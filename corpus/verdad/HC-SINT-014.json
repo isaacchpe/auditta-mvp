@@ -1,0 +1,71 @@
+{
+  "id": "HC-SINT-014",
+  "plantilla": "C",
+  "sexo": "femenino",
+  "edad": 71,
+  "defectos": [
+    "COMP-05",
+    "OPO-02",
+    "PERT-01"
+  ],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": true
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Margarita Claudia Ruiz Hernandez"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "25662869"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "22-02-1955"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "305 409 4542"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Avenida 19 # 20-26"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Cereté"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Mocarí"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Rosa Lorena Ramos Valencia"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-49517"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-2925"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-464693"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "01-09-2026"
+    },
+    {
+      "categoria": "PACIENTE",
+      "valor": "Pedro Wilson Pastrana Medina"
+    }
+  ],
+  "paginas": 2,
+  "archivo": "HC-SINT-014.pdf"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "HC-SINT-001",
+  "plantilla": "A",
+  "sexo": "femenino",
+  "edad": 46,
+  "defectos": [],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Milena Martha Rojas Tordecilla"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "1074700087"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "24/04/1979"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "327 869 8226"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Carrera 10 # 10-24"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Planeta Rica"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Buenavista"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Viviana Teresa Acosta Romero"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-62064"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-6696"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-473960"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "11/02/2026"
+    },
+    {
+      "categoria": "CORREO",
+      "valor": "milena.rojas49@correo-ejemplo.co"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-001.pdf"
+}

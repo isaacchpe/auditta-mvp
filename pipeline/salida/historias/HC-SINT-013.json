@@ -1,0 +1,170 @@
+{
+  "_id": "HC-SINT-013",
+  "archivo": "HC-SINT-013.pdf",
+  "hash": "7c20b6b3030dcae6beae066ab5a4127577935e99e2da41ed00d814192000de98",
+  "paginas": 2,
+  "plantilla": "C",
+  "secciones_reconocidas": [
+    "analisis",
+    "antecedentes",
+    "diagnosticos",
+    "enfermedad_actual",
+    "epicrisis",
+    "evolucion",
+    "examen_fisico",
+    "identificacion",
+    "motivo_consulta",
+    "ordenes",
+    "plan",
+    "profesional"
+  ],
+  "texto_anonimizado": "ESE Hospital Sintético San Jerónimo\nCódigo de habilitación 230010999903 · HISTORIA CLÍNICA DE HOSPITALIZACIÓN\n\nDATOS DEL PACIENTE\nUSUARIO: [PACIENTE_1]O: CC [DOCUMENTO_1] EDAD: 71 años SEXO:\nFEMENINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1]N: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Coosalud HISTORIA: [HISTORIA_1] EPISODIO: [FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 10:54 SERVICIO: HOSPITALIZACIÓN\n\nMOTIVO DE CONSULTA\n«No puedo respirar bien y tengo las piernas hinchadas».\n\nENFERMEDAD ACTUAL\nDisnea progresiva de una semana hasta hacerse de reposo, ortopnea de tres almohadas y edema de\nmiembros inferiores. Ganancia de 4 kg en 10 días.\nSegún refiere su familiar [PACIENTE_3], el cuadro empeoró en las últimas horas.\n\nANTECEDENTES\nPersonales: insuficiencia cardíaca con fracción de eyección reducida, hipertensión arterial. Familiares: sin\nrelevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 160/100 mmHg, FC 104 lpm, FR 26 rpm, SatO2 89 % al aire ambiente, T 36,4 °C. Ingurgitación yugular,\ncrépitos bibasales, edema grado III en miembros inferiores.\n\nANÁLISIS\nFalla cardíaca descompensada con congestión pulmonar y sistémica. Se hospitaliza.\n\nDIAGNÓSTICOS\n- I500 Insuficiencia cardíaca congestiva\n- I10X Hipertensión esencial\n\nÓRDENES\n- Péptido natriurético, creatinina, electrolitos. Justificación: Confirmar descompensación y vigilar función renal con\ndiurético.\n- Radiografía de tórax. Justificación: Evaluar congestión pulmonar y derrame.\nRESULTADOS\n- Péptido natriurético tipo B: 1.850 pg/mL. Interpretación: Confirma falla cardíaca descompensada.\n- Radiografía de tórax: cardiomegalia y redistribución de flujo. Interpretación: Congestión pulmonar.\n\nPLAN DE MANEJO\n- Furosemida 40 mg intravenosa cada 8 horas.\n- Oxígeno por cánula nasal a 3 litros por minuto.\n- Restricción hídrica a 1.200 mL por día y control de peso diario.\n- Enalapril 10 mg vía oral cada 12 horas.\n\nEVOLUCIÓN\n[FECHA_3] 19:38 · Día 2: Mejoría de la disnea, diuresis 2.400 mL en 24 horas, peso 2 kg menos. Se continúa\ndiurético intravenoso.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 1\n[FECHA_4] 16:30 · Día 3: Sin ortopnea, SatO2 94 % al aire ambiente, edema grado I. Se pasa furosemida a vía\noral.\n\nEPICRISIS\n[FECHA_5] · Día 4: Egreso con mejoría clínica. Diagnósticos de egreso: insuficiencia cardíaca congestiva\ndescompensada e hipertensión arterial. Plan: furosemida 40 mg vía oral cada 12 horas, enalapril 10 mg cada\n12 horas, control por cardiología en 15 días, signos de alarma explicados.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Cirugía general. Firma:\n____________\nFecha y hora de la anotación: [FECHA_2] 10:54\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 2",
+  "entidades": [
+    {
+      "categoria": "DIRECCION",
+      "token": "[DIRECCION_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "token": "[DOCUMENTO_1]",
+      "ocurrencias": 3
+    },
+    {
+      "categoria": "FACTURA",
+      "token": "[FACTURA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_2]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_3]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_4]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_5]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "HISTORIA",
+      "token": "[HISTORIA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "MEDICO",
+      "token": "[MEDICO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "PACIENTE",
+      "token": "[PACIENTE_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "PACIENTE",
+      "token": "[PACIENTE_2]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "PACIENTE",
+      "token": "[PACIENTE_3]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "REGISTRO",
+      "token": "[REGISTRO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "TELEFONO",
+      "token": "[TELEFONO_1]",
+      "ocurrencias": 1
+    }
+  ],
+  "version_extractor": "1.0.0",
+  "version_reglas": "1.0.0",
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": true
+  },
+  "estado": "pendiente_confirmacion",
+  "tiempos_ms": {
+    "extraccion": 5,
+    "anonimizacion": 5,
+    "total": 11
+  },
+  "secciones": [
+    {
+      "titulo": null,
+      "texto": "ESE Hospital Sintético San Jerónimo\nCódigo de habilitación 230010999903 · HISTORIA CLÍNICA DE HOSPITALIZACIÓN"
+    },
+    {
+      "titulo": "DATOS DEL PACIENTE",
+      "texto": "USUARIO: [PACIENTE_1]O: CC [DOCUMENTO_1] EDAD: 71 años SEXO:\nFEMENINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1]N: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Coosalud HISTORIA: [HISTORIA_1] EPISODIO: [FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 10:54 SERVICIO: HOSPITALIZACIÓN"
+    },
+    {
+      "titulo": "MOTIVO DE CONSULTA",
+      "texto": "«No puedo respirar bien y tengo las piernas hinchadas»."
+    },
+    {
+      "titulo": "ENFERMEDAD ACTUAL",
+      "texto": "Disnea progresiva de una semana hasta hacerse de reposo, ortopnea de tres almohadas y edema de\nmiembros inferiores. Ganancia de 4 kg en 10 días.\nSegún refiere su familiar [PACIENTE_3], el cuadro empeoró en las últimas horas."
+    },
+    {
+      "titulo": "ANTECEDENTES",
+      "texto": "Personales: insuficiencia cardíaca con fracción de eyección reducida, hipertensión arterial. Familiares: sin\nrelevancia. Alérgicos: niega."
+    },
+    {
+      "titulo": "EXAMEN FÍSICO",
+      "texto": "TA 160/100 mmHg, FC 104 lpm, FR 26 rpm, SatO2 89 % al aire ambiente, T 36,4 °C. Ingurgitación yugular,\ncrépitos bibasales, edema grado III en miembros inferiores."
+    },
+    {
+      "titulo": "ANÁLISIS",
+      "texto": "Falla cardíaca descompensada con congestión pulmonar y sistémica. Se hospitaliza."
+    },
+    {
+      "titulo": "DIAGNÓSTICOS",
+      "texto": "- I500 Insuficiencia cardíaca congestiva\n- I10X Hipertensión esencial"
+    },
+    {
+      "titulo": "ÓRDENES",
+      "texto": "- Péptido natriurético, creatinina, electrolitos. Justificación: Confirmar descompensación y vigilar función renal con\ndiurético.\n- Radiografía de tórax. Justificación: Evaluar congestión pulmonar y derrame.\nRESULTADOS\n- Péptido natriurético tipo B: 1.850 pg/mL. Interpretación: Confirma falla cardíaca descompensada.\n- Radiografía de tórax: cardiomegalia y redistribución de flujo. Interpretación: Congestión pulmonar."
+    },
+    {
+      "titulo": "PLAN DE MANEJO",
+      "texto": "- Furosemida 40 mg intravenosa cada 8 horas.\n- Oxígeno por cánula nasal a 3 litros por minuto.\n- Restricción hídrica a 1.200 mL por día y control de peso diario.\n- Enalapril 10 mg vía oral cada 12 horas."
+    },
+    {
+      "titulo": "EVOLUCIÓN",
+      "texto": "[FECHA_3] 19:38 · Día 2: Mejoría de la disnea, diuresis 2.400 mL en 24 horas, peso 2 kg menos. Se continúa\ndiurético intravenoso.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 1\n[FECHA_4] 16:30 · Día 3: Sin ortopnea, SatO2 94 % al aire ambiente, edema grado I. Se pasa furosemida a vía\noral."
+    },
+    {
+      "titulo": "EPICRISIS",
+      "texto": "[FECHA_5] · Día 4: Egreso con mejoría clínica. Diagnósticos de egreso: insuficiencia cardíaca congestiva\ndescompensada e hipertensión arterial. Plan: furosemida 40 mg vía oral cada 12 horas, enalapril 10 mg cada\n12 horas, control por cardiología en 15 días, signos de alarma explicados."
+    },
+    {
+      "titulo": "PROFESIONAL",
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Cirugía general. Firma:\n____________\nFecha y hora de la anotación: [FECHA_2] 10:54\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 2"
+    }
+  ]
+}

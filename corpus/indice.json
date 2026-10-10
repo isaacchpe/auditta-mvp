@@ -1,0 +1,193 @@
+{
+  "generado": "2026-10-10T16:44:26",
+  "semilla": 2026,
+  "historias": [
+    {
+      "id": "HC-SINT-001",
+      "plantilla": "A",
+      "paginas": 1,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-002",
+      "plantilla": "A",
+      "paginas": 1,
+      "defectos": [
+        "COH-03",
+        "COMP-05",
+        "OPO-01"
+      ]
+    },
+    {
+      "id": "HC-SINT-003",
+      "plantilla": "A",
+      "paginas": 1,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-004",
+      "plantilla": "A",
+      "paginas": 1,
+      "defectos": [
+        "COH-03",
+        "COH-04"
+      ]
+    },
+    {
+      "id": "HC-SINT-005",
+      "plantilla": "A",
+      "paginas": 1,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-006",
+      "plantilla": "A",
+      "paginas": 1,
+      "defectos": [
+        "COMP-03",
+        "IDP-02",
+        "SOP-03"
+      ]
+    },
+    {
+      "id": "HC-SINT-007",
+      "plantilla": "B",
+      "paginas": 2,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-008",
+      "plantilla": "B",
+      "paginas": 1,
+      "defectos": [
+        "PERT-02",
+        "SOP-03"
+      ]
+    },
+    {
+      "id": "HC-SINT-009",
+      "plantilla": "B",
+      "paginas": 1,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-010",
+      "plantilla": "B",
+      "paginas": 2,
+      "defectos": [
+        "COH-03",
+        "PERT-01",
+        "PERT-02"
+      ]
+    },
+    {
+      "id": "HC-SINT-011",
+      "plantilla": "B",
+      "paginas": 1,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-012",
+      "plantilla": "B",
+      "paginas": 1,
+      "defectos": [
+        "OPO-01",
+        "SOP-03"
+      ]
+    },
+    {
+      "id": "HC-SINT-013",
+      "plantilla": "C",
+      "paginas": 2,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-014",
+      "plantilla": "C",
+      "paginas": 2,
+      "defectos": [
+        "COMP-05",
+        "OPO-02",
+        "PERT-01"
+      ]
+    },
+    {
+      "id": "HC-SINT-015",
+      "plantilla": "C",
+      "paginas": 2,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-016",
+      "plantilla": "C",
+      "paginas": 2,
+      "defectos": [
+        "COH-04",
+        "IDP-02",
+        "OPO-01"
+      ]
+    },
+    {
+      "id": "HC-SINT-017",
+      "plantilla": "C",
+      "paginas": 2,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-018",
+      "plantilla": "C",
+      "paginas": 2,
+      "defectos": [
+        "COMP-03",
+        "COMP-04"
+      ]
+    },
+    {
+      "id": "HC-SINT-019",
+      "plantilla": "D",
+      "paginas": 1,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-020",
+      "plantilla": "D",
+      "paginas": 1,
+      "defectos": [
+        "OPO-01",
+        "PERT-01",
+        "PERT-04"
+      ]
+    },
+    {
+      "id": "HC-SINT-021",
+      "plantilla": "D",
+      "paginas": 1,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-022",
+      "plantilla": "D",
+      "paginas": 1,
+      "defectos": [
+        "COH-04",
+        "COMP-06",
+        "PERT-04"
+      ]
+    },
+    {
+      "id": "HC-SINT-023",
+      "plantilla": "D",
+      "paginas": 1,
+      "defectos": []
+    },
+    {
+      "id": "HC-SINT-024",
+      "plantilla": "D",
+      "paginas": 1,
+      "defectos": [
+        "COMP-04",
+        "PERT-04"
+      ]
+    }
+  ]
+}

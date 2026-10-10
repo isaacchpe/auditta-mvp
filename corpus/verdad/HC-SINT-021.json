@@ -1,0 +1,63 @@
+{
+  "id": "HC-SINT-021",
+  "plantilla": "D",
+  "sexo": "masculino",
+  "edad": 48,
+  "defectos": [],
+  "contexto": {
+    "promocion_mantenimiento": true,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Manuel Nicolas Ortiz Pacheco"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "15405350"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "24 de julio de 1978"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "305 700 5214"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Diagonal 58 # 6-30"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Magangué"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "La Pradera"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Leidy Fernando Vargas Jimenez"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-41604"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-9102"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-323046"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "22 de agosto de 2026"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-021.pdf"
+}

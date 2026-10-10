@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditta · Inicio</title>
+<link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+<div class="marco">
+  <main class="contenido">
+    <div class="encabezado"><div class="titulos"><p class="ruta">Inicio</p><h1 id="saludo">Buenos días</h1></div><span id="insignia"></span></div>
+    <div class="indicadores" id="indicadores"></div>
+    <div class="fila">
+      <section class="tarjeta panel" style="flex:2"><h2>Continúe donde quedó</h2><p class="sub">Historias analizadas con mayor puntaje de riesgo</p><div id="pendientes" style="display:flex;flex-direction:column;gap:10px"></div></section>
+      <section class="tarjeta panel"><h2>Hallazgos por severidad</h2><p class="sub">Pendientes de decisión en las historias analizadas</p><div id="severidades" style="display:flex;flex-direction:column;gap:12px"></div><div class="aviso info"></div></section>
+    </div>
+    <p class="pie-legal">Auditta emite recomendaciones. La decisión de auditoría es del profesional.</p>
+  </main>
+</div>
+<script src="/app.js"></script>
+<script>
+if (Auditta.exigirSesion()) {
+  Auditta.lateral("inicio");
+  const $ = s => document.querySelector(s);
+  $("#insignia").innerHTML = Auditta.insignia();
+  const hora = new Date().getHours();
+  $("#saludo").textContent = `${hora < 12 ? "Buenos días" : (hora < 18 ? "Buenas tardes" : "Buenas noches")}, ${(Auditta.almacen.leer("auditta_nombre") || "").split(" ")[0]}`;
+  $(".aviso.info").innerHTML = `${Auditta.ICONOS.escudo}<span>Auditta emite recomendaciones. La decisión de auditoría es del profesional.</span>`;
+  Promise.all([Auditta.api("/historias"), Auditta.api("/metricas")]).then(([{ historias }, m]) => {
+    const estados = m.historias_por_estado || {};
+    const kpi = (etiqueta, valor, detalle) => `<div class="tarjeta kpi"><span class="etiqueta">${etiqueta}</span><span class="valor">${valor}</span><span class="detalle">${detalle}</span></div>`;
+    $("#indicadores").innerHTML = kpi("Historias del corpus", historias.length, "4 plantillas de prestador") + kpi("Pendientes de confirmar", estados.pendiente_confirmacion || 0, "anonimización por revisar") + kpi("Listas para revisión", estados.analizada || 0, "con hallazgos marcados") + kpi("Hallazgos por revisar", m.hallazgos_total - m.hallazgos_revisados, `${m.por_severidad?.alta || 0} de severidad alta`);
+    const lista = historias.filter(h => h.estado === "analizada").slice(0, 5);
+    $("#pendientes").innerHTML = lista.length ? lista.map((h, i) => `<div style="display:flex;align-items:center;gap:16px;padding:12px 14px;border-radius:8px;background:var(--color-neutro-fondo)"><div style="flex:1"><b>${h._id}</b><div style="font-size:12px;color:var(--color-neutro-texto-secundario)">Plantilla ${h.plantilla} · ${h.paginas} páginas · ${h.num_hallazgos} hallazgos</div></div>${Auditta.puntaje(h.puntaje, h.nivel)}<a class="btn ${i ? "secundario" : ""}" href="/informe.html?id=${h._id}">Revisar</a></div>`).join("") : '<p style="color:var(--color-neutro-texto-secundario)">No hay historias analizadas pendientes de revisión.</p>';
+    const sev = m.por_severidad || {}; const total = Math.max(1, (sev.alta || 0) + (sev.media || 0) + (sev.baja || 0));
+    $("#severidades").innerHTML = ["alta", "media", "baja"].map(s => `<div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">${Auditta.chip(s)}<b>${sev[s] || 0}</b></div><div class="barra-h"><div class="pista"><div class="barra" style="width:${100 * (sev[s] || 0) / total}%;background:var(--color-severidad-${s})"></div></div></div></div>`).join("");
+  }).catch(x => { $("#pendientes").innerHTML = `<div class="aviso error">${Auditta.escapar(x.message)}</div>`; });
+}
+</script>
+</body>
+</html>

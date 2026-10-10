@@ -1,0 +1,140 @@
+{
+  "_id": "HC-SINT-022",
+  "archivo": "HC-SINT-022.pdf",
+  "hash": "e138f88211882386bc0a286c17f19981567408e3b762cda8dbc362cd38e5a9de",
+  "paginas": 1,
+  "plantilla": "D",
+  "secciones_reconocidas": [
+    "analisis",
+    "antecedentes",
+    "diagnosticos",
+    "enfermedad_actual",
+    "examen_fisico",
+    "identificacion",
+    "intervenciones_ruta",
+    "motivo_consulta",
+    "ordenes",
+    "profesional"
+  ],
+  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 48 años Sexo:\nmasculino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Coosalud Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 14:05 Curso de vida: adultez\n\nMOTIVO DE CONSULTA\nConsulta de valoración integral del adulto.\n\nENFERMEDAD ACTUAL\nHombre de 48 años que asiste a la valoración de la ruta. Refiere sedentarismo y consumo ocasional de\nalcohol. Niega síntomas.\n\nANTECEDENTES\nPersonales: niega. Familiares: padre hipertenso. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 134/86 mmHg, FC 74 lpm, peso 88 kg, talla 172 cm, IMC 29,7, perímetro abdominal 101 cm.\n\nANÁLISIS\nAdulto con sobrepeso y riesgo cardiovascular por evaluar.\nSe realiza citología cervicouterina de tamizaje durante la consulta.\n\nDIAGNÓSTICOS\n- Z000 Examen médico general\n- E660 Obesidad debida a exceso de calorías\n\nÓRDENES\n- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta.\n\nINTERVENCIONES DE LA RUTA\n- Educación en salud.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 14:05\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
+  "entidades": [
+    {
+      "categoria": "DOCUMENTO",
+      "token": "[DOCUMENTO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FACTURA",
+      "token": "[FACTURA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_2]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "HISTORIA",
+      "token": "[HISTORIA_1]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_2]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_3]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "MEDICO",
+      "token": "[MEDICO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "PACIENTE",
+      "token": "[PACIENTE_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "REGISTRO",
+      "token": "[REGISTRO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "TELEFONO",
+      "token": "[TELEFONO_1]",
+      "ocurrencias": 1
+    }
+  ],
+  "version_extractor": "1.0.0",
+  "version_reglas": "1.0.0",
+  "contexto": {
+    "promocion_mantenimiento": true,
+    "egreso": false
+  },
+  "estado": "pendiente_confirmacion",
+  "tiempos_ms": {
+    "extraccion": 4,
+    "anonimizacion": 3,
+    "total": 7
+  },
+  "secciones": [
+    {
+      "titulo": null,
+      "texto": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD"
+    },
+    {
+      "titulo": "IDENTIFICACIÓN DEL USUARIO",
+      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 48 años Sexo:\nmasculino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Coosalud Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 14:05 Curso de vida: adultez"
+    },
+    {
+      "titulo": "MOTIVO DE CONSULTA",
+      "texto": "Consulta de valoración integral del adulto."
+    },
+    {
+      "titulo": "ENFERMEDAD ACTUAL",
+      "texto": "Hombre de 48 años que asiste a la valoración de la ruta. Refiere sedentarismo y consumo ocasional de\nalcohol. Niega síntomas."
+    },
+    {
+      "titulo": "ANTECEDENTES",
+      "texto": "Personales: niega. Familiares: padre hipertenso. Alérgicos: niega."
+    },
+    {
+      "titulo": "EXAMEN FÍSICO",
+      "texto": "TA 134/86 mmHg, FC 74 lpm, peso 88 kg, talla 172 cm, IMC 29,7, perímetro abdominal 101 cm."
+    },
+    {
+      "titulo": "ANÁLISIS",
+      "texto": "Adulto con sobrepeso y riesgo cardiovascular por evaluar.\nSe realiza citología cervicouterina de tamizaje durante la consulta."
+    },
+    {
+      "titulo": "DIAGNÓSTICOS",
+      "texto": "- Z000 Examen médico general\n- E660 Obesidad debida a exceso de calorías"
+    },
+    {
+      "titulo": "ÓRDENES",
+      "texto": "- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta."
+    },
+    {
+      "titulo": "INTERVENCIONES DE LA RUTA",
+      "texto": "- Educación en salud."
+    },
+    {
+      "titulo": "PROFESIONAL",
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 14:05\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "HC-SINT-006",
+  "plantilla": "A",
+  "sexo": "femenino",
+  "edad": 32,
+  "defectos": [
+    "COMP-03",
+    "IDP-02",
+    "SOP-03"
+  ],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Yolanda Mariana Morales Osorio"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "72623684"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "25/05/1994"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "328 311 8104"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Avenida 31 # 34-86"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Sahagún"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Buenavista"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Luis Javier Zuniga Mendoza"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-15929"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-9925"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-979734"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "11/08/2026"
+    },
+    {
+      "categoria": "CORREO",
+      "valor": "yolanda.morales7@correo-ejemplo.co"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-006.pdf"
+}

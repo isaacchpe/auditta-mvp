@@ -1,0 +1,33 @@
+{
+  "historias": 24,
+  "historias_analizadas": 0,
+  "recall_anonimizacion": 1.0,
+  "identificadores": 304,
+  "documentos_con_fuga": 0,
+  "recall_por_categoria": {
+    "PACIENTE": 1.0,
+    "DOCUMENTO": 1.0,
+    "FECHA": 1.0,
+    "TELEFONO": 1.0,
+    "DIRECCION": 1.0,
+    "LUGAR": 1.0,
+    "MEDICO": 1.0,
+    "REGISTRO": 1.0,
+    "HISTORIA": 1.0,
+    "FACTURA": 1.0,
+    "CORREO": 1.0
+  },
+  "json_valido_primer_intento": null,
+  "hallazgos_con_evidencia": null,
+  "hallazgos_generados": 0,
+  "hallazgos_verificados": 0,
+  "sensibilidad_defectos_inducidos": null,
+  "latencia_media_ms": null,
+  "latencia_maxima_ms": null,
+  "tokens_entrada": 0,
+  "tokens_salida": 0,
+  "fecha": "2026-10-10T21:47:04.392253+00:00",
+  "version_reglas": "1.0.0",
+  "version_prompt": "1.0.0",
+  "version_catalogo": "1.0.0"
+}

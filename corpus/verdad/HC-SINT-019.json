@@ -1,0 +1,67 @@
+{
+  "id": "HC-SINT-019",
+  "plantilla": "D",
+  "sexo": "femenino",
+  "edad": 3,
+  "defectos": [],
+  "contexto": {
+    "promocion_mantenimiento": true,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Camila Mercedes Valencia Rivera"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "1048550241"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "29 de diciembre de 2022"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "325 600 6209"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Diagonal 33 # 16-19"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Magangué"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "El Recreo"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Amparo Miguel Urango Suarez"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-13784"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-4946"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-319855"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "22 de septiembre de 2026"
+    },
+    {
+      "categoria": "PACIENTE",
+      "valor": "Beatriz Elena Reyes Pacheco"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-019.pdf"
+}

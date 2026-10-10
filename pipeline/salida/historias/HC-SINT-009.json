@@ -1,0 +1,140 @@
+{
+  "_id": "HC-SINT-009",
+  "archivo": "HC-SINT-009.pdf",
+  "hash": "1558bca31c984fe587d2e86a19fb50ca0cf913abf787e41c035e47eee0eecd6e",
+  "paginas": 1,
+  "plantilla": "B",
+  "secciones_reconocidas": [
+    "analisis",
+    "antecedentes",
+    "diagnosticos",
+    "enfermedad_actual",
+    "examen_fisico",
+    "identificacion",
+    "motivo_consulta",
+    "ordenes",
+    "plan",
+    "profesional"
+  ],
+  "texto_anonimizado": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS\n\nIDENTIFICACIÓN DEL PACIENTE\nPaciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 7 años Sexo: femenino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Sanitas HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 21:20\nAcompañante: [PACIENTE_2] (madre)\n\nMOTIVO DE CONSULTA\n«La niña tiene fiebre y le cuesta respirar».\n\nENFERMEDAD ACTUAL\nFiebre de 39 °C de tres días, tos productiva y dificultad respiratoria progresiva desde hace 12 horas. Vacunación\ncompleta para la edad según la madre.\n\nANTECEDENTES\nPersonales: asma leve intermitente. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nFC 128 lpm, FR 38 rpm, T 38,9 °C, SatO2 91 % al aire ambiente, peso 23 kg. Tirajes subcostales, crépitos en\nbase pulmonar derecha.\n\nANÁLISIS\nNeumonía adquirida en la comunidad con dificultad respiratoria.\n\nDIAGNÓSTICOS\n- J189 Neumonía, no especificada\n- J459 Asma, no especificada\n\nÓRDENES\n- Radiografía de tórax. Justificación: Confirmar consolidación y descartar derrame.\n- Hemograma y proteína C reactiva. Justificación: Orientar la etiología bacteriana.\nRESULTADOS\n- Radiografía de tórax: consolidación en lóbulo inferior derecho sin derrame. Interpretación: Confirma neumonía\nlobar.\n- Hemograma: leucocitos 16.200, neutrófilos 78 %. Interpretación: Respuesta inflamatoria compatible con\ninfección bacteriana.\n\nPLAN DE MANEJO\n- Oxígeno por cánula nasal a 2 litros por minuto.\n- Amoxicilina 90 mg/kg/día vía oral dividida cada 12 horas por 7 días.\n- Acetaminofén 15 mg/kg vía oral cada 6 horas si hay fiebre.\n- Observación por 12 horas con control de saturación.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma: ____________\nFecha y hora de la anotación: [FECHA_2] 21:20\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1",
+  "entidades": [
+    {
+      "categoria": "DOCUMENTO",
+      "token": "[DOCUMENTO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FACTURA",
+      "token": "[FACTURA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_2]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "HISTORIA",
+      "token": "[HISTORIA_1]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_2]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "MEDICO",
+      "token": "[MEDICO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "PACIENTE",
+      "token": "[PACIENTE_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "PACIENTE",
+      "token": "[PACIENTE_2]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "REGISTRO",
+      "token": "[REGISTRO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "TELEFONO",
+      "token": "[TELEFONO_1]",
+      "ocurrencias": 1
+    }
+  ],
+  "version_extractor": "1.0.0",
+  "version_reglas": "1.0.0",
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": false
+  },
+  "estado": "pendiente_confirmacion",
+  "tiempos_ms": {
+    "extraccion": 4,
+    "anonimizacion": 3,
+    "total": 8
+  },
+  "secciones": [
+    {
+      "titulo": null,
+      "texto": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS"
+    },
+    {
+      "titulo": "IDENTIFICACIÓN DEL PACIENTE",
+      "texto": "Paciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 7 años Sexo: femenino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Sanitas HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 21:20\nAcompañante: [PACIENTE_2] (madre)"
+    },
+    {
+      "titulo": "MOTIVO DE CONSULTA",
+      "texto": "«La niña tiene fiebre y le cuesta respirar»."
+    },
+    {
+      "titulo": "ENFERMEDAD ACTUAL",
+      "texto": "Fiebre de 39 °C de tres días, tos productiva y dificultad respiratoria progresiva desde hace 12 horas. Vacunación\ncompleta para la edad según la madre."
+    },
+    {
+      "titulo": "ANTECEDENTES",
+      "texto": "Personales: asma leve intermitente. Familiares: sin relevancia. Alérgicos: niega."
+    },
+    {
+      "titulo": "EXAMEN FÍSICO",
+      "texto": "FC 128 lpm, FR 38 rpm, T 38,9 °C, SatO2 91 % al aire ambiente, peso 23 kg. Tirajes subcostales, crépitos en\nbase pulmonar derecha."
+    },
+    {
+      "titulo": "ANÁLISIS",
+      "texto": "Neumonía adquirida en la comunidad con dificultad respiratoria."
+    },
+    {
+      "titulo": "DIAGNÓSTICOS",
+      "texto": "- J189 Neumonía, no especificada\n- J459 Asma, no especificada"
+    },
+    {
+      "titulo": "ÓRDENES",
+      "texto": "- Radiografía de tórax. Justificación: Confirmar consolidación y descartar derrame.\n- Hemograma y proteína C reactiva. Justificación: Orientar la etiología bacteriana.\nRESULTADOS\n- Radiografía de tórax: consolidación en lóbulo inferior derecho sin derrame. Interpretación: Confirma neumonía\nlobar.\n- Hemograma: leucocitos 16.200, neutrófilos 78 %. Interpretación: Respuesta inflamatoria compatible con\ninfección bacteriana."
+    },
+    {
+      "titulo": "PLAN DE MANEJO",
+      "texto": "- Oxígeno por cánula nasal a 2 litros por minuto.\n- Amoxicilina 90 mg/kg/día vía oral dividida cada 12 horas por 7 días.\n- Acetaminofén 15 mg/kg vía oral cada 6 horas si hay fiebre.\n- Observación por 12 horas con control de saturación."
+    },
+    {
+      "titulo": "PROFESIONAL",
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma: ____________\nFecha y hora de la anotación: [FECHA_2] 21:20\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1"
+    }
+  ]
+}

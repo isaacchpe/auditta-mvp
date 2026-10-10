@@ -1,0 +1,145 @@
+{
+  "_id": "HC-SINT-019",
+  "archivo": "HC-SINT-019.pdf",
+  "hash": "60b2c4c481e62607dc80ae669bfc636eff30d67deb66e3b382b10c519cb53a14",
+  "paginas": 1,
+  "plantilla": "D",
+  "secciones_reconocidas": [
+    "analisis",
+    "antecedentes",
+    "diagnosticos",
+    "enfermedad_actual",
+    "examen_fisico",
+    "identificacion",
+    "intervenciones_ruta",
+    "motivo_consulta",
+    "plan",
+    "profesional"
+  ],
+  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: RC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 3 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Coosalud Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 15:49 Curso de vida: primera infancia\nAcompañante: [PACIENTE_2] (madre)\n\nMOTIVO DE CONSULTA\nConsulta de valoración integral de primera infancia.\n\nENFERMEDAD ACTUAL\nNiña de 3 años traída por su madre para la valoración de la ruta de promoción y mantenimiento. Asintomática.\nAlimentación variada, duerme 10 horas.\n\nANTECEDENTES\nPerinatales: parto a término, peso al nacer 3.100 g. Vacunación: esquema completo para la edad según carné.\nAlérgicos: niega.\n\nEXAMEN FÍSICO\nPeso 14,2 kg, talla 95 cm, perímetro cefálico 49 cm, FC 104 lpm, FR 24 rpm, T 36,5 °C. Desarrollo acorde a la\nedad en las cuatro áreas de la escala abreviada.\n\nANÁLISIS\nNiña sana con crecimiento y desarrollo adecuados.\n\nDIAGNÓSTICOS\n- Z001 Control de salud de rutina del niño\n\nPLAN DE MANEJO\n- Continuar alimentación balanceada.\n- Próximo control a los 4 años.\n\nINTERVENCIONES DE LA RUTA\n- Valoración del desarrollo con escala abreviada.\n- Valoración nutricional con curvas de la OMS.\n- Verificación del esquema de vacunación.\n- Educación en salud a la cuidadora.\n- Aplicación de flúor barniz y valoración por odontología.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 15:49\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
+  "entidades": [
+    {
+      "categoria": "DOCUMENTO",
+      "token": "[DOCUMENTO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FACTURA",
+      "token": "[FACTURA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_2]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "HISTORIA",
+      "token": "[HISTORIA_1]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_2]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_3]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "MEDICO",
+      "token": "[MEDICO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "PACIENTE",
+      "token": "[PACIENTE_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "PACIENTE",
+      "token": "[PACIENTE_2]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "REGISTRO",
+      "token": "[REGISTRO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "TELEFONO",
+      "token": "[TELEFONO_1]",
+      "ocurrencias": 1
+    }
+  ],
+  "version_extractor": "1.0.0",
+  "version_reglas": "1.0.0",
+  "contexto": {
+    "promocion_mantenimiento": true,
+    "egreso": false
+  },
+  "estado": "pendiente_confirmacion",
+  "tiempos_ms": {
+    "extraccion": 4,
+    "anonimizacion": 3,
+    "total": 8
+  },
+  "secciones": [
+    {
+      "titulo": null,
+      "texto": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD"
+    },
+    {
+      "titulo": "IDENTIFICACIÓN DEL USUARIO",
+      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: RC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 3 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Coosalud Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 15:49 Curso de vida: primera infancia\nAcompañante: [PACIENTE_2] (madre)"
+    },
+    {
+      "titulo": "MOTIVO DE CONSULTA",
+      "texto": "Consulta de valoración integral de primera infancia."
+    },
+    {
+      "titulo": "ENFERMEDAD ACTUAL",
+      "texto": "Niña de 3 años traída por su madre para la valoración de la ruta de promoción y mantenimiento. Asintomática.\nAlimentación variada, duerme 10 horas."
+    },
+    {
+      "titulo": "ANTECEDENTES",
+      "texto": "Perinatales: parto a término, peso al nacer 3.100 g. Vacunación: esquema completo para la edad según carné.\nAlérgicos: niega."
+    },
+    {
+      "titulo": "EXAMEN FÍSICO",
+      "texto": "Peso 14,2 kg, talla 95 cm, perímetro cefálico 49 cm, FC 104 lpm, FR 24 rpm, T 36,5 °C. Desarrollo acorde a la\nedad en las cuatro áreas de la escala abreviada."
+    },
+    {
+      "titulo": "ANÁLISIS",
+      "texto": "Niña sana con crecimiento y desarrollo adecuados."
+    },
+    {
+      "titulo": "DIAGNÓSTICOS",
+      "texto": "- Z001 Control de salud de rutina del niño"
+    },
+    {
+      "titulo": "PLAN DE MANEJO",
+      "texto": "- Continuar alimentación balanceada.\n- Próximo control a los 4 años."
+    },
+    {
+      "titulo": "INTERVENCIONES DE LA RUTA",
+      "texto": "- Valoración del desarrollo con escala abreviada.\n- Valoración nutricional con curvas de la OMS.\n- Verificación del esquema de vacunación.\n- Educación en salud a la cuidadora.\n- Aplicación de flúor barniz y valoración por odontología."
+    },
+    {
+      "titulo": "PROFESIONAL",
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 15:49\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
+    }
+  ]
+}

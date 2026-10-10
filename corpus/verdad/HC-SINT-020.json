@@ -1,0 +1,71 @@
+{
+  "id": "HC-SINT-020",
+  "plantilla": "D",
+  "sexo": "femenino",
+  "edad": 3,
+  "defectos": [
+    "OPO-01",
+    "PERT-01",
+    "PERT-04"
+  ],
+  "contexto": {
+    "promocion_mantenimiento": true,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Dolores Claudia Ortiz Reyes"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "1049612378"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "7 de agosto de 2023"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "320 387 5904"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Carrera 18 # 22-79"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Montelíbano"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "El Recreo"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Paola Angelica Perez Alvarez"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-99119"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-7781"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-772373"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "7 de septiembre de 2026"
+    },
+    {
+      "categoria": "PACIENTE",
+      "valor": "Teresa Margarita Hernandez Mejia"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-020.pdf"
+}

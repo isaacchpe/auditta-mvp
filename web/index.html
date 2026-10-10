@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditta · Ingreso</title>
+<link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+<main class="acceso">
+  <section class="marca-panel">
+    <div class="marca" style="font-size:44px">Auditta</div>
+    <h1>Revise lo que importa de cada historia clínica.</h1>
+    <p>Auditta marca los hallazgos con riesgo de glosa, con la evidencia y la norma que los sustentan. Usted decide.</p>
+    <ul class="garantias" id="garantias"></ul>
+  </section>
+  <section class="formulario">
+    <form id="f-ingreso" class="tarjeta" novalidate>
+      <h1 style="font-size:26px">Ingresar</h1>
+      <p>Use la cuenta con la que se registró para la prueba.</p>
+      <div class="campo"><label for="i-correo">Correo</label><input id="i-correo" type="email" autocomplete="email" required><div class="mensaje-error" id="i-correo-error"></div></div>
+      <div class="campo"><label for="i-clave">Contraseña</label><input id="i-clave" type="password" autocomplete="current-password" required><div class="mensaje-error" id="i-clave-error"></div></div>
+      <div class="mensaje-error" id="i-error" role="alert"></div>
+      <button class="btn" type="submit"><span class="giro"></span><span class="etiqueta">Ingresar</span></button>
+      <p>¿No tiene cuenta? <a href="#registro" id="ir-registro">Crear una cuenta</a></p>
+      <div class="aviso info" id="aviso-1"></div>
+    </form>
+    <form id="f-registro" class="tarjeta oculto" novalidate>
+      <h1 style="font-size:26px">Crear una cuenta</h1>
+      <p>Para participar en la prueba del MVP con historias clínicas sintéticas.</p>
+      <div class="campo"><label for="r-nombre">Nombre completo</label><input id="r-nombre" autocomplete="name" required minlength="3"><div class="mensaje-error" id="r-nombre-error"></div></div>
+      <div class="campo"><label for="r-correo">Correo</label><input id="r-correo" type="email" autocomplete="email" required><div class="mensaje-error" id="r-correo-error"></div></div>
+      <div class="campo"><label for="r-perfil">Perfil</label><select id="r-perfil" required><option value="">Seleccione…</option><option value="auditor_medico">Auditor médico</option><option value="facturacion">Facturación o cuentas médicas</option><option value="coordinador">Coordinador de auditoría</option><option value="desarrollador">Desarrollador (prueba de pasillo)</option><option value="otro">Otro</option></select><div class="mensaje-error" id="r-perfil-error"></div></div>
+      <div class="campo"><label for="r-clave">Contraseña (mínimo 8 caracteres)</label><input id="r-clave" type="password" autocomplete="new-password" required minlength="8"><div class="mensaje-error" id="r-clave-error"></div></div>
+      <div class="mensaje-error" id="r-error" role="alert"></div>
+      <button class="btn" type="submit"><span class="giro"></span><span class="etiqueta">Crear cuenta</span></button>
+      <p><a href="#ingreso" id="ir-ingreso">Ya tengo cuenta</a></p>
+      <div class="aviso info" id="aviso-2"></div>
+    </form>
+  </section>
+</main>
+<script src="/app.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const correoValido = v => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.trim());
+if (Auditta.token()) location.href = "/bandeja.html";
+$("#garantias").innerHTML = [["candado", "Anonimización local: ningún dato del paciente sale sin su confirmación."], ["documento", "Cada hallazgo cita el texto exacto de la historia y su ubicación."], ["escudo", "El sustento normativo viene de un catálogo versionado, no del modelo."]].map(([i, t]) => `<li>${Auditta.ICONOS[i]}<span>${t}</span></li>`).join("");
+const legal = `${Auditta.ICONOS.escudo}<span>Auditta emite recomendaciones. La decisión de auditoría es del profesional.</span>`;
+$("#aviso-1").innerHTML = legal; $("#aviso-2").innerHTML = legal;
+function mostrar(registro) { $("#f-ingreso").classList.toggle("oculto", registro); $("#f-registro").classList.toggle("oculto", !registro); }
+$("#ir-registro").addEventListener("click", e => { e.preventDefault(); mostrar(true); });
+$("#ir-ingreso").addEventListener("click", e => { e.preventDefault(); mostrar(false); });
+if (location.hash === "#registro") mostrar(true);
+function marcar(id, mensaje) { const campo = $("#" + id).closest(".campo"); campo.classList.toggle("error", !!mensaje); $("#" + id + "-error").textContent = mensaje || ""; return !mensaje; }
+$("#f-ingreso").addEventListener("submit", async e => {
+  e.preventDefault();
+  const boton = e.submitter; $("#i-error").textContent = "";
+  const correo = $("#i-correo").value, clave = $("#i-clave").value;
+  const ok = [marcar("i-correo", correoValido(correo) ? "" : "Escriba un correo válido."), marcar("i-clave", clave ? "" : "Escriba la contraseña.")].every(Boolean);
+  if (!ok) return;
+  Auditta.ocupado(boton, true);
+  try { Auditta.guardarSesion(await Auditta.api("/auth/ingreso", { method: "POST", body: JSON.stringify({ correo, clave }) })); location.href = "/bandeja.html"; }
+  catch (x) { $("#i-error").textContent = x.message; Auditta.ocupado(boton, false); }
+});
+$("#f-registro").addEventListener("submit", async e => {
+  e.preventDefault();
+  const boton = e.submitter; $("#r-error").textContent = "";
+  const datos = { nombre: $("#r-nombre").value.trim(), correo: $("#r-correo").value, perfil: $("#r-perfil").value, clave: $("#r-clave").value };
+  const ok = [marcar("r-nombre", datos.nombre.length >= 3 ? "" : "Escriba su nombre completo."), marcar("r-correo", correoValido(datos.correo) ? "" : "Escriba un correo válido."), marcar("r-perfil", datos.perfil ? "" : "Seleccione su perfil."), marcar("r-clave", datos.clave.length >= 8 ? "" : "La contraseña debe tener al menos 8 caracteres.")].every(Boolean);
+  if (!ok) return;
+  Auditta.ocupado(boton, true);
+  try { Auditta.guardarSesion(await Auditta.api("/auth/registro", { method: "POST", body: JSON.stringify(datos) })); location.href = "/bandeja.html"; }
+  catch (x) { $("#r-error").textContent = x.message; Auditta.ocupado(boton, false); }
+});
+</script>
+</body>
+</html>

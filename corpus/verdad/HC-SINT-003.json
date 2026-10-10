@@ -1,0 +1,67 @@
+{
+  "id": "HC-SINT-003",
+  "plantilla": "A",
+  "sexo": "masculino",
+  "edad": 58,
+  "defectos": [],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Yuli Oscar Pineda Castro"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "1053966306"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "17/05/1967"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "328 815 8846"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Transversal 37 # 17-47"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Planeta Rica"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "La Castellana"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Milena Nubia Marquez Pastrana"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-74162"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-4274"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-372745"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "21/02/2026"
+    },
+    {
+      "categoria": "CORREO",
+      "valor": "yuli.pineda89@correo-ejemplo.co"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-003.pdf"
+}

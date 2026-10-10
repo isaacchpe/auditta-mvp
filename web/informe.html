@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditta · Informe de riesgo</title>
+<link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+<div class="marco">
+  <main class="contenido">
+    <div class="encabezado"><div class="titulos"><p class="ruta" id="ruta">Inicio / Bandeja</p><h1 id="titulo">Informe de riesgo</h1></div><span id="insignia"></span></div>
+    <section class="tarjeta resumen-informe" id="resumen"></section>
+    <div class="fila" style="align-items:flex-start">
+      <section class="tarjeta panel" style="flex:1.1"><h2>Documento (texto anonimizado)</h2><p class="sub">Las citas de los hallazgos aparecen resaltadas</p><div class="documento" id="documento">Cargando…</div></section>
+      <div id="hallazgos" style="flex:1;display:flex;flex-direction:column;gap:16px"></div>
+    </div>
+    <div id="cierre" class="tarjeta panel oculto" style="align-items:center;text-align:center"><h2>Todos los hallazgos tienen decisión</h2><p class="sub">Al finalizar se registra el tiempo total de revisión de esta historia.</p><button class="btn" id="finalizar" type="button"><span class="giro"></span><span class="etiqueta">Finalizar revisión</span></button><div class="mensaje-error" id="error-cierre"></div></div>
+    <p class="pie-legal">Auditta emite recomendaciones. La decisión de auditoría es del profesional.</p>
+  </main>
+</div>
+<div class="velo" id="velo"><form class="modal" id="f-reclasificar" novalidate>
+  <h2 id="m-titulo">Reclasificar hallazgo</h2>
+  <p id="m-sub" style="margin:0;color:var(--color-neutro-texto-secundario)"></p>
+  <div style="display:flex;flex-direction:column;gap:8px" id="m-opciones"></div>
+  <div class="mensaje-error" id="m-sev-error"></div>
+  <div class="campo"><label for="m-motivo">Motivo (obligatorio)</label><textarea id="m-motivo" rows="3" maxlength="500" required></textarea><div class="mensaje-error" id="m-motivo-error"></div></div>
+  <div style="display:flex;gap:10px;justify-content:flex-end"><button class="btn fantasma" type="button" id="m-cancelar">Cancelar</button><button class="btn" type="submit"><span class="giro"></span><span class="etiqueta">Guardar reclasificación</span></button></div>
+</form></div>
+<script src="/app.js"></script>
+<script>
+if (Auditta.exigirSesion()) {
+  Auditta.lateral("bandeja");
+  const $ = s => document.querySelector(s);
+  const id = Auditta.parametro("id");
+  const apertura = performance.now();
+  const transcurrido = () => Math.round((performance.now() - apertura) / 1000);
+  let historia = null, hallazgos = [], reclasificando = null;
+  $("#insignia").innerHTML = Auditta.insignia();
+  const FAMILIA_COLOR = { SOP: "var(--color-severidad-alta)", COMP: "var(--color-severidad-media)", PERT: "#B3561D", COH: "#5E6FB3", OPO: "#2E7D8C", IDP: "#6B7A2F" };
+  const NIVEL = { alto: "Alto", medio: "Medio", bajo: "Bajo" };
+
+  function normalizar(t) { return t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[«»“”"]/g, "").replace(/\s+/g, " ").trim(); }
+  function resaltar(texto, lista) {
+    let html = Auditta.resaltarTokens(texto);
+    for (const h of lista) {
+      const cita = (h.evidencia || "").replace(/^[«"“]+|[»"”.]+$/g, "").trim();
+      if (cita.length < 8) continue;
+      const indice = normalizar(texto).indexOf(normalizar(cita));
+      if (indice < 0) continue;
+      const fragmento = Auditta.resaltarTokens(texto.substr(indice, cita.length));
+      if (html.includes(fragmento)) html = html.replace(fragmento, `<mark id="ev-${h._id}"><span class="marca-h">H-${String(h.orden).padStart(2, "0")}</span>${fragmento}</mark>`);
+    }
+    return html;
+  }
+  function pintarResumen() {
+    const total = hallazgos.length, decididos = hallazgos.filter(h => h.estado_revision !== "pendiente").length;
+    const comp = historia.composicion || [];
+    const barra = comp.map(c => `<span style="width:${c.puntos}%;background:${FAMILIA_COLOR[c.familia] || "#999"}"></span>`).join("");
+    $("#resumen").innerHTML = `<div><p class="rotulo">PUNTAJE DE RIESGO</p><span class="grande ${historia.nivel}">${historia.puntaje ?? "—"}</span> <b class="${historia.nivel}">/ 100 · ${NIVEL[historia.nivel] || "—"}</b></div><div style="flex:1"><p class="rotulo">COMPOSICIÓN POR FAMILIA DE CRITERIO</p><div class="apilada">${barra}</div><div class="leyenda" style="margin-top:6px">${comp.map(c => `<span style="color:${FAMILIA_COLOR[c.familia] || "#999"}">■ ${c.nombre} ${c.puntos}</span>`).join("")}</div></div><div style="text-align:right"><p class="rotulo">REVISIÓN</p><b>${decididos} de ${total} hallazgos</b><div style="font-size:12px;color:var(--color-neutro-texto-secundario)">Tiempo de revisión <span id="reloj">00:00</span></div></div>`;
+    $("#cierre").classList.toggle("oculto", !(total && decididos === total && historia.estado !== "revisada"));
+  }
+  function tarjeta(h) {
+    const estado = h.estado_revision || "pendiente";
+    const codigo = `H-${String(h.orden).padStart(2, "0")}`;
+    const decision = h.ultima_decision || {};
+    const quien = decision.nombre || (decision.usuario || "").split("@")[0];
+    const hora = decision.fecha ? new Date(decision.fecha).toLocaleTimeString("es-CO", { hour: "2-digit", minute: "2-digit" }) : "";
+    const pie = estado === "pendiente"
+      ? `<button class="btn" data-accion="aceptado" data-id="${h._id}"><span class="giro"></span><span class="etiqueta">Aceptar hallazgo</span></button><button class="btn secundario" data-accion="reclasificar" data-id="${h._id}"><span class="etiqueta">Reclasificar</span></button><button class="btn fantasma" data-accion="descartado" data-id="${h._id}"><span class="giro"></span><span class="etiqueta">Descartar</span></button>`
+      : `<span class="decision ${estado}">${Auditta.ICONOS[{ aceptado: "aceptar", descartado: "descartar", reclasificado: "reclasificar" }[estado]]}${{ aceptado: "Aceptado", descartado: "Descartado", reclasificado: `Reclasificado de ${h.severidad} a ${h.severidad_revisada}` }[estado]} por ${Auditta.escapar(quien)} · ${hora}</span><span style="flex:1"></span>${historia.estado !== "revisada" ? `<button class="btn fantasma" data-accion="deshacer" data-id="${h._id}">Deshacer</button>` : ""}`;
+    return `<article class="tarjeta hallazgo ${estado}" id="h-${h._id}"><div class="cabecera"><span class="codigo">${codigo}</span><span class="criterio">${h.criterio_id} · ${Auditta.escapar(h.criterio)}</span>${Auditta.chip(estado === "reclasificado" ? h.severidad_revisada : h.severidad)}</div><p style="margin:0">${Auditta.escapar(h.descripcion)}</p><div class="evidencia"><span class="ubicacion">${Auditta.ICONOS.documento} Evidencia${h.seccion ? " · " + Auditta.escapar(h.seccion) : ""} <a href="#ev-${h._id}" style="margin-left:6px">ver en el documento</a></span><span>«${Auditta.resaltarTokens(h.evidencia)}»</span></div><div><p class="rotulo">SUSTENTO NORMATIVO</p>${Auditta.escapar(h.sustento)}</div>${h.recomendacion ? `<div><p class="rotulo">RECOMENDACIÓN</p>${Auditta.escapar(h.recomendacion)}</div>` : ""}<p class="confianza" style="margin:0">Confianza declarada por el modelo: ${Number(h.confianza).toFixed(2).replace(".", ",")} · Evidencia verificada en el texto fuente</p><div class="separador"></div><div class="acciones">${pie}</div></article>`;
+  }
+  function pintar() {
+    $("#documento").innerHTML = (historia.secciones || []).map(s => (s.titulo ? `<h3>${Auditta.escapar(s.titulo)}</h3>` : "") + `<div>${resaltar(s.texto, hallazgos)}</div>`).join("");
+    $("#hallazgos").innerHTML = hallazgos.length ? hallazgos.map(tarjeta).join("") : `<div class="tarjeta panel" style="align-items:center;text-align:center;padding:40px"><h2>Sin hallazgos para esta historia</h2><p class="sub">El análisis no reportó incumplimientos sustentados con evidencia.</p></div>`;
+    pintarResumen();
+  }
+  async function decidir(hallazgoId, datos, boton) {
+    if (boton) Auditta.ocupado(boton, true);
+    try {
+      const r = await Auditta.api(`/hallazgos/${hallazgoId}/decision`, { method: "POST", body: JSON.stringify({ ...datos, segundos_desde_apertura: transcurrido() }) });
+      const h = hallazgos.find(x => x._id === hallazgoId);
+      h.estado_revision = r.estado_revision; h.ultima_decision = r.decision; if (datos.severidad_nueva) h.severidad_revisada = datos.severidad_nueva;
+      pintar();
+      const codigo = `H-${String(h.orden).padStart(2, "0")}`;
+      Auditta.notificar(`Decisión registrada · ${codigo} ${{ aceptado: "aceptado", descartado: "descartado", reclasificado: "reclasificado" }[r.estado_revision]}`, { texto: "Deshacer", al: () => deshacer(hallazgoId) });
+    } catch (x) { if (boton) Auditta.ocupado(boton, false); Auditta.notificar(x.message); }
+  }
+  async function deshacer(hallazgoId) {
+    try { await Auditta.api(`/hallazgos/${hallazgoId}/deshacer`, { method: "POST" }); const h = hallazgos.find(x => x._id === hallazgoId); h.estado_revision = "pendiente"; delete h.ultima_decision; delete h.severidad_revisada; pintar(); }
+    catch (x) { Auditta.notificar(x.message); }
+  }
+  function abrirModal(h) {
+    reclasificando = h;
+    $("#m-titulo").textContent = `Reclasificar hallazgo H-${String(h.orden).padStart(2, "0")}`;
+    $("#m-sub").textContent = `${h.criterio_id} · ${h.criterio}. Severidad actual: ${h.severidad}. Elija la severidad que corresponde según su criterio y explique el motivo.`;
+    $("#m-opciones").innerHTML = ["alta", "media", "baja"].map(s => `<label class="opcion"><input type="radio" name="sev" value="${s}" ${s === h.severidad ? "disabled" : ""}>${Auditta.chip(s)}${s === h.severidad ? '<span style="font-size:12px;color:var(--color-neutro-texto-tenue)">severidad actual</span>' : ""}</label>`).join("");
+    $("#m-motivo").value = ""; $("#m-sev-error").textContent = ""; $("#m-motivo-error").textContent = "";
+    $("#velo").classList.add("abierto"); $("#m-motivo").focus();
+  }
+  $("#m-cancelar").addEventListener("click", () => $("#velo").classList.remove("abierto"));
+  $("#f-reclasificar").addEventListener("submit", async e => {
+    e.preventDefault();
+    const sev = document.querySelector('input[name="sev"]:checked')?.value, motivo = $("#m-motivo").value.trim();
+    $("#m-sev-error").textContent = sev ? "" : "Elija la nueva severidad."; $("#m-motivo-error").textContent = motivo ? "" : "Escriba el motivo.";
+    if (!sev || !motivo) return;
+    const boton = e.submitter; Auditta.ocupado(boton, true);
+    await decidir(reclasificando._id, { decision: "reclasificado", severidad_nueva: sev, motivo });
+    Auditta.ocupado(boton, false); $("#velo").classList.remove("abierto");
+  });
+  $("#hallazgos").addEventListener("click", e => {
+    const boton = e.target.closest("button[data-accion]"); if (!boton) return;
+    const h = hallazgos.find(x => x._id === boton.dataset.id);
+    if (boton.dataset.accion === "reclasificar") abrirModal(h);
+    else if (boton.dataset.accion === "deshacer") deshacer(h._id);
+    else decidir(h._id, { decision: boton.dataset.accion }, boton);
+  });
+  $("#finalizar").addEventListener("click", async () => {
+    const boton = $("#finalizar"); Auditta.ocupado(boton, true); $("#error-cierre").textContent = "";
+    try { await Auditta.api(`/historias/${id}/cerrar-revision`, { method: "POST", body: JSON.stringify({ segundos_revision: transcurrido() }) }); location.href = "/completada.html?id=" + id; }
+    catch (x) { $("#error-cierre").textContent = x.message; Auditta.ocupado(boton, false); }
+  });
+  setInterval(() => { const r = $("#reloj"); if (r) r.textContent = Auditta.segundos(transcurrido()); }, 1000);
+  Auditta.api("/historias/" + id).then(h => {
+    if (h.estado === "pendiente_confirmacion") { location.href = "/confirmacion.html?id=" + id; return; }
+    historia = h; hallazgos = h.hallazgos || [];
+    $("#titulo").textContent = "Informe de riesgo · " + h._id; $("#ruta").textContent = "Inicio / Bandeja / " + h._id;
+    pintar();
+    Auditta.evento("abrir_informe", { historia_id: id });
+  }).catch(x => { $("#documento").innerHTML = `<div class="aviso error">${Auditta.escapar(x.message)}</div>`; });
+}
+</script>
+</body>
+</html>

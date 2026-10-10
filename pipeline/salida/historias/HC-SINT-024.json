@@ -1,0 +1,145 @@
+{
+  "_id": "HC-SINT-024",
+  "archivo": "HC-SINT-024.pdf",
+  "hash": "8f50893cd6207eab8373f54d2ee1e3bc9ed631dd2c001d51002ca68d266da21d",
+  "paginas": 1,
+  "plantilla": "D",
+  "secciones_reconocidas": [
+    "analisis",
+    "antecedentes",
+    "diagnosticos",
+    "enfermedad_actual",
+    "examen_fisico",
+    "identificacion",
+    "intervenciones_ruta",
+    "motivo_consulta",
+    "ordenes",
+    "plan",
+    "profesional"
+  ],
+  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 24 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Coosalud Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 20:16 Curso de vida: juventud\n\nMOTIVO DE CONSULTA\nControl prenatal de segundo trimestre.\n\nENFERMEDAD ACTUAL\nGestante de 22 semanas, primigestante, asintomática, con movimientos fetales presentes. Toma el ácido fólico\ny el sulfato ferroso.\n\nANTECEDENTES\nObstétricos: G1 P0. Personales: niega. Alérgicos: niega.\n\nEXAMEN FÍSICO\nSin hallazgos relevantes.\n\nANÁLISIS\nEmbarazo de curso normal, bajo riesgo.\n\nDIAGNÓSTICOS\n- Z340 Supervisión de primer embarazo normal\n\nÓRDENES\n- Ecografía obstétrica de detalle. Justificación: Tamizaje de anomalías estructurales entre las semanas 18 y 24.\n- Prueba de tolerancia a la glucosa. Justificación: Tamizaje de diabetes gestacional de la ruta.\nRESULTADOS\n- Ecografía obstétrica: feto único vivo, biometría acorde, anatomía normal. Interpretación: Sin alteraciones.\n\nPLAN DE MANEJO\n- Continuar micronutrientes.\n- Próximo control en 4 semanas.\n\nINTERVENCIONES DE LA RUTA\n- Educación en salud.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 20:16\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
+  "entidades": [
+    {
+      "categoria": "DOCUMENTO",
+      "token": "[DOCUMENTO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FACTURA",
+      "token": "[FACTURA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_2]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "HISTORIA",
+      "token": "[HISTORIA_1]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_2]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_3]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "MEDICO",
+      "token": "[MEDICO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "PACIENTE",
+      "token": "[PACIENTE_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "REGISTRO",
+      "token": "[REGISTRO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "TELEFONO",
+      "token": "[TELEFONO_1]",
+      "ocurrencias": 1
+    }
+  ],
+  "version_extractor": "1.0.0",
+  "version_reglas": "1.0.0",
+  "contexto": {
+    "promocion_mantenimiento": true,
+    "egreso": false
+  },
+  "estado": "pendiente_confirmacion",
+  "tiempos_ms": {
+    "extraccion": 4,
+    "anonimizacion": 3,
+    "total": 7
+  },
+  "secciones": [
+    {
+      "titulo": null,
+      "texto": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD"
+    },
+    {
+      "titulo": "IDENTIFICACIÓN DEL USUARIO",
+      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 24 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Coosalud Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 20:16 Curso de vida: juventud"
+    },
+    {
+      "titulo": "MOTIVO DE CONSULTA",
+      "texto": "Control prenatal de segundo trimestre."
+    },
+    {
+      "titulo": "ENFERMEDAD ACTUAL",
+      "texto": "Gestante de 22 semanas, primigestante, asintomática, con movimientos fetales presentes. Toma el ácido fólico\ny el sulfato ferroso."
+    },
+    {
+      "titulo": "ANTECEDENTES",
+      "texto": "Obstétricos: G1 P0. Personales: niega. Alérgicos: niega."
+    },
+    {
+      "titulo": "EXAMEN FÍSICO",
+      "texto": "Sin hallazgos relevantes."
+    },
+    {
+      "titulo": "ANÁLISIS",
+      "texto": "Embarazo de curso normal, bajo riesgo."
+    },
+    {
+      "titulo": "DIAGNÓSTICOS",
+      "texto": "- Z340 Supervisión de primer embarazo normal"
+    },
+    {
+      "titulo": "ÓRDENES",
+      "texto": "- Ecografía obstétrica de detalle. Justificación: Tamizaje de anomalías estructurales entre las semanas 18 y 24.\n- Prueba de tolerancia a la glucosa. Justificación: Tamizaje de diabetes gestacional de la ruta.\nRESULTADOS\n- Ecografía obstétrica: feto único vivo, biometría acorde, anatomía normal. Interpretación: Sin alteraciones."
+    },
+    {
+      "titulo": "PLAN DE MANEJO",
+      "texto": "- Continuar micronutrientes.\n- Próximo control en 4 semanas."
+    },
+    {
+      "titulo": "INTERVENCIONES DE LA RUTA",
+      "texto": "- Educación en salud."
+    },
+    {
+      "titulo": "PROFESIONAL",
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 20:16\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "HC-SINT-015",
+  "plantilla": "C",
+  "sexo": "masculino",
+  "edad": 63,
+  "defectos": [],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": true
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Andres Jorge Osorio Salazar"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "45608499"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "25-05-1963"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "316 618 6434"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Diagonal 56 # 36-61"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Montelíbano"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "El Recreo"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "David Katherine Burgos Burgos"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-63700"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-7252"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-323216"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "19-08-2026"
+    },
+    {
+      "categoria": "PACIENTE",
+      "valor": "Alvaro Leidy Reyes Jaramillo"
+    }
+  ],
+  "paginas": 2,
+  "archivo": "HC-SINT-015.pdf"
+}

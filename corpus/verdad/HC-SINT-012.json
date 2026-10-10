@@ -1,0 +1,66 @@
+{
+  "id": "HC-SINT-012",
+  "plantilla": "B",
+  "sexo": "masculino",
+  "edad": 27,
+  "defectos": [
+    "OPO-01",
+    "SOP-03"
+  ],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Ricardo Jesus Moreno Ricardo"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "47012142"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "1998-09-14"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "317 752 8496"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Avenida 40 # 24-34"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Lorica"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Villa Olímpica"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Juan Emmanuel Pastrana Galeano"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-14916"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-3827"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-188297"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "2026-03-24"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-012.pdf"
+}

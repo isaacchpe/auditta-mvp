@@ -1,0 +1,71 @@
+{
+  "id": "HC-SINT-016",
+  "plantilla": "C",
+  "sexo": "masculino",
+  "edad": 63,
+  "defectos": [
+    "COH-04",
+    "IDP-02",
+    "OPO-01"
+  ],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": true
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "David Tomas Ortiz Ricardo"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "1035958274"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "28-05-1962"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "316 509 1355"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Avenida 55 # 26-96"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Sincelejo"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Mocarí"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Yuli Amparo Pineda Pastrana"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-37513"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-6769"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-779713"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "18-03-2026"
+    },
+    {
+      "categoria": "PACIENTE",
+      "valor": "Monica Paola Rodriguez Guerrero"
+    }
+  ],
+  "paginas": 2,
+  "archivo": "HC-SINT-016.pdf"
+}

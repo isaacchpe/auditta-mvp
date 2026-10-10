@@ -1,0 +1,63 @@
+{
+  "id": "HC-SINT-007",
+  "plantilla": "B",
+  "sexo": "masculino",
+  "edad": 54,
+  "defectos": [],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Edgar Rafael Ruiz Alvarez"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "1036615522"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "1971-06-23"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "311 492 5995"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Carrera 32 # 16-43"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Corozal"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "El Prado"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Hernan Alberto Arrieta Pastrana"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-73183"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-2967"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-652863"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "2026-03-21"
+    }
+  ],
+  "paginas": 2,
+  "archivo": "HC-SINT-007.pdf"
+}

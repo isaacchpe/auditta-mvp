@@ -1,0 +1,66 @@
+{
+  "id": "HC-SINT-008",
+  "plantilla": "B",
+  "sexo": "masculino",
+  "edad": 54,
+  "defectos": [
+    "PERT-02",
+    "SOP-03"
+  ],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Leidy Alberto Hernandez Cabrales"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "31039853"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "1972-04-19"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "324 669 4513"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Avenida 28 # 22-95"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Magangué"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "El Recreo"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Miguel Fernando Jimenez Diaz"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-99724"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-6836"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-857447"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "2026-06-14"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-008.pdf"
+}

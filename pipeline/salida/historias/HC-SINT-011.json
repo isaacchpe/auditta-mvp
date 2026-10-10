@@ -1,0 +1,140 @@
+{
+  "_id": "HC-SINT-011",
+  "archivo": "HC-SINT-011.pdf",
+  "hash": "e11b45667250c5de6d0aee43b97631a20b56b3581dd7d33b8aa87e8304964a93",
+  "paginas": 1,
+  "plantilla": "B",
+  "secciones_reconocidas": [
+    "analisis",
+    "antecedentes",
+    "consentimiento",
+    "diagnosticos",
+    "enfermedad_actual",
+    "examen_fisico",
+    "identificacion",
+    "motivo_consulta",
+    "ordenes",
+    "plan",
+    "profesional"
+  ],
+  "texto_anonimizado": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS\n\nIDENTIFICACIÓN DEL PACIENTE\nPaciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 27 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Mutual Ser HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 15:01\n\nMOTIVO DE CONSULTA\n«Me caí de la moto y me duele el brazo».\n\nENFERMEDAD ACTUAL\nCaída de motocicleta a baja velocidad hace una hora, con trauma en antebrazo derecho, dolor intenso y\ndeformidad. Sin pérdida de conciencia ni otros traumas.\n\nANTECEDENTES\nPersonales: niega. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 124/78 mmHg, FC 92 lpm, FR 18 rpm, T 36,7 °C. Deformidad en tercio medio de antebrazo derecho, pulso\nradial presente, llenado capilar menor de 2 segundos, sensibilidad conservada.\n\nANÁLISIS\nFractura cerrada de antebrazo derecho; se requiere reducción.\n\nDIAGNÓSTICOS\n- S522 Fractura de la diáfisis del cúbito\n- V280 Motociclista lesionado en accidente de transporte\n\nÓRDENES\n- Radiografía de antebrazo derecho AP y lateral. Justificación: Trauma con deformidad para caracterizar la\nfractura.\n- Reducción cerrada de fractura e inmovilización. Justificación: Fractura desplazada confirmada en radiografía.\nRESULTADOS\n- Radiografía de antebrazo: fractura diafisaria de cúbito con desplazamiento de 20 grados. Interpretación: Indica\nreducción cerrada.\n\nCONSENTIMIENTO INFORMADO\nEl paciente o su representante recibe información sobre el procedimiento Reducción cerrada de fractura bajo\nsedación, sus riesgos y alternativas, y firma el consentimiento, que se anexa a la historia.\n\nPLAN DE MANEJO\n- Diclofenaco 75 mg intramuscular dosis única.\n- Inmovilización con férula braquiopalmar.\n- Reducción cerrada bajo sedación.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de urgencias.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 15:01\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1",
+  "entidades": [
+    {
+      "categoria": "DOCUMENTO",
+      "token": "[DOCUMENTO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FACTURA",
+      "token": "[FACTURA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "FECHA",
+      "token": "[FECHA_2]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "HISTORIA",
+      "token": "[HISTORIA_1]",
+      "ocurrencias": 2
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "LUGAR",
+      "token": "[LUGAR_2]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "MEDICO",
+      "token": "[MEDICO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "PACIENTE",
+      "token": "[PACIENTE_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "REGISTRO",
+      "token": "[REGISTRO_1]",
+      "ocurrencias": 1
+    },
+    {
+      "categoria": "TELEFONO",
+      "token": "[TELEFONO_1]",
+      "ocurrencias": 1
+    }
+  ],
+  "version_extractor": "1.0.0",
+  "version_reglas": "1.0.0",
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": false
+  },
+  "estado": "pendiente_confirmacion",
+  "tiempos_ms": {
+    "extraccion": 4,
+    "anonimizacion": 3,
+    "total": 8
+  },
+  "secciones": [
+    {
+      "titulo": null,
+      "texto": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS"
+    },
+    {
+      "titulo": "IDENTIFICACIÓN DEL PACIENTE",
+      "texto": "Paciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 27 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Mutual Ser HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 15:01"
+    },
+    {
+      "titulo": "MOTIVO DE CONSULTA",
+      "texto": "«Me caí de la moto y me duele el brazo»."
+    },
+    {
+      "titulo": "ENFERMEDAD ACTUAL",
+      "texto": "Caída de motocicleta a baja velocidad hace una hora, con trauma en antebrazo derecho, dolor intenso y\ndeformidad. Sin pérdida de conciencia ni otros traumas."
+    },
+    {
+      "titulo": "ANTECEDENTES",
+      "texto": "Personales: niega. Familiares: sin relevancia. Alérgicos: niega."
+    },
+    {
+      "titulo": "EXAMEN FÍSICO",
+      "texto": "TA 124/78 mmHg, FC 92 lpm, FR 18 rpm, T 36,7 °C. Deformidad en tercio medio de antebrazo derecho, pulso\nradial presente, llenado capilar menor de 2 segundos, sensibilidad conservada."
+    },
+    {
+      "titulo": "ANÁLISIS",
+      "texto": "Fractura cerrada de antebrazo derecho; se requiere reducción."
+    },
+    {
+      "titulo": "DIAGNÓSTICOS",
+      "texto": "- S522 Fractura de la diáfisis del cúbito\n- V280 Motociclista lesionado en accidente de transporte"
+    },
+    {
+      "titulo": "ÓRDENES",
+      "texto": "- Radiografía de antebrazo derecho AP y lateral. Justificación: Trauma con deformidad para caracterizar la\nfractura.\n- Reducción cerrada de fractura e inmovilización. Justificación: Fractura desplazada confirmada en radiografía.\nRESULTADOS\n- Radiografía de antebrazo: fractura diafisaria de cúbito con desplazamiento de 20 grados. Interpretación: Indica\nreducción cerrada."
+    },
+    {
+      "titulo": "CONSENTIMIENTO INFORMADO",
+      "texto": "El paciente o su representante recibe información sobre el procedimiento Reducción cerrada de fractura bajo\nsedación, sus riesgos y alternativas, y firma el consentimiento, que se anexa a la historia."
+    },
+    {
+      "titulo": "PLAN DE MANEJO",
+      "texto": "- Diclofenaco 75 mg intramuscular dosis única.\n- Inmovilización con férula braquiopalmar.\n- Reducción cerrada bajo sedación."
+    },
+    {
+      "titulo": "PROFESIONAL",
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de urgencias.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 15:01\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1"
+    }
+  ]
+}

@@ -1,0 +1,1226 @@
+[
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "CORREO": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 17
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "CORREO": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "CORREO": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 9
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "CORREO": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "CORREO": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "CORREO": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 12,
+      "detectados": 12,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 12,
+      "detectados": 12,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 9
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 2,
+          "detectados": 2
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 2,
+          "detectados": 2
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 9
+  },
+  {
+    "anonimizacion": {
+      "total": 12,
+      "detectados": 12,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 12,
+      "detectados": 12,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 2,
+          "detectados": 2
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 11
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 2,
+          "detectados": 2
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 10
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 2,
+          "detectados": 2
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 11
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 2,
+          "detectados": 2
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 10
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 2,
+          "detectados": 2
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 9
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 2,
+          "detectados": 2
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 10
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 2,
+          "detectados": 2
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 13,
+      "detectados": 13,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 2,
+          "detectados": 2
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 12,
+      "detectados": 12,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 12,
+      "detectados": 12,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 7
+  },
+  {
+    "anonimizacion": {
+      "total": 12,
+      "detectados": 12,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 8
+  },
+  {
+    "anonimizacion": {
+      "total": 12,
+      "detectados": 12,
+      "fugas": [],
+      "por_categoria": {
+        "PACIENTE": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DOCUMENTO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FECHA": {
+          "total": 2,
+          "detectados": 2
+        },
+        "TELEFONO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "DIRECCION": {
+          "total": 1,
+          "detectados": 1
+        },
+        "LUGAR": {
+          "total": 2,
+          "detectados": 2
+        },
+        "MEDICO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "REGISTRO": {
+          "total": 1,
+          "detectados": 1
+        },
+        "HISTORIA": {
+          "total": 1,
+          "detectados": 1
+        },
+        "FACTURA": {
+          "total": 1,
+          "detectados": 1
+        }
+      }
+    },
+    "latencia_total_ms": 7
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "id": "HC-SINT-013",
+  "plantilla": "C",
+  "sexo": "femenino",
+  "edad": 71,
+  "defectos": [],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": true
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Angelica Ligia Salazar Sierra"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "1052784615"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "18-04-1954"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "322 620 2719"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Calle 19 # 29-52"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Magangué"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Los Ángeles"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Ligia Marcela Castillo Ruiz"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-48392"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-9866"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-399451"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "18-01-2026"
+    },
+    {
+      "categoria": "PACIENTE",
+      "valor": "Lorena Andrea Villadiego Rodriguez"
+    }
+  ],
+  "paginas": 2,
+  "archivo": "HC-SINT-013.pdf"
+}

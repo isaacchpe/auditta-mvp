@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditta · Confirmar anonimización</title>
+<link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+<div class="marco">
+  <main class="contenido">
+    <div class="encabezado"><div class="titulos"><p class="ruta" id="ruta">Inicio / Bandeja</p><h1 id="titulo">Confirmar anonimización</h1></div><span id="insignia"></span></div>
+    <div class="aviso info" id="aviso"></div>
+    <div class="fila">
+      <section class="tarjeta panel" style="flex:2"><h2>Texto anonimizado</h2><p class="sub" id="subdoc"></p><div class="documento" id="documento">Cargando…</div></section>
+      <div style="display:flex;flex-direction:column;gap:16px;flex:1">
+        <section class="tarjeta panel"><h2>Entidades detectadas</h2><p class="sub" id="subent"></p><div id="entidades" style="display:flex;flex-direction:column;gap:8px"></div></section>
+        <section class="tarjeta panel"><h2>Confirmación</h2>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" id="casilla" style="margin-top:3px"><span>Revisé el texto y no contiene datos que identifiquen al paciente.</span></label>
+          <div class="mensaje-error" id="error" role="alert"></div>
+          <button class="btn" id="confirmar" type="button" disabled><span class="giro"></span><span class="etiqueta">Confirmar y ver informe</span></button>
+          <a class="btn secundario" href="/bandeja.html">Volver a la bandeja</a>
+          <p class="pie-legal" style="margin:0">Si no confirma, el análisis queda bloqueado (RNF-01).</p>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="/app.js"></script>
+<script>
+if (Auditta.exigirSesion()) {
+  Auditta.lateral("bandeja");
+  const $ = s => document.querySelector(s);
+  const id = Auditta.parametro("id");
+  $("#insignia").innerHTML = Auditta.insignia();
+  $("#aviso").innerHTML = `${Auditta.ICONOS.candado}<span>Este es el único texto que se envía al proveedor externo de inteligencia artificial. Revise que no quede ningún dato que identifique al paciente (Ley 1581 de 2012).</span>`;
+  const CATEGORIAS = { PACIENTE: "Nombres de personas", DOCUMENTO: "Documento de identidad", FECHA: "Fechas", DIRECCION: "Dirección", TELEFONO: "Teléfono", CORREO: "Correo electrónico", LUGAR: "Lugar de residencia", MEDICO: "Profesional tratante", REGISTRO: "Registro médico", HISTORIA: "Número de historia", FACTURA: "Número de admisión o factura" };
+  Auditta.api("/historias/" + id).then(h => {
+    $("#titulo").textContent = "Confirmar anonimización · " + h._id;
+    $("#ruta").textContent = "Inicio / Bandeja / " + h._id;
+    $("#subdoc").textContent = `Plantilla ${h.plantilla} · ${h.paginas} páginas · reglas de anonimización v${h.version_reglas}`;
+    $("#documento").innerHTML = (h.secciones || []).map(s => (s.titulo ? `<h3>${Auditta.escapar(s.titulo)}</h3>` : "") + `<div>${Auditta.resaltarTokens(s.texto)}</div>`).join("");
+    const grupos = {};
+    (h.entidades || []).forEach(e => { const g = grupos[e.categoria] = grupos[e.categoria] || { n: 0, tokens: [] }; g.n += e.ocurrencias; g.tokens.push(e.token); });
+    $("#subent").textContent = `${(h.entidades || []).length} sustituciones en ${Object.keys(grupos).length} categorías`;
+    $("#entidades").innerHTML = Object.entries(grupos).map(([c, g]) => `<div style="display:flex;align-items:center;gap:8px"><div style="flex:1"><div style="font-weight:500">${CATEGORIAS[c] || c}</div><div class="token" style="font-size:11px">${g.tokens.slice(0, 3).join(" ")}${g.tokens.length > 3 ? " …" : ""}</div></div><span style="padding:2px 8px;border-radius:999px;background:var(--color-neutro-fondo);font-weight:600;font-size:12px">${g.n}</span></div>`).join("");
+    if (h.estado !== "pendiente_confirmacion") { $("#casilla").disabled = true; $("#confirmar").disabled = true; $("#error").textContent = "Esta historia ya fue confirmada."; $("#confirmar").insertAdjacentHTML("afterend", `<a class="btn" href="/informe.html?id=${h._id}">Ver informe</a>`); }
+  }).catch(x => { $("#documento").innerHTML = `<div class="aviso error">${Auditta.escapar(x.message)}</div>`; });
+  $("#casilla").addEventListener("change", e => { $("#confirmar").disabled = !e.target.checked; });
+  $("#confirmar").addEventListener("click", async () => {
+    const boton = $("#confirmar"); $("#error").textContent = "";
+    if (!$("#casilla").checked) { $("#error").textContent = "Marque la casilla para confirmar."; return; }
+    Auditta.ocupado(boton, true);
+    try { await Auditta.api(`/historias/${id}/confirmar-anonimizacion`, { method: "POST" }); location.href = "/informe.html?id=" + id; }
+    catch (x) { $("#error").textContent = x.message; Auditta.ocupado(boton, false); }
+  });
+}
+</script>
+</body>
+</html>

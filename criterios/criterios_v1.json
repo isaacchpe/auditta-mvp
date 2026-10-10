@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "fecha": "2026-10-10",
+  "familias": {
+    "COMP": "Completitud",
+    "COH": "Coherencia",
+    "PERT": "Pertinencia",
+    "OPO": "Oportunidad",
+    "SOP": "Soporte",
+    "IDP": "Identificación del prestador"
+  },
+  "criterios": [
+    {"id": "COMP-01", "familia": "COMP", "nombre": "Identificación del usuario", "descripcion": "La historia registra los datos de identificación del usuario: documento, edad, sexo y aseguradora. En el texto anonimizado se verifica la presencia de los tokens, no su valor.", "severidad_base": "media", "sustento": "Resolución 1995 de 1999, art. 9"},
+    {"id": "COMP-02", "familia": "COMP", "nombre": "Motivo de consulta y enfermedad actual", "descripcion": "Se registran el motivo de consulta y la enfermedad actual.", "severidad_base": "media", "sustento": "Resolución 1995 de 1999, arts. 3 y 10"},
+    {"id": "COMP-03", "familia": "COMP", "nombre": "Antecedentes", "descripcion": "Se registran antecedentes personales, familiares y alérgicos, o se declara de forma explícita su ausencia.", "severidad_base": "baja", "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)"},
+    {"id": "COMP-04", "familia": "COMP", "nombre": "Examen físico y signos vitales", "descripcion": "El examen físico incluye signos vitales y la revisión pertinente al motivo de consulta.", "severidad_base": "media", "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)"},
+    {"id": "COMP-05", "familia": "COMP", "nombre": "Diagnóstico codificado", "descripcion": "Se registra al menos un diagnóstico con su código CIE-10.", "severidad_base": "alta", "sustento": "Resolución 1995 de 1999, art. 10; Resolución 948 de 2026 (RIPS como soporte de la FEV)"},
+    {"id": "COMP-06", "familia": "COMP", "nombre": "Plan de manejo", "descripcion": "Se registra la conducta o plan de manejo: tratamiento, órdenes, recomendaciones y control.", "severidad_base": "media", "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)"},
+    {"id": "COH-01", "familia": "COH", "nombre": "Diagnóstico soportado por la anamnesis y el examen", "descripcion": "El diagnóstico es consistente con los síntomas y los hallazgos registrados.", "severidad_base": "alta", "sustento": "Resolución 1995 de 1999, art. 3 (racionalidad científica)"},
+    {"id": "COH-02", "familia": "COH", "nombre": "Plan coherente con el diagnóstico", "descripcion": "La conducta, las órdenes y la formulación corresponden al diagnóstico registrado.", "severidad_base": "alta", "sustento": "Resolución 1995 de 1999, art. 3 (racionalidad científica)"},
+    {"id": "COH-03", "familia": "COH", "nombre": "Formulación completa", "descripcion": "Cada medicamento formulado registra dosis, vía, frecuencia y duración.", "severidad_base": "media", "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)"},
+    {"id": "COH-04", "familia": "COH", "nombre": "Consistencia demográfica", "descripcion": "No hay contradicciones entre el sexo o la edad del usuario y los diagnósticos o procedimientos registrados.", "severidad_base": "alta", "sustento": "Resolución 1995 de 1999, art. 3 (racionalidad científica)"},
+    {"id": "PERT-01", "familia": "PERT", "nombre": "Justificación clínica del servicio", "descripcion": "Cada procedimiento o servicio prestado tiene una justificación clínica registrada.", "severidad_base": "alta", "sustento": "Resolución 1995 de 1999, art. 3; Resolución 2284 de 2023, manual único de glosas (pertinencia)"},
+    {"id": "PERT-02", "familia": "PERT", "nombre": "Indicación de ayudas diagnósticas", "descripcion": "Los laboratorios y las imágenes ordenados tienen indicación clínica registrada.", "severidad_base": "media", "sustento": "Resolución 2284 de 2023, manual único de glosas (pertinencia)"},
+    {"id": "PERT-03", "familia": "PERT", "nombre": "Justificación de interconsulta o remisión", "descripcion": "Las interconsultas y las remisiones registran el motivo clínico.", "severidad_base": "media", "sustento": "Resolución 1995 de 1999, art. 3 (racionalidad científica)"},
+    {"id": "PERT-04", "familia": "PERT", "nombre": "Atenciones de la ruta según curso de vida", "descripcion": "En atenciones de promoción y mantenimiento se registran las intervenciones que la ruta exige para el curso de vida del usuario.", "severidad_base": "media", "aplica_si": "promocion_mantenimiento", "sustento": "Resolución 3280 de 2018"},
+    {"id": "OPO-01", "familia": "OPO", "nombre": "Fecha y hora en cada anotación", "descripcion": "Cada anotación registra la fecha y la hora en que se realiza.", "severidad_base": "media", "sustento": "Resolución 1995 de 1999, art. 5"},
+    {"id": "OPO-02", "familia": "OPO", "nombre": "Secuencialidad cronológica", "descripcion": "Los registros siguen el orden cronológico de la atención, sin fechas incoherentes.", "severidad_base": "media", "sustento": "Resolución 1995 de 1999, art. 3 (secuencialidad)"},
+    {"id": "OPO-03", "familia": "OPO", "nombre": "Registro oportuno", "descripcion": "El registro se hace durante la atención o inmediatamente después, sin diferencias injustificadas entre la atención y la anotación.", "severidad_base": "baja", "sustento": "Resolución 1995 de 1999, art. 3 (oportunidad)"},
+    {"id": "SOP-01", "familia": "SOP", "nombre": "Consentimiento informado", "descripcion": "Los procedimientos que implican riesgo cuentan con consentimiento informado registrado o anexado.", "severidad_base": "alta", "sustento": "Ley 23 de 1981, art. 15; Resolución 1995 de 1999, art. 11"},
+    {"id": "SOP-02", "familia": "SOP", "nombre": "Orden médica del servicio", "descripcion": "Existe orden médica registrada para los procedimientos, los medicamentos y las ayudas diagnósticas prestados.", "severidad_base": "alta", "sustento": "Resolución 2284 de 2023, manual único de glosas (soportes)"},
+    {"id": "SOP-03", "familia": "SOP", "nombre": "Resultados e interpretación", "descripcion": "Los resultados de las ayudas diagnósticas ordenadas se registran y se interpretan en la evolución.", "severidad_base": "media", "sustento": "Resolución 1995 de 1999, art. 11"},
+    {"id": "SOP-04", "familia": "SOP", "nombre": "Epicrisis al egreso", "descripcion": "En egresos de hospitalización u observación existe epicrisis con resumen, diagnósticos de egreso y plan.", "severidad_base": "alta", "aplica_si": "egreso", "sustento": "Resolución 1995 de 1999, art. 11"},
+    {"id": "IDP-01", "familia": "IDP", "nombre": "Nombre y firma del profesional", "descripcion": "Cada anotación lleva el nombre y la firma de su autor. En el texto anonimizado se verifica la presencia del token del profesional.", "severidad_base": "alta", "sustento": "Resolución 1995 de 1999, art. 5"},
+    {"id": "IDP-02", "familia": "IDP", "nombre": "Registro profesional y especialidad", "descripcion": "Se registra el registro profesional y la especialidad o el cargo del responsable de la atención.", "severidad_base": "media", "sustento": "Resolución 1995 de 1999, art. 5"},
+    {"id": "IDP-03", "familia": "IDP", "nombre": "Identificación de la institución", "descripcion": "Se identifica la institución prestadora con nombre y código de habilitación.", "severidad_base": "baja", "sustento": "Resolución 948 de 2026 (datos del prestador en el RIPS)"},
+    {"id": "IDP-04", "familia": "IDP", "nombre": "Legibilidad y uso de siglas", "descripcion": "El registro es claro, sin enmendaduras ni siglas no estandarizadas.", "severidad_base": "baja", "sustento": "Resolución 1995 de 1999, art. 5"}
+  ]
+}

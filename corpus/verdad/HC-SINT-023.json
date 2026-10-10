@@ -1,0 +1,63 @@
+{
+  "id": "HC-SINT-023",
+  "plantilla": "D",
+  "sexo": "femenino",
+  "edad": 24,
+  "defectos": [],
+  "contexto": {
+    "promocion_mantenimiento": true,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Ligia Carmen Ricardo Arrieta"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "44206273"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "20 de diciembre de 2001"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "315 659 9608"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Avenida 16 # 22-47"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Montería"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Buenavista"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Rosa Elena Madera Salgado"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-24260"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-8486"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-743137"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "13 de agosto de 2026"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-023.pdf"
+}

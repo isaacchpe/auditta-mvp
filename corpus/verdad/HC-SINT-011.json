@@ -1,0 +1,63 @@
+{
+  "id": "HC-SINT-011",
+  "plantilla": "B",
+  "sexo": "masculino",
+  "edad": 27,
+  "defectos": [],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Leidy Mauricio Ricardo Doria"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "44222072"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "1999-02-23"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "304 654 8845"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Transversal 26 # 25-27"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Valledupar"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Buenavista"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Milena Beatriz Ramos Bula"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-92969"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-6201"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-158988"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "2026-03-06"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-011.pdf"
+}

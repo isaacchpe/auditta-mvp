@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditta · Bandeja de historias</title>
+<link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+<div class="marco">
+  <main class="contenido">
+    <div class="encabezado"><div class="titulos"><p class="ruta">Inicio / Bandeja</p><h1>Bandeja de historias</h1></div><span id="insignia"></span></div>
+    <div class="filtros" id="filtros"><input class="buscar" id="buscar" type="search" placeholder="Buscar por identificador…"></div>
+    <div class="tarjeta tabla-envoltorio"><table><thead><tr><th>Historia</th><th>Plantilla de prestador</th><th>Págs.</th><th>Estado</th><th>Puntaje</th><th>Hallazgos</th><th>Acción</th></tr></thead><tbody id="filas"><tr><td colspan="7">Cargando…</td></tr></tbody></table></div>
+    <p id="conteo" style="color:var(--color-neutro-texto-secundario);font-size:13px"></p>
+  </main>
+</div>
+<script src="/app.js"></script>
+<script>
+if (Auditta.exigirSesion()) {
+  Auditta.lateral("bandeja");
+  const $ = s => document.querySelector(s);
+  $("#insignia").innerHTML = Auditta.insignia();
+  const PLANTILLAS = { A: "Plantilla A · Consulta externa", B: "Plantilla B · Urgencias", C: "Plantilla C · Hospitalización", D: "Plantilla D · Promoción y mantenimiento" };
+  let historias = [], filtro = "todas";
+  const accion = h => {
+    if (h.estado === "pendiente_confirmacion") return `<a class="btn secundario" href="/confirmacion.html?id=${h._id}">Confirmar anonimización</a>`;
+    if (h.estado === "analizada") return `<a class="btn secundario" href="/informe.html?id=${h._id}">Revisar informe</a>`;
+    if (h.estado === "revisada") return `<a class="btn fantasma" href="/completada.html?id=${h._id}">Ver revisión</a>`;
+    return `<span style="color:var(--color-neutro-texto-tenue)">${Auditta.escapar(h.error || "Sin detalle")}</span>`;
+  };
+  function pintar() {
+    const texto = $("#buscar").value.trim().toLowerCase();
+    const visibles = historias.filter(h => (filtro === "todas" || h.estado === filtro) && (!texto || h._id.toLowerCase().includes(texto)));
+    $("#filas").innerHTML = visibles.length ? visibles.map(h => `<tr><td>${h._id}</td><td>${PLANTILLAS[h.plantilla] || h.plantilla || "—"}</td><td>${h.paginas ?? "—"}</td><td>${Auditta.estado(h.estado)}</td><td>${h.estado === "error" ? '<span style="color:var(--color-severidad-alta)">Sin capa de texto</span>' : Auditta.puntaje(h.puntaje, h.nivel)}</td><td>${h.num_hallazgos ? `${h.revisados}/${h.num_hallazgos}` : "—"}</td><td>${accion(h)}</td></tr>`).join("") : '<tr><td colspan="7" style="text-align:center;color:var(--color-neutro-texto-secundario);padding:40px">Aún no hay historias en esta vista.</td></tr>';
+    $("#conteo").textContent = `Mostrando ${visibles.length} de ${historias.length} historias`;
+  }
+  function filtros() {
+    const n = e => historias.filter(h => h.estado === e).length;
+    const opciones = [["todas", `Todas (${historias.length})`], ["pendiente_confirmacion", `Pendientes de confirmar (${n("pendiente_confirmacion")})`], ["analizada", `Para revisar (${n("analizada")})`], ["revisada", `Revisadas (${n("revisada")})`], ["error", `Con error (${n("error")})`]];
+    $("#filtros").insertAdjacentHTML("afterbegin", opciones.map(([v, t]) => `<button type="button" class="filtro ${v === filtro ? "activo" : ""}" data-valor="${v}">${t}</button>`).join(""));
+    document.querySelectorAll(".filtro").forEach(b => b.addEventListener("click", () => { filtro = b.dataset.valor; document.querySelectorAll(".filtro").forEach(x => x.classList.toggle("activo", x === b)); pintar(); }));
+  }
+  $("#buscar").addEventListener("input", pintar);
+  Auditta.api("/historias").then(d => { historias = d.historias; filtros(); pintar(); }).catch(x => { $("#filas").innerHTML = `<tr><td colspan="7"><div class="aviso error">${Auditta.escapar(x.message)}</div></td></tr>`; });
+}
+</script>
+</body>
+</html>

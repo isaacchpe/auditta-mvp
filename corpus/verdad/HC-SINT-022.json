@@ -1,0 +1,67 @@
+{
+  "id": "HC-SINT-022",
+  "plantilla": "D",
+  "sexo": "masculino",
+  "edad": 48,
+  "defectos": [
+    "COH-04",
+    "COMP-06",
+    "PERT-04"
+  ],
+  "contexto": {
+    "promocion_mantenimiento": true,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Daniel Javier Cruz Flores"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "57504406"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "24 de julio de 1978"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "303 756 8103"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Carrera 37 # 6-80"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Lorica"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Los Ángeles"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Ricardo Juan Negrete Pastrana"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-70319"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-6802"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-611884"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "20 de septiembre de 2026"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-022.pdf"
+}

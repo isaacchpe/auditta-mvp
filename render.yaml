@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: auditta-mvp
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/salud
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: auditta
+      - key: JWT_SECRETO
+        generateValue: true
+      - key: FORMULARIO_RETROALIMENTACION
+        sync: false

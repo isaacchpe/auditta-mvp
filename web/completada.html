@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditta · Revisión completada</title>
+<link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+<div class="marco">
+  <main class="contenido">
+    <div class="encabezado"><div class="titulos"><p class="ruta" id="ruta">Inicio / Bandeja</p><h1>Revisión completada</h1></div><span id="insignia"></span></div>
+    <div class="centrado"><section class="tarjeta exito" id="exito">Cargando…</section></div>
+  </main>
+</div>
+<script src="/app.js"></script>
+<script>
+if (Auditta.exigirSesion()) {
+  Auditta.lateral("bandeja");
+  const $ = s => document.querySelector(s);
+  const id = Auditta.parametro("id");
+  $("#insignia").innerHTML = Auditta.insignia();
+  Promise.all([Auditta.api("/historias/" + id), Auditta.api("/historias"), Auditta.api("/configuracion")]).then(([h, { historias }, conf]) => {
+    $("#ruta").textContent = "Inicio / Bandeja / " + h._id;
+    const c = h.cierre || {};
+    const siguiente = historias.find(x => x.estado === "analizada");
+    const formulario = conf.formulario_retroalimentacion;
+    $("#exito").innerHTML = `<div class="icono"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h1 style="font-size:24px">Revisión de ${h._id} completada</h1><p style="margin:0;color:var(--color-neutro-texto-secundario);font-size:15px">Sus decisiones quedaron registradas con su usuario y la hora. Puede consultarlas en la bandeja.</p><div class="resumen-cierre"><div style="background:var(--color-severidad-baja-suave);color:var(--color-severidad-baja)"><b>${c.aceptados ?? 0}</b><span>Aceptados</span></div><div style="background:var(--color-severidad-media-suave);color:var(--color-severidad-media)"><b>${c.reclasificados ?? 0}</b><span>Reclasificados</span></div><div style="background:var(--color-neutro-fondo);color:var(--color-neutro-texto-secundario)"><b>${c.descartados ?? 0}</b><span>Descartados</span></div><div style="background:var(--color-marca-primario-suave);color:var(--color-marca-primario-oscuro)"><b>${Auditta.segundos(c.segundos_revision)}</b><span>Tiempo de revisión</span></div></div><div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">${siguiente ? `<a class="btn" href="/informe.html?id=${siguiente._id}">Revisar la siguiente historia</a>` : ""}<a class="btn secundario" href="/bandeja.html">Volver a la bandeja</a></div>${formulario ? `<div style="display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:10px;background:var(--color-neutro-fondo);width:100%;text-align:left"><div style="flex:1"><b>¿Le sirvió Auditta en esta historia?</b><div style="font-size:13px;color:var(--color-neutro-texto-secundario)">Cuéntenos en dos minutos qué le ayudó y qué le estorbó.</div></div><a class="btn secundario" href="${Auditta.escapar(formulario)}" target="_blank" rel="noopener" id="opinion">Dar mi opinión</a></div>` : ""}`;
+    const opinion = $("#opinion"); if (opinion) opinion.addEventListener("click", () => Auditta.evento("abrir_retroalimentacion", { historia_id: id }));
+  }).catch(x => { $("#exito").innerHTML = `<div class="aviso error">${Auditta.escapar(x.message)}</div>`; });
+}
+</script>
+</body>
+</html>

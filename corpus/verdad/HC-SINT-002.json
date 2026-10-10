@@ -1,0 +1,71 @@
+{
+  "id": "HC-SINT-002",
+  "plantilla": "A",
+  "sexo": "femenino",
+  "edad": 46,
+  "defectos": [
+    "COH-03",
+    "COMP-05",
+    "OPO-01"
+  ],
+  "contexto": {
+    "promocion_mantenimiento": false,
+    "egreso": false
+  },
+  "identificadores": [
+    {
+      "categoria": "PACIENTE",
+      "valor": "Alejandra Alejandra Montes Hoyos"
+    },
+    {
+      "categoria": "DOCUMENTO",
+      "valor": "1053522449"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "03/03/1980"
+    },
+    {
+      "categoria": "TELEFONO",
+      "valor": "318 921 9045"
+    },
+    {
+      "categoria": "DIRECCION",
+      "valor": "Transversal 43 # 21-63"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "Valledupar"
+    },
+    {
+      "categoria": "LUGAR",
+      "valor": "El Prado"
+    },
+    {
+      "categoria": "MEDICO",
+      "valor": "Cecilia Natalia Reyes Perez"
+    },
+    {
+      "categoria": "REGISTRO",
+      "valor": "RM-78579"
+    },
+    {
+      "categoria": "HISTORIA",
+      "valor": "HC-2026-2680"
+    },
+    {
+      "categoria": "FACTURA",
+      "valor": "ADM-852151"
+    },
+    {
+      "categoria": "FECHA",
+      "valor": "01/05/2026"
+    },
+    {
+      "categoria": "CORREO",
+      "valor": "alejandra.montes80@correo-ejemplo.co"
+    }
+  ],
+  "paginas": 1,
+  "archivo": "HC-SINT-002.pdf"
+}

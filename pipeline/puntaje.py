@@ -1,4 +1,4 @@
-PESOS = {"alta": 25, "media": 12, "baja": 5}
+PESOS = {"alta": 20, "media": 10, "baja": 4}
 
 
 def calcular(hallazgos: list[dict], familias: dict) -> dict:

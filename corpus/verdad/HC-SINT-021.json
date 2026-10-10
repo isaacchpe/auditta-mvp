@@ -11,27 +11,27 @@
   "identificadores": [
     {
       "categoria": "PACIENTE",
-      "valor": "Manuel Nicolas Ortiz Pacheco"
+      "valor": "Oscar Juan Sanchez Gomez"
     },
     {
       "categoria": "DOCUMENTO",
-      "valor": "15405350"
+      "valor": "1078652921"
     },
     {
       "categoria": "FECHA",
-      "valor": "24 de julio de 1978"
+      "valor": "6 de octubre de 1977"
     },
     {
       "categoria": "TELEFONO",
-      "valor": "305 700 5214"
+      "valor": "302 615 4134"
     },
     {
       "categoria": "DIRECCION",
-      "valor": "Diagonal 58 # 6-30"
+      "valor": "Calle 37 # 32-35"
     },
     {
       "categoria": "LUGAR",
-      "valor": "Magangué"
+      "valor": "Lorica"
     },
     {
       "categoria": "LUGAR",
@@ -39,25 +39,25 @@
     },
     {
       "categoria": "MEDICO",
-      "valor": "Leidy Fernando Vargas Jimenez"
+      "valor": "Daniel Jesus Ruiz Petro"
     },
     {
       "categoria": "REGISTRO",
-      "valor": "RM-41604"
+      "valor": "RM-65308"
     },
     {
       "categoria": "HISTORIA",
-      "valor": "HC-2026-9102"
+      "valor": "HC-2026-7933"
     },
     {
       "categoria": "FACTURA",
-      "valor": "ADM-323046"
+      "valor": "ADM-581701"
     },
     {
       "categoria": "FECHA",
-      "valor": "22 de agosto de 2026"
+      "valor": "23 de marzo de 2026"
     }
   ],
-  "paginas": 1,
+  "paginas": 2,
   "archivo": "HC-SINT-021.pdf"
 }

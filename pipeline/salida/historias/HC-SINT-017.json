@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-017",
   "archivo": "HC-SINT-017.pdf",
-  "hash": "efcbf187fce9e6e09fa8f644699f50e62af149489f68b20965e2d58c9b244e62",
+  "hash": "6e3044a4bc55236e9933b8ac8673f36fa068c5c9ae8c98871360e280fb5c3370",
   "paginas": 2,
   "plantilla": "C",
   "secciones_reconocidas": [
@@ -18,7 +18,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "ESE Hospital Sintético San Jerónimo\nCódigo de habilitación 230010999903 · HISTORIA CLÍNICA DE HOSPITALIZACIÓN\n\nDATOS DEL PACIENTE\nUSUARIO: [PACIENTE_1]O: CC [DOCUMENTO_1] EDAD: 29 años SEXO:\nFEMENINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1]N: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Coosalud HISTORIA: [HISTORIA_1] EPISODIO: [FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 17:39 SERVICIO: HOSPITALIZACIÓN\n\nMOTIVO DE CONSULTA\n«Tengo contracciones y estoy de 39 semanas».\n\nENFERMEDAD ACTUAL\nGestante de 39,2 semanas por ecografía temprana, con actividad uterina regular desde hace 5 horas, sin\nsangrado ni pérdida de líquido. Movimientos fetales presentes. Controles prenatales completos.\nSegún refiere su familiar [PACIENTE_3], el cuadro empeoró en las últimas horas.\n\nANTECEDENTES\nObstétricos: G2 P1, parto vaginal previo sin complicaciones. Personales: niega. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 118/76 mmHg, FC 88 lpm, FR 18 rpm, T 36,7 °C. Altura uterina 34 cm, fetocardia 142 lpm, cérvix 5 cm,\nborrado 80 %, cefálico, membranas íntegras.\n\nANÁLISIS\nTrabajo de parto en fase activa, embarazo a término de bajo riesgo.\n\nDIAGNÓSTICOS\n- O80 Parto único espontáneo\n- Z370 Nacido vivo único\n\nÓRDENES\n- Hemograma, hemoclasificación y VIH. Justificación: Protocolo de ingreso a trabajo de parto.\nRESULTADOS\n- Hemoglobina: 11,8 g/dL. Interpretación: Sin anemia.\n\nPLAN DE MANEJO\n- Ingreso a sala de partos, monitoreo fetal intermitente.\n- Analgesia según solicitud.\n- Atención del parto por el equipo de turno.\n\nEVOLUCIÓN\n[FECHA_3] 07:36 · Día 1, 06:40: Parto vaginal eutócico, recién nacido vivo de sexo masculino, 3.250 g, Apgar 8\ny 9. Alumbramiento completo, sangrado estimado 350 mL.\n[FECHA_4] 12:45 · Día 2: Puerperio normal, lactancia establecida, útero involucionado.\n\nEPICRISIS\n[FECHA_5] · Día 2: Egreso materno. Diagnóstico de egreso: parto vaginal a término sin complicaciones. Plan:\nsulfato ferroso 300 mg cada día por 30 días, control de puerperio en 7 días, signos de alarma explicados.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 1\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina interna.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 17:39\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 2",
+  "texto_anonimizado": "ESE Hospital Sintético San Jerónimo\nCódigo de habilitación 230010999903 · HISTORIA CLÍNICA DE HOSPITALIZACIÓN\n\nDATOS DEL PACIENTE\nUSUARIO: [PACIENTE_1] DOCUMENTO: CC [DOCUMENTO_1] EDAD: 29 años\nSEXO: FEMENINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1] DIRECCIÓN: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Sanitas HISTORIA: [HISTORIA_1] EPISODIO: [FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 19:51 SERVICIO: HOSPITALIZACIÓN\n\nMOTIVO DE CONSULTA\n«Tengo contracciones y estoy de 39 semanas».\n\nENFERMEDAD ACTUAL\nGestante de 39,2 semanas por ecografía temprana, con actividad uterina regular desde hace 5 horas, sin\nsangrado ni pérdida de líquido. Movimientos fetales presentes. Controles prenatales completos.\nSegún refiere su familiar [PACIENTE_2], el cuadro empeoró en las últimas horas.\n\nANTECEDENTES\nObstétricos: G2 P1, parto vaginal previo sin complicaciones. Personales: niega. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 118/76 mmHg, FC 88 lpm, FR 18 rpm, T 36,7 °C. Altura uterina 34 cm, fetocardia 142 lpm, cérvix 5 cm,\nborrado 80 %, cefálico, membranas íntegras.\n\nANÁLISIS\nTrabajo de parto en fase activa, embarazo a término de bajo riesgo.\n\nDIAGNÓSTICOS\n- O80 Parto único espontáneo\n- Z370 Nacido vivo único\n\nÓRDENES\n- Hemograma, hemoclasificación y VIH. Justificación: Protocolo de ingreso a trabajo de parto.\nRESULTADOS\n- Hemoglobina: 11,8 g/dL. Interpretación: Sin anemia.\n\nPLAN DE MANEJO\n- Ingreso a sala de partos, monitoreo fetal intermitente.\n- Analgesia según solicitud.\n- Atención del parto por el equipo de turno.\n\nEVOLUCIÓN\n[FECHA_3] 17:33 · Día 1, 06:40: Parto vaginal eutócico, recién nacido vivo de sexo masculino, 3.250 g, Apgar 8\ny 9. Alumbramiento completo, sangrado estimado 350 mL.\n[FECHA_4] 16:37 · Día 2: Puerperio normal, lactancia establecida, útero involucionado.\n\nEPICRISIS\n[FECHA_5] 16:08 · Día 2: Egreso materno. Diagnóstico de egreso: parto vaginal a término sin complicaciones.\nPlan: sulfato ferroso 300 mg cada día por 30 días, control de puerperio en 7 días, signos de alarma explicados.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 1\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Ginecología y\nobstetricia. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 19:51\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 2",
   "entidades": [
     {
       "categoria": "DIRECCION",
@@ -78,16 +78,11 @@
     {
       "categoria": "PACIENTE",
       "token": "[PACIENTE_1]",
-      "ocurrencias": 1
+      "ocurrencias": 3
     },
     {
       "categoria": "PACIENTE",
       "token": "[PACIENTE_2]",
-      "ocurrencias": 2
-    },
-    {
-      "categoria": "PACIENTE",
-      "token": "[PACIENTE_3]",
       "ocurrencias": 1
     },
     {
@@ -109,10 +104,66 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 4,
+    "extraccion": 5,
     "anonimizacion": 4,
-    "total": 9
+    "analisis": 2415,
+    "total": 2425
   },
+  "puntaje": 26,
+  "nivel": "bajo",
+  "composicion": [
+    {
+      "familia": "COMP",
+      "nombre": "Completitud",
+      "puntos": 17
+    },
+    {
+      "familia": "SOP",
+      "nombre": "Soporte",
+      "puntos": 9
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-017-H01",
+      "historia_id": "HC-SINT-017",
+      "orden": 1,
+      "criterio_id": "SOP-03",
+      "criterio": "Resultados e interpretación",
+      "familia": "SOP",
+      "familia_nombre": "Soporte",
+      "severidad": "media",
+      "descripcion": "Se ordenaron ayudas diagnósticas (hemograma, hemoclasificación y VIH) y solo se registra el resultado e interpretación del hemograma; no hay resultado ni interpretación de la hemoclasificación ni del VIH, ni se declaran pendientes.",
+      "evidencia": "- Hemograma, hemoclasificación y VIH. Justificación: Protocolo de ingreso a trabajo de parto.\nRESULTADOS\n- Hemoglobina: 11,8 g/dL. Interpretación: Sin anemia.",
+      "seccion": "ÓRDENES / RESULTADOS",
+      "sustento": "Resolución 1995 de 1999, art. 11",
+      "recomendacion": "Registrar en la evolución el resultado y la interpretación de la hemoclasificación y del VIH, o dejar constancia expresa de que se encuentran pendientes.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-017-H02",
+      "historia_id": "HC-SINT-017",
+      "orden": 2,
+      "criterio_id": "COMP-05",
+      "criterio": "Diagnóstico codificado",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "alta",
+      "descripcion": "El diagnóstico registrado en el análisis y en las órdenes es 'trabajo de parto en fase activa', pero en la sección de diagnósticos solo figuran códigos de resultado del parto (O80 y Z370), sin el código CIE-10 del diagnóstico de ingreso.",
+      "evidencia": "Trabajo de parto en fase activa, embarazo a término de bajo riesgo.",
+      "seccion": "ANÁLISIS / DIAGNÓSTICOS",
+      "sustento": "Resolución 1995 de 1999, art. 10; Resolución 948 de 2026 (RIPS como soporte de la FEV)",
+      "recomendacion": "Registrar el diagnóstico de ingreso con su código CIE-10 correspondiente al trabajo de parto en fase activa.",
+      "confianza": 0.6,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 2,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -120,7 +171,7 @@
     },
     {
       "titulo": "DATOS DEL PACIENTE",
-      "texto": "USUARIO: [PACIENTE_1]O: CC [DOCUMENTO_1] EDAD: 29 años SEXO:\nFEMENINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1]N: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Coosalud HISTORIA: [HISTORIA_1] EPISODIO: [FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 17:39 SERVICIO: HOSPITALIZACIÓN"
+      "texto": "USUARIO: [PACIENTE_1] DOCUMENTO: CC [DOCUMENTO_1] EDAD: 29 años\nSEXO: FEMENINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1] DIRECCIÓN: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Sanitas HISTORIA: [HISTORIA_1] EPISODIO: [FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 19:51 SERVICIO: HOSPITALIZACIÓN"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -128,7 +179,7 @@
     },
     {
       "titulo": "ENFERMEDAD ACTUAL",
-      "texto": "Gestante de 39,2 semanas por ecografía temprana, con actividad uterina regular desde hace 5 horas, sin\nsangrado ni pérdida de líquido. Movimientos fetales presentes. Controles prenatales completos.\nSegún refiere su familiar [PACIENTE_3], el cuadro empeoró en las últimas horas."
+      "texto": "Gestante de 39,2 semanas por ecografía temprana, con actividad uterina regular desde hace 5 horas, sin\nsangrado ni pérdida de líquido. Movimientos fetales presentes. Controles prenatales completos.\nSegún refiere su familiar [PACIENTE_2], el cuadro empeoró en las últimas horas."
     },
     {
       "titulo": "ANTECEDENTES",
@@ -156,15 +207,15 @@
     },
     {
       "titulo": "EVOLUCIÓN",
-      "texto": "[FECHA_3] 07:36 · Día 1, 06:40: Parto vaginal eutócico, recién nacido vivo de sexo masculino, 3.250 g, Apgar 8\ny 9. Alumbramiento completo, sangrado estimado 350 mL.\n[FECHA_4] 12:45 · Día 2: Puerperio normal, lactancia establecida, útero involucionado."
+      "texto": "[FECHA_3] 17:33 · Día 1, 06:40: Parto vaginal eutócico, recién nacido vivo de sexo masculino, 3.250 g, Apgar 8\ny 9. Alumbramiento completo, sangrado estimado 350 mL.\n[FECHA_4] 16:37 · Día 2: Puerperio normal, lactancia establecida, útero involucionado."
     },
     {
       "titulo": "EPICRISIS",
-      "texto": "[FECHA_5] · Día 2: Egreso materno. Diagnóstico de egreso: parto vaginal a término sin complicaciones. Plan:\nsulfato ferroso 300 mg cada día por 30 días, control de puerperio en 7 días, signos de alarma explicados.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 1"
+      "texto": "[FECHA_5] 16:08 · Día 2: Egreso materno. Diagnóstico de egreso: parto vaginal a término sin complicaciones.\nPlan: sulfato ferroso 300 mg cada día por 30 días, control de puerperio en 7 días, signos de alarma explicados.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 1"
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina interna.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 17:39\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 2"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Ginecología y\nobstetricia. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 19:51\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 2"
     }
   ]
 }

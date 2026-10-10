@@ -1,12 +1,11 @@
 {
   "_id": "HC-SINT-024",
   "archivo": "HC-SINT-024.pdf",
-  "hash": "8f50893cd6207eab8373f54d2ee1e3bc9ed631dd2c001d51002ca68d266da21d",
+  "hash": "e8474a5bed645c1d7a94a289658de6eb619da03ae489f2b56d46208a4b2176dc",
   "paginas": 1,
   "plantilla": "D",
   "secciones_reconocidas": [
     "analisis",
-    "antecedentes",
     "diagnosticos",
     "enfermedad_actual",
     "examen_fisico",
@@ -17,7 +16,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 24 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Coosalud Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 20:16 Curso de vida: juventud\n\nMOTIVO DE CONSULTA\nControl prenatal de segundo trimestre.\n\nENFERMEDAD ACTUAL\nGestante de 22 semanas, primigestante, asintomática, con movimientos fetales presentes. Toma el ácido fólico\ny el sulfato ferroso.\n\nANTECEDENTES\nObstétricos: G1 P0. Personales: niega. Alérgicos: niega.\n\nEXAMEN FÍSICO\nSin hallazgos relevantes.\n\nANÁLISIS\nEmbarazo de curso normal, bajo riesgo.\n\nDIAGNÓSTICOS\n- Z340 Supervisión de primer embarazo normal\n\nÓRDENES\n- Ecografía obstétrica de detalle. Justificación: Tamizaje de anomalías estructurales entre las semanas 18 y 24.\n- Prueba de tolerancia a la glucosa. Justificación: Tamizaje de diabetes gestacional de la ruta.\nRESULTADOS\n- Ecografía obstétrica: feto único vivo, biometría acorde, anatomía normal. Interpretación: Sin alteraciones.\n\nPLAN DE MANEJO\n- Continuar micronutrientes.\n- Próximo control en 4 semanas.\n\nINTERVENCIONES DE LA RUTA\n- Educación en salud.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 20:16\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 24 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1] Barrio: [LUGAR_2] de contacto: [TELEFONO_1]\nAseguradora: Mutual Ser Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 18:54 Curso de vida: juventud\n\nMOTIVO DE CONSULTA\nControl prenatal de segundo trimestre.\n\nENFERMEDAD ACTUAL\nGestante de 22 semanas, primigestante, asintomática, con movimientos fetales presentes. Toma el ácido fólico\ny el sulfato ferroso.\n\nEXAMEN FÍSICO\nSin hallazgos relevantes.\n\nANÁLISIS\nEmbarazo de curso normal, bajo riesgo.\n\nDIAGNÓSTICOS\n- Z340 Supervisión de primer embarazo normal\n\nÓRDENES\n- Ecografía obstétrica de detalle. Justificación: Tamizaje de anomalías estructurales entre las semanas 18 y 24.\n- Prueba de tolerancia a la glucosa. Justificación: Tamizaje de diabetes gestacional de la ruta.\nRESULTADOS\n- Ecografía obstétrica: feto único vivo, biometría acorde, anatomía normal. Interpretación: Sin alteraciones.\n- Prueba de tolerancia a la glucosa: basal 82 mg/dL, 1 hora 148 mg/dL, 2 horas 126 mg/dL. Interpretación: Sin\ndiabetes gestacional.\n\nPLAN DE MANEJO\n- Continuar micronutrientes.\n- Próximo control en 4 semanas.\n\nINTERVENCIONES DE LA RUTA\n- Clasificación del riesgo obstétrico.\n- Curso de preparación para la maternidad.\n- Vacunación con toxoide tetánico e influenza.\n- Valoración por odontología y nutrición.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 18:54\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "DOCUMENTO",
@@ -70,11 +69,6 @@
       "ocurrencias": 1
     },
     {
-      "categoria": "REGISTRO",
-      "token": "[REGISTRO_1]",
-      "ocurrencias": 1
-    },
-    {
       "categoria": "TELEFONO",
       "token": "[TELEFONO_1]",
       "ocurrencias": 1
@@ -90,8 +84,81 @@
   "tiempos_ms": {
     "extraccion": 4,
     "anonimizacion": 3,
-    "total": 7
+    "analisis": 2520,
+    "total": 2528
   },
+  "puntaje": 23,
+  "nivel": "bajo",
+  "composicion": [
+    {
+      "familia": "COMP",
+      "nombre": "Completitud",
+      "puntos": 14
+    },
+    {
+      "familia": "IDP",
+      "nombre": "Identificación del prestador",
+      "puntos": 9
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-024-H01",
+      "historia_id": "HC-SINT-024",
+      "orden": 1,
+      "criterio_id": "COMP-04",
+      "criterio": "Examen físico y signos vitales",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "media",
+      "descripcion": "El examen físico no incluye signos vitales ni la revisión pertinente al motivo de consulta (control prenatal de segundo trimestre); se limita a indicar 'Sin hallazgos relevantes'.",
+      "evidencia": "EXAMEN FÍSICO\nSin hallazgos relevantes.",
+      "seccion": "EXAMEN FÍSICO",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Registrar los signos vitales (TA, FC, FR, temperatura, SatO2) y los hallazgos del examen obstétrico pertinente: altura uterina, frecuencia cardiaca fetal, presentación, entre otros.",
+      "confianza": 0.9,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-024-H02",
+      "historia_id": "HC-SINT-024",
+      "orden": 2,
+      "criterio_id": "COMP-03",
+      "criterio": "Antecedentes",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "baja",
+      "descripcion": "No se registra una sección de antecedentes personales, familiares y alérgicos, ni se declara explícitamente su ausencia.",
+      "evidencia": "MOTIVO DE CONSULTA\nControl prenatal de segundo trimestre.",
+      "seccion": "ANTECEDENTES",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Incluir la sección de antecedentes personales, familiares y alérgicos, o declarar de forma explícita su ausencia.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-024-H03",
+      "historia_id": "HC-SINT-024",
+      "orden": 3,
+      "criterio_id": "IDP-02",
+      "criterio": "Registro profesional y especialidad",
+      "familia": "IDP",
+      "familia_nombre": "Identificación del prestador",
+      "severidad": "media",
+      "descripcion": "No se registra el número de registro profesional ni la especialidad o cargo del responsable de la atención.",
+      "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
+      "seccion": "PROFESIONAL",
+      "sustento": "Resolución 1995 de 1999, art. 5",
+      "recomendacion": "Registrar el número de registro profesional (tarjeta profesional/ReTHUS) y la especialidad o cargo del profesional que atiende.",
+      "confianza": 0.8,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 3,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -99,7 +166,7 @@
     },
     {
       "titulo": "IDENTIFICACIÓN DEL USUARIO",
-      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 24 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Coosalud Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 20:16 Curso de vida: juventud"
+      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 24 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1] Barrio: [LUGAR_2] de contacto: [TELEFONO_1]\nAseguradora: Mutual Ser Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 18:54 Curso de vida: juventud"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -108,10 +175,6 @@
     {
       "titulo": "ENFERMEDAD ACTUAL",
       "texto": "Gestante de 22 semanas, primigestante, asintomática, con movimientos fetales presentes. Toma el ácido fólico\ny el sulfato ferroso."
-    },
-    {
-      "titulo": "ANTECEDENTES",
-      "texto": "Obstétricos: G1 P0. Personales: niega. Alérgicos: niega."
     },
     {
       "titulo": "EXAMEN FÍSICO",
@@ -127,7 +190,7 @@
     },
     {
       "titulo": "ÓRDENES",
-      "texto": "- Ecografía obstétrica de detalle. Justificación: Tamizaje de anomalías estructurales entre las semanas 18 y 24.\n- Prueba de tolerancia a la glucosa. Justificación: Tamizaje de diabetes gestacional de la ruta.\nRESULTADOS\n- Ecografía obstétrica: feto único vivo, biometría acorde, anatomía normal. Interpretación: Sin alteraciones."
+      "texto": "- Ecografía obstétrica de detalle. Justificación: Tamizaje de anomalías estructurales entre las semanas 18 y 24.\n- Prueba de tolerancia a la glucosa. Justificación: Tamizaje de diabetes gestacional de la ruta.\nRESULTADOS\n- Ecografía obstétrica: feto único vivo, biometría acorde, anatomía normal. Interpretación: Sin alteraciones.\n- Prueba de tolerancia a la glucosa: basal 82 mg/dL, 1 hora 148 mg/dL, 2 horas 126 mg/dL. Interpretación: Sin\ndiabetes gestacional."
     },
     {
       "titulo": "PLAN DE MANEJO",
@@ -135,11 +198,11 @@
     },
     {
       "titulo": "INTERVENCIONES DE LA RUTA",
-      "texto": "- Educación en salud."
+      "texto": "- Clasificación del riesgo obstétrico.\n- Curso de preparación para la maternidad.\n- Vacunación con toxoide tetánico e influenza.\n- Valoración por odontología y nutrición."
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 20:16\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 18:54\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

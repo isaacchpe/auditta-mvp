@@ -19,7 +19,7 @@ PATRONES = [
     ("DIRECCION", re.compile(r"(?i)\b(?:calle|carrera|cra\.?|cl\.?|kr\.?|diagonal|dg\.?|transversal|tv\.?|avenida|av\.?|manzana|mz\.?)\s*\d+[A-Za-z]?\s*(?:bis)?\s*(?:#|n[o°º.]*|-)?\s*\d+[A-Za-z]?\s*(?:-\s*\d+)?(?:\s*(?:apto|apartamento|casa|torre|interior|int\.?|barrio|b\.?)\s*[\w .-]{1,40})?")),
 ]
 
-PALABRA = r"[A-ZÁÉÍÓÚÑ](?:[a-záéíóúñ]+|[A-ZÁÉÍÓÚÑ]+)"
+PALABRA = r"[A-ZÁÉÍÓÚÑ](?:[a-záéíóúñ]+|[A-ZÁÉÍÓÚÑ]+)\b"
 NOMBRE_PROPIO = rf"{PALABRA}(?:\s(?:(?:de|del|la|DE|DEL|LA)\s)?{PALABRA}(?!\s*:)){{1,4}}"
 ETIQUETAS_PERSONA = re.compile(
     rf"(?i:paciente|nombre(?:s)? y apellidos|nombre completo|nombre del (?:paciente|usuario)|usuario|acompa[ñn]ante|responsable|acudiente|madre|padre|familiar|hijo|hija|esposo|esposa|c[oó]nyuge)\s*:\s*({NOMBRE_PROPIO})"

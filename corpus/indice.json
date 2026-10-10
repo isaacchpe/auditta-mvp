@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-10T16:44:26",
+  "generado": "2026-10-10T17:17:51",
   "semilla": 2026,
   "historias": [
     {
@@ -13,9 +13,8 @@
       "plantilla": "A",
       "paginas": 1,
       "defectos": [
-        "COH-03",
-        "COMP-05",
-        "OPO-01"
+        "IDP-02",
+        "SOP-03"
       ]
     },
     {
@@ -29,8 +28,9 @@
       "plantilla": "A",
       "paginas": 1,
       "defectos": [
-        "COH-03",
-        "COH-04"
+        "COMP-03",
+        "OPO-01",
+        "PERT-01"
       ]
     },
     {
@@ -73,9 +73,9 @@
     {
       "id": "HC-SINT-010",
       "plantilla": "B",
-      "paginas": 2,
+      "paginas": 1,
       "defectos": [
-        "COH-03",
+        "COMP-04",
         "PERT-01",
         "PERT-02"
       ]
@@ -91,7 +91,8 @@
       "plantilla": "B",
       "paginas": 1,
       "defectos": [
-        "OPO-01",
+        "COMP-03",
+        "IDP-02",
         "SOP-03"
       ]
     },
@@ -106,9 +107,9 @@
       "plantilla": "C",
       "paginas": 2,
       "defectos": [
-        "COMP-05",
         "OPO-02",
-        "PERT-01"
+        "PERT-01",
+        "PERT-02"
       ]
     },
     {
@@ -123,8 +124,7 @@
       "paginas": 2,
       "defectos": [
         "COH-04",
-        "IDP-02",
-        "OPO-01"
+        "PERT-01"
       ]
     },
     {
@@ -139,7 +139,7 @@
       "paginas": 2,
       "defectos": [
         "COMP-03",
-        "COMP-04"
+        "PERT-01"
       ]
     },
     {
@@ -153,15 +153,14 @@
       "plantilla": "D",
       "paginas": 1,
       "defectos": [
-        "OPO-01",
-        "PERT-01",
-        "PERT-04"
+        "COMP-05",
+        "IDP-02"
       ]
     },
     {
       "id": "HC-SINT-021",
       "plantilla": "D",
-      "paginas": 1,
+      "paginas": 2,
       "defectos": []
     },
     {
@@ -169,15 +168,15 @@
       "plantilla": "D",
       "paginas": 1,
       "defectos": [
-        "COH-04",
+        "COMP-04",
         "COMP-06",
-        "PERT-04"
+        "IDP-01"
       ]
     },
     {
       "id": "HC-SINT-023",
       "plantilla": "D",
-      "paginas": 1,
+      "paginas": 2,
       "defectos": []
     },
     {
@@ -185,8 +184,9 @@
       "plantilla": "D",
       "paginas": 1,
       "defectos": [
+        "COMP-03",
         "COMP-04",
-        "PERT-04"
+        "IDP-02"
       ]
     }
   ]

@@ -51,7 +51,30 @@
         }
       }
     },
-    "latencia_total_ms": 17
+    "analisis": {
+      "hallazgos": [],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2821,
+        "tokens_salida": 14,
+        "latencia_ms": 1235,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": []
+    },
+    "latencia_total_ms": 1254
   },
   {
     "anonimizacion": {
@@ -105,7 +128,58 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "IDP-02",
+          "severidad": "media",
+          "descripcion": "No se registra el número de registro profesional ni la especialidad o cargo del responsable de la atención.",
+          "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
+          "seccion": "PROFESIONAL",
+          "recomendacion": "Registrar el número de registro profesional (ReTHUS) y la especialidad o cargo del médico tratante.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenaron ayudas diagnósticas (perfil lipídico y glicemia) y la historia no registra sus resultados ni interpretación, ni indica que estén pendientes.",
+          "evidencia": "- Perfil lipídico y glicemia en ayunas. Justificación: Control de riesgo cardiovascular en paciente hipertensa.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar los resultados e interpretación de las ayudas diagnósticas ordenadas o dejar constancia expresa de que se encuentran pendientes.",
+          "confianza": 0.8
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2742,
+        "tokens_salida": 285,
+        "latencia_ms": 1851,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "IDP-02",
+        "SOP-03"
+      ],
+      "detectados": [
+        "IDP-02",
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [
+        "IDP-02",
+        "SOP-03"
+      ],
+      "no_detectados": [],
+      "adicionales": []
+    },
+    "latencia_total_ms": 1861
   },
   {
     "anonimizacion": {
@@ -159,7 +233,44 @@
         }
       }
     },
-    "latencia_total_ms": 9
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenaron creatinina y microalbuminuria y no se registran ni interpretan sus resultados en la historia, sin indicar que estén pendientes.",
+          "evidencia": "Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y tamizaje de nefropatía diabética.",
+          "seccion": "ÓRDENES / RESULTADOS",
+          "recomendacion": "Registrar e interpretar los resultados de creatinina y microalbuminuria o dejar constancia expresa de que se encuentran pendientes.",
+          "confianza": 0.85
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2780,
+        "tokens_salida": 181,
+        "latencia_ms": 1621,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": [
+        "SOP-03"
+      ]
+    },
+    "latencia_total_ms": 1654
   },
   {
     "anonimizacion": {
@@ -213,7 +324,84 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COMP-03",
+          "severidad": "baja",
+          "descripcion": "La historia no registra antecedentes personales, familiares ni alérgicos, ni declara de forma explícita su ausencia.",
+          "evidencia": "Paciente con diabetes mellitus tipo 2 diagnosticada hace 6 años, en manejo con metformina. Refiere adherencia parcial y polidipsia leve en las últimas dos semanas. Niega hipoglucemias.",
+          "seccion": "ENFERMEDAD ACTUAL",
+          "recomendacion": "Registrar una sección de antecedentes personales, familiares y alérgicos, o declarar explícitamente su ausencia.",
+          "confianza": 0.9
+        },
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenaron creatinina y microalbuminuria y no se registra su resultado ni interpretación, ni se indica que estén pendientes.",
+          "evidencia": "Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y tamizaje de nefropatía diabética.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar e interpretar los resultados de creatinina y microalbuminuria o indicar expresamente que están pendientes.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "PERT-01",
+          "severidad": "alta",
+          "descripcion": "Se ordena terapia física (10 sesiones) sin justificación clínica registrada.",
+          "evidencia": "Terapia física, 10 sesiones.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar la justificación clínica de la terapia física ordenada.",
+          "confianza": 0.8
+        },
+        {
+          "criterio_id": "PERT-02",
+          "severidad": "media",
+          "descripcion": "Se ordena hemoglobina glicosilada sin indicación clínica explícita en la orden.",
+          "evidencia": "Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y tamizaje de nefropatía diabética.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar la indicación clínica individual de la hemoglobina glicosilada.",
+          "confianza": 0.6
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2745,
+        "tokens_salida": 579,
+        "latencia_ms": 2959,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "COMP-03",
+        "OPO-01",
+        "PERT-01"
+      ],
+      "detectados": [
+        "COMP-03",
+        "PERT-01",
+        "PERT-02",
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [
+        "COMP-03",
+        "PERT-01"
+      ],
+      "no_detectados": [
+        "OPO-01"
+      ],
+      "adicionales": [
+        "PERT-02",
+        "SOP-03"
+      ]
+    },
+    "latencia_total_ms": 2973
   },
   {
     "anonimizacion": {
@@ -267,7 +455,30 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2728,
+        "tokens_salida": 14,
+        "latencia_ms": 1206,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": []
+    },
+    "latencia_total_ms": 1219
   },
   {
     "anonimizacion": {
@@ -321,7 +532,70 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COMP-03",
+          "severidad": "baja",
+          "descripcion": "La historia no registra antecedentes personales, familiares ni alérgicos, ni declara de forma explícita su ausencia.",
+          "evidencia": "MOTIVO DE CONSULTA\n«Dolor al orinar y ganas frecuentes de ir al baño».",
+          "seccion": "Antecedentes",
+          "recomendacion": "Registrar los antecedentes personales, familiares y alérgicos del usuario o declarar explícitamente su ausencia.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenaron uroanálisis y urocultivo, pero la historia no registra sus resultados ni su interpretación, ni indica que estén pendientes.",
+          "evidencia": "- Uroanálisis y urocultivo. Justificación: Confirmación del diagnóstico y orientación del antibiótico.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar los resultados e interpretación de las ayudas diagnósticas ordenadas o indicar expresamente que se encuentran pendientes.",
+          "confianza": 0.8
+        },
+        {
+          "criterio_id": "IDP-02",
+          "severidad": "media",
+          "descripcion": "No se registra el número de registro profesional ni la especialidad o cargo del responsable de la atención.",
+          "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
+          "seccion": "PROFESIONAL",
+          "recomendacion": "Registrar el número de registro profesional y la especialidad o cargo del profesional que atiende.",
+          "confianza": 0.9
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2638,
+        "tokens_salida": 410,
+        "latencia_ms": 2293,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "COMP-03",
+        "IDP-02",
+        "SOP-03"
+      ],
+      "detectados": [
+        "COMP-03",
+        "IDP-02",
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [
+        "COMP-03",
+        "IDP-02",
+        "SOP-03"
+      ],
+      "no_detectados": [],
+      "adicionales": []
+    },
+    "latencia_total_ms": 2303
   },
   {
     "anonimizacion": {
@@ -371,7 +645,30 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2834,
+        "tokens_salida": 14,
+        "latencia_ms": 994,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": []
+    },
+    "latencia_total_ms": 1004
   },
   {
     "anonimizacion": {
@@ -421,7 +718,49 @@
         }
       }
     },
-    "latencia_total_ms": 9
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenó electrocardiograma de 12 derivaciones y troponina I seriada, pero la historia no registra el resultado ni la interpretación de estos exámenes, ni indica que estén pendientes.",
+          "evidencia": "- Electrocardiograma de 12 derivaciones. Justificación: Dolor torácico con sospecha de síndrome coronario\nagudo.\n- Troponina I seriada.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar en la evolución el resultado y la interpretación del electrocardiograma y de la troponina, o dejar constancia expresa de que se encuentran pendientes.",
+          "confianza": 0.85
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2724,
+        "tokens_salida": 196,
+        "latencia_ms": 1925,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "PERT-02",
+        "SOP-03"
+      ],
+      "detectados": [
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [
+        "SOP-03"
+      ],
+      "no_detectados": [
+        "PERT-02"
+      ],
+      "adicionales": []
+    },
+    "latencia_total_ms": 1935
   },
   {
     "anonimizacion": {
@@ -471,7 +810,44 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COH-03",
+          "severidad": "media",
+          "descripcion": "El acetaminofén formulado no registra la frecuencia de administración ni la duración del esquema.",
+          "evidencia": "Acetaminofén 15 mg/kg vía oral cada 6 horas si hay fiebre.",
+          "seccion": "PLAN DE MANEJO",
+          "recomendacion": "Completar la formulación del acetaminofén indicando la frecuencia y la duración del tratamiento.",
+          "confianza": 0.6
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2788,
+        "tokens_salida": 140,
+        "latencia_ms": 1733,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [
+        "COH-03"
+      ],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": [
+        "COH-03"
+      ]
+    },
+    "latencia_total_ms": 1746
   },
   {
     "anonimizacion": {
@@ -521,7 +897,84 @@
         }
       }
     },
-    "latencia_total_ms": 9
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COMP-04",
+          "severidad": "media",
+          "descripcion": "El examen físico no registra signos vitales (temperatura, frecuencia cardíaca, frecuencia respiratoria, saturación de oxígeno, tensión arterial), pese a tratarse de una urgencia pediátrica por dificultad respiratoria.",
+          "evidencia": "EXAMEN FÍSICO\nTirajes subcostales, crépitos en base pulmonar derecha.",
+          "seccion": "EXAMEN FÍSICO",
+          "recomendacion": "Registrar los signos vitales completos al ingreso y en cada control, dado que son indispensables para la valoración de la dificultad respiratoria.",
+          "confianza": 0.9
+        },
+        {
+          "criterio_id": "COH-03",
+          "severidad": "media",
+          "descripcion": "El acetaminofén formulado no registra la frecuencia ni la duración del esquema; solo indica dosis y vía.",
+          "evidencia": "Acetaminofén 15 mg/kg vía oral cada 6 horas si hay fiebre.",
+          "seccion": "PLAN DE MANEJO",
+          "recomendacion": "Completar la formulación con la frecuencia y la duración del tratamiento.",
+          "confianza": 0.55
+        },
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenó hemograma y proteína C reactiva, pero en los resultados solo se registra e interpreta el hemograma; no hay resultado ni interpretación de la proteína C reactiva ni constancia de que esté pendiente.",
+          "evidencia": "Hemograma: leucocitos 16.200, neutrófilos 78 %. Interpretación: Respuesta inflamatoria compatible con infección bacteriana.",
+          "seccion": "RESULTADOS",
+          "recomendacion": "Registrar el resultado e interpretación de la proteína C reactiva o dejar constancia expresa de que se encuentra pendiente.",
+          "confianza": 0.75
+        },
+        {
+          "criterio_id": "PERT-02",
+          "severidad": "media",
+          "descripcion": "La proteína C reactiva se ordenó sin que la historia registre una indicación clínica específica para su solicitud.",
+          "evidencia": "Hemograma y proteína C reactiva.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Documentar la indicación clínica que justifica la solicitud de la proteína C reactiva.",
+          "confianza": 0.5
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2741,
+        "tokens_salida": 599,
+        "latencia_ms": 2854,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "COMP-04",
+        "PERT-01",
+        "PERT-02"
+      ],
+      "detectados": [
+        "COH-03",
+        "COMP-04",
+        "PERT-02",
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [
+        "COMP-04",
+        "PERT-02"
+      ],
+      "no_detectados": [
+        "PERT-01"
+      ],
+      "adicionales": [
+        "COH-03",
+        "SOP-03"
+      ]
+    },
+    "latencia_total_ms": 2865
   },
   {
     "anonimizacion": {
@@ -571,7 +1024,30 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2786,
+        "tokens_salida": 14,
+        "latencia_ms": 953,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": []
+    },
+    "latencia_total_ms": 964
   },
   {
     "anonimizacion": {
@@ -621,7 +1097,70 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COMP-03",
+          "severidad": "baja",
+          "descripcion": "La historia no registra antecedentes personales, familiares ni alérgicos, ni declara de forma explícita su ausencia.",
+          "evidencia": "MOTIVO DE CONSULTA\n«Me caí de la moto y me duele el brazo».",
+          "seccion": "Antecedentes",
+          "recomendacion": "Registrar los antecedentes personales, familiares y alérgicos del paciente o declarar explícitamente su ausencia.",
+          "confianza": 0.9
+        },
+        {
+          "criterio_id": "IDP-02",
+          "severidad": "media",
+          "descripcion": "No se registra el registro profesional ni la especialidad o cargo del responsable de la atención.",
+          "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
+          "seccion": "PROFESIONAL",
+          "recomendacion": "Registrar el número de registro profesional y la especialidad o cargo del profesional que atiende.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenó radiografía de antebrazo derecho y no se registra ni interpreta su resultado en la evolución.",
+          "evidencia": "- Radiografía de antebrazo derecho AP y lateral. Justificación: Trauma con deformidad para caracterizar la\nfractura.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar e interpretar el resultado de la radiografía ordenada, o indicar expresamente que está pendiente.",
+          "confianza": 0.8
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2690,
+        "tokens_salida": 396,
+        "latencia_ms": 2254,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "COMP-03",
+        "IDP-02",
+        "SOP-03"
+      ],
+      "detectados": [
+        "COMP-03",
+        "IDP-02",
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [
+        "COMP-03",
+        "IDP-02",
+        "SOP-03"
+      ],
+      "no_detectados": [],
+      "adicionales": []
+    },
+    "latencia_total_ms": 2267
   },
   {
     "anonimizacion": {
@@ -671,7 +1210,44 @@
         }
       }
     },
-    "latencia_total_ms": 11
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COH-03",
+          "severidad": "media",
+          "descripcion": "La formulación de furosemida y enalapril en el plan de manejo no registra la duración del tratamiento.",
+          "evidencia": "- Furosemida 40 mg intravenosa cada 8 horas.",
+          "seccion": "PLAN DE MANEJO",
+          "recomendacion": "Registrar la duración de cada medicamento formulado en el plan de manejo.",
+          "confianza": 0.6
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 3176,
+        "tokens_salida": 135,
+        "latencia_ms": 1307,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [
+        "COH-03"
+      ],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": [
+        "COH-03"
+      ]
+    },
+    "latencia_total_ms": 1320
   },
   {
     "anonimizacion": {
@@ -721,7 +1297,74 @@
         }
       }
     },
-    "latencia_total_ms": 10
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "SOP-01",
+          "severidad": "alta",
+          "descripcion": "Se realizó toracentesis diagnóstica, procedimiento invasivo, sin que la historia registre consentimiento informado.",
+          "evidencia": "Toracentesis diagnóstica.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Anexar o registrar el consentimiento informado firmado para la toracentesis diagnóstica.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenó toracentesis diagnóstica y no se registra su resultado ni interpretación en la evolución, ni se indica que esté pendiente.",
+          "evidencia": "Toracentesis diagnóstica.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar el resultado e interpretación de la toracentesis diagnóstica o dejar constancia de su estado pendiente.",
+          "confianza": 0.8
+        },
+        {
+          "criterio_id": "PERT-02",
+          "severidad": "media",
+          "descripcion": "La toracentesis diagnóstica figura en las órdenes sin indicación clínica registrada que la justifique.",
+          "evidencia": "Toracentesis diagnóstica.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Documentar la indicación clínica que sustenta la toracentesis diagnóstica.",
+          "confianza": 0.7
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 3151,
+        "tokens_salida": 355,
+        "latencia_ms": 2207,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "OPO-02",
+        "PERT-01",
+        "PERT-02"
+      ],
+      "detectados": [
+        "PERT-02",
+        "SOP-01",
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [
+        "PERT-02"
+      ],
+      "no_detectados": [
+        "OPO-02",
+        "PERT-01"
+      ],
+      "adicionales": [
+        "SOP-01",
+        "SOP-03"
+      ]
+    },
+    "latencia_total_ms": 2220
   },
   {
     "anonimizacion": {
@@ -771,7 +1414,44 @@
         }
       }
     },
-    "latencia_total_ms": 11
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COH-03",
+          "severidad": "media",
+          "descripcion": "El medicamento acetaminofén formulado en el plan de egreso no registra la vía de administración.",
+          "evidencia": "Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8 días con patología.",
+          "seccion": "EPICRISIS",
+          "recomendacion": "Registrar la vía de administración del acetaminofén formulado.",
+          "confianza": 0.85
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 3209,
+        "tokens_salida": 146,
+        "latencia_ms": 1999,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [
+        "COH-03"
+      ],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": [
+        "COH-03"
+      ]
+    },
+    "latencia_total_ms": 2014
   },
   {
     "anonimizacion": {
@@ -821,7 +1501,92 @@
         }
       }
     },
-    "latencia_total_ms": 10
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COH-04",
+          "severidad": "alta",
+          "descripcion": "Se registra la realización de una citología cervicouterina de tamizaje en un paciente de sexo masculino, lo cual es una contradicción demográfica real.",
+          "evidencia": "Se realiza citología cervicouterina de tamizaje durante la consulta.",
+          "seccion": "ANÁLISIS",
+          "recomendacion": "Aclarar o eliminar el procedimiento registrado, ya que no corresponde al sexo del usuario; verificar posible error de transcripción.",
+          "confianza": 0.95
+        },
+        {
+          "criterio_id": "PERT-01",
+          "severidad": "alta",
+          "descripcion": "Se ordena una toracentesis diagnóstica sin justificación clínica registrada, en un cuadro de colecistitis aguda litiásica.",
+          "evidencia": "Toracentesis diagnóstica.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar la indicación clínica de la toracentesis o retirarla de las órdenes si no está justificada.",
+          "confianza": 0.9
+        },
+        {
+          "criterio_id": "SOP-02",
+          "severidad": "alta",
+          "descripcion": "La citología cervicouterina se realizó sin figurar en el plan de manejo ni en las órdenes médicas.",
+          "evidencia": "Se realiza citología cervicouterina de tamizaje durante la consulta.",
+          "seccion": "ANÁLISIS",
+          "recomendacion": "Documentar la orden médica correspondiente o aclarar el registro del procedimiento.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenaron hemograma, bilirrubinas y transaminasas, pero solo se registra el resultado del hemograma; no hay resultado ni interpretación de bilirrubinas y transaminasas, ni constancia de que estén pendientes.",
+          "evidencia": "Hemograma, bilirrubinas, transaminasas. Justificación: Evaluar respuesta inflamatoria y descartar colestasis.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar los resultados e interpretación de bilirrubinas y transaminasas o indicar expresamente que están pendientes.",
+          "confianza": 0.8
+        },
+        {
+          "criterio_id": "COH-03",
+          "severidad": "media",
+          "descripcion": "El acetaminofén formulado en el plan de egreso no registra la vía de administración.",
+          "evidencia": "Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8 días con patología.",
+          "seccion": "EPICRISIS",
+          "recomendacion": "Completar la formulación indicando la vía de administración del acetaminofén.",
+          "confianza": 0.75
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 3234,
+        "tokens_salida": 708,
+        "latencia_ms": 3135,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "COH-04",
+        "PERT-01"
+      ],
+      "detectados": [
+        "COH-03",
+        "COH-04",
+        "PERT-01",
+        "SOP-02",
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [
+        "COH-04",
+        "PERT-01"
+      ],
+      "no_detectados": [],
+      "adicionales": [
+        "COH-03",
+        "SOP-02",
+        "SOP-03"
+      ]
+    },
+    "latencia_total_ms": 3156
   },
   {
     "anonimizacion": {
@@ -871,7 +1636,55 @@
         }
       }
     },
-    "latencia_total_ms": 9
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenaron ayudas diagnósticas (hemograma, hemoclasificación y VIH) y solo se registra el resultado e interpretación del hemograma; no hay resultado ni interpretación de la hemoclasificación ni del VIH, ni se declaran pendientes.",
+          "evidencia": "- Hemograma, hemoclasificación y VIH. Justificación: Protocolo de ingreso a trabajo de parto.\nRESULTADOS\n- Hemoglobina: 11,8 g/dL. Interpretación: Sin anemia.",
+          "seccion": "ÓRDENES / RESULTADOS",
+          "recomendacion": "Registrar en la evolución el resultado y la interpretación de la hemoclasificación y del VIH, o dejar constancia expresa de que se encuentran pendientes.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "COMP-05",
+          "severidad": "alta",
+          "descripcion": "El diagnóstico registrado en el análisis y en las órdenes es 'trabajo de parto en fase activa', pero en la sección de diagnósticos solo figuran códigos de resultado del parto (O80 y Z370), sin el código CIE-10 del diagnóstico de ingreso.",
+          "evidencia": "Trabajo de parto en fase activa, embarazo a término de bajo riesgo.",
+          "seccion": "ANÁLISIS / DIAGNÓSTICOS",
+          "recomendacion": "Registrar el diagnóstico de ingreso con su código CIE-10 correspondiente al trabajo de parto en fase activa.",
+          "confianza": 0.6
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 3043,
+        "tokens_salida": 399,
+        "latencia_ms": 2414,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [
+        "COMP-05",
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": [
+        "COMP-05",
+        "SOP-03"
+      ]
+    },
+    "latencia_total_ms": 2425
   },
   {
     "anonimizacion": {
@@ -921,7 +1734,81 @@
         }
       }
     },
-    "latencia_total_ms": 10
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "SOP-02",
+          "severidad": "alta",
+          "descripcion": "Se ordena y realiza una toracentesis diagnóstica sin que figure en el plan de manejo ni exista orden médica que la respalde; además no tiene justificación clínica registrada.",
+          "evidencia": "Toracentesis diagnóstica.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Documentar la orden médica y la justificación clínica de la toracentesis o retirarla de las órdenes, dado que no corresponde al manejo del trabajo de parto.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "PERT-01",
+          "severidad": "alta",
+          "descripcion": "La toracentesis diagnóstica es un procedimiento invasivo sin justificación clínica registrada en una gestante a término en trabajo de parto de bajo riesgo.",
+          "evidencia": "Toracentesis diagnóstica.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar la indicación clínica que sustente el procedimiento o eliminarlo de la atención.",
+          "confianza": 0.8
+        },
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenaron hemoclasificación y VIH, pero la historia solo registra el resultado del hemograma; no se documentan ni interpretan los resultados de las otras ayudas diagnósticas ordenadas ni se declaran pendientes.",
+          "evidencia": "Hemograma, hemoclasificación y VIH. Justificación: Protocolo de ingreso a trabajo de parto.",
+          "seccion": "ÓRDENES",
+          "recomendacion": "Registrar e interpretar los resultados de hemoclasificación y VIH, o indicar expresamente que están pendientes.",
+          "confianza": 0.75
+        },
+        {
+          "criterio_id": "COMP-03",
+          "severidad": "baja",
+          "descripcion": "La historia no incluye una sección de antecedentes personales, familiares y alérgicos, ni declara explícitamente su ausencia.",
+          "evidencia": "Controles prenatales completos.",
+          "seccion": "ENFERMEDAD ACTUAL",
+          "recomendacion": "Adicionar la sección de antecedentes personales, familiares y alérgicos o declarar su ausencia.",
+          "confianza": 0.7
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 3014,
+        "tokens_salida": 567,
+        "latencia_ms": 3124,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "COMP-03",
+        "PERT-01"
+      ],
+      "detectados": [
+        "COMP-03",
+        "PERT-01",
+        "SOP-02",
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [
+        "COMP-03",
+        "PERT-01"
+      ],
+      "no_detectados": [],
+      "adicionales": [
+        "SOP-02",
+        "SOP-03"
+      ]
+    },
+    "latencia_total_ms": 3139
   },
   {
     "anonimizacion": {
@@ -971,7 +1858,66 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COMP-04",
+          "severidad": "media",
+          "descripcion": "El examen físico no registra la revisión pertinente al motivo de consulta ni los signos vitales completos esperados para una valoración integral de primera infancia; no se documenta SatO2 ni examen por sistemas, y la valoración del desarrollo se menciona de forma global sin hallazgos del examen físico.",
+          "evidencia": "Peso 14,2 kg, talla 95 cm, perímetro cefálico 49 cm, FC 104 lpm, FR 24 rpm, T 36,5 °C. Desarrollo acorde a la edad en las cuatro áreas de la escala abreviada.",
+          "seccion": "EXAMEN FÍSICO",
+          "recomendacion": "Registrar el examen físico completo por sistemas con los hallazgos pertinentes al motivo de consulta y los signos vitales completos.",
+          "confianza": 0.6
+        },
+        {
+          "criterio_id": "COMP-03",
+          "severidad": "baja",
+          "descripcion": "No se registran antecedentes familiares ni se declara explícitamente su ausencia; solo se consignan antecedentes perinatales, de vacunación y alérgicos.",
+          "evidencia": "Perinatales: parto a término, peso al nacer 3.100 g. Vacunación: esquema completo para la edad según carné. Alérgicos: niega.",
+          "seccion": "ANTECEDENTES",
+          "recomendacion": "Registrar los antecedentes familiares o declarar de forma explícita su ausencia.",
+          "confianza": 0.7
+        },
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordena/aplica flúor barniz y valoración por odontología sin que la historia registre el resultado o la interpretación de dichas intervenciones, ni se indique que están pendientes.",
+          "evidencia": "Aplicación de flúor barniz y valoración por odontología.",
+          "seccion": "INTERVENCIONES DE LA RUTA",
+          "recomendacion": "Registrar el resultado e interpretación de las intervenciones realizadas o indicar expresamente que quedan pendientes.",
+          "confianza": 0.6
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2790,
+        "tokens_salida": 540,
+        "latencia_ms": 3050,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [
+        "COMP-03",
+        "COMP-04",
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": [
+        "COMP-03",
+        "COMP-04",
+        "SOP-03"
+      ]
+    },
+    "latencia_total_ms": 3060
   },
   {
     "anonimizacion": {
@@ -1021,7 +1967,81 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COMP-05",
+          "severidad": "alta",
+          "descripcion": "No se registra diagnóstico codificado con CIE-10; el diagnóstico aparece como texto libre sin código.",
+          "evidencia": "- Control de salud de rutina del niño",
+          "seccion": "DIAGNÓSTICOS",
+          "recomendacion": "Registrar el diagnóstico con su código CIE-10 correspondiente.",
+          "confianza": 0.95
+        },
+        {
+          "criterio_id": "COMP-03",
+          "severidad": "baja",
+          "descripcion": "No se registran antecedentes familiares ni se declara explícitamente su ausencia; solo hay perinatales, vacunación y alérgicos.",
+          "evidencia": "Perinatales: parto a término, peso al nacer 3.100 g. Vacunación: esquema completo para la edad según carné.\nAlérgicos: niega.",
+          "seccion": "ANTECEDENTES",
+          "recomendacion": "Registrar antecedentes familiares o declarar explícitamente su ausencia.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "IDP-02",
+          "severidad": "media",
+          "descripcion": "No se registra el número de registro profesional ni la especialidad o cargo del responsable de la atención.",
+          "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
+          "seccion": "PROFESIONAL",
+          "recomendacion": "Registrar el número de registro profesional y la especialidad o cargo del profesional.",
+          "confianza": 0.9
+        },
+        {
+          "criterio_id": "COMP-04",
+          "severidad": "media",
+          "descripcion": "El examen físico no incluye TA ni SatO2, y no consigna revisión por sistemas pertinente al motivo de consulta.",
+          "evidencia": "Peso 14,2 kg, talla 95 cm, perímetro cefálico 49 cm, FC 104 lpm, FR 24 rpm, T 36,5 °C. Desarrollo acorde a la\nedad en las cuatro áreas de la escala abreviada.",
+          "seccion": "EXAMEN FÍSICO",
+          "recomendacion": "Completar los signos vitales y la revisión pertinente al motivo de consulta.",
+          "confianza": 0.6
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2768,
+        "tokens_salida": 551,
+        "latencia_ms": 3062,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "COMP-05",
+        "IDP-02"
+      ],
+      "detectados": [
+        "COMP-03",
+        "COMP-04",
+        "COMP-05",
+        "IDP-02"
+      ],
+      "verdaderos_positivos": [
+        "COMP-05",
+        "IDP-02"
+      ],
+      "no_detectados": [],
+      "adicionales": [
+        "COMP-03",
+        "COMP-04"
+      ]
+    },
+    "latencia_total_ms": 3073
   },
   {
     "anonimizacion": {
@@ -1071,7 +2091,44 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "SOP-03",
+          "severidad": "media",
+          "descripcion": "Se ordenaron ayudas diagnósticas (glicemia en ayunas y perfil lipídico) y la historia no registra el resultado ni la interpretación de todos los exámenes ordenados; solo se reportan glicemia, colesterol total y triglicéridos, sin el resto del perfil lipídico (HDL, LDL), y no se declara que estén pendientes.",
+          "evidencia": "- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta.",
+          "seccion": "ÓRDENES / RESULTADOS",
+          "recomendacion": "Registrar e interpretar la totalidad de los resultados de las ayudas diagnósticas ordenadas o indicar expresamente que están pendientes.",
+          "confianza": 0.6
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2874,
+        "tokens_salida": 226,
+        "latencia_ms": 2139,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [
+        "SOP-03"
+      ],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": [
+        "SOP-03"
+      ]
+    },
+    "latencia_total_ms": 2158
   },
   {
     "anonimizacion": {
@@ -1121,7 +2178,73 @@
         }
       }
     },
-    "latencia_total_ms": 7
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COMP-04",
+          "severidad": "media",
+          "descripcion": "El examen físico no registra signos vitales ni la revisión pertinente al motivo de consulta; solo se anota 'Examen por sistemas sin hallazgos'.",
+          "evidencia": "Examen por sistemas sin hallazgos.",
+          "seccion": "EXAMEN FÍSICO",
+          "recomendacion": "Registrar los signos vitales (TA, FC, FR, temperatura, SatO2) y los hallazgos del examen físico pertinentes a la valoración integral del adulto.",
+          "confianza": 0.9
+        },
+        {
+          "criterio_id": "IDP-02",
+          "severidad": "media",
+          "descripcion": "No se registra el número de registro profesional del responsable de la atención; solo se indica la especialidad.",
+          "evidencia": "Especialidad: Medicina familiar. Firma electrónica registrada.",
+          "seccion": "PROFESIONAL",
+          "recomendacion": "Registrar el número de registro profesional (tarjeta profesional o registro médico) junto con la especialidad del responsable de la atención.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "IDP-01",
+          "severidad": "alta",
+          "descripcion": "La anotación no registra el nombre del profesional que la suscribe; solo se menciona la firma electrónica sin identificar al autor.",
+          "evidencia": "Especialidad: Medicina familiar. Firma electrónica registrada.",
+          "seccion": "PROFESIONAL",
+          "recomendacion": "Registrar el nombre completo del profesional autor de la anotación, además de la firma.",
+          "confianza": 0.8
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2745,
+        "tokens_salida": 401,
+        "latencia_ms": 2427,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "COMP-04",
+        "COMP-06",
+        "IDP-01"
+      ],
+      "detectados": [
+        "COMP-04",
+        "IDP-01",
+        "IDP-02"
+      ],
+      "verdaderos_positivos": [
+        "COMP-04",
+        "IDP-01"
+      ],
+      "no_detectados": [
+        "COMP-06"
+      ],
+      "adicionales": [
+        "IDP-02"
+      ]
+    },
+    "latencia_total_ms": 2437
   },
   {
     "anonimizacion": {
@@ -1171,7 +2294,30 @@
         }
       }
     },
-    "latencia_total_ms": 8
+    "analisis": {
+      "hallazgos": [],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2883,
+        "tokens_salida": 14,
+        "latencia_ms": 1331,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [],
+      "detectados": [],
+      "verdaderos_positivos": [],
+      "no_detectados": [],
+      "adicionales": []
+    },
+    "latencia_total_ms": 1341
   },
   {
     "anonimizacion": {
@@ -1221,6 +2367,69 @@
         }
       }
     },
-    "latencia_total_ms": 7
+    "analisis": {
+      "hallazgos": [
+        {
+          "criterio_id": "COMP-04",
+          "severidad": "media",
+          "descripcion": "El examen físico no incluye signos vitales ni la revisión pertinente al motivo de consulta (control prenatal de segundo trimestre); se limita a indicar 'Sin hallazgos relevantes'.",
+          "evidencia": "EXAMEN FÍSICO\nSin hallazgos relevantes.",
+          "seccion": "EXAMEN FÍSICO",
+          "recomendacion": "Registrar los signos vitales (TA, FC, FR, temperatura, SatO2) y los hallazgos del examen obstétrico pertinente: altura uterina, frecuencia cardiaca fetal, presentación, entre otros.",
+          "confianza": 0.9
+        },
+        {
+          "criterio_id": "COMP-03",
+          "severidad": "baja",
+          "descripcion": "No se registra una sección de antecedentes personales, familiares y alérgicos, ni se declara explícitamente su ausencia.",
+          "evidencia": "MOTIVO DE CONSULTA\nControl prenatal de segundo trimestre.",
+          "seccion": "ANTECEDENTES",
+          "recomendacion": "Incluir la sección de antecedentes personales, familiares y alérgicos, o declarar de forma explícita su ausencia.",
+          "confianza": 0.85
+        },
+        {
+          "criterio_id": "IDP-02",
+          "severidad": "media",
+          "descripcion": "No se registra el número de registro profesional ni la especialidad o cargo del responsable de la atención.",
+          "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
+          "seccion": "PROFESIONAL",
+          "recomendacion": "Registrar el número de registro profesional (tarjeta profesional/ReTHUS) y la especialidad o cargo del profesional que atiende.",
+          "confianza": 0.8
+        }
+      ],
+      "descartados_sin_evidencia": [],
+      "no_evaluables": [],
+      "version_prompt": "1.2.0",
+      "version_catalogo": "1.0.0",
+      "modelo": "deepseek-chat",
+      "registro": {
+        "intentos": 1,
+        "valido_primer_intento": true,
+        "tokens_entrada": 2767,
+        "tokens_salida": 446,
+        "latencia_ms": 2518,
+        "errores": []
+      }
+    },
+    "concordancia": {
+      "esperados": [
+        "COMP-03",
+        "COMP-04",
+        "IDP-02"
+      ],
+      "detectados": [
+        "COMP-03",
+        "COMP-04",
+        "IDP-02"
+      ],
+      "verdaderos_positivos": [
+        "COMP-03",
+        "COMP-04",
+        "IDP-02"
+      ],
+      "no_detectados": [],
+      "adicionales": []
+    },
+    "latencia_total_ms": 2528
   }
 ]

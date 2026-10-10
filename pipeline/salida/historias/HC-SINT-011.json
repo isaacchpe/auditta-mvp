@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-011",
   "archivo": "HC-SINT-011.pdf",
-  "hash": "e11b45667250c5de6d0aee43b97631a20b56b3581dd7d33b8aa87e8304964a93",
+  "hash": "673f795d432f8b2fc001c018cbb7f79432986fe2929445de6af190f0a48702d4",
   "paginas": 1,
   "plantilla": "B",
   "secciones_reconocidas": [
@@ -17,7 +17,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS\n\nIDENTIFICACIÓN DEL PACIENTE\nPaciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 27 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Mutual Ser HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 15:01\n\nMOTIVO DE CONSULTA\n«Me caí de la moto y me duele el brazo».\n\nENFERMEDAD ACTUAL\nCaída de motocicleta a baja velocidad hace una hora, con trauma en antebrazo derecho, dolor intenso y\ndeformidad. Sin pérdida de conciencia ni otros traumas.\n\nANTECEDENTES\nPersonales: niega. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 124/78 mmHg, FC 92 lpm, FR 18 rpm, T 36,7 °C. Deformidad en tercio medio de antebrazo derecho, pulso\nradial presente, llenado capilar menor de 2 segundos, sensibilidad conservada.\n\nANÁLISIS\nFractura cerrada de antebrazo derecho; se requiere reducción.\n\nDIAGNÓSTICOS\n- S522 Fractura de la diáfisis del cúbito\n- V280 Motociclista lesionado en accidente de transporte\n\nÓRDENES\n- Radiografía de antebrazo derecho AP y lateral. Justificación: Trauma con deformidad para caracterizar la\nfractura.\n- Reducción cerrada de fractura e inmovilización. Justificación: Fractura desplazada confirmada en radiografía.\nRESULTADOS\n- Radiografía de antebrazo: fractura diafisaria de cúbito con desplazamiento de 20 grados. Interpretación: Indica\nreducción cerrada.\n\nCONSENTIMIENTO INFORMADO\nEl paciente o su representante recibe información sobre el procedimiento Reducción cerrada de fractura bajo\nsedación, sus riesgos y alternativas, y firma el consentimiento, que se anexa a la historia.\n\nPLAN DE MANEJO\n- Diclofenaco 75 mg intramuscular dosis única.\n- Inmovilización con férula braquiopalmar.\n- Reducción cerrada bajo sedación.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de urgencias.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 15:01\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS\n\nIDENTIFICACIÓN DEL PACIENTE\nPaciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 27 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Coosalud HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 13:24\n\nMOTIVO DE CONSULTA\n«Me caí de la moto y me duele el brazo».\n\nENFERMEDAD ACTUAL\nCaída de motocicleta a baja velocidad hace una hora, con trauma en antebrazo derecho, dolor intenso y\ndeformidad. Sin pérdida de conciencia ni otros traumas.\n\nANTECEDENTES\nPersonales: niega. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 124/78 mmHg, FC 92 lpm, FR 18 rpm, T 36,7 °C. Deformidad en tercio medio de antebrazo derecho, pulso\nradial presente, llenado capilar menor de 2 segundos, sensibilidad conservada.\n\nANÁLISIS\nFractura cerrada de antebrazo derecho; se requiere reducción.\n\nDIAGNÓSTICOS\n- S522 Fractura de la diáfisis del cúbito\n- V280 Motociclista lesionado en accidente de transporte\n\nÓRDENES\n- Radiografía de antebrazo derecho AP y lateral. Justificación: Trauma con deformidad para caracterizar la\nfractura.\n- Reducción cerrada de fractura e inmovilización. Justificación: Fractura desplazada confirmada en radiografía.\nRESULTADOS\n- Radiografía de antebrazo: fractura diafisaria de cúbito con desplazamiento de 20 grados. Interpretación: Indica\nreducción cerrada.\n\nCONSENTIMIENTO INFORMADO\nEl paciente o su representante recibe información sobre el procedimiento Reducción cerrada de fractura bajo\nsedación, sus riesgos y alternativas, y firma el consentimiento, que se anexa a la historia.\n\nPLAN DE MANEJO\n- Diclofenaco 75 mg intramuscular dosis única.\n- Inmovilización con férula braquiopalmar.\n- Reducción cerrada bajo sedación.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 13:24\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "DOCUMENTO",
@@ -83,10 +83,20 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 4,
+    "extraccion": 5,
     "anonimizacion": 3,
-    "total": 8
+    "analisis": 954,
+    "total": 964
   },
+  "puntaje": 0,
+  "nivel": "bajo",
+  "composicion": [],
+  "hallazgos_lista": [],
+  "num_hallazgos": 0,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -94,7 +104,7 @@
     },
     {
       "titulo": "IDENTIFICACIÓN DEL PACIENTE",
-      "texto": "Paciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 27 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Mutual Ser HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 15:01"
+      "texto": "Paciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 27 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Coosalud HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 13:24"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -134,7 +144,7 @@
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de urgencias.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 15:01\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 13:24\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

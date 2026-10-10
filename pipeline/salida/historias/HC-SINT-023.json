@@ -1,8 +1,8 @@
 {
   "_id": "HC-SINT-023",
   "archivo": "HC-SINT-023.pdf",
-  "hash": "cd82d559e426d3f46952438f1d5ea1527a4687787da1189e6c85b8a0896ce4a0",
-  "paginas": 1,
+  "hash": "31b9555c3380819ea68e8fda2012061c451159c22a09d151d4154b78d04c417d",
+  "paginas": 2,
   "plantilla": "D",
   "secciones_reconocidas": [
     "analisis",
@@ -17,7 +17,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 24 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Sanitas Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 16:40 Curso de vida: juventud\n\nMOTIVO DE CONSULTA\nControl prenatal de segundo trimestre.\n\nENFERMEDAD ACTUAL\nGestante de 22 semanas, primigestante, asintomática, con movimientos fetales presentes. Toma el ácido fólico\ny el sulfato ferroso.\n\nANTECEDENTES\nObstétricos: G1 P0. Personales: niega. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 108/68 mmHg, FC 84 lpm, peso 61 kg, altura uterina 21 cm, fetocardia 148 lpm.\n\nANÁLISIS\nEmbarazo de curso normal, bajo riesgo.\n\nDIAGNÓSTICOS\n- Z340 Supervisión de primer embarazo normal\n\nÓRDENES\n- Ecografía obstétrica de detalle. Justificación: Tamizaje de anomalías estructurales entre las semanas 18 y 24.\n- Prueba de tolerancia a la glucosa. Justificación: Tamizaje de diabetes gestacional de la ruta.\nRESULTADOS\n- Ecografía obstétrica: feto único vivo, biometría acorde, anatomía normal. Interpretación: Sin alteraciones.\n\nPLAN DE MANEJO\n- Continuar micronutrientes.\n- Próximo control en 4 semanas.\n\nINTERVENCIONES DE LA RUTA\n- Clasificación del riesgo obstétrico.\n- Curso de preparación para la maternidad.\n- Vacunación con toxoide tetánico e influenza.\n- Valoración por odontología y nutrición.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 16:40\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 24 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1] Barrio: [LUGAR_2] de contacto: [TELEFONO_1]\nAseguradora: Sanitas Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 17:35 Curso de vida: juventud\n\nMOTIVO DE CONSULTA\nControl prenatal de segundo trimestre.\n\nENFERMEDAD ACTUAL\nGestante de 22 semanas, primigestante, asintomática, con movimientos fetales presentes. Toma el ácido fólico\ny el sulfato ferroso.\n\nANTECEDENTES\nObstétricos: G1 P0. Personales: niega. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 108/68 mmHg, FC 84 lpm, FR 18 rpm, T 36,6 °C, peso 61 kg, altura uterina 21 cm, fetocardia 148 lpm.\n\nANÁLISIS\nEmbarazo de curso normal, bajo riesgo.\n\nDIAGNÓSTICOS\n- Z340 Supervisión de primer embarazo normal\n\nÓRDENES\n- Ecografía obstétrica de detalle. Justificación: Tamizaje de anomalías estructurales entre las semanas 18 y 24.\n- Prueba de tolerancia a la glucosa. Justificación: Tamizaje de diabetes gestacional de la ruta.\nRESULTADOS\n- Ecografía obstétrica: feto único vivo, biometría acorde, anatomía normal. Interpretación: Sin alteraciones.\n- Prueba de tolerancia a la glucosa: basal 82 mg/dL, 1 hora 148 mg/dL, 2 horas 126 mg/dL. Interpretación: Sin\ndiabetes gestacional.\n\nPLAN DE MANEJO\n- Continuar micronutrientes.\n- Próximo control en 4 semanas.\n\nINTERVENCIONES DE LA RUTA\n- Clasificación del riesgo obstétrico.\n- Curso de preparación para la maternidad.\n- Vacunación con toxoide tetánico e influenza.\n- Valoración por odontología y nutrición.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1\nFirma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 17:35\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 2",
   "entidades": [
     {
       "categoria": "DOCUMENTO",
@@ -42,7 +42,7 @@
     {
       "categoria": "HISTORIA",
       "token": "[HISTORIA_1]",
-      "ocurrencias": 2
+      "ocurrencias": 3
     },
     {
       "categoria": "LUGAR",
@@ -57,7 +57,7 @@
     {
       "categoria": "LUGAR",
       "token": "[LUGAR_3]",
-      "ocurrencias": 2
+      "ocurrencias": 3
     },
     {
       "categoria": "MEDICO",
@@ -88,10 +88,20 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 4,
-    "anonimizacion": 3,
-    "total": 8
+    "extraccion": 5,
+    "anonimizacion": 4,
+    "analisis": 1332,
+    "total": 1341
   },
+  "puntaje": 0,
+  "nivel": "bajo",
+  "composicion": [],
+  "hallazgos_lista": [],
+  "num_hallazgos": 0,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -99,7 +109,7 @@
     },
     {
       "titulo": "IDENTIFICACIÓN DEL USUARIO",
-      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 24 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Sanitas Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 16:40 Curso de vida: juventud"
+      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 24 años\nSexo: femenino\nMunicipio de residencia: [LUGAR_1] Barrio: [LUGAR_2] de contacto: [TELEFONO_1]\nAseguradora: Sanitas Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 17:35 Curso de vida: juventud"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -115,7 +125,7 @@
     },
     {
       "titulo": "EXAMEN FÍSICO",
-      "texto": "TA 108/68 mmHg, FC 84 lpm, peso 61 kg, altura uterina 21 cm, fetocardia 148 lpm."
+      "texto": "TA 108/68 mmHg, FC 84 lpm, FR 18 rpm, T 36,6 °C, peso 61 kg, altura uterina 21 cm, fetocardia 148 lpm."
     },
     {
       "titulo": "ANÁLISIS",
@@ -127,7 +137,7 @@
     },
     {
       "titulo": "ÓRDENES",
-      "texto": "- Ecografía obstétrica de detalle. Justificación: Tamizaje de anomalías estructurales entre las semanas 18 y 24.\n- Prueba de tolerancia a la glucosa. Justificación: Tamizaje de diabetes gestacional de la ruta.\nRESULTADOS\n- Ecografía obstétrica: feto único vivo, biometría acorde, anatomía normal. Interpretación: Sin alteraciones."
+      "texto": "- Ecografía obstétrica de detalle. Justificación: Tamizaje de anomalías estructurales entre las semanas 18 y 24.\n- Prueba de tolerancia a la glucosa. Justificación: Tamizaje de diabetes gestacional de la ruta.\nRESULTADOS\n- Ecografía obstétrica: feto único vivo, biometría acorde, anatomía normal. Interpretación: Sin alteraciones.\n- Prueba de tolerancia a la glucosa: basal 82 mg/dL, 1 hora 148 mg/dL, 2 horas 126 mg/dL. Interpretación: Sin\ndiabetes gestacional."
     },
     {
       "titulo": "PLAN DE MANEJO",
@@ -139,7 +149,7 @@
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 16:40\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1\nFirma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 17:35\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 2"
     }
   ]
 }

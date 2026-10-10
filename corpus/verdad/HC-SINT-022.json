@@ -4,9 +4,9 @@
   "sexo": "masculino",
   "edad": 48,
   "defectos": [
-    "COH-04",
+    "COMP-04",
     "COMP-06",
-    "PERT-04"
+    "IDP-01"
   ],
   "contexto": {
     "promocion_mantenimiento": true,
@@ -15,51 +15,51 @@
   "identificadores": [
     {
       "categoria": "PACIENTE",
-      "valor": "Daniel Javier Cruz Flores"
+      "valor": "Yuli Ramiro Ruiz Cruz"
     },
     {
       "categoria": "DOCUMENTO",
-      "valor": "57504406"
+      "valor": "1027322411"
     },
     {
       "categoria": "FECHA",
-      "valor": "24 de julio de 1978"
+      "valor": "21 de noviembre de 1977"
     },
     {
       "categoria": "TELEFONO",
-      "valor": "303 756 8103"
+      "valor": "310 660 3373"
     },
     {
       "categoria": "DIRECCION",
-      "valor": "Carrera 37 # 6-80"
+      "valor": "Diagonal 28 # 28-60"
     },
     {
       "categoria": "LUGAR",
-      "valor": "Lorica"
+      "valor": "Montería"
     },
     {
       "categoria": "LUGAR",
-      "valor": "Los Ángeles"
+      "valor": "El Prado"
     },
     {
       "categoria": "MEDICO",
-      "valor": "Ricardo Juan Negrete Pastrana"
+      "valor": "Camilo Emmanuel Ojeda Gutierrez"
     },
     {
       "categoria": "REGISTRO",
-      "valor": "RM-70319"
+      "valor": "RM-24085"
     },
     {
       "categoria": "HISTORIA",
-      "valor": "HC-2026-6802"
+      "valor": "HC-2026-3359"
     },
     {
       "categoria": "FACTURA",
-      "valor": "ADM-611884"
+      "valor": "ADM-686832"
     },
     {
       "categoria": "FECHA",
-      "valor": "20 de septiembre de 2026"
+      "valor": "25 de febrero de 2026"
     }
   ],
   "paginas": 1,

@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-005",
   "archivo": "HC-SINT-005.pdf",
-  "hash": "ca801c9a754875094013a200faf46f9a8930c1c63f53cda4cf1c4d309e488bb5",
+  "hash": "2752ccd0a39b61763cb7060055168d58d03e45c7567379d441e8b25c26b3bd7f",
   "paginas": 1,
   "plantilla": "A",
   "secciones_reconocidas": [
@@ -16,7 +16,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "IPS Centro Médico Sinú Sintético\nCódigo de habilitación 230010999901 · HISTORIA CLÍNICA DE CONSULTA EXTERNA\n\nDATOS DE IDENTIFICACIÓN\nNombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 32 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1]o: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Sanitas Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 12:42\n\nMOTIVO DE CONSULTA\n«Dolor al orinar y ganas frecuentes de ir al baño».\n\nENFERMEDAD ACTUAL\nDisuria, polaquiuria y urgencia miccional de dos días de evolución, sin fiebre ni dolor lumbar. Niega flujo\nvaginal. Último periodo menstrual hace 10 días.\n\nANTECEDENTES\nPersonales: infección urinaria hace un año. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 110/70 mmHg, FC 82 lpm, FR 16 rpm, T 37,1 °C. Abdomen blando, dolor leve suprapúbico, puño percusión\nlumbar negativa.\n\nANÁLISIS\nInfección urinaria baja no complicada.\n\nDIAGNÓSTICOS\n- N390 Infección de vías urinarias, sitio no especificado\n\nÓRDENES\n- Uroanálisis y urocultivo. Justificación: Confirmación del diagnóstico y orientación del antibiótico.\nRESULTADOS\n- Uroanálisis: leucocitos 25 por campo, nitritos positivos. Interpretación: Compatible con infección urinaria.\n\nPLAN DE MANEJO\n- Nitrofurantoína 100 mg vía oral cada 6 horas por 5 días.\n- Hidratación abundante.\n- Signos de alarma: fiebre, dolor lumbar o vómito.\n- Control si no mejora en 72 horas.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina\ngeneral. Firma: ____________\nFecha y hora de la anotación: [FECHA_2] 12:42\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "IPS Centro Médico Sinú Sintético\nCódigo de habilitación 230010999901 · HISTORIA CLÍNICA DE CONSULTA EXTERNA\n\nDATOS DE IDENTIFICACIÓN\nNombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 32 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1] Teléfono: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Sanitas Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 12:42\n\nMOTIVO DE CONSULTA\n«Dolor al orinar y ganas frecuentes de ir al baño».\n\nENFERMEDAD ACTUAL\nDisuria, polaquiuria y urgencia miccional de dos días de evolución, sin fiebre ni dolor lumbar. Niega flujo\nvaginal. Último periodo menstrual hace 10 días.\n\nANTECEDENTES\nPersonales: infección urinaria hace un año. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 110/70 mmHg, FC 82 lpm, FR 16 rpm, T 37,1 °C. Abdomen blando, dolor leve suprapúbico, puño percusión\nlumbar negativa.\n\nANÁLISIS\nInfección urinaria baja no complicada.\n\nDIAGNÓSTICOS\n- N390 Infección de vías urinarias, sitio no especificado\n\nÓRDENES\n- Uroanálisis y urocultivo. Justificación: Confirmación del diagnóstico y orientación del antibiótico.\nRESULTADOS\n- Uroanálisis: leucocitos 25 por campo, nitritos positivos. Interpretación: Compatible con infección urinaria.\n\nPLAN DE MANEJO\n- Nitrofurantoína 100 mg vía oral cada 6 horas por 5 días.\n- Hidratación abundante.\n- Signos de alarma: fiebre, dolor lumbar o vómito.\n- Control si no mejora en 72 horas.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina\ngeneral. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 12:42\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "CORREO",
@@ -92,10 +92,20 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 4,
-    "anonimizacion": 3,
-    "total": 8
+    "extraccion": 6,
+    "anonimizacion": 5,
+    "analisis": 1207,
+    "total": 1219
   },
+  "puntaje": 0,
+  "nivel": "bajo",
+  "composicion": [],
+  "hallazgos_lista": [],
+  "num_hallazgos": 0,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -103,7 +113,7 @@
     },
     {
       "titulo": "DATOS DE IDENTIFICACIÓN",
-      "texto": "Nombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 32 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1]o: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Sanitas Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 12:42"
+      "texto": "Nombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 32 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1] Teléfono: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Sanitas Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 12:42"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -139,7 +149,7 @@
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina\ngeneral. Firma: ____________\nFecha y hora de la anotación: [FECHA_2] 12:42\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina\ngeneral. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 12:42\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

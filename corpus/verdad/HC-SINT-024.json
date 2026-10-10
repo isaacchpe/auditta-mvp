@@ -4,8 +4,9 @@
   "sexo": "femenino",
   "edad": 24,
   "defectos": [
+    "COMP-03",
     "COMP-04",
-    "PERT-04"
+    "IDP-02"
   ],
   "contexto": {
     "promocion_mantenimiento": true,
@@ -14,23 +15,23 @@
   "identificadores": [
     {
       "categoria": "PACIENTE",
-      "valor": "Ana Luz Torres Urango"
+      "valor": "Juliana Claudia Salazar Navarro"
     },
     {
       "categoria": "DOCUMENTO",
-      "valor": "1016062469"
+      "valor": "1043252188"
     },
     {
       "categoria": "FECHA",
-      "valor": "30 de diciembre de 2001"
+      "valor": "16 de septiembre de 2001"
     },
     {
       "categoria": "TELEFONO",
-      "valor": "317 347 6279"
+      "valor": "306 344 9422"
     },
     {
       "categoria": "DIRECCION",
-      "valor": "Transversal 54 # 20-61"
+      "valor": "Diagonal 36 # 7-72"
     },
     {
       "categoria": "LUGAR",
@@ -38,27 +39,27 @@
     },
     {
       "categoria": "LUGAR",
-      "valor": "San José"
+      "valor": "Santa Fe"
     },
     {
       "categoria": "MEDICO",
-      "valor": "Luis Julio Medina Tordecilla"
+      "valor": "Javier Pedro Tapia Navarro"
     },
     {
       "categoria": "REGISTRO",
-      "valor": "RM-34154"
+      "valor": "RM-87404"
     },
     {
       "categoria": "HISTORIA",
-      "valor": "HC-2026-4090"
+      "valor": "HC-2026-7252"
     },
     {
       "categoria": "FACTURA",
-      "valor": "ADM-906132"
+      "valor": "ADM-606291"
     },
     {
       "categoria": "FECHA",
-      "valor": "18 de marzo de 2026"
+      "valor": "4 de septiembre de 2026"
     }
   ],
   "paginas": 1,

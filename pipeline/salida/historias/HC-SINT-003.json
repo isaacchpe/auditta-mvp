@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-003",
   "archivo": "HC-SINT-003.pdf",
-  "hash": "c5d877649e5444b784726ac7210135395180072cb4243b748daeaa8b72f0ed9c",
+  "hash": "3921d13c6802a1387991e30935835d55e5131181b6df6c916fac8af6a47ca812",
   "paginas": 1,
   "plantilla": "A",
   "secciones_reconocidas": [
@@ -16,7 +16,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "IPS Centro Médico Sinú Sintético\nCódigo de habilitación 230010999901 · HISTORIA CLÍNICA DE CONSULTA EXTERNA\n\nDATOS DE IDENTIFICACIÓN\nNombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 58 años Sexo: masculino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1]o: [TELEFONO_1]\nCorreo: [CORREO_1]\nAseguradora: Nueva EPS Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 18:29\n\nMOTIVO DE CONSULTA\n«Vengo a control de la diabetes».\n\nENFERMEDAD ACTUAL\nPaciente con diabetes mellitus tipo 2 diagnosticada hace 6 años, en manejo con metformina. Refiere\nadherencia parcial y polidipsia leve en las últimas dos semanas. Niega hipoglucemias.\n\nANTECEDENTES\nPersonales: diabetes mellitus tipo 2, dislipidemia. Familiares: padre con diabetes. Alérgicos: penicilina.\n\nEXAMEN FÍSICO\nTA 130/84 mmHg, FC 80 lpm, FR 18 rpm, T 36,5 °C, peso 84 kg, IMC 29,4. Pies sin lesiones, pulsos pedios\npresentes, sensibilidad conservada con monofilamento.\n\nANÁLISIS\nDiabetes mellitus tipo 2 con control metabólico por evaluar; sobrepeso.\n\nDIAGNÓSTICOS\n- E119 Diabetes mellitus tipo 2 sin complicaciones\n- E780 Hipercolesterolemia pura\n\nÓRDENES\n- Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y\ntamizaje de nefropatía diabética.\nRESULTADOS\n- Hemoglobina glicosilada: 7,9 %. Interpretación: Control subóptimo; se ajusta dosis de metformina.\n\nPLAN DE MANEJO\n- Metformina 850 mg vía oral cada 12 horas con las comidas, por 90 días.\n- Atorvastatina 20 mg vía oral cada noche por 90 días.\n- Plan de alimentación y actividad física 150 minutos por semana.\n- Control en 90 días con resultados.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina general.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 18:29\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "IPS Centro Médico Sinú Sintético\nCódigo de habilitación 230010999901 · HISTORIA CLÍNICA DE CONSULTA EXTERNA\n\nDATOS DE IDENTIFICACIÓN\nNombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 58 años Sexo: masculino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1] Teléfono: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Nueva EPS Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 09:30\n\nMOTIVO DE CONSULTA\n«Vengo a control de la diabetes».\n\nENFERMEDAD ACTUAL\nPaciente con diabetes mellitus tipo 2 diagnosticada hace 6 años, en manejo con metformina. Refiere\nadherencia parcial y polidipsia leve en las últimas dos semanas. Niega hipoglucemias.\n\nANTECEDENTES\nPersonales: diabetes mellitus tipo 2, dislipidemia. Familiares: padre con diabetes. Alérgicos: penicilina.\n\nEXAMEN FÍSICO\nTA 130/84 mmHg, FC 80 lpm, FR 18 rpm, T 36,5 °C, peso 84 kg, IMC 29,4. Pies sin lesiones, pulsos pedios\npresentes, sensibilidad conservada con monofilamento.\n\nANÁLISIS\nDiabetes mellitus tipo 2 con control metabólico por evaluar; sobrepeso.\n\nDIAGNÓSTICOS\n- E119 Diabetes mellitus tipo 2 sin complicaciones\n- E780 Hipercolesterolemia pura\n\nÓRDENES\n- Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y\ntamizaje de nefropatía diabética.\nRESULTADOS\n- Hemoglobina glicosilada: 7,9 %. Interpretación: Control subóptimo; se ajusta dosis de metformina.\n\nPLAN DE MANEJO\n- Metformina 850 mg vía oral cada 12 horas con las comidas, por 90 días.\n- Atorvastatina 20 mg vía oral cada noche por 90 días.\n- Plan de alimentación y actividad física 150 minutos por semana.\n- Control en 90 días con resultados.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina\ngeneral. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 09:30\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "CORREO",
@@ -94,8 +94,42 @@
   "tiempos_ms": {
     "extraccion": 5,
     "anonimizacion": 3,
-    "total": 9
+    "analisis": 1623,
+    "total": 1654
   },
+  "puntaje": 9,
+  "nivel": "bajo",
+  "composicion": [
+    {
+      "familia": "SOP",
+      "nombre": "Soporte",
+      "puntos": 9
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-003-H01",
+      "historia_id": "HC-SINT-003",
+      "orden": 1,
+      "criterio_id": "SOP-03",
+      "criterio": "Resultados e interpretación",
+      "familia": "SOP",
+      "familia_nombre": "Soporte",
+      "severidad": "media",
+      "descripcion": "Se ordenaron creatinina y microalbuminuria y no se registran ni interpretan sus resultados en la historia, sin indicar que estén pendientes.",
+      "evidencia": "Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y tamizaje de nefropatía diabética.",
+      "seccion": "ÓRDENES / RESULTADOS",
+      "sustento": "Resolución 1995 de 1999, art. 11",
+      "recomendacion": "Registrar e interpretar los resultados de creatinina y microalbuminuria o dejar constancia expresa de que se encuentran pendientes.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 1,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -103,7 +137,7 @@
     },
     {
       "titulo": "DATOS DE IDENTIFICACIÓN",
-      "texto": "Nombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 58 años Sexo: masculino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1]o: [TELEFONO_1]\nCorreo: [CORREO_1]\nAseguradora: Nueva EPS Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 18:29"
+      "texto": "Nombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 58 años Sexo: masculino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1] Teléfono: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Nueva EPS Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 09:30"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -139,7 +173,7 @@
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina general.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 18:29\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina\ngeneral. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 09:30\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

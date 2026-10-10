@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-020",
   "archivo": "HC-SINT-020.pdf",
-  "hash": "8d7ee809ded951338aae1e632462c4018382b288b4f1a68cc430fca85e35ce20",
+  "hash": "f85990d99304bdb4a9dc3183df205a540da93d7f4df6ba216b39a500ddda9d3a",
   "paginas": 1,
   "plantilla": "D",
   "secciones_reconocidas": [
@@ -16,7 +16,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: RC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 3 años Sexo:\nfemenino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Salud Total Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 09:38 Curso de vida: primera infancia\nAcompañante: [PACIENTE_2] (madre)\n\nMOTIVO DE CONSULTA\nConsulta de valoración integral de primera infancia.\n\nENFERMEDAD ACTUAL\nNiña de 3 años traída por su madre para la valoración de la ruta de promoción y mantenimiento. Asintomática.\nAlimentación variada, duerme 10 horas.\n\nANTECEDENTES\nPerinatales: parto a término, peso al nacer 3.100 g. Vacunación: esquema completo para la edad según carné.\nAlérgicos: niega.\n\nEXAMEN FÍSICO\nPeso 14,2 kg, talla 95 cm, perímetro cefálico 49 cm, FC 104 lpm, FR 24 rpm, T 36,5 °C. Desarrollo acorde a la\nedad en las cuatro áreas de la escala abreviada.\n\nANÁLISIS\nNiña sana con crecimiento y desarrollo adecuados.\n\nDIAGNÓSTICOS\n- Z001 Control de salud de rutina del niño\n- Ecografía abdominal total.\n\nPLAN DE MANEJO\n- Continuar alimentación balanceada.\n- Próximo control a los 4 años.\n\nINTERVENCIONES DE LA RUTA\n- Educación en salud.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha de la anotación: [FECHA_2]\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: RC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 3 años Sexo:\nfemenino\nMunicipio de residencia: [LUGAR_1] Barrio: [LUGAR_2] de contacto: [TELEFONO_1]\nAseguradora: Mutual Ser Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 19:52 Curso de vida: primera infancia\nAcompañante: [PACIENTE_2] (madre)\n\nMOTIVO DE CONSULTA\nConsulta de valoración integral de primera infancia.\n\nENFERMEDAD ACTUAL\nNiña de 3 años traída por su madre para la valoración de la ruta de promoción y mantenimiento. Asintomática.\nAlimentación variada, duerme 10 horas.\n\nANTECEDENTES\nPerinatales: parto a término, peso al nacer 3.100 g. Vacunación: esquema completo para la edad según carné.\nAlérgicos: niega.\n\nEXAMEN FÍSICO\nPeso 14,2 kg, talla 95 cm, perímetro cefálico 49 cm, FC 104 lpm, FR 24 rpm, T 36,5 °C. Desarrollo acorde a la\nedad en las cuatro áreas de la escala abreviada.\n\nANÁLISIS\nNiña sana con crecimiento y desarrollo adecuados.\n\nDIAGNÓSTICOS\n- Control de salud de rutina del niño\n\nPLAN DE MANEJO\n- Continuar alimentación balanceada.\n- Próximo control a los 4 años.\n\nINTERVENCIONES DE LA RUTA\n- Valoración del desarrollo con escala abreviada.\n- Valoración nutricional con curvas de la OMS.\n- Verificación del esquema de vacunación.\n- Educación en salud a la cuidadora.\n- Aplicación de flúor barniz y valoración por odontología.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 19:52\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "DOCUMENTO",
@@ -74,11 +74,6 @@
       "ocurrencias": 1
     },
     {
-      "categoria": "REGISTRO",
-      "token": "[REGISTRO_1]",
-      "ocurrencias": 1
-    },
-    {
       "categoria": "TELEFONO",
       "token": "[TELEFONO_1]",
       "ocurrencias": 1
@@ -93,9 +88,99 @@
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
     "extraccion": 4,
-    "anonimizacion": 3,
-    "total": 8
+    "anonimizacion": 4,
+    "analisis": 3064,
+    "total": 3073
   },
+  "puntaje": 42,
+  "nivel": "medio",
+  "composicion": [
+    {
+      "familia": "COMP",
+      "nombre": "Completitud",
+      "puntos": 32
+    },
+    {
+      "familia": "IDP",
+      "nombre": "Identificación del prestador",
+      "puntos": 10
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-020-H01",
+      "historia_id": "HC-SINT-020",
+      "orden": 1,
+      "criterio_id": "COMP-05",
+      "criterio": "Diagnóstico codificado",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "alta",
+      "descripcion": "No se registra diagnóstico codificado con CIE-10; el diagnóstico aparece como texto libre sin código.",
+      "evidencia": "- Control de salud de rutina del niño",
+      "seccion": "DIAGNÓSTICOS",
+      "sustento": "Resolución 1995 de 1999, art. 10; Resolución 948 de 2026 (RIPS como soporte de la FEV)",
+      "recomendacion": "Registrar el diagnóstico con su código CIE-10 correspondiente.",
+      "confianza": 0.95,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-020-H02",
+      "historia_id": "HC-SINT-020",
+      "orden": 2,
+      "criterio_id": "COMP-03",
+      "criterio": "Antecedentes",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "baja",
+      "descripcion": "No se registran antecedentes familiares ni se declara explícitamente su ausencia; solo hay perinatales, vacunación y alérgicos.",
+      "evidencia": "Perinatales: parto a término, peso al nacer 3.100 g. Vacunación: esquema completo para la edad según carné.\nAlérgicos: niega.",
+      "seccion": "ANTECEDENTES",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Registrar antecedentes familiares o declarar explícitamente su ausencia.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-020-H03",
+      "historia_id": "HC-SINT-020",
+      "orden": 3,
+      "criterio_id": "IDP-02",
+      "criterio": "Registro profesional y especialidad",
+      "familia": "IDP",
+      "familia_nombre": "Identificación del prestador",
+      "severidad": "media",
+      "descripcion": "No se registra el número de registro profesional ni la especialidad o cargo del responsable de la atención.",
+      "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
+      "seccion": "PROFESIONAL",
+      "sustento": "Resolución 1995 de 1999, art. 5",
+      "recomendacion": "Registrar el número de registro profesional y la especialidad o cargo del profesional.",
+      "confianza": 0.9,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-020-H04",
+      "historia_id": "HC-SINT-020",
+      "orden": 4,
+      "criterio_id": "COMP-04",
+      "criterio": "Examen físico y signos vitales",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "media",
+      "descripcion": "El examen físico no incluye TA ni SatO2, y no consigna revisión por sistemas pertinente al motivo de consulta.",
+      "evidencia": "Peso 14,2 kg, talla 95 cm, perímetro cefálico 49 cm, FC 104 lpm, FR 24 rpm, T 36,5 °C. Desarrollo acorde a la\nedad en las cuatro áreas de la escala abreviada.",
+      "seccion": "EXAMEN FÍSICO",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Completar los signos vitales y la revisión pertinente al motivo de consulta.",
+      "confianza": 0.6,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 4,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -103,7 +188,7 @@
     },
     {
       "titulo": "IDENTIFICACIÓN DEL USUARIO",
-      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: RC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 3 años Sexo:\nfemenino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Salud Total Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 09:38 Curso de vida: primera infancia\nAcompañante: [PACIENTE_2] (madre)"
+      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: RC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 3 años Sexo:\nfemenino\nMunicipio de residencia: [LUGAR_1] Barrio: [LUGAR_2] de contacto: [TELEFONO_1]\nAseguradora: Mutual Ser Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 19:52 Curso de vida: primera infancia\nAcompañante: [PACIENTE_2] (madre)"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -127,7 +212,7 @@
     },
     {
       "titulo": "DIAGNÓSTICOS",
-      "texto": "- Z001 Control de salud de rutina del niño\n- Ecografía abdominal total."
+      "texto": "- Control de salud de rutina del niño"
     },
     {
       "titulo": "PLAN DE MANEJO",
@@ -135,11 +220,11 @@
     },
     {
       "titulo": "INTERVENCIONES DE LA RUTA",
-      "texto": "- Educación en salud."
+      "texto": "- Valoración del desarrollo con escala abreviada.\n- Valoración nutricional con curvas de la OMS.\n- Verificación del esquema de vacunación.\n- Educación en salud a la cuidadora.\n- Aplicación de flúor barniz y valoración por odontología."
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha de la anotación: [FECHA_2]\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 19:52\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

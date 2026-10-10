@@ -1,8 +1,8 @@
 {
   "_id": "HC-SINT-021",
   "archivo": "HC-SINT-021.pdf",
-  "hash": "99f233694f058463c1d494f19fec7d11a0dea5c3ccac5c5083d2568ea4f6077c",
-  "paginas": 1,
+  "hash": "2cae8d5be6ade293b82311f89a5964e1e6733593d3cf0b32453547ac532aed4e",
+  "paginas": 2,
   "plantilla": "D",
   "secciones_reconocidas": [
     "analisis",
@@ -17,7 +17,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 48 años Sexo:\nmasculino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Nueva EPS Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 18:26 Curso de vida: adultez\n\nMOTIVO DE CONSULTA\nConsulta de valoración integral del adulto.\n\nENFERMEDAD ACTUAL\nHombre de 48 años que asiste a la valoración de la ruta. Refiere sedentarismo y consumo ocasional de\nalcohol. Niega síntomas.\n\nANTECEDENTES\nPersonales: niega. Familiares: padre hipertenso. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 134/86 mmHg, FC 74 lpm, peso 88 kg, talla 172 cm, IMC 29,7, perímetro abdominal 101 cm.\n\nANÁLISIS\nAdulto con sobrepeso y riesgo cardiovascular por evaluar.\n\nDIAGNÓSTICOS\n- Z000 Examen médico general\n- E660 Obesidad debida a exceso de calorías\n\nÓRDENES\n- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta.\n\nPLAN DE MANEJO\n- Plan de actividad física y alimentación.\n- Control en 12 meses con resultados.\n\nINTERVENCIONES DE LA RUTA\n- Tamizaje de riesgo cardiovascular y metabólico.\n- Tamizaje de consumo de alcohol con cuestionario AUDIT.\n- Educación en estilos de vida saludables.\n- Valoración por odontología.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 18:26\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 48 años\nSexo: masculino\nMunicipio de residencia: [LUGAR_1] Barrio: [LUGAR_2] de contacto: [TELEFONO_1]\nAseguradora: Mutual Ser Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 15:02 Curso de vida: adultez\n\nMOTIVO DE CONSULTA\nConsulta de valoración integral del adulto.\n\nENFERMEDAD ACTUAL\nHombre de 48 años que asiste a la valoración de la ruta. Refiere sedentarismo y consumo ocasional de\nalcohol. Niega síntomas.\n\nANTECEDENTES\nPersonales: niega. Familiares: padre hipertenso. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 134/86 mmHg, FC 74 lpm, FR 16 rpm, T 36,4 °C, peso 88 kg, talla 172 cm, IMC 29,7, perímetro abdominal\n101 cm. Examen por sistemas sin hallazgos.\n\nANÁLISIS\nAdulto con sobrepeso y riesgo cardiovascular por evaluar.\n\nDIAGNÓSTICOS\n- Z000 Examen médico general\n- E660 Obesidad debida a exceso de calorías\n\nÓRDENES\n- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta.\nRESULTADOS\n- Glicemia y perfil lipídico: glicemia 104 mg/dL, colesterol total 228 mg/dL, triglicéridos 190 mg/dL.\nInterpretación: Glicemia alterada en ayunas y dislipidemia; se indica cambio de hábitos y control.\n\nPLAN DE MANEJO\n- Plan de actividad física y alimentación.\n- Control en 12 meses con resultados.\n\nINTERVENCIONES DE LA RUTA\n- Tamizaje de riesgo cardiovascular y metabólico.\n- Tamizaje de consumo de alcohol con cuestionario AUDIT.\n- Educación en estilos de vida saludables.\n- Valoración por odontología.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar. Firma\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1\nelectrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 15:02\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 2",
   "entidades": [
     {
       "categoria": "DOCUMENTO",
@@ -42,7 +42,7 @@
     {
       "categoria": "HISTORIA",
       "token": "[HISTORIA_1]",
-      "ocurrencias": 2
+      "ocurrencias": 3
     },
     {
       "categoria": "LUGAR",
@@ -57,7 +57,7 @@
     {
       "categoria": "LUGAR",
       "token": "[LUGAR_3]",
-      "ocurrencias": 2
+      "ocurrencias": 3
     },
     {
       "categoria": "MEDICO",
@@ -88,10 +88,44 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 4,
-    "anonimizacion": 3,
-    "total": 8
+    "extraccion": 5,
+    "anonimizacion": 11,
+    "analisis": 2141,
+    "total": 2158
   },
+  "puntaje": 8,
+  "nivel": "bajo",
+  "composicion": [
+    {
+      "familia": "SOP",
+      "nombre": "Soporte",
+      "puntos": 8
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-021-H01",
+      "historia_id": "HC-SINT-021",
+      "orden": 1,
+      "criterio_id": "SOP-03",
+      "criterio": "Resultados e interpretación",
+      "familia": "SOP",
+      "familia_nombre": "Soporte",
+      "severidad": "media",
+      "descripcion": "Se ordenaron ayudas diagnósticas (glicemia en ayunas y perfil lipídico) y la historia no registra el resultado ni la interpretación de todos los exámenes ordenados; solo se reportan glicemia, colesterol total y triglicéridos, sin el resto del perfil lipídico (HDL, LDL), y no se declara que estén pendientes.",
+      "evidencia": "- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta.",
+      "seccion": "ÓRDENES / RESULTADOS",
+      "sustento": "Resolución 1995 de 1999, art. 11",
+      "recomendacion": "Registrar e interpretar la totalidad de los resultados de las ayudas diagnósticas ordenadas o indicar expresamente que están pendientes.",
+      "confianza": 0.6,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 1,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -99,7 +133,7 @@
     },
     {
       "titulo": "IDENTIFICACIÓN DEL USUARIO",
-      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 48 años Sexo:\nmasculino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Nueva EPS Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 18:26 Curso de vida: adultez"
+      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 48 años\nSexo: masculino\nMunicipio de residencia: [LUGAR_1] Barrio: [LUGAR_2] de contacto: [TELEFONO_1]\nAseguradora: Mutual Ser Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 15:02 Curso de vida: adultez"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -115,7 +149,7 @@
     },
     {
       "titulo": "EXAMEN FÍSICO",
-      "texto": "TA 134/86 mmHg, FC 74 lpm, peso 88 kg, talla 172 cm, IMC 29,7, perímetro abdominal 101 cm."
+      "texto": "TA 134/86 mmHg, FC 74 lpm, FR 16 rpm, T 36,4 °C, peso 88 kg, talla 172 cm, IMC 29,7, perímetro abdominal\n101 cm. Examen por sistemas sin hallazgos."
     },
     {
       "titulo": "ANÁLISIS",
@@ -127,7 +161,7 @@
     },
     {
       "titulo": "ÓRDENES",
-      "texto": "- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta."
+      "texto": "- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta.\nRESULTADOS\n- Glicemia y perfil lipídico: glicemia 104 mg/dL, colesterol total 228 mg/dL, triglicéridos 190 mg/dL.\nInterpretación: Glicemia alterada en ayunas y dislipidemia; se indica cambio de hábitos y control."
     },
     {
       "titulo": "PLAN DE MANEJO",
@@ -139,7 +173,7 @@
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 18:26\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar. Firma\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1\nelectrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 15:02\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 2"
     }
   ]
 }

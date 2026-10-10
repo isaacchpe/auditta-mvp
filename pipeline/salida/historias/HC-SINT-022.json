@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-022",
   "archivo": "HC-SINT-022.pdf",
-  "hash": "e138f88211882386bc0a286c17f19981567408e3b762cda8dbc362cd38e5a9de",
+  "hash": "79cdc3ff0434ce363505bdf26519390bd389b6127c0f023d73f8c3d8a1b7e62a",
   "paginas": 1,
   "plantilla": "D",
   "secciones_reconocidas": [
@@ -16,7 +16,7 @@
     "ordenes",
     "profesional"
   ],
-  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 48 años Sexo:\nmasculino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Coosalud Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 14:05 Curso de vida: adultez\n\nMOTIVO DE CONSULTA\nConsulta de valoración integral del adulto.\n\nENFERMEDAD ACTUAL\nHombre de 48 años que asiste a la valoración de la ruta. Refiere sedentarismo y consumo ocasional de\nalcohol. Niega síntomas.\n\nANTECEDENTES\nPersonales: niega. Familiares: padre hipertenso. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 134/86 mmHg, FC 74 lpm, peso 88 kg, talla 172 cm, IMC 29,7, perímetro abdominal 101 cm.\n\nANÁLISIS\nAdulto con sobrepeso y riesgo cardiovascular por evaluar.\nSe realiza citología cervicouterina de tamizaje durante la consulta.\n\nDIAGNÓSTICOS\n- Z000 Examen médico general\n- E660 Obesidad debida a exceso de calorías\n\nÓRDENES\n- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta.\n\nINTERVENCIONES DE LA RUTA\n- Educación en salud.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 14:05\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "Centro de Salud Sintético de [LUGAR_3]\nCódigo de habilitación 230010999904 · REGISTRO DE ATENCIÓN DE PROMOCIÓN Y MANTENIMIENTO DE LA SALUD\n\nIDENTIFICACIÓN DEL USUARIO\nNombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 48 años\nSexo: masculino\nMunicipio de residencia: [LUGAR_1] Barrio: [LUGAR_2] de contacto: [TELEFONO_1]\nAseguradora: Sanitas Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 08:22 Curso de vida: adultez\n\nMOTIVO DE CONSULTA\nConsulta de valoración integral del adulto.\n\nENFERMEDAD ACTUAL\nHombre de 48 años que asiste a la valoración de la ruta. Refiere sedentarismo y consumo ocasional de\nalcohol. Niega síntomas.\n\nANTECEDENTES\nPersonales: niega. Familiares: padre hipertenso. Alérgicos: niega.\n\nEXAMEN FÍSICO\nExamen por sistemas sin hallazgos.\n\nANÁLISIS\nAdulto con sobrepeso y riesgo cardiovascular por evaluar.\n\nDIAGNÓSTICOS\n- Z000 Examen médico general\n- E660 Obesidad debida a exceso de calorías\n\nÓRDENES\n- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta.\nRESULTADOS\n- Glicemia y perfil lipídico: glicemia 104 mg/dL, colesterol total 228 mg/dL, triglicéridos 190 mg/dL.\nInterpretación: Glicemia alterada en ayunas y dislipidemia; se indica cambio de hábitos y control.\n\nINTERVENCIONES DE LA RUTA\n- Tamizaje de riesgo cardiovascular y metabólico.\n- Tamizaje de consumo de alcohol con cuestionario AUDIT.\n- Educación en estilos de vida saludables.\n- Valoración por odontología.\n\nPROFESIONAL\nEspecialidad: Medicina familiar. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 08:22\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "DOCUMENTO",
@@ -59,18 +59,8 @@
       "ocurrencias": 2
     },
     {
-      "categoria": "MEDICO",
-      "token": "[MEDICO_1]",
-      "ocurrencias": 1
-    },
-    {
       "categoria": "PACIENTE",
       "token": "[PACIENTE_1]",
-      "ocurrencias": 1
-    },
-    {
-      "categoria": "REGISTRO",
-      "token": "[REGISTRO_1]",
       "ocurrencias": 1
     },
     {
@@ -89,8 +79,81 @@
   "tiempos_ms": {
     "extraccion": 4,
     "anonimizacion": 3,
-    "total": 7
+    "analisis": 2429,
+    "total": 2437
   },
+  "puntaje": 37,
+  "nivel": "medio",
+  "composicion": [
+    {
+      "familia": "IDP",
+      "nombre": "Identificación del prestador",
+      "puntos": 27
+    },
+    {
+      "familia": "COMP",
+      "nombre": "Completitud",
+      "puntos": 10
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-022-H01",
+      "historia_id": "HC-SINT-022",
+      "orden": 1,
+      "criterio_id": "COMP-04",
+      "criterio": "Examen físico y signos vitales",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "media",
+      "descripcion": "El examen físico no registra signos vitales ni la revisión pertinente al motivo de consulta; solo se anota 'Examen por sistemas sin hallazgos'.",
+      "evidencia": "Examen por sistemas sin hallazgos.",
+      "seccion": "EXAMEN FÍSICO",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Registrar los signos vitales (TA, FC, FR, temperatura, SatO2) y los hallazgos del examen físico pertinentes a la valoración integral del adulto.",
+      "confianza": 0.9,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-022-H02",
+      "historia_id": "HC-SINT-022",
+      "orden": 2,
+      "criterio_id": "IDP-02",
+      "criterio": "Registro profesional y especialidad",
+      "familia": "IDP",
+      "familia_nombre": "Identificación del prestador",
+      "severidad": "media",
+      "descripcion": "No se registra el número de registro profesional del responsable de la atención; solo se indica la especialidad.",
+      "evidencia": "Especialidad: Medicina familiar. Firma electrónica registrada.",
+      "seccion": "PROFESIONAL",
+      "sustento": "Resolución 1995 de 1999, art. 5",
+      "recomendacion": "Registrar el número de registro profesional (tarjeta profesional o registro médico) junto con la especialidad del responsable de la atención.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-022-H03",
+      "historia_id": "HC-SINT-022",
+      "orden": 3,
+      "criterio_id": "IDP-01",
+      "criterio": "Nombre y firma del profesional",
+      "familia": "IDP",
+      "familia_nombre": "Identificación del prestador",
+      "severidad": "alta",
+      "descripcion": "La anotación no registra el nombre del profesional que la suscribe; solo se menciona la firma electrónica sin identificar al autor.",
+      "evidencia": "Especialidad: Medicina familiar. Firma electrónica registrada.",
+      "seccion": "PROFESIONAL",
+      "sustento": "Resolución 1995 de 1999, art. 5",
+      "recomendacion": "Registrar el nombre completo del profesional autor de la anotación, además de la firma.",
+      "confianza": 0.8,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 3,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -98,7 +161,7 @@
     },
     {
       "titulo": "IDENTIFICACIÓN DEL USUARIO",
-      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 48 años Sexo:\nmasculino\nMunicipio de residencia: [LUGAR_1]o: [LUGAR_2] Teléfono de contacto: [TELEFONO_1]\nAseguradora: Coosalud Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 14:05 Curso de vida: adultez"
+      "texto": "Nombre del usuario: [PACIENTE_1] y número de documento: CC [DOCUMENTO_1] Fecha de nacimiento: [FECHA_1] Edad: 48 años\nSexo: masculino\nMunicipio de residencia: [LUGAR_1] Barrio: [LUGAR_2] de contacto: [TELEFONO_1]\nAseguradora: Sanitas Historia clínica: [HISTORIA_1] Atención: [FACTURA_1]\nFecha de la atención: [FECHA_2], 08:22 Curso de vida: adultez"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -114,11 +177,11 @@
     },
     {
       "titulo": "EXAMEN FÍSICO",
-      "texto": "TA 134/86 mmHg, FC 74 lpm, peso 88 kg, talla 172 cm, IMC 29,7, perímetro abdominal 101 cm."
+      "texto": "Examen por sistemas sin hallazgos."
     },
     {
       "titulo": "ANÁLISIS",
-      "texto": "Adulto con sobrepeso y riesgo cardiovascular por evaluar.\nSe realiza citología cervicouterina de tamizaje durante la consulta."
+      "texto": "Adulto con sobrepeso y riesgo cardiovascular por evaluar."
     },
     {
       "titulo": "DIAGNÓSTICOS",
@@ -126,15 +189,15 @@
     },
     {
       "titulo": "ÓRDENES",
-      "texto": "- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta."
+      "texto": "- Glicemia en ayunas y perfil lipídico. Justificación: Tamizaje de riesgo cardiovascular y metabólico de la ruta.\nRESULTADOS\n- Glicemia y perfil lipídico: glicemia 104 mg/dL, colesterol total 228 mg/dL, triglicéridos 190 mg/dL.\nInterpretación: Glicemia alterada en ayunas y dislipidemia; se indica cambio de hábitos y control."
     },
     {
       "titulo": "INTERVENCIONES DE LA RUTA",
-      "texto": "- Educación en salud."
+      "texto": "- Tamizaje de riesgo cardiovascular y metabólico.\n- Tamizaje de consumo de alcohol con cuestionario AUDIT.\n- Educación en estilos de vida saludables.\n- Valoración por odontología."
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina familiar.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 14:05\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Especialidad: Medicina familiar. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 08:22\nCentro de Salud Sintético de [LUGAR_3] · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

@@ -1,12 +1,11 @@
 {
   "_id": "HC-SINT-004",
   "archivo": "HC-SINT-004.pdf",
-  "hash": "f2818208cdb809543048d45f5a7f3e1b0d3894f837104c42e7dafcaa24f70cd0",
+  "hash": "c7082296c7472a5ffbed7cd08fab1c54e305345b7abe4b611fb1e39d793098a6",
   "paginas": 1,
   "plantilla": "A",
   "secciones_reconocidas": [
     "analisis",
-    "antecedentes",
     "diagnosticos",
     "enfermedad_actual",
     "examen_fisico",
@@ -16,7 +15,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "IPS Centro Médico Sinú Sintético\nCódigo de habilitación 230010999901 · HISTORIA CLÍNICA DE CONSULTA EXTERNA\n\nDATOS DE IDENTIFICACIÓN\nNombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 58 años Sexo: masculino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1]o: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Nueva EPS Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 08:28\n\nMOTIVO DE CONSULTA\n«Vengo a control de la diabetes».\n\nENFERMEDAD ACTUAL\nPaciente con diabetes mellitus tipo 2 diagnosticada hace 6 años, en manejo con metformina. Refiere\nadherencia parcial y polidipsia leve en las últimas dos semanas. Niega hipoglucemias.\n\nANTECEDENTES\nPersonales: diabetes mellitus tipo 2, dislipidemia. Familiares: padre con diabetes. Alérgicos: penicilina.\n\nEXAMEN FÍSICO\nTA 130/84 mmHg, FC 80 lpm, FR 18 rpm, T 36,5 °C, peso 84 kg, IMC 29,4. Pies sin lesiones, pulsos pedios\npresentes, sensibilidad conservada con monofilamento.\n\nANÁLISIS\nDiabetes mellitus tipo 2 con control metabólico por evaluar; sobrepeso.\nSe realiza citología cervicouterina de tamizaje durante la consulta.\n\nDIAGNÓSTICOS\n- E119 Diabetes mellitus tipo 2 sin complicaciones\n- E780 Hipercolesterolemia pura\n\nÓRDENES\n- Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y\ntamizaje de nefropatía diabética.\nRESULTADOS\n- Hemoglobina glicosilada: 7,9 %. Interpretación: Control subóptimo; se ajusta dosis de metformina.\n\nPLAN DE MANEJO\n- Metformina 850 mg.\n- Atorvastatina 20 mg.\n- Plan de alimentación y actividad física 150 minutos por semana.\n- Control en 90 días con resultados.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina general.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 08:28\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "IPS Centro Médico Sinú Sintético\nCódigo de habilitación 230010999901 · HISTORIA CLÍNICA DE CONSULTA EXTERNA\n\nDATOS DE IDENTIFICACIÓN\nNombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 58 años Sexo: masculino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1] Teléfono: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Nueva EPS Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 14:58\n\nMOTIVO DE CONSULTA\n«Vengo a control de la diabetes».\n\nENFERMEDAD ACTUAL\nPaciente con diabetes mellitus tipo 2 diagnosticada hace 6 años, en manejo con metformina. Refiere\nadherencia parcial y polidipsia leve en las últimas dos semanas. Niega hipoglucemias.\n\nEXAMEN FÍSICO\nTA 130/84 mmHg, FC 80 lpm, FR 18 rpm, T 36,5 °C, peso 84 kg, IMC 29,4. Pies sin lesiones, pulsos pedios\npresentes, sensibilidad conservada con monofilamento.\n\nANÁLISIS\nDiabetes mellitus tipo 2 con control metabólico por evaluar; sobrepeso.\n\nDIAGNÓSTICOS\n- E119 Diabetes mellitus tipo 2 sin complicaciones\n- E780 Hipercolesterolemia pura\n\nÓRDENES\n- Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y\ntamizaje de nefropatía diabética.\n- Terapia física, 10 sesiones.\nRESULTADOS\n- Hemoglobina glicosilada: 7,9 %. Interpretación: Control subóptimo; se ajusta dosis de metformina.\n\nPLAN DE MANEJO\n- Metformina 850 mg vía oral cada 12 horas con las comidas, por 90 días.\n- Atorvastatina 20 mg vía oral cada noche por 90 días.\n- Plan de alimentación y actividad física 150 minutos por semana.\n- Control en 90 días con resultados.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina general.\nFirma electrónica registrada.\nFecha de la anotación: [FECHA_2]\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "CORREO",
@@ -92,10 +91,105 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 4,
-    "anonimizacion": 3,
-    "total": 8
+    "extraccion": 6,
+    "anonimizacion": 5,
+    "analisis": 2961,
+    "total": 2973
   },
+  "puntaje": 39,
+  "nivel": "medio",
+  "composicion": [
+    {
+      "familia": "PERT",
+      "nombre": "Pertinencia",
+      "puntos": 26
+    },
+    {
+      "familia": "SOP",
+      "nombre": "Soporte",
+      "puntos": 9
+    },
+    {
+      "familia": "COMP",
+      "nombre": "Completitud",
+      "puntos": 4
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-004-H01",
+      "historia_id": "HC-SINT-004",
+      "orden": 1,
+      "criterio_id": "COMP-03",
+      "criterio": "Antecedentes",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "baja",
+      "descripcion": "La historia no registra antecedentes personales, familiares ni alérgicos, ni declara de forma explícita su ausencia.",
+      "evidencia": "Paciente con diabetes mellitus tipo 2 diagnosticada hace 6 años, en manejo con metformina. Refiere adherencia parcial y polidipsia leve en las últimas dos semanas. Niega hipoglucemias.",
+      "seccion": "ENFERMEDAD ACTUAL",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Registrar una sección de antecedentes personales, familiares y alérgicos, o declarar explícitamente su ausencia.",
+      "confianza": 0.9,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-004-H02",
+      "historia_id": "HC-SINT-004",
+      "orden": 2,
+      "criterio_id": "SOP-03",
+      "criterio": "Resultados e interpretación",
+      "familia": "SOP",
+      "familia_nombre": "Soporte",
+      "severidad": "media",
+      "descripcion": "Se ordenaron creatinina y microalbuminuria y no se registra su resultado ni interpretación, ni se indica que estén pendientes.",
+      "evidencia": "Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y tamizaje de nefropatía diabética.",
+      "seccion": "ÓRDENES",
+      "sustento": "Resolución 1995 de 1999, art. 11",
+      "recomendacion": "Registrar e interpretar los resultados de creatinina y microalbuminuria o indicar expresamente que están pendientes.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-004-H03",
+      "historia_id": "HC-SINT-004",
+      "orden": 3,
+      "criterio_id": "PERT-01",
+      "criterio": "Justificación clínica del servicio",
+      "familia": "PERT",
+      "familia_nombre": "Pertinencia",
+      "severidad": "alta",
+      "descripcion": "Se ordena terapia física (10 sesiones) sin justificación clínica registrada.",
+      "evidencia": "Terapia física, 10 sesiones.",
+      "seccion": "ÓRDENES",
+      "sustento": "Resolución 1995 de 1999, art. 3; Resolución 2284 de 2023, manual único de glosas (pertinencia)",
+      "recomendacion": "Registrar la justificación clínica de la terapia física ordenada.",
+      "confianza": 0.8,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-004-H04",
+      "historia_id": "HC-SINT-004",
+      "orden": 4,
+      "criterio_id": "PERT-02",
+      "criterio": "Indicación de ayudas diagnósticas",
+      "familia": "PERT",
+      "familia_nombre": "Pertinencia",
+      "severidad": "media",
+      "descripcion": "Se ordena hemoglobina glicosilada sin indicación clínica explícita en la orden.",
+      "evidencia": "Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y tamizaje de nefropatía diabética.",
+      "seccion": "ÓRDENES",
+      "sustento": "Resolución 2284 de 2023, manual único de glosas (pertinencia)",
+      "recomendacion": "Registrar la indicación clínica individual de la hemoglobina glicosilada.",
+      "confianza": 0.6,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 4,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -103,7 +197,7 @@
     },
     {
       "titulo": "DATOS DE IDENTIFICACIÓN",
-      "texto": "Nombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 58 años Sexo: masculino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1]o: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Nueva EPS Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 08:28"
+      "texto": "Nombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 58 años Sexo: masculino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1] Teléfono: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Nueva EPS Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 14:58"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -114,16 +208,12 @@
       "texto": "Paciente con diabetes mellitus tipo 2 diagnosticada hace 6 años, en manejo con metformina. Refiere\nadherencia parcial y polidipsia leve en las últimas dos semanas. Niega hipoglucemias."
     },
     {
-      "titulo": "ANTECEDENTES",
-      "texto": "Personales: diabetes mellitus tipo 2, dislipidemia. Familiares: padre con diabetes. Alérgicos: penicilina."
-    },
-    {
       "titulo": "EXAMEN FÍSICO",
       "texto": "TA 130/84 mmHg, FC 80 lpm, FR 18 rpm, T 36,5 °C, peso 84 kg, IMC 29,4. Pies sin lesiones, pulsos pedios\npresentes, sensibilidad conservada con monofilamento."
     },
     {
       "titulo": "ANÁLISIS",
-      "texto": "Diabetes mellitus tipo 2 con control metabólico por evaluar; sobrepeso.\nSe realiza citología cervicouterina de tamizaje durante la consulta."
+      "texto": "Diabetes mellitus tipo 2 con control metabólico por evaluar; sobrepeso."
     },
     {
       "titulo": "DIAGNÓSTICOS",
@@ -131,15 +221,15 @@
     },
     {
       "titulo": "ÓRDENES",
-      "texto": "- Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y\ntamizaje de nefropatía diabética.\nRESULTADOS\n- Hemoglobina glicosilada: 7,9 %. Interpretación: Control subóptimo; se ajusta dosis de metformina."
+      "texto": "- Hemoglobina glicosilada, creatinina y microalbuminuria. Justificación: Seguimiento del control metabólico y\ntamizaje de nefropatía diabética.\n- Terapia física, 10 sesiones.\nRESULTADOS\n- Hemoglobina glicosilada: 7,9 %. Interpretación: Control subóptimo; se ajusta dosis de metformina."
     },
     {
       "titulo": "PLAN DE MANEJO",
-      "texto": "- Metformina 850 mg.\n- Atorvastatina 20 mg.\n- Plan de alimentación y actividad física 150 minutos por semana.\n- Control en 90 días con resultados."
+      "texto": "- Metformina 850 mg vía oral cada 12 horas con las comidas, por 90 días.\n- Atorvastatina 20 mg vía oral cada noche por 90 días.\n- Plan de alimentación y actividad física 150 minutos por semana.\n- Control en 90 días con resultados."
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina general.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 08:28\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina general.\nFirma electrónica registrada.\nFecha de la anotación: [FECHA_2]\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

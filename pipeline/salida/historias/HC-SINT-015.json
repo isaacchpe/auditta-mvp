@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-015",
   "archivo": "HC-SINT-015.pdf",
-  "hash": "0528c7ddda4f5bb38f4d7778369ccdd27da538c69d710c4ca84253e0645caf89",
+  "hash": "7662f4d95834b74bdc4c9499575f25d3b8891986edc443c9d5caf0147cfcb239",
   "paginas": 2,
   "plantilla": "C",
   "secciones_reconocidas": [
@@ -19,7 +19,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "ESE Hospital Sintético San Jerónimo\nCódigo de habilitación 230010999903 · HISTORIA CLÍNICA DE HOSPITALIZACIÓN\n\nDATOS DEL PACIENTE\nUSUARIO: [PACIENTE_1]O: CC [DOCUMENTO_1] EDAD: 63 años SEXO:\nMASCULINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1]N: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Mutual Ser HISTORIA: [HISTORIA_1] EPISODIO:\n[FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 12:05 SERVICIO: HOSPITALIZACIÓN\n\nMOTIVO DE CONSULTA\n«Dolor fuerte en la barriga del lado derecho».\n\nENFERMEDAD ACTUAL\nDolor en hipocondrio derecho de 24 horas, intensidad 8/10, irradiado a la espalda, con vómito en tres\nocasiones y fiebre subjetiva. Intolerancia a grasas de larga data.\nSegún refiere su familiar [PACIENTE_3], el cuadro empeoró en las últimas horas.\n\nANTECEDENTES\nPersonales: colelitiasis conocida hace dos años. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 132/86 mmHg, FC 102 lpm, FR 20 rpm, T 38,4 °C. Signo de Murphy positivo, sin signos de irritación\nperitoneal generalizada.\n\nANÁLISIS\nColecistitis aguda litiásica; se hospitaliza para manejo quirúrgico.\n\nDIAGNÓSTICOS\n- K810 Colecistitis aguda\n- K802 Cálculo de la vesícula biliar sin colecistitis\n\nÓRDENES\n- Ecografía hepatobiliar. Justificación: Dolor en hipocondrio derecho con Murphy positivo.\n- Hemograma, bilirrubinas, transaminasas. Justificación: Evaluar respuesta inflamatoria y descartar colestasis.\n- Colecistectomía laparoscópica. Justificación: Colecistitis aguda litiásica confirmada por ecografía.\nRESULTADOS\n- Ecografía hepatobiliar: vesícula distendida, pared de 6 mm, cálculo de 18 mm en el cuello. Interpretación:\nConfirma colecistitis aguda litiásica.\n- Hemograma: leucocitos 14.800. Interpretación: Respuesta inflamatoria.\n\nCONSENTIMIENTO INFORMADO\nEl paciente o su representante recibe información sobre el procedimiento Colecistectomía laparoscópica bajo\nanestesia general, sus riesgos y alternativas, y firma el consentimiento, que se anexa a la historia.\n\nPLAN DE MANEJO\n- Nada vía oral.\n- Lactato de Ringer 1.000 mL intravenoso cada 8 horas.\n- Ampicilina sulbactam 3 g intravenoso cada 6 horas.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 1\n- Colecistectomía laparoscópica.\n\nEVOLUCIÓN\n[FECHA_3] 10:21 · Día 2: Colecistectomía laparoscópica sin complicaciones, sangrado de 30 mL. Tolera vía oral\nlíquida.\n[FECHA_4] 19:07 · Día 3: Dolor controlado, deambula, heridas limpias.\n\nEPICRISIS\n[FECHA_5] · Día 3: Egreso. Diagnóstico de egreso: colecistitis aguda litiásica, posoperatorio de colecistectomía\nlaparoscópica. Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8 días con patología.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Ginecología. Firma:\n____________\nFecha y hora de la anotación: [FECHA_2] 12:05\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 2",
+  "texto_anonimizado": "ESE Hospital Sintético San Jerónimo\nCódigo de habilitación 230010999903 · HISTORIA CLÍNICA DE HOSPITALIZACIÓN\n\nDATOS DEL PACIENTE\nUSUARIO: [PACIENTE_1] DOCUMENTO: CC [DOCUMENTO_1] EDAD: 63 años\nSEXO: MASCULINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1] DIRECCIÓN: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Salud Total HISTORIA: [HISTORIA_1] EPISODIO:\n[FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 20:29 SERVICIO: HOSPITALIZACIÓN\n\nMOTIVO DE CONSULTA\n«Dolor fuerte en la barriga del lado derecho».\n\nENFERMEDAD ACTUAL\nDolor en hipocondrio derecho de 24 horas, intensidad 8/10, irradiado a la espalda, con vómito en tres\nocasiones y fiebre subjetiva. Intolerancia a grasas de larga data.\nSegún refiere su familiar [PACIENTE_2], el cuadro empeoró en las últimas horas.\n\nANTECEDENTES\nPersonales: colelitiasis conocida hace dos años. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 132/86 mmHg, FC 102 lpm, FR 20 rpm, T 38,4 °C. Signo de Murphy positivo, sin signos de irritación\nperitoneal generalizada.\n\nANÁLISIS\nColecistitis aguda litiásica; se hospitaliza para manejo quirúrgico.\n\nDIAGNÓSTICOS\n- K810 Colecistitis aguda\n- K802 Cálculo de la vesícula biliar sin colecistitis\n\nÓRDENES\n- Ecografía hepatobiliar. Justificación: Dolor en hipocondrio derecho con Murphy positivo.\n- Hemograma, bilirrubinas, transaminasas. Justificación: Evaluar respuesta inflamatoria y descartar colestasis.\n- Colecistectomía laparoscópica. Justificación: Colecistitis aguda litiásica confirmada por ecografía.\nRESULTADOS\n- Ecografía hepatobiliar: vesícula distendida, pared de 6 mm, cálculo de 18 mm en el cuello. Interpretación:\nConfirma colecistitis aguda litiásica.\n- Hemograma: leucocitos 14.800. Interpretación: Respuesta inflamatoria.\n\nCONSENTIMIENTO INFORMADO\nEl paciente o su representante recibe información sobre el procedimiento Colecistectomía laparoscópica bajo\nanestesia general, sus riesgos y alternativas, y firma el consentimiento, que se anexa a la historia.\n\nPLAN DE MANEJO\n- Nada vía oral.\n- Lactato de Ringer 1.000 mL intravenoso cada 8 horas.\n- Ampicilina sulbactam 3 g intravenoso cada 6 horas.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 1\n- Colecistectomía laparoscópica.\n\nEVOLUCIÓN\n[FECHA_3] 16:47 · Día 2: Colecistectomía laparoscópica sin complicaciones, sangrado de 30 mL. Tolera vía oral\nlíquida.\n[FECHA_4] 08:27 · Día 3: Dolor controlado, deambula, heridas limpias.\n\nEPICRISIS\n[FECHA_5] 12:21 · Día 3: Egreso. Diagnóstico de egreso: colecistitis aguda litiásica, posoperatorio de\ncolecistectomía laparoscópica. Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8\ndías con patología.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Cirugía general. Firma\nelectrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 20:29\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 2",
   "entidades": [
     {
       "categoria": "DIRECCION",
@@ -79,16 +79,11 @@
     {
       "categoria": "PACIENTE",
       "token": "[PACIENTE_1]",
-      "ocurrencias": 1
+      "ocurrencias": 3
     },
     {
       "categoria": "PACIENTE",
       "token": "[PACIENTE_2]",
-      "ocurrencias": 2
-    },
-    {
-      "categoria": "PACIENTE",
-      "token": "[PACIENTE_3]",
       "ocurrencias": 1
     },
     {
@@ -111,9 +106,43 @@
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
     "extraccion": 5,
-    "anonimizacion": 5,
-    "total": 11
+    "anonimizacion": 7,
+    "analisis": 2001,
+    "total": 2014
   },
+  "puntaje": 9,
+  "nivel": "bajo",
+  "composicion": [
+    {
+      "familia": "COH",
+      "nombre": "Coherencia",
+      "puntos": 9
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-015-H01",
+      "historia_id": "HC-SINT-015",
+      "orden": 1,
+      "criterio_id": "COH-03",
+      "criterio": "Formulación completa",
+      "familia": "COH",
+      "familia_nombre": "Coherencia",
+      "severidad": "media",
+      "descripcion": "El medicamento acetaminofén formulado en el plan de egreso no registra la vía de administración.",
+      "evidencia": "Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8 días con patología.",
+      "seccion": "EPICRISIS",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Registrar la vía de administración del acetaminofén formulado.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 1,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -121,7 +150,7 @@
     },
     {
       "titulo": "DATOS DEL PACIENTE",
-      "texto": "USUARIO: [PACIENTE_1]O: CC [DOCUMENTO_1] EDAD: 63 años SEXO:\nMASCULINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1]N: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Mutual Ser HISTORIA: [HISTORIA_1] EPISODIO:\n[FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 12:05 SERVICIO: HOSPITALIZACIÓN"
+      "texto": "USUARIO: [PACIENTE_1] DOCUMENTO: CC [DOCUMENTO_1] EDAD: 63 años\nSEXO: MASCULINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1] DIRECCIÓN: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Salud Total HISTORIA: [HISTORIA_1] EPISODIO:\n[FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 20:29 SERVICIO: HOSPITALIZACIÓN"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -129,7 +158,7 @@
     },
     {
       "titulo": "ENFERMEDAD ACTUAL",
-      "texto": "Dolor en hipocondrio derecho de 24 horas, intensidad 8/10, irradiado a la espalda, con vómito en tres\nocasiones y fiebre subjetiva. Intolerancia a grasas de larga data.\nSegún refiere su familiar [PACIENTE_3], el cuadro empeoró en las últimas horas."
+      "texto": "Dolor en hipocondrio derecho de 24 horas, intensidad 8/10, irradiado a la espalda, con vómito en tres\nocasiones y fiebre subjetiva. Intolerancia a grasas de larga data.\nSegún refiere su familiar [PACIENTE_2], el cuadro empeoró en las últimas horas."
     },
     {
       "titulo": "ANTECEDENTES",
@@ -157,19 +186,19 @@
     },
     {
       "titulo": "PLAN DE MANEJO",
-      "texto": "- Nada vía oral.\n- Lactato de Ringer 1.000 mL intravenoso cada 8 horas.\n- Ampicilina sulbactam 3 g intravenoso cada 6 horas.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 1\n- Colecistectomía laparoscópica."
+      "texto": "- Nada vía oral.\n- Lactato de Ringer 1.000 mL intravenoso cada 8 horas.\n- Ampicilina sulbactam 3 g intravenoso cada 6 horas.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 1\n- Colecistectomía laparoscópica."
     },
     {
       "titulo": "EVOLUCIÓN",
-      "texto": "[FECHA_3] 10:21 · Día 2: Colecistectomía laparoscópica sin complicaciones, sangrado de 30 mL. Tolera vía oral\nlíquida.\n[FECHA_4] 19:07 · Día 3: Dolor controlado, deambula, heridas limpias."
+      "texto": "[FECHA_3] 16:47 · Día 2: Colecistectomía laparoscópica sin complicaciones, sangrado de 30 mL. Tolera vía oral\nlíquida.\n[FECHA_4] 08:27 · Día 3: Dolor controlado, deambula, heridas limpias."
     },
     {
       "titulo": "EPICRISIS",
-      "texto": "[FECHA_5] · Día 3: Egreso. Diagnóstico de egreso: colecistitis aguda litiásica, posoperatorio de colecistectomía\nlaparoscópica. Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8 días con patología."
+      "texto": "[FECHA_5] 12:21 · Día 3: Egreso. Diagnóstico de egreso: colecistitis aguda litiásica, posoperatorio de\ncolecistectomía laparoscópica. Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8\ndías con patología."
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Ginecología. Firma:\n____________\nFecha y hora de la anotación: [FECHA_2] 12:05\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 2"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Cirugía general. Firma\nelectrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 20:29\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 2"
     }
   ]
 }

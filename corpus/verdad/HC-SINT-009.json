@@ -11,55 +11,55 @@
   "identificadores": [
     {
       "categoria": "PACIENTE",
-      "valor": "Diana Valentina Castro Ramirez"
+      "valor": "Rosa Sofia Acosta Ruiz"
     },
     {
       "categoria": "DOCUMENTO",
-      "valor": "1060232708"
+      "valor": "1064376476"
     },
     {
       "categoria": "FECHA",
-      "valor": "2018-07-15"
+      "valor": "2019-01-29"
     },
     {
       "categoria": "TELEFONO",
-      "valor": "316 115 1938"
+      "valor": "300 521 5211"
     },
     {
       "categoria": "DIRECCION",
-      "valor": "Calle 25 # 6-49"
+      "valor": "Transversal 10 # 8-22"
     },
     {
       "categoria": "LUGAR",
-      "valor": "Cereté"
+      "valor": "Sahagún"
     },
     {
       "categoria": "LUGAR",
-      "valor": "Buenavista"
+      "valor": "La Castellana"
     },
     {
       "categoria": "MEDICO",
-      "valor": "Nicolas Hernan Urango Villadiego"
+      "valor": "Martha Viviana Ricardo Sierra"
     },
     {
       "categoria": "REGISTRO",
-      "valor": "RM-95815"
+      "valor": "RM-55915"
     },
     {
       "categoria": "HISTORIA",
-      "valor": "HC-2026-1622"
+      "valor": "HC-2026-6160"
     },
     {
       "categoria": "FACTURA",
-      "valor": "ADM-523824"
+      "valor": "ADM-917634"
     },
     {
       "categoria": "FECHA",
-      "valor": "2026-02-10"
+      "valor": "2026-06-09"
     },
     {
       "categoria": "PACIENTE",
-      "valor": "Nubia Carolina Tordecilla Montes"
+      "valor": "Nubia Estefania Valencia Lopez"
     }
   ],
   "paginas": 1,

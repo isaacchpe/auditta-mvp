@@ -4,9 +4,8 @@
   "sexo": "femenino",
   "edad": 46,
   "defectos": [
-    "COH-03",
-    "COMP-05",
-    "OPO-01"
+    "IDP-02",
+    "SOP-03"
   ],
   "contexto": {
     "promocion_mantenimiento": false,
@@ -15,55 +14,55 @@
   "identificadores": [
     {
       "categoria": "PACIENTE",
-      "valor": "Alejandra Alejandra Montes Hoyos"
+      "valor": "Milena Cecilia Salazar Hernandez"
     },
     {
       "categoria": "DOCUMENTO",
-      "valor": "1053522449"
+      "valor": "1048793812"
     },
     {
       "categoria": "FECHA",
-      "valor": "03/03/1980"
+      "valor": "07/10/1979"
     },
     {
       "categoria": "TELEFONO",
-      "valor": "318 921 9045"
+      "valor": "306 699 9166"
     },
     {
       "categoria": "DIRECCION",
-      "valor": "Transversal 43 # 21-63"
+      "valor": "Calle 37 # 37-86"
     },
     {
       "categoria": "LUGAR",
-      "valor": "Valledupar"
+      "valor": "Corozal"
     },
     {
       "categoria": "LUGAR",
-      "valor": "El Prado"
+      "valor": "Villa Olímpica"
     },
     {
       "categoria": "MEDICO",
-      "valor": "Cecilia Natalia Reyes Perez"
+      "valor": "Eduardo Alvaro Negrete Pacheco"
     },
     {
       "categoria": "REGISTRO",
-      "valor": "RM-78579"
+      "valor": "RM-77893"
     },
     {
       "categoria": "HISTORIA",
-      "valor": "HC-2026-2680"
+      "valor": "HC-2026-1415"
     },
     {
       "categoria": "FACTURA",
-      "valor": "ADM-852151"
+      "valor": "ADM-703472"
     },
     {
       "categoria": "FECHA",
-      "valor": "01/05/2026"
+      "valor": "10/05/2026"
     },
     {
       "categoria": "CORREO",
-      "valor": "alejandra.montes80@correo-ejemplo.co"
+      "valor": "milena.salazar29@correo-ejemplo.co"
     }
   ],
   "paginas": 1,

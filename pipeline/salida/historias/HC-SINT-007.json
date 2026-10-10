@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-007",
   "archivo": "HC-SINT-007.pdf",
-  "hash": "3efc309adc9932ad1e2c4f67d6ec19541a70cf73df1adf1ade97d731aa59b2db",
+  "hash": "83c5c3eee5a689e0b4ccd00840513ab03a1a53f42f7ffd32300e655ef171ee16",
   "paginas": 2,
   "plantilla": "B",
   "secciones_reconocidas": [
@@ -16,7 +16,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS\n\nIDENTIFICACIÓN DEL PACIENTE\nPaciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 54 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Salud Total HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 15:13\n\nMOTIVO DE CONSULTA\n«Dolor en el pecho desde hace dos horas».\n\nENFERMEDAD ACTUAL\nDolor torácico opresivo de dos horas de evolución, irradiado al brazo izquierdo, asociado a sudoración. Niega\nepisodios previos.\n\nANTECEDENTES\nPersonales: hipertensión arterial en manejo con losartán 50 mg cada 12 horas. Familiares: hermano con infarto\na los 60 años. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 150/95 mmHg, FC 98 lpm, FR 20 rpm, SatO2 94 % al aire ambiente, T 36,8 °C. Ruidos cardíacos rítmicos\nsin soplos, pulmones bien ventilados.\n\nANÁLISIS\nSíndrome coronario agudo a descartar; se inicia protocolo de dolor torácico.\n\nDIAGNÓSTICOS\n- I200 Angina inestable\n- I10X Hipertensión esencial\n\nÓRDENES\n- Electrocardiograma de 12 derivaciones. Justificación: Dolor torácico con sospecha de síndrome coronario\nagudo.\n- Troponina I seriada. Justificación: Descartar necrosis miocárdica.\nRESULTADOS\n- Electrocardiograma: ritmo sinusal, infradesnivel del ST en DII, DIII y aVF. Interpretación: Isquemia de cara\ninferior.\n- Troponina I: 0,08 ng/mL. Interpretación: Elevada; se confirma síndrome coronario agudo.\nInterconsulta a Medicina interna. Motivo: Síndrome coronario agudo con troponina elevada para definir\nmanejo.\n\nPLAN DE MANEJO\n- Ácido acetilsalicílico 300 mg vía oral dosis única.\n- Oxígeno por cánula nasal a 2 litros por minuto.\n- Monitoreo continuo y control de signos vitales cada hora.\n- Valoración por medicina interna.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma: ____________\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1\nFecha y hora de la anotación: [FECHA_2] 15:13\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 2",
+  "texto_anonimizado": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS\n\nIDENTIFICACIÓN DEL PACIENTE\nPaciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 54 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Salud Total HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 15:13\n\nMOTIVO DE CONSULTA\n«Dolor en el pecho desde hace dos horas».\n\nENFERMEDAD ACTUAL\nDolor torácico opresivo de dos horas de evolución, irradiado al brazo izquierdo, asociado a sudoración. Niega\nepisodios previos.\n\nANTECEDENTES\nPersonales: hipertensión arterial en manejo con losartán 50 mg cada 12 horas. Familiares: hermano con infarto\na los 60 años. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 150/95 mmHg, FC 98 lpm, FR 20 rpm, SatO2 94 % al aire ambiente, T 36,8 °C. Ruidos cardíacos rítmicos\nsin soplos, pulmones bien ventilados.\n\nANÁLISIS\nSíndrome coronario agudo a descartar; se inicia protocolo de dolor torácico.\n\nDIAGNÓSTICOS\n- I200 Angina inestable\n- I10X Hipertensión esencial\n\nÓRDENES\n- Electrocardiograma de 12 derivaciones. Justificación: Dolor torácico con sospecha de síndrome coronario\nagudo.\n- Troponina I seriada. Justificación: Descartar necrosis miocárdica.\nRESULTADOS\n- Electrocardiograma: ritmo sinusal, infradesnivel del ST en DII, DIII y aVF. Interpretación: Isquemia de cara\ninferior.\n- Troponina I: 0,08 ng/mL. Interpretación: Elevada; se confirma síndrome coronario agudo.\nInterconsulta a Medicina interna. Motivo: Síndrome coronario agudo con troponina elevada para definir\nmanejo.\n\nPLAN DE MANEJO\n- Ácido acetilsalicílico 300 mg vía oral dosis única.\n- Oxígeno por cánula nasal a 2 litros por minuto.\n- Monitoreo continuo y control de signos vitales cada hora.\n- Valoración por medicina interna.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma electrónica registrada.\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1\nFecha y hora de la anotación: [FECHA_2] 15:13\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 2",
   "entidades": [
     {
       "categoria": "DOCUMENTO",
@@ -82,10 +82,20 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 4,
+    "extraccion": 5,
     "anonimizacion": 3,
-    "total": 8
+    "analisis": 995,
+    "total": 1004
   },
+  "puntaje": 0,
+  "nivel": "bajo",
+  "composicion": [],
+  "hallazgos_lista": [],
+  "num_hallazgos": 0,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -129,7 +139,7 @@
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma: ____________\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1\nFecha y hora de la anotación: [FECHA_2] 15:13\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 2"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma electrónica registrada.\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1\nFecha y hora de la anotación: [FECHA_2] 15:13\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 2"
     }
   ]
 }

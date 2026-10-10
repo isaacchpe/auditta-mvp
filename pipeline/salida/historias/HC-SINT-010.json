@@ -1,8 +1,8 @@
 {
   "_id": "HC-SINT-010",
   "archivo": "HC-SINT-010.pdf",
-  "hash": "96cb4e2c93a52080986e7fbf63f6a8481c7f5f9a7a1aef44ff880fcd384469b1",
-  "paginas": 2,
+  "hash": "d6bf089326d7d9aac6daed855a16f624a6cae85bd073007c1755428c96282f20",
+  "paginas": 1,
   "plantilla": "B",
   "secciones_reconocidas": [
     "analisis",
@@ -16,7 +16,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS\n\nIDENTIFICACIÓN DEL PACIENTE\nPaciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 7 años Sexo: femenino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Mutual Ser HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 18:27\nAcompañante: [PACIENTE_2] (madre)\n\nMOTIVO DE CONSULTA\n«La niña tiene fiebre y le cuesta respirar».\n\nENFERMEDAD ACTUAL\nFiebre de 39 °C de tres días, tos productiva y dificultad respiratoria progresiva desde hace 12 horas. Vacunación\ncompleta para la edad según la madre.\n\nANTECEDENTES\nPersonales: asma leve intermitente. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nFC 128 lpm, FR 38 rpm, T 38,9 °C, SatO2 91 % al aire ambiente, peso 23 kg. Tirajes subcostales, crépitos en\nbase pulmonar derecha.\n\nANÁLISIS\nNeumonía adquirida en la comunidad con dificultad respiratoria.\n\nDIAGNÓSTICOS\n- J189 Neumonía, no especificada\n- J459 Asma, no especificada\n\nÓRDENES\n- Radiografía de tórax.\n- Hemograma y proteína C reactiva.\n- Tomografía de cráneo simple.\nRESULTADOS\n- Radiografía de tórax: consolidación en lóbulo inferior derecho sin derrame. Interpretación: Confirma neumonía\nlobar.\n- Hemograma: leucocitos 16.200, neutrófilos 78 %. Interpretación: Respuesta inflamatoria compatible con\ninfección bacteriana.\n\nPLAN DE MANEJO\n- Oxígeno por cánula nasal a 2 litros por minuto.\n- Amoxicilina 90 mg.\n- Acetaminofén 15 mg.\n- Observación por 12 horas con control de saturación.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma: ____________\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1\nFecha y hora de la anotación: [FECHA_2] 18:27\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 2",
+  "texto_anonimizado": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS\n\nIDENTIFICACIÓN DEL PACIENTE\nPaciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 7 años Sexo: femenino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Sanitas HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 21:16\nAcompañante: [PACIENTE_2] (madre)\n\nMOTIVO DE CONSULTA\n«La niña tiene fiebre y le cuesta respirar».\n\nENFERMEDAD ACTUAL\nFiebre de 39 °C de tres días, tos productiva y dificultad respiratoria progresiva desde hace 12 horas. Vacunación\ncompleta para la edad según la madre.\n\nANTECEDENTES\nPersonales: asma leve intermitente. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTirajes subcostales, crépitos en base pulmonar derecha.\n\nANÁLISIS\nNeumonía adquirida en la comunidad con dificultad respiratoria.\n\nDIAGNÓSTICOS\n- J189 Neumonía, no especificada\n- J459 Asma, no especificada\n\nÓRDENES\n- Radiografía de tórax.\n- Hemograma y proteína C reactiva.\n- Nebulizaciones con solución salina, 3 sesiones.\nRESULTADOS\n- Radiografía de tórax: consolidación en lóbulo inferior derecho sin derrame. Interpretación: Confirma neumonía\nlobar.\n- Hemograma: leucocitos 16.200, neutrófilos 78 %. Interpretación: Respuesta inflamatoria compatible con\ninfección bacteriana.\n\nPLAN DE MANEJO\n- Oxígeno por cánula nasal a 2 litros por minuto.\n- Amoxicilina 90 mg/kg/día vía oral dividida cada 12 horas por 7 días.\n- Acetaminofén 15 mg/kg vía oral cada 6 horas si hay fiebre.\n- Observación por 12 horas con control de saturación.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Pediatría. Firma\nelectrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 21:16\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "DOCUMENTO",
@@ -41,7 +41,7 @@
     {
       "categoria": "HISTORIA",
       "token": "[HISTORIA_1]",
-      "ocurrencias": 3
+      "ocurrencias": 2
     },
     {
       "categoria": "LUGAR",
@@ -87,10 +87,110 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 5,
+    "extraccion": 4,
     "anonimizacion": 3,
-    "total": 9
+    "analisis": 2856,
+    "total": 2865
   },
+  "puntaje": 35,
+  "nivel": "medio",
+  "composicion": [
+    {
+      "familia": "COMP",
+      "nombre": "Completitud",
+      "puntos": 10
+    },
+    {
+      "familia": "SOP",
+      "nombre": "Soporte",
+      "puntos": 9
+    },
+    {
+      "familia": "COH",
+      "nombre": "Coherencia",
+      "puntos": 8
+    },
+    {
+      "familia": "PERT",
+      "nombre": "Pertinencia",
+      "puntos": 8
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-010-H01",
+      "historia_id": "HC-SINT-010",
+      "orden": 1,
+      "criterio_id": "COMP-04",
+      "criterio": "Examen físico y signos vitales",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "media",
+      "descripcion": "El examen físico no registra signos vitales (temperatura, frecuencia cardíaca, frecuencia respiratoria, saturación de oxígeno, tensión arterial), pese a tratarse de una urgencia pediátrica por dificultad respiratoria.",
+      "evidencia": "EXAMEN FÍSICO\nTirajes subcostales, crépitos en base pulmonar derecha.",
+      "seccion": "EXAMEN FÍSICO",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Registrar los signos vitales completos al ingreso y en cada control, dado que son indispensables para la valoración de la dificultad respiratoria.",
+      "confianza": 0.9,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-010-H02",
+      "historia_id": "HC-SINT-010",
+      "orden": 2,
+      "criterio_id": "COH-03",
+      "criterio": "Formulación completa",
+      "familia": "COH",
+      "familia_nombre": "Coherencia",
+      "severidad": "media",
+      "descripcion": "El acetaminofén formulado no registra la frecuencia ni la duración del esquema; solo indica dosis y vía.",
+      "evidencia": "Acetaminofén 15 mg/kg vía oral cada 6 horas si hay fiebre.",
+      "seccion": "PLAN DE MANEJO",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Completar la formulación con la frecuencia y la duración del tratamiento.",
+      "confianza": 0.55,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-010-H03",
+      "historia_id": "HC-SINT-010",
+      "orden": 3,
+      "criterio_id": "SOP-03",
+      "criterio": "Resultados e interpretación",
+      "familia": "SOP",
+      "familia_nombre": "Soporte",
+      "severidad": "media",
+      "descripcion": "Se ordenó hemograma y proteína C reactiva, pero en los resultados solo se registra e interpreta el hemograma; no hay resultado ni interpretación de la proteína C reactiva ni constancia de que esté pendiente.",
+      "evidencia": "Hemograma: leucocitos 16.200, neutrófilos 78 %. Interpretación: Respuesta inflamatoria compatible con infección bacteriana.",
+      "seccion": "RESULTADOS",
+      "sustento": "Resolución 1995 de 1999, art. 11",
+      "recomendacion": "Registrar el resultado e interpretación de la proteína C reactiva o dejar constancia expresa de que se encuentra pendiente.",
+      "confianza": 0.75,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-010-H04",
+      "historia_id": "HC-SINT-010",
+      "orden": 4,
+      "criterio_id": "PERT-02",
+      "criterio": "Indicación de ayudas diagnósticas",
+      "familia": "PERT",
+      "familia_nombre": "Pertinencia",
+      "severidad": "media",
+      "descripcion": "La proteína C reactiva se ordenó sin que la historia registre una indicación clínica específica para su solicitud.",
+      "evidencia": "Hemograma y proteína C reactiva.",
+      "seccion": "ÓRDENES",
+      "sustento": "Resolución 2284 de 2023, manual único de glosas (pertinencia)",
+      "recomendacion": "Documentar la indicación clínica que justifica la solicitud de la proteína C reactiva.",
+      "confianza": 0.5,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 4,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -98,7 +198,7 @@
     },
     {
       "titulo": "IDENTIFICACIÓN DEL PACIENTE",
-      "texto": "Paciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 7 años Sexo: femenino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Mutual Ser HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 18:27\nAcompañante: [PACIENTE_2] (madre)"
+      "texto": "Paciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 7 años Sexo: femenino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Sanitas HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 21:16\nAcompañante: [PACIENTE_2] (madre)"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -114,7 +214,7 @@
     },
     {
       "titulo": "EXAMEN FÍSICO",
-      "texto": "FC 128 lpm, FR 38 rpm, T 38,9 °C, SatO2 91 % al aire ambiente, peso 23 kg. Tirajes subcostales, crépitos en\nbase pulmonar derecha."
+      "texto": "Tirajes subcostales, crépitos en base pulmonar derecha."
     },
     {
       "titulo": "ANÁLISIS",
@@ -126,15 +226,15 @@
     },
     {
       "titulo": "ÓRDENES",
-      "texto": "- Radiografía de tórax.\n- Hemograma y proteína C reactiva.\n- Tomografía de cráneo simple.\nRESULTADOS\n- Radiografía de tórax: consolidación en lóbulo inferior derecho sin derrame. Interpretación: Confirma neumonía\nlobar.\n- Hemograma: leucocitos 16.200, neutrófilos 78 %. Interpretación: Respuesta inflamatoria compatible con\ninfección bacteriana."
+      "texto": "- Radiografía de tórax.\n- Hemograma y proteína C reactiva.\n- Nebulizaciones con solución salina, 3 sesiones.\nRESULTADOS\n- Radiografía de tórax: consolidación en lóbulo inferior derecho sin derrame. Interpretación: Confirma neumonía\nlobar.\n- Hemograma: leucocitos 16.200, neutrófilos 78 %. Interpretación: Respuesta inflamatoria compatible con\ninfección bacteriana."
     },
     {
       "titulo": "PLAN DE MANEJO",
-      "texto": "- Oxígeno por cánula nasal a 2 litros por minuto.\n- Amoxicilina 90 mg.\n- Acetaminofén 15 mg.\n- Observación por 12 horas con control de saturación."
+      "texto": "- Oxígeno por cánula nasal a 2 litros por minuto.\n- Amoxicilina 90 mg/kg/día vía oral dividida cada 12 horas por 7 días.\n- Acetaminofén 15 mg/kg vía oral cada 6 horas si hay fiebre.\n- Observación por 12 horas con control de saturación."
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma: ____________\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1\nFecha y hora de la anotación: [FECHA_2] 18:27\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 2"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Pediatría. Firma\nelectrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 21:16\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

@@ -11,23 +11,23 @@
   "identificadores": [
     {
       "categoria": "PACIENTE",
-      "valor": "Andres Jorge Osorio Salazar"
+      "valor": "Gustavo Emmanuel Flores Ramirez"
     },
     {
       "categoria": "DOCUMENTO",
-      "valor": "45608499"
+      "valor": "1066412650"
     },
     {
       "categoria": "FECHA",
-      "valor": "25-05-1963"
+      "valor": "07-02-1963"
     },
     {
       "categoria": "TELEFONO",
-      "valor": "316 618 6434"
+      "valor": "323 272 6324"
     },
     {
       "categoria": "DIRECCION",
-      "valor": "Diagonal 56 # 36-61"
+      "valor": "Transversal 42 # 40-52"
     },
     {
       "categoria": "LUGAR",
@@ -35,31 +35,31 @@
     },
     {
       "categoria": "LUGAR",
-      "valor": "El Recreo"
+      "valor": "El Prado"
     },
     {
       "categoria": "MEDICO",
-      "valor": "David Katherine Burgos Burgos"
+      "valor": "Alberto Javier Montes Rojas"
     },
     {
       "categoria": "REGISTRO",
-      "valor": "RM-63700"
+      "valor": "RM-55684"
     },
     {
       "categoria": "HISTORIA",
-      "valor": "HC-2026-7252"
+      "valor": "HC-2026-6736"
     },
     {
       "categoria": "FACTURA",
-      "valor": "ADM-323216"
+      "valor": "ADM-529601"
     },
     {
       "categoria": "FECHA",
-      "valor": "19-08-2026"
+      "valor": "22-06-2026"
     },
     {
       "categoria": "PACIENTE",
-      "valor": "Alvaro Leidy Reyes Jaramillo"
+      "valor": "Daniel Manuel Lozano Salgado"
     }
   ],
   "paginas": 2,

@@ -36,7 +36,7 @@ CASOS = {
          "diagnosticos": [("G430", "Migraña sin aura"), ("I10X", "Hipertensión esencial")],
          "plan": ["Naproxeno 500 mg vía oral cada 12 horas por 5 días.", "Metoclopramida 10 mg vía oral cada 8 horas si hay náuseas, por 3 días.", "Continuar losartán 50 mg cada 12 horas.", "Recomendaciones de higiene del sueño y diario de cefalea.", "Control en 30 días."],
          "ordenes": [("laboratorio", "Perfil lipídico y glicemia en ayunas", "Control de riesgo cardiovascular en paciente hipertensa.")],
-         "resultados": []},
+         "resultados": [("Perfil lipídico y glicemia", "colesterol total 212 mg/dL, LDL 134 mg/dL, glicemia 96 mg/dL", "Dislipidemia leve; se refuerza dieta y se revalora en el control.")]},
         {"sexo": "masculino", "edad": 58, "motivo": "«Vengo a control de la diabetes».",
          "enfermedad": "Paciente con diabetes mellitus tipo 2 diagnosticada hace 6 años, en manejo con metformina. Refiere adherencia parcial y polidipsia leve en las últimas dos semanas. Niega hipoglucemias.",
          "antecedentes": "Personales: diabetes mellitus tipo 2, dislipidemia. Familiares: padre con diabetes. Alérgicos: penicilina.",
@@ -72,7 +72,7 @@ CASOS = {
          "antecedentes": "Personales: asma leve intermitente. Familiares: sin relevancia. Alérgicos: niega.",
          "examen": "FC 128 lpm, FR 38 rpm, T 38,9 °C, SatO2 91 % al aire ambiente, peso 23 kg. Tirajes subcostales, crépitos en base pulmonar derecha.",
          "analisis": "Neumonía adquirida en la comunidad con dificultad respiratoria.",
-         "diagnosticos": [("J189", "Neumonía, no especificada"), ("J459", "Asma, no especificada")],
+         "diagnosticos": [("J189", "Neumonía, no especificada"), ("J459", "Asma, no especificada")], "especialidad": "Pediatría",
          "plan": ["Oxígeno por cánula nasal a 2 litros por minuto.", "Amoxicilina 90 mg/kg/día vía oral dividida cada 12 horas por 7 días.", "Acetaminofén 15 mg/kg vía oral cada 6 horas si hay fiebre.", "Observación por 12 horas con control de saturación."],
          "ordenes": [("imagen", "Radiografía de tórax", "Confirmar consolidación y descartar derrame."), ("laboratorio", "Hemograma y proteína C reactiva", "Orientar la etiología bacteriana.")],
          "resultados": [("Radiografía de tórax", "consolidación en lóbulo inferior derecho sin derrame", "Confirma neumonía lobar."), ("Hemograma", "leucocitos 16.200, neutrófilos 78 %", "Respuesta inflamatoria compatible con infección bacteriana.")],
@@ -94,7 +94,7 @@ CASOS = {
          "antecedentes": "Personales: insuficiencia cardíaca con fracción de eyección reducida, hipertensión arterial. Familiares: sin relevancia. Alérgicos: niega.",
          "examen": "TA 160/100 mmHg, FC 104 lpm, FR 26 rpm, SatO2 89 % al aire ambiente, T 36,4 °C. Ingurgitación yugular, crépitos bibasales, edema grado III en miembros inferiores.",
          "analisis": "Falla cardíaca descompensada con congestión pulmonar y sistémica. Se hospitaliza.",
-         "diagnosticos": [("I500", "Insuficiencia cardíaca congestiva"), ("I10X", "Hipertensión esencial")],
+         "diagnosticos": [("I500", "Insuficiencia cardíaca congestiva"), ("I10X", "Hipertensión esencial")], "especialidad": "Medicina interna",
          "plan": ["Furosemida 40 mg intravenosa cada 8 horas.", "Oxígeno por cánula nasal a 3 litros por minuto.", "Restricción hídrica a 1.200 mL por día y control de peso diario.", "Enalapril 10 mg vía oral cada 12 horas."],
          "ordenes": [("laboratorio", "Péptido natriurético, creatinina, electrolitos", "Confirmar descompensación y vigilar función renal con diurético."), ("imagen", "Radiografía de tórax", "Evaluar congestión pulmonar y derrame.")],
          "resultados": [("Péptido natriurético tipo B", "1.850 pg/mL", "Confirma falla cardíaca descompensada."), ("Radiografía de tórax", "cardiomegalia y redistribución de flujo", "Congestión pulmonar.")],
@@ -105,7 +105,7 @@ CASOS = {
          "antecedentes": "Personales: colelitiasis conocida hace dos años. Familiares: sin relevancia. Alérgicos: niega.",
          "examen": "TA 132/86 mmHg, FC 102 lpm, FR 20 rpm, T 38,4 °C. Signo de Murphy positivo, sin signos de irritación peritoneal generalizada.",
          "analisis": "Colecistitis aguda litiásica; se hospitaliza para manejo quirúrgico.",
-         "diagnosticos": [("K810", "Colecistitis aguda"), ("K802", "Cálculo de la vesícula biliar sin colecistitis")],
+         "diagnosticos": [("K810", "Colecistitis aguda"), ("K802", "Cálculo de la vesícula biliar sin colecistitis")], "especialidad": "Cirugía general",
          "plan": ["Nada vía oral.", "Lactato de Ringer 1.000 mL intravenoso cada 8 horas.", "Ampicilina sulbactam 3 g intravenoso cada 6 horas.", "Colecistectomía laparoscópica."],
          "ordenes": [("imagen", "Ecografía hepatobiliar", "Dolor en hipocondrio derecho con Murphy positivo."), ("laboratorio", "Hemograma, bilirrubinas, transaminasas", "Evaluar respuesta inflamatoria y descartar colestasis."), ("procedimiento", "Colecistectomía laparoscópica", "Colecistitis aguda litiásica confirmada por ecografía.")],
          "resultados": [("Ecografía hepatobiliar", "vesícula distendida, pared de 6 mm, cálculo de 18 mm en el cuello", "Confirma colecistitis aguda litiásica."), ("Hemograma", "leucocitos 14.800", "Respuesta inflamatoria.")],
@@ -117,7 +117,7 @@ CASOS = {
          "antecedentes": "Obstétricos: G2 P1, parto vaginal previo sin complicaciones. Personales: niega. Alérgicos: niega.",
          "examen": "TA 118/76 mmHg, FC 88 lpm, FR 18 rpm, T 36,7 °C. Altura uterina 34 cm, fetocardia 142 lpm, cérvix 5 cm, borrado 80 %, cefálico, membranas íntegras.",
          "analisis": "Trabajo de parto en fase activa, embarazo a término de bajo riesgo.",
-         "diagnosticos": [("O80", "Parto único espontáneo"), ("Z370", "Nacido vivo único")],
+         "diagnosticos": [("O80", "Parto único espontáneo"), ("Z370", "Nacido vivo único")], "especialidad": "Ginecología y obstetricia",
          "plan": ["Ingreso a sala de partos, monitoreo fetal intermitente.", "Analgesia según solicitud.", "Atención del parto por el equipo de turno."],
          "ordenes": [("laboratorio", "Hemograma, hemoclasificación y VIH", "Protocolo de ingreso a trabajo de parto.")],
          "resultados": [("Hemoglobina", "11,8 g/dL", "Sin anemia.")],
@@ -137,23 +137,23 @@ CASOS = {
         {"sexo": "masculino", "edad": 48, "motivo": "Consulta de valoración integral del adulto.",
          "enfermedad": "Hombre de 48 años que asiste a la valoración de la ruta. Refiere sedentarismo y consumo ocasional de alcohol. Niega síntomas.",
          "antecedentes": "Personales: niega. Familiares: padre hipertenso. Alérgicos: niega.",
-         "examen": "TA 134/86 mmHg, FC 74 lpm, peso 88 kg, talla 172 cm, IMC 29,7, perímetro abdominal 101 cm.",
+         "examen": "TA 134/86 mmHg, FC 74 lpm, FR 16 rpm, T 36,4 °C, peso 88 kg, talla 172 cm, IMC 29,7, perímetro abdominal 101 cm. Examen por sistemas sin hallazgos.",
          "analisis": "Adulto con sobrepeso y riesgo cardiovascular por evaluar.",
          "diagnosticos": [("Z000", "Examen médico general"), ("E660", "Obesidad debida a exceso de calorías")],
          "plan": ["Plan de actividad física y alimentación.", "Control en 12 meses con resultados."],
          "intervenciones": ["Tamizaje de riesgo cardiovascular y metabólico.", "Tamizaje de consumo de alcohol con cuestionario AUDIT.", "Educación en estilos de vida saludables.", "Valoración por odontología."],
          "ordenes": [("laboratorio", "Glicemia en ayunas y perfil lipídico", "Tamizaje de riesgo cardiovascular y metabólico de la ruta.")],
-         "resultados": []},
+         "resultados": [("Glicemia y perfil lipídico", "glicemia 104 mg/dL, colesterol total 228 mg/dL, triglicéridos 190 mg/dL", "Glicemia alterada en ayunas y dislipidemia; se indica cambio de hábitos y control.")]},
         {"sexo": "femenino", "edad": 24, "motivo": "Control prenatal de segundo trimestre.",
          "enfermedad": "Gestante de 22 semanas, primigestante, asintomática, con movimientos fetales presentes. Toma el ácido fólico y el sulfato ferroso.",
          "antecedentes": "Obstétricos: G1 P0. Personales: niega. Alérgicos: niega.",
-         "examen": "TA 108/68 mmHg, FC 84 lpm, peso 61 kg, altura uterina 21 cm, fetocardia 148 lpm.",
+         "examen": "TA 108/68 mmHg, FC 84 lpm, FR 18 rpm, T 36,6 °C, peso 61 kg, altura uterina 21 cm, fetocardia 148 lpm.",
          "analisis": "Embarazo de curso normal, bajo riesgo.",
          "diagnosticos": [("Z340", "Supervisión de primer embarazo normal")],
          "plan": ["Continuar micronutrientes.", "Próximo control en 4 semanas."],
          "intervenciones": ["Clasificación del riesgo obstétrico.", "Curso de preparación para la maternidad.", "Vacunación con toxoide tetánico e influenza.", "Valoración por odontología y nutrición."],
          "ordenes": [("imagen", "Ecografía obstétrica de detalle", "Tamizaje de anomalías estructurales entre las semanas 18 y 24."), ("laboratorio", "Prueba de tolerancia a la glucosa", "Tamizaje de diabetes gestacional de la ruta.")],
-         "resultados": [("Ecografía obstétrica", "feto único vivo, biometría acorde, anatomía normal", "Sin alteraciones.")]},
+         "resultados": [("Ecografía obstétrica", "feto único vivo, biometría acorde, anatomía normal", "Sin alteraciones."), ("Prueba de tolerancia a la glucosa", "basal 82 mg/dL, 1 hora 148 mg/dL, 2 horas 126 mg/dL", "Sin diabetes gestacional.")]},
     ],
 }
 
@@ -229,7 +229,7 @@ def construir(plantilla: str, caso: dict, defectos: list[str], g: Generador, num
     aseguradora = g.azar.choice(ASEGURADORAS)
     medico = g.persona(g.azar.choice(["femenino", "masculino"]))
     registro = f"RM-{g.azar.randint(10000, 99999)}"
-    especialidad = {"A": "Medicina general", "B": "Medicina de urgencias", "C": g.azar.choice(["Medicina interna", "Cirugía general", "Ginecología"]), "D": "Medicina familiar"}[plantilla]
+    especialidad = caso.get("especialidad") or {"A": "Medicina general", "B": "Medicina de urgencias", "C": "Medicina interna", "D": "Medicina familiar"}[plantilla]
     numero_hc = f"HC-{fecha.year}-{g.azar.randint(1000, 9999)}"
     numero_admision = f"ADM-{g.azar.randint(100000, 999999)}"
     correo = f"{nombre.split()[0].lower()}.{nombre.split()[2].lower()}{g.azar.randint(1, 99)}@correo-ejemplo.co"
@@ -308,7 +308,9 @@ def construir(plantilla: str, caso: dict, defectos: list[str], g: Generador, num
             else:
                 L.append(("p", f"- {orden}. Justificación: {justificacion}"))
     if "PERT-01" in defectos:
-        L.append(("p", "- Ecografía abdominal total." if plantilla != "B" else "- Tomografía de cráneo simple."))
+        if not caso.get("ordenes"):
+            L.append(("h", "ÓRDENES"))
+        L.append(("p", {"A": "- Terapia física, 10 sesiones.", "B": "- Nebulizaciones con solución salina, 3 sesiones.", "C": "- Toracentesis diagnóstica.", "D": "- Terapia respiratoria, 5 sesiones."}[plantilla]))
     if caso.get("resultados") and "SOP-03" not in defectos:
         L.append(("h", "RESULTADOS"))
         for prueba, valor, interpretacion in caso["resultados"]:
@@ -339,16 +341,16 @@ def construir(plantilla: str, caso: dict, defectos: list[str], g: Generador, num
             L.append(("p", f"{formato_fecha(fecha_ev, plantilla)} {g.azar.randint(6, 19):02d}:{g.azar.randint(0, 59):02d} · {dia}: {texto}"))
     if "egreso" in caso and "SOP-04" not in defectos:
         dia, texto = caso["egreso"]
-        L += [("h", "EPICRISIS"), ("p", f"{formato_fecha(fecha + timedelta(days=len(caso.get('evoluciones', [])) + 1), plantilla)} · {dia}: {texto}")]
+        L += [("h", "EPICRISIS"), ("p", f"{formato_fecha(fecha + timedelta(days=len(caso.get('evoluciones', [])) + 1), plantilla)} {g.azar.randint(8, 16):02d}:{g.azar.randint(0, 59):02d} · {dia}: {texto}")]
     elif "egreso" in caso:
-        L.append(("p", f"{formato_fecha(fecha + timedelta(days=3), plantilla)}: Egreso hospitalario."))
+        L.append(("p", f"{formato_fecha(fecha + timedelta(days=3), plantilla)} {g.azar.randint(8, 16):02d}:{g.azar.randint(0, 59):02d}: Egreso hospitalario."))
     L.append(("h", "PROFESIONAL"))
     if "IDP-01" in defectos:
-        L.append(("p", f"Especialidad: {especialidad}."))
+        L.append(("p", f"Especialidad: {especialidad}. Firma electrónica registrada."))
     elif "IDP-02" in defectos:
-        L.append(("p", f"Atendido por: {medico}. Firma: ____________"))
+        L.append(("p", f"Atendido por: {medico}. Firma electrónica registrada."))
     else:
-        L.append(("p", f"Atendido por: {medico}. Registro médico: {registro}. Especialidad: {especialidad}. Firma: ____________"))
+        L.append(("p", f"Atendido por: {medico}. Registro médico: {registro}. Especialidad: {especialidad}. Firma electrónica registrada."))
     if "OPO-01" in defectos:
         L.append(("p", f"Fecha de la anotación: {formato_fecha(fecha, plantilla)}"))
     else:

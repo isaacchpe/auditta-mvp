@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-006",
   "archivo": "HC-SINT-006.pdf",
-  "hash": "f3dd577f5fea3ec1cca0f7950e5371412ef23547eb5f1ebaa3eb3f40664570d1",
+  "hash": "b72af196b25111200adf3ea8213137f205c5c6e014486baa33cec4cff5b7f7ab",
   "paginas": 1,
   "plantilla": "A",
   "secciones_reconocidas": [
@@ -15,7 +15,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "IPS Centro Médico Sinú Sintético\nCódigo de habilitación 230010999901 · HISTORIA CLÍNICA DE CONSULTA EXTERNA\n\nDATOS DE IDENTIFICACIÓN\nNombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 32 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1]o: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Sanitas Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 17:19\n\nMOTIVO DE CONSULTA\n«Dolor al orinar y ganas frecuentes de ir al baño».\n\nENFERMEDAD ACTUAL\nDisuria, polaquiuria y urgencia miccional de dos días de evolución, sin fiebre ni dolor lumbar. Niega flujo\nvaginal. Último periodo menstrual hace 10 días.\n\nEXAMEN FÍSICO\nTA 110/70 mmHg, FC 82 lpm, FR 16 rpm, T 37,1 °C. Abdomen blando, dolor leve suprapúbico, puño percusión\nlumbar negativa.\n\nANÁLISIS\nInfección urinaria baja no complicada.\n\nDIAGNÓSTICOS\n- N390 Infección de vías urinarias, sitio no especificado\n\nÓRDENES\n- Uroanálisis y urocultivo. Justificación: Confirmación del diagnóstico y orientación del antibiótico.\n\nPLAN DE MANEJO\n- Nitrofurantoína 100 mg vía oral cada 6 horas por 5 días.\n- Hidratación abundante.\n- Signos de alarma: fiebre, dolor lumbar o vómito.\n- Control si no mejora en 72 horas.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Firma: ____________\nFecha y hora de la anotación: [FECHA_2] 17:19\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "IPS Centro Médico Sinú Sintético\nCódigo de habilitación 230010999901 · HISTORIA CLÍNICA DE CONSULTA EXTERNA\n\nDATOS DE IDENTIFICACIÓN\nNombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 32 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1] Teléfono: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Sanitas Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 17:19\n\nMOTIVO DE CONSULTA\n«Dolor al orinar y ganas frecuentes de ir al baño».\n\nENFERMEDAD ACTUAL\nDisuria, polaquiuria y urgencia miccional de dos días de evolución, sin fiebre ni dolor lumbar. Niega flujo\nvaginal. Último periodo menstrual hace 10 días.\n\nEXAMEN FÍSICO\nTA 110/70 mmHg, FC 82 lpm, FR 16 rpm, T 37,1 °C. Abdomen blando, dolor leve suprapúbico, puño percusión\nlumbar negativa.\n\nANÁLISIS\nInfección urinaria baja no complicada.\n\nDIAGNÓSTICOS\n- N390 Infección de vías urinarias, sitio no especificado\n\nÓRDENES\n- Uroanálisis y urocultivo. Justificación: Confirmación del diagnóstico y orientación del antibiótico.\n\nPLAN DE MANEJO\n- Nitrofurantoína 100 mg vía oral cada 6 horas por 5 días.\n- Hidratación abundante.\n- Signos de alarma: fiebre, dolor lumbar o vómito.\n- Control si no mejora en 72 horas.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 17:19\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "CORREO",
@@ -86,10 +86,88 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 4,
+    "extraccion": 5,
     "anonimizacion": 3,
-    "total": 8
+    "analisis": 2295,
+    "total": 2303
   },
+  "puntaje": 23,
+  "nivel": "bajo",
+  "composicion": [
+    {
+      "familia": "IDP",
+      "nombre": "Identificación del prestador",
+      "puntos": 10
+    },
+    {
+      "familia": "SOP",
+      "nombre": "Soporte",
+      "puntos": 9
+    },
+    {
+      "familia": "COMP",
+      "nombre": "Completitud",
+      "puntos": 4
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-006-H01",
+      "historia_id": "HC-SINT-006",
+      "orden": 1,
+      "criterio_id": "COMP-03",
+      "criterio": "Antecedentes",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "baja",
+      "descripcion": "La historia no registra antecedentes personales, familiares ni alérgicos, ni declara de forma explícita su ausencia.",
+      "evidencia": "MOTIVO DE CONSULTA\n«Dolor al orinar y ganas frecuentes de ir al baño».",
+      "seccion": "Antecedentes",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Registrar los antecedentes personales, familiares y alérgicos del usuario o declarar explícitamente su ausencia.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-006-H02",
+      "historia_id": "HC-SINT-006",
+      "orden": 2,
+      "criterio_id": "SOP-03",
+      "criterio": "Resultados e interpretación",
+      "familia": "SOP",
+      "familia_nombre": "Soporte",
+      "severidad": "media",
+      "descripcion": "Se ordenaron uroanálisis y urocultivo, pero la historia no registra sus resultados ni su interpretación, ni indica que estén pendientes.",
+      "evidencia": "- Uroanálisis y urocultivo. Justificación: Confirmación del diagnóstico y orientación del antibiótico.",
+      "seccion": "ÓRDENES",
+      "sustento": "Resolución 1995 de 1999, art. 11",
+      "recomendacion": "Registrar los resultados e interpretación de las ayudas diagnósticas ordenadas o indicar expresamente que se encuentran pendientes.",
+      "confianza": 0.8,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-006-H03",
+      "historia_id": "HC-SINT-006",
+      "orden": 3,
+      "criterio_id": "IDP-02",
+      "criterio": "Registro profesional y especialidad",
+      "familia": "IDP",
+      "familia_nombre": "Identificación del prestador",
+      "severidad": "media",
+      "descripcion": "No se registra el número de registro profesional ni la especialidad o cargo del responsable de la atención.",
+      "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
+      "seccion": "PROFESIONAL",
+      "sustento": "Resolución 1995 de 1999, art. 5",
+      "recomendacion": "Registrar el número de registro profesional y la especialidad o cargo del profesional que atiende.",
+      "confianza": 0.9,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 3,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -97,7 +175,7 @@
     },
     {
       "titulo": "DATOS DE IDENTIFICACIÓN",
-      "texto": "Nombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 32 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1]o: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Sanitas Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 17:19"
+      "texto": "Nombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 32 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1] Teléfono: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Sanitas Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 17:19"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -129,7 +207,7 @@
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Firma: ____________\nFecha y hora de la anotación: [FECHA_2] 17:19\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 17:19\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

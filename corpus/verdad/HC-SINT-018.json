@@ -5,7 +5,7 @@
   "edad": 29,
   "defectos": [
     "COMP-03",
-    "COMP-04"
+    "PERT-01"
   ],
   "contexto": {
     "promocion_mantenimiento": false,
@@ -14,23 +14,23 @@
   "identificadores": [
     {
       "categoria": "PACIENTE",
-      "valor": "Dolores Beatriz Moreno Navarro"
+      "valor": "Beatriz Natalia Navarro Bula"
     },
     {
       "categoria": "DOCUMENTO",
-      "valor": "1088993247"
+      "valor": "1046628928"
     },
     {
       "categoria": "FECHA",
-      "valor": "20-11-1996"
+      "valor": "26-08-1996"
     },
     {
       "categoria": "TELEFONO",
-      "valor": "315 721 8859"
+      "valor": "314 600 6358"
     },
     {
       "categoria": "DIRECCION",
-      "valor": "Diagonal 41 # 25-42"
+      "valor": "Diagonal 12 # 36-27"
     },
     {
       "categoria": "LUGAR",
@@ -42,27 +42,27 @@
     },
     {
       "categoria": "MEDICO",
-      "valor": "Mercedes Alejandra Castro Montes"
+      "valor": "Hernan Javier Causil Herrera"
     },
     {
       "categoria": "REGISTRO",
-      "valor": "RM-36048"
+      "valor": "RM-77147"
     },
     {
       "categoria": "HISTORIA",
-      "valor": "HC-2026-5483"
+      "valor": "HC-2026-7552"
     },
     {
       "categoria": "FACTURA",
-      "valor": "ADM-637178"
+      "valor": "ADM-418837"
     },
     {
       "categoria": "FECHA",
-      "valor": "14-05-2026"
+      "valor": "02-07-2026"
     },
     {
       "categoria": "PACIENTE",
-      "valor": "Samuel Daniel Sotomayor Perez"
+      "valor": "Adriana Rosa Zuniga Pacheco"
     }
   ],
   "paginas": 2,

@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-001",
   "archivo": "HC-SINT-001.pdf",
-  "hash": "d3c9c795458c36b05e5a063100a185ce512fc96daa31eeed8835d20745e769d5",
+  "hash": "8c79020b9aad2518584150ce3fc64ad92c78d5cb79de4e096dcdc3477a9b6a9f",
   "paginas": 1,
   "plantilla": "A",
   "secciones_reconocidas": [
@@ -16,7 +16,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "IPS Centro Médico Sinú Sintético\nCódigo de habilitación 230010999901 · HISTORIA CLÍNICA DE CONSULTA EXTERNA\n\nDATOS DE IDENTIFICACIÓN\nNombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 46 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1]o: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Salud Total Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 15:32\n\nMOTIVO DE CONSULTA\n«Dolor de cabeza frecuente desde hace un mes».\n\nENFERMEDAD ACTUAL\nCefalea pulsátil hemicraneana derecha, de predominio vespertino, 3 a 4 episodios por semana, intensidad\n7/10, con fotofobia y náuseas. Sin fiebre ni déficit neurológico. Empeora con el estrés laboral.\n\nANTECEDENTES\nPersonales: hipertensión arterial en manejo con losartán. Familiares: madre con migraña. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 138/88 mmHg, FC 76 lpm, FR 16 rpm, T 36,6 °C, peso 68 kg. Pupilas isocóricas normorreactivas, fondo de\nojo sin papiledema, examen neurológico sin déficit.\n\nANÁLISIS\nCuadro compatible con migraña sin aura, en paciente hipertensa controlada.\n\nDIAGNÓSTICOS\n- G430 Migraña sin aura\n- I10X Hipertensión esencial\n\nÓRDENES\n- Perfil lipídico y glicemia en ayunas. Justificación: Control de riesgo cardiovascular en paciente hipertensa.\n\nPLAN DE MANEJO\n- Naproxeno 500 mg vía oral cada 12 horas por 5 días.\n- Metoclopramida 10 mg vía oral cada 8 horas si hay náuseas, por 3 días.\n- Continuar losartán 50 mg cada 12 horas.\n- Recomendaciones de higiene del sueño y diario de cefalea.\n- Control en 30 días.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina general.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 15:32\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "IPS Centro Médico Sinú Sintético\nCódigo de habilitación 230010999901 · HISTORIA CLÍNICA DE CONSULTA EXTERNA\n\nDATOS DE IDENTIFICACIÓN\nNombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 46 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1] Teléfono: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Salud Total Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 15:32\n\nMOTIVO DE CONSULTA\n«Dolor de cabeza frecuente desde hace un mes».\n\nENFERMEDAD ACTUAL\nCefalea pulsátil hemicraneana derecha, de predominio vespertino, 3 a 4 episodios por semana, intensidad\n7/10, con fotofobia y náuseas. Sin fiebre ni déficit neurológico. Empeora con el estrés laboral.\n\nANTECEDENTES\nPersonales: hipertensión arterial en manejo con losartán. Familiares: madre con migraña. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 138/88 mmHg, FC 76 lpm, FR 16 rpm, T 36,6 °C, peso 68 kg. Pupilas isocóricas normorreactivas, fondo de\nojo sin papiledema, examen neurológico sin déficit.\n\nANÁLISIS\nCuadro compatible con migraña sin aura, en paciente hipertensa controlada.\n\nDIAGNÓSTICOS\n- G430 Migraña sin aura\n- I10X Hipertensión esencial\n\nÓRDENES\n- Perfil lipídico y glicemia en ayunas. Justificación: Control de riesgo cardiovascular en paciente hipertensa.\nRESULTADOS\n- Perfil lipídico y glicemia: colesterol total 212 mg/dL, LDL 134 mg/dL, glicemia 96 mg/dL. Interpretación:\nDislipidemia leve; se refuerza dieta y se revalora en el control.\n\nPLAN DE MANEJO\n- Naproxeno 500 mg vía oral cada 12 horas por 5 días.\n- Metoclopramida 10 mg vía oral cada 8 horas si hay náuseas, por 3 días.\n- Continuar losartán 50 mg cada 12 horas.\n- Recomendaciones de higiene del sueño y diario de cefalea.\n- Control en 30 días.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina general.\nFirma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 15:32\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "CORREO",
@@ -92,10 +92,20 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 8,
-    "anonimizacion": 7,
-    "total": 17
+    "extraccion": 9,
+    "anonimizacion": 9,
+    "analisis": 1236,
+    "total": 1254
   },
+  "puntaje": 0,
+  "nivel": "bajo",
+  "composicion": [],
+  "hallazgos_lista": [],
+  "num_hallazgos": 0,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -103,7 +113,7 @@
     },
     {
       "titulo": "DATOS DE IDENTIFICACIÓN",
-      "texto": "Nombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 46 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1]o: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Salud Total Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 15:32"
+      "texto": "Nombre completo: [PACIENTE_1] de identidad: CC [DOCUMENTO_1]\nFecha de nacimiento: [FECHA_1] Edad: 46 años Sexo: femenino\nDirección: [DIRECCION_1], barrio [LUGAR_2] Municipio: [LUGAR_1] Teléfono: [TELEFONO_1] Correo:\n[CORREO_1]\nAseguradora: Salud Total Historia clínica No. [HISTORIA_1] Admisión: [FACTURA_1]\nFecha de atención: [FECHA_2] Hora: 15:32"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -131,7 +141,7 @@
     },
     {
       "titulo": "ÓRDENES",
-      "texto": "- Perfil lipídico y glicemia en ayunas. Justificación: Control de riesgo cardiovascular en paciente hipertensa."
+      "texto": "- Perfil lipídico y glicemia en ayunas. Justificación: Control de riesgo cardiovascular en paciente hipertensa.\nRESULTADOS\n- Perfil lipídico y glicemia: colesterol total 212 mg/dL, LDL 134 mg/dL, glicemia 96 mg/dL. Interpretación:\nDislipidemia leve; se refuerza dieta y se revalora en el control."
     },
     {
       "titulo": "PLAN DE MANEJO",
@@ -139,7 +149,7 @@
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina general.\nFirma: ____________\nFecha y hora de la anotación: [FECHA_2] 15:32\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina general.\nFirma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 15:32\nIPS Centro Médico Sinú Sintético · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

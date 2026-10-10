@@ -11,51 +11,51 @@
   "identificadores": [
     {
       "categoria": "PACIENTE",
-      "valor": "Leidy Mauricio Ricardo Doria"
+      "valor": "Santiago Eduardo Rojas Reyes"
     },
     {
       "categoria": "DOCUMENTO",
-      "valor": "44222072"
+      "valor": "34624539"
     },
     {
       "categoria": "FECHA",
-      "valor": "1999-02-23"
+      "valor": "1998-07-11"
     },
     {
       "categoria": "TELEFONO",
-      "valor": "304 654 8845"
+      "valor": "328 800 7502"
     },
     {
       "categoria": "DIRECCION",
-      "valor": "Transversal 26 # 25-27"
+      "valor": "Diagonal 60 # 14-39"
     },
     {
       "categoria": "LUGAR",
-      "valor": "Valledupar"
+      "valor": "Montería"
     },
     {
       "categoria": "LUGAR",
-      "valor": "Buenavista"
+      "valor": "La Castellana"
     },
     {
       "categoria": "MEDICO",
-      "valor": "Milena Beatriz Ramos Bula"
+      "valor": "Eduardo Sebastian Acosta Gutierrez"
     },
     {
       "categoria": "REGISTRO",
-      "valor": "RM-92969"
+      "valor": "RM-92153"
     },
     {
       "categoria": "HISTORIA",
-      "valor": "HC-2026-6201"
+      "valor": "HC-2026-2465"
     },
     {
       "categoria": "FACTURA",
-      "valor": "ADM-158988"
+      "valor": "ADM-980335"
     },
     {
       "categoria": "FECHA",
-      "valor": "2026-03-06"
+      "valor": "2026-06-14"
     }
   ],
   "paginas": 1,

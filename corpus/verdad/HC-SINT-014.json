@@ -4,9 +4,9 @@
   "sexo": "femenino",
   "edad": 71,
   "defectos": [
-    "COMP-05",
     "OPO-02",
-    "PERT-01"
+    "PERT-01",
+    "PERT-02"
   ],
   "contexto": {
     "promocion_mantenimiento": false,
@@ -15,55 +15,55 @@
   "identificadores": [
     {
       "categoria": "PACIENTE",
-      "valor": "Margarita Claudia Ruiz Hernandez"
+      "valor": "Paola Mariana Pineda Ortiz"
     },
     {
       "categoria": "DOCUMENTO",
-      "valor": "25662869"
+      "valor": "32003385"
     },
     {
       "categoria": "FECHA",
-      "valor": "22-02-1955"
+      "valor": "04-07-1954"
     },
     {
       "categoria": "TELEFONO",
-      "valor": "305 409 4542"
+      "valor": "320 962 7136"
     },
     {
       "categoria": "DIRECCION",
-      "valor": "Avenida 19 # 20-26"
+      "valor": "Calle 33 # 24-37"
     },
     {
       "categoria": "LUGAR",
-      "valor": "Cereté"
+      "valor": "Magangué"
     },
     {
       "categoria": "LUGAR",
-      "valor": "Mocarí"
+      "valor": "El Recreo"
     },
     {
       "categoria": "MEDICO",
-      "valor": "Rosa Lorena Ramos Valencia"
+      "valor": "Sandra Martha Arrieta Ojeda"
     },
     {
       "categoria": "REGISTRO",
-      "valor": "RM-49517"
+      "valor": "RM-24076"
     },
     {
       "categoria": "HISTORIA",
-      "valor": "HC-2026-2925"
+      "valor": "HC-2026-2198"
     },
     {
       "categoria": "FACTURA",
-      "valor": "ADM-464693"
+      "valor": "ADM-499715"
     },
     {
       "categoria": "FECHA",
-      "valor": "01-09-2026"
+      "valor": "24-03-2026"
     },
     {
       "categoria": "PACIENTE",
-      "valor": "Pedro Wilson Pastrana Medina"
+      "valor": "Yaneth Pedro Burgos Navarro"
     }
   ],
   "paginas": 2,

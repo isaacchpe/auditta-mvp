@@ -1,7 +1,7 @@
 {
   "_id": "HC-SINT-016",
   "archivo": "HC-SINT-016.pdf",
-  "hash": "470c73f52f4a402310e8861dc0eee534b284aaf14c79947b6ef0e1c474b7ca73",
+  "hash": "d543a126a010f5b0b7207a4e2630b9eeb7aded1c9ab32f8514d1bb4ea5bed8d2",
   "paginas": 2,
   "plantilla": "C",
   "secciones_reconocidas": [
@@ -19,7 +19,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "ESE Hospital Sintético San Jerónimo\nCódigo de habilitación 230010999903 · HISTORIA CLÍNICA DE HOSPITALIZACIÓN\n\nDATOS DEL PACIENTE\nUSUARIO: [PACIENTE_1]O: CC [DOCUMENTO_1] EDAD: 63 años SEXO:\nMASCULINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1]N: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Nueva EPS HISTORIA: [HISTORIA_1] EPISODIO:\n[FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 17:17 SERVICIO: HOSPITALIZACIÓN\n\nMOTIVO DE CONSULTA\n«Dolor fuerte en la barriga del lado derecho».\n\nENFERMEDAD ACTUAL\nDolor en hipocondrio derecho de 24 horas, intensidad 8/10, irradiado a la espalda, con vómito en tres\nocasiones y fiebre subjetiva. Intolerancia a grasas de larga data.\nSegún refiere su familiar [PACIENTE_3], el cuadro empeoró en las últimas horas.\n\nANTECEDENTES\nPersonales: colelitiasis conocida hace dos años. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 132/86 mmHg, FC 102 lpm, FR 20 rpm, T 38,4 °C. Signo de Murphy positivo, sin signos de irritación\nperitoneal generalizada.\n\nANÁLISIS\nColecistitis aguda litiásica; se hospitaliza para manejo quirúrgico.\nSe realiza citología cervicouterina de tamizaje durante la consulta.\n\nDIAGNÓSTICOS\n- K810 Colecistitis aguda\n- K802 Cálculo de la vesícula biliar sin colecistitis\n\nÓRDENES\n- Ecografía hepatobiliar. Justificación: Dolor en hipocondrio derecho con Murphy positivo.\n- Hemograma, bilirrubinas, transaminasas. Justificación: Evaluar respuesta inflamatoria y descartar colestasis.\n- Colecistectomía laparoscópica. Justificación: Colecistitis aguda litiásica confirmada por ecografía.\nRESULTADOS\n- Ecografía hepatobiliar: vesícula distendida, pared de 6 mm, cálculo de 18 mm en el cuello. Interpretación:\nConfirma colecistitis aguda litiásica.\n- Hemograma: leucocitos 14.800. Interpretación: Respuesta inflamatoria.\n\nCONSENTIMIENTO INFORMADO\nEl paciente o su representante recibe información sobre el procedimiento Colecistectomía laparoscópica bajo\nanestesia general, sus riesgos y alternativas, y firma el consentimiento, que se anexa a la historia.\n\nPLAN DE MANEJO\n- Nada vía oral.\n- Lactato de Ringer 1.000 mL intravenoso cada 8 horas.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 1\n- Ampicilina sulbactam 3 g intravenoso cada 6 horas.\n- Colecistectomía laparoscópica.\n\nEVOLUCIÓN\n[FECHA_3] 14:44 · Día 2: Colecistectomía laparoscópica sin complicaciones, sangrado de 30 mL. Tolera vía oral\nlíquida.\n[FECHA_4] 10:08 · Día 3: Dolor controlado, deambula, heridas limpias.\n\nEPICRISIS\n[FECHA_5] · Día 3: Egreso. Diagnóstico de egreso: colecistitis aguda litiásica, posoperatorio de colecistectomía\nlaparoscópica. Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8 días con patología.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Firma: ____________\nFecha de la anotación: [FECHA_2]\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 2",
+  "texto_anonimizado": "ESE Hospital Sintético San Jerónimo\nCódigo de habilitación 230010999903 · HISTORIA CLÍNICA DE HOSPITALIZACIÓN\n\nDATOS DEL PACIENTE\nUSUARIO: [PACIENTE_1] DOCUMENTO: CC [DOCUMENTO_1] EDAD: 63 años SEXO:\nMASCULINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1] DIRECCIÓN: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Nueva EPS HISTORIA: [HISTORIA_1] EPISODIO:\n[FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 09:34 SERVICIO: HOSPITALIZACIÓN\n\nMOTIVO DE CONSULTA\n«Dolor fuerte en la barriga del lado derecho».\n\nENFERMEDAD ACTUAL\nDolor en hipocondrio derecho de 24 horas, intensidad 8/10, irradiado a la espalda, con vómito en tres\nocasiones y fiebre subjetiva. Intolerancia a grasas de larga data.\nSegún refiere su familiar [PACIENTE_2], el cuadro empeoró en las últimas horas.\n\nANTECEDENTES\nPersonales: colelitiasis conocida hace dos años. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 132/86 mmHg, FC 102 lpm, FR 20 rpm, T 38,4 °C. Signo de Murphy positivo, sin signos de irritación\nperitoneal generalizada.\n\nANÁLISIS\nColecistitis aguda litiásica; se hospitaliza para manejo quirúrgico.\nSe realiza citología cervicouterina de tamizaje durante la consulta.\n\nDIAGNÓSTICOS\n- K810 Colecistitis aguda\n- K802 Cálculo de la vesícula biliar sin colecistitis\n\nÓRDENES\n- Ecografía hepatobiliar. Justificación: Dolor en hipocondrio derecho con Murphy positivo.\n- Hemograma, bilirrubinas, transaminasas. Justificación: Evaluar respuesta inflamatoria y descartar colestasis.\n- Colecistectomía laparoscópica. Justificación: Colecistitis aguda litiásica confirmada por ecografía.\n- Toracentesis diagnóstica.\nRESULTADOS\n- Ecografía hepatobiliar: vesícula distendida, pared de 6 mm, cálculo de 18 mm en el cuello. Interpretación:\nConfirma colecistitis aguda litiásica.\n- Hemograma: leucocitos 14.800. Interpretación: Respuesta inflamatoria.\n\nCONSENTIMIENTO INFORMADO\nEl paciente o su representante recibe información sobre el procedimiento Colecistectomía laparoscópica bajo\nanestesia general, sus riesgos y alternativas, y firma el consentimiento, que se anexa a la historia.\n\nPLAN DE MANEJO\n- Nada vía oral.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 1\n- Lactato de Ringer 1.000 mL intravenoso cada 8 horas.\n- Ampicilina sulbactam 3 g intravenoso cada 6 horas.\n- Colecistectomía laparoscópica.\n\nEVOLUCIÓN\n[FECHA_3] 10:35 · Día 2: Colecistectomía laparoscópica sin complicaciones, sangrado de 30 mL. Tolera vía oral\nlíquida.\n[FECHA_4] 17:16 · Día 3: Dolor controlado, deambula, heridas limpias.\n\nEPICRISIS\n[FECHA_5] 10:21 · Día 3: Egreso. Diagnóstico de egreso: colecistitis aguda litiásica, posoperatorio de\ncolecistectomía laparoscópica. Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8\ndías con patología.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Cirugía general. Firma\nelectrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 09:34\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 2",
   "entidades": [
     {
       "categoria": "DIRECCION",
@@ -79,16 +79,16 @@
     {
       "categoria": "PACIENTE",
       "token": "[PACIENTE_1]",
-      "ocurrencias": 1
+      "ocurrencias": 3
     },
     {
       "categoria": "PACIENTE",
       "token": "[PACIENTE_2]",
-      "ocurrencias": 2
+      "ocurrencias": 1
     },
     {
-      "categoria": "PACIENTE",
-      "token": "[PACIENTE_3]",
+      "categoria": "REGISTRO",
+      "token": "[REGISTRO_1]",
       "ocurrencias": 1
     },
     {
@@ -105,10 +105,122 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 5,
-    "anonimizacion": 5,
-    "total": 10
+    "extraccion": 7,
+    "anonimizacion": 8,
+    "analisis": 3140,
+    "total": 3156
   },
+  "puntaje": 76,
+  "nivel": "alto",
+  "composicion": [
+    {
+      "familia": "COH",
+      "nombre": "Coherencia",
+      "puntos": 29
+    },
+    {
+      "familia": "SOP",
+      "nombre": "Soporte",
+      "puntos": 28
+    },
+    {
+      "familia": "PERT",
+      "nombre": "Pertinencia",
+      "puntos": 19
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-016-H01",
+      "historia_id": "HC-SINT-016",
+      "orden": 1,
+      "criterio_id": "COH-04",
+      "criterio": "Consistencia demográfica",
+      "familia": "COH",
+      "familia_nombre": "Coherencia",
+      "severidad": "alta",
+      "descripcion": "Se registra la realización de una citología cervicouterina de tamizaje en un paciente de sexo masculino, lo cual es una contradicción demográfica real.",
+      "evidencia": "Se realiza citología cervicouterina de tamizaje durante la consulta.",
+      "seccion": "ANÁLISIS",
+      "sustento": "Resolución 1995 de 1999, art. 3 (racionalidad científica)",
+      "recomendacion": "Aclarar o eliminar el procedimiento registrado, ya que no corresponde al sexo del usuario; verificar posible error de transcripción.",
+      "confianza": 0.95,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-016-H02",
+      "historia_id": "HC-SINT-016",
+      "orden": 2,
+      "criterio_id": "PERT-01",
+      "criterio": "Justificación clínica del servicio",
+      "familia": "PERT",
+      "familia_nombre": "Pertinencia",
+      "severidad": "alta",
+      "descripcion": "Se ordena una toracentesis diagnóstica sin justificación clínica registrada, en un cuadro de colecistitis aguda litiásica.",
+      "evidencia": "Toracentesis diagnóstica.",
+      "seccion": "ÓRDENES",
+      "sustento": "Resolución 1995 de 1999, art. 3; Resolución 2284 de 2023, manual único de glosas (pertinencia)",
+      "recomendacion": "Registrar la indicación clínica de la toracentesis o retirarla de las órdenes si no está justificada.",
+      "confianza": 0.9,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-016-H03",
+      "historia_id": "HC-SINT-016",
+      "orden": 3,
+      "criterio_id": "SOP-02",
+      "criterio": "Orden médica del servicio",
+      "familia": "SOP",
+      "familia_nombre": "Soporte",
+      "severidad": "alta",
+      "descripcion": "La citología cervicouterina se realizó sin figurar en el plan de manejo ni en las órdenes médicas.",
+      "evidencia": "Se realiza citología cervicouterina de tamizaje durante la consulta.",
+      "seccion": "ANÁLISIS",
+      "sustento": "Resolución 2284 de 2023, manual único de glosas (soportes)",
+      "recomendacion": "Documentar la orden médica correspondiente o aclarar el registro del procedimiento.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-016-H04",
+      "historia_id": "HC-SINT-016",
+      "orden": 4,
+      "criterio_id": "SOP-03",
+      "criterio": "Resultados e interpretación",
+      "familia": "SOP",
+      "familia_nombre": "Soporte",
+      "severidad": "media",
+      "descripcion": "Se ordenaron hemograma, bilirrubinas y transaminasas, pero solo se registra el resultado del hemograma; no hay resultado ni interpretación de bilirrubinas y transaminasas, ni constancia de que estén pendientes.",
+      "evidencia": "Hemograma, bilirrubinas, transaminasas. Justificación: Evaluar respuesta inflamatoria y descartar colestasis.",
+      "seccion": "ÓRDENES",
+      "sustento": "Resolución 1995 de 1999, art. 11",
+      "recomendacion": "Registrar los resultados e interpretación de bilirrubinas y transaminasas o indicar expresamente que están pendientes.",
+      "confianza": 0.8,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-016-H05",
+      "historia_id": "HC-SINT-016",
+      "orden": 5,
+      "criterio_id": "COH-03",
+      "criterio": "Formulación completa",
+      "familia": "COH",
+      "familia_nombre": "Coherencia",
+      "severidad": "media",
+      "descripcion": "El acetaminofén formulado en el plan de egreso no registra la vía de administración.",
+      "evidencia": "Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8 días con patología.",
+      "seccion": "EPICRISIS",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Completar la formulación indicando la vía de administración del acetaminofén.",
+      "confianza": 0.75,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 5,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -116,7 +228,7 @@
     },
     {
       "titulo": "DATOS DEL PACIENTE",
-      "texto": "USUARIO: [PACIENTE_1]O: CC [DOCUMENTO_1] EDAD: 63 años SEXO:\nMASCULINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1]N: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Nueva EPS HISTORIA: [HISTORIA_1] EPISODIO:\n[FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 17:17 SERVICIO: HOSPITALIZACIÓN"
+      "texto": "USUARIO: [PACIENTE_1] DOCUMENTO: CC [DOCUMENTO_1] EDAD: 63 años SEXO:\nMASCULINO\nFECHA DE NACIMIENTO: [FECHA_1] PROCEDENCIA: [LUGAR_1] DIRECCIÓN: [DIRECCION_1]\nTELÉFONO: [TELEFONO_1] ASEGURADORA: Nueva EPS HISTORIA: [HISTORIA_1] EPISODIO:\n[FACTURA_1]\nFECHA DE INGRESO: [FECHA_2] 09:34 SERVICIO: HOSPITALIZACIÓN"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -124,7 +236,7 @@
     },
     {
       "titulo": "ENFERMEDAD ACTUAL",
-      "texto": "Dolor en hipocondrio derecho de 24 horas, intensidad 8/10, irradiado a la espalda, con vómito en tres\nocasiones y fiebre subjetiva. Intolerancia a grasas de larga data.\nSegún refiere su familiar [PACIENTE_3], el cuadro empeoró en las últimas horas."
+      "texto": "Dolor en hipocondrio derecho de 24 horas, intensidad 8/10, irradiado a la espalda, con vómito en tres\nocasiones y fiebre subjetiva. Intolerancia a grasas de larga data.\nSegún refiere su familiar [PACIENTE_2], el cuadro empeoró en las últimas horas."
     },
     {
       "titulo": "ANTECEDENTES",
@@ -144,7 +256,7 @@
     },
     {
       "titulo": "ÓRDENES",
-      "texto": "- Ecografía hepatobiliar. Justificación: Dolor en hipocondrio derecho con Murphy positivo.\n- Hemograma, bilirrubinas, transaminasas. Justificación: Evaluar respuesta inflamatoria y descartar colestasis.\n- Colecistectomía laparoscópica. Justificación: Colecistitis aguda litiásica confirmada por ecografía.\nRESULTADOS\n- Ecografía hepatobiliar: vesícula distendida, pared de 6 mm, cálculo de 18 mm en el cuello. Interpretación:\nConfirma colecistitis aguda litiásica.\n- Hemograma: leucocitos 14.800. Interpretación: Respuesta inflamatoria."
+      "texto": "- Ecografía hepatobiliar. Justificación: Dolor en hipocondrio derecho con Murphy positivo.\n- Hemograma, bilirrubinas, transaminasas. Justificación: Evaluar respuesta inflamatoria y descartar colestasis.\n- Colecistectomía laparoscópica. Justificación: Colecistitis aguda litiásica confirmada por ecografía.\n- Toracentesis diagnóstica.\nRESULTADOS\n- Ecografía hepatobiliar: vesícula distendida, pared de 6 mm, cálculo de 18 mm en el cuello. Interpretación:\nConfirma colecistitis aguda litiásica.\n- Hemograma: leucocitos 14.800. Interpretación: Respuesta inflamatoria."
     },
     {
       "titulo": "CONSENTIMIENTO INFORMADO",
@@ -152,19 +264,19 @@
     },
     {
       "titulo": "PLAN DE MANEJO",
-      "texto": "- Nada vía oral.\n- Lactato de Ringer 1.000 mL intravenoso cada 8 horas.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 1\n- Ampicilina sulbactam 3 g intravenoso cada 6 horas.\n- Colecistectomía laparoscópica."
+      "texto": "- Nada vía oral.\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 1\n- Lactato de Ringer 1.000 mL intravenoso cada 8 horas.\n- Ampicilina sulbactam 3 g intravenoso cada 6 horas.\n- Colecistectomía laparoscópica."
     },
     {
       "titulo": "EVOLUCIÓN",
-      "texto": "[FECHA_3] 14:44 · Día 2: Colecistectomía laparoscópica sin complicaciones, sangrado de 30 mL. Tolera vía oral\nlíquida.\n[FECHA_4] 10:08 · Día 3: Dolor controlado, deambula, heridas limpias."
+      "texto": "[FECHA_3] 10:35 · Día 2: Colecistectomía laparoscópica sin complicaciones, sangrado de 30 mL. Tolera vía oral\nlíquida.\n[FECHA_4] 17:16 · Día 3: Dolor controlado, deambula, heridas limpias."
     },
     {
       "titulo": "EPICRISIS",
-      "texto": "[FECHA_5] · Día 3: Egreso. Diagnóstico de egreso: colecistitis aguda litiásica, posoperatorio de colecistectomía\nlaparoscópica. Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8 días con patología."
+      "texto": "[FECHA_5] 10:21 · Día 3: Egreso. Diagnóstico de egreso: colecistitis aguda litiásica, posoperatorio de\ncolecistectomía laparoscópica. Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8\ndías con patología."
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Firma: ____________\nFecha de la anotación: [FECHA_2]\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_2] · CC [DOCUMENTO_1]\nPágina 2"
+      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Cirugía general. Firma\nelectrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 09:34\nESE Hospital Sintético San Jerónimo · Paciente: [PACIENTE_1] · CC [DOCUMENTO_1]\nPágina 2"
     }
   ]
 }

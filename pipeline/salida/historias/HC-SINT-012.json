@@ -1,12 +1,11 @@
 {
   "_id": "HC-SINT-012",
   "archivo": "HC-SINT-012.pdf",
-  "hash": "a5ad083f8a2c6e653c7b91269ec5e111c413f47f8b54ef2437c7b4688996a6f8",
+  "hash": "fe04356987d5fb36dc7f956676eb1ff81c1a96daef3cd360ce22314b89d69ab1",
   "paginas": 1,
   "plantilla": "B",
   "secciones_reconocidas": [
     "analisis",
-    "antecedentes",
     "consentimiento",
     "diagnosticos",
     "enfermedad_actual",
@@ -17,7 +16,7 @@
     "plan",
     "profesional"
   ],
-  "texto_anonimizado": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS\n\nIDENTIFICACIÓN DEL PACIENTE\nPaciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 27 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Mutual Ser HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 21:55\n\nMOTIVO DE CONSULTA\n«Me caí de la moto y me duele el brazo».\n\nENFERMEDAD ACTUAL\nCaída de motocicleta a baja velocidad hace una hora, con trauma en antebrazo derecho, dolor intenso y\ndeformidad. Sin pérdida de conciencia ni otros traumas.\n\nANTECEDENTES\nPersonales: niega. Familiares: sin relevancia. Alérgicos: niega.\n\nEXAMEN FÍSICO\nTA 124/78 mmHg, FC 92 lpm, FR 18 rpm, T 36,7 °C. Deformidad en tercio medio de antebrazo derecho, pulso\nradial presente, llenado capilar menor de 2 segundos, sensibilidad conservada.\n\nANÁLISIS\nFractura cerrada de antebrazo derecho; se requiere reducción.\n\nDIAGNÓSTICOS\n- S522 Fractura de la diáfisis del cúbito\n- V280 Motociclista lesionado en accidente de transporte\n\nÓRDENES\n- Radiografía de antebrazo derecho AP y lateral. Justificación: Trauma con deformidad para caracterizar la\nfractura.\n- Reducción cerrada de fractura e inmovilización. Justificación: Fractura desplazada confirmada en radiografía.\n\nCONSENTIMIENTO INFORMADO\nEl paciente o su representante recibe información sobre el procedimiento Reducción cerrada de fractura bajo\nsedación, sus riesgos y alternativas, y firma el consentimiento, que se anexa a la historia.\n\nPLAN DE MANEJO\n- Diclofenaco 75 mg intramuscular dosis única.\n- Inmovilización con férula braquiopalmar.\n- Reducción cerrada bajo sedación.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma: ____________\nFecha de la anotación: [FECHA_2]\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1",
+  "texto_anonimizado": "Clínica Sintética del Caribe\nCódigo de habilitación 230010999902 · HISTORIA CLÍNICA DE URGENCIAS\n\nIDENTIFICACIÓN DEL PACIENTE\nPaciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 27 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Mutual Ser HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 07:14\n\nMOTIVO DE CONSULTA\n«Me caí de la moto y me duele el brazo».\n\nENFERMEDAD ACTUAL\nCaída de motocicleta a baja velocidad hace una hora, con trauma en antebrazo derecho, dolor intenso y\ndeformidad. Sin pérdida de conciencia ni otros traumas.\n\nEXAMEN FÍSICO\nTA 124/78 mmHg, FC 92 lpm, FR 18 rpm, T 36,7 °C. Deformidad en tercio medio de antebrazo derecho, pulso\nradial presente, llenado capilar menor de 2 segundos, sensibilidad conservada.\n\nANÁLISIS\nFractura cerrada de antebrazo derecho; se requiere reducción.\n\nDIAGNÓSTICOS\n- S522 Fractura de la diáfisis del cúbito\n- V280 Motociclista lesionado en accidente de transporte\n\nÓRDENES\n- Radiografía de antebrazo derecho AP y lateral. Justificación: Trauma con deformidad para caracterizar la\nfractura.\n- Reducción cerrada de fractura e inmovilización. Justificación: Fractura desplazada confirmada en radiografía.\n\nCONSENTIMIENTO INFORMADO\nEl paciente o su representante recibe información sobre el procedimiento Reducción cerrada de fractura bajo\nsedación, sus riesgos y alternativas, y firma el consentimiento, que se anexa a la historia.\n\nPLAN DE MANEJO\n- Diclofenaco 75 mg intramuscular dosis única.\n- Inmovilización con férula braquiopalmar.\n- Reducción cerrada bajo sedación.\n\nPROFESIONAL\nAtendido por: [MEDICO_1]. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 07:14\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1",
   "entidades": [
     {
       "categoria": "DOCUMENTO",
@@ -65,11 +64,6 @@
       "ocurrencias": 1
     },
     {
-      "categoria": "REGISTRO",
-      "token": "[REGISTRO_1]",
-      "ocurrencias": 1
-    },
-    {
       "categoria": "TELEFONO",
       "token": "[TELEFONO_1]",
       "ocurrencias": 1
@@ -83,10 +77,88 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 5,
+    "extraccion": 4,
     "anonimizacion": 3,
-    "total": 8
+    "analisis": 2259,
+    "total": 2267
   },
+  "puntaje": 22,
+  "nivel": "bajo",
+  "composicion": [
+    {
+      "familia": "IDP",
+      "nombre": "Identificación del prestador",
+      "puntos": 9
+    },
+    {
+      "familia": "SOP",
+      "nombre": "Soporte",
+      "puntos": 9
+    },
+    {
+      "familia": "COMP",
+      "nombre": "Completitud",
+      "puntos": 4
+    }
+  ],
+  "hallazgos_lista": [
+    {
+      "_id": "HC-SINT-012-H01",
+      "historia_id": "HC-SINT-012",
+      "orden": 1,
+      "criterio_id": "COMP-03",
+      "criterio": "Antecedentes",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "baja",
+      "descripcion": "La historia no registra antecedentes personales, familiares ni alérgicos, ni declara de forma explícita su ausencia.",
+      "evidencia": "MOTIVO DE CONSULTA\n«Me caí de la moto y me duele el brazo».",
+      "seccion": "Antecedentes",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Registrar los antecedentes personales, familiares y alérgicos del paciente o declarar explícitamente su ausencia.",
+      "confianza": 0.9,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-012-H02",
+      "historia_id": "HC-SINT-012",
+      "orden": 2,
+      "criterio_id": "IDP-02",
+      "criterio": "Registro profesional y especialidad",
+      "familia": "IDP",
+      "familia_nombre": "Identificación del prestador",
+      "severidad": "media",
+      "descripcion": "No se registra el registro profesional ni la especialidad o cargo del responsable de la atención.",
+      "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
+      "seccion": "PROFESIONAL",
+      "sustento": "Resolución 1995 de 1999, art. 5",
+      "recomendacion": "Registrar el número de registro profesional y la especialidad o cargo del profesional que atiende.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-012-H03",
+      "historia_id": "HC-SINT-012",
+      "orden": 3,
+      "criterio_id": "SOP-03",
+      "criterio": "Resultados e interpretación",
+      "familia": "SOP",
+      "familia_nombre": "Soporte",
+      "severidad": "media",
+      "descripcion": "Se ordenó radiografía de antebrazo derecho y no se registra ni interpreta su resultado en la evolución.",
+      "evidencia": "- Radiografía de antebrazo derecho AP y lateral. Justificación: Trauma con deformidad para caracterizar la\nfractura.",
+      "seccion": "ÓRDENES",
+      "sustento": "Resolución 1995 de 1999, art. 11",
+      "recomendacion": "Registrar e interpretar el resultado de la radiografía ordenada, o indicar expresamente que está pendiente.",
+      "confianza": 0.8,
+      "estado_revision": "pendiente"
+    }
+  ],
+  "num_hallazgos": 3,
+  "no_evaluables": [],
+  "version_prompt": "1.2.0",
+  "version_catalogo": "1.0.0",
+  "modelo": "deepseek-chat",
   "secciones": [
     {
       "titulo": null,
@@ -94,7 +166,7 @@
     },
     {
       "titulo": "IDENTIFICACIÓN DEL PACIENTE",
-      "texto": "Paciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 27 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Mutual Ser HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 21:55"
+      "texto": "Paciente: [PACIENTE_1] CC: [DOCUMENTO_1] Edad: 27 años Sexo: masculino\nNacimiento: [FECHA_1] Residencia: [LUGAR_1], barrio [LUGAR_2] Tel: [TELEFONO_1]\nEPS: Mutual Ser HC [HISTORIA_1] Ingreso [FACTURA_1]: [FECHA_2] 07:14"
     },
     {
       "titulo": "MOTIVO DE CONSULTA",
@@ -103,10 +175,6 @@
     {
       "titulo": "ENFERMEDAD ACTUAL",
       "texto": "Caída de motocicleta a baja velocidad hace una hora, con trauma en antebrazo derecho, dolor intenso y\ndeformidad. Sin pérdida de conciencia ni otros traumas."
-    },
-    {
-      "titulo": "ANTECEDENTES",
-      "texto": "Personales: niega. Familiares: sin relevancia. Alérgicos: niega."
     },
     {
       "titulo": "EXAMEN FÍSICO",
@@ -134,7 +202,7 @@
     },
     {
       "titulo": "PROFESIONAL",
-      "texto": "Atendido por: [MEDICO_1]. Registro médico: [REGISTRO_1]. Especialidad: Medicina de\nurgencias. Firma: ____________\nFecha de la anotación: [FECHA_2]\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1"
+      "texto": "Atendido por: [MEDICO_1]. Firma electrónica registrada.\nFecha y hora de la anotación: [FECHA_2] 07:14\nClínica Sintética del Caribe · Historia [HISTORIA_1]\nPágina 1"
     }
   ]
 }

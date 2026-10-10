@@ -44,9 +44,10 @@ if (Auditta.exigirSesion()) {
   function resaltar(texto, lista) {
     let html = Auditta.resaltarTokens(texto);
     for (const h of lista) {
-      const cita = (h.evidencia || "").replace(/^[«"“]+|[»"”.]+$/g, "").trim();
+      let cita = (h.evidencia || "").replace(/^[«"“]+|[»"”.]+$/g, "").trim();
       if (cita.length < 8) continue;
-      const indice = normalizar(texto).indexOf(normalizar(cita));
+      let indice = normalizar(texto).indexOf(normalizar(cita));
+      if (indice < 0) { cita = cita.replace(/^[A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ ]{3,}\s+/, "").trim(); indice = cita.length >= 8 ? normalizar(texto).indexOf(normalizar(cita)) : -1; }
       if (indice < 0) continue;
       const fragmento = Auditta.resaltarTokens(texto.substr(indice, cita.length));
       if (html.includes(fragmento)) html = html.replace(fragmento, `<mark id="ev-${h._id}"><span class="marca-h">H-${String(h.orden).padStart(2, "0")}</span>${fragmento}</mark>`);

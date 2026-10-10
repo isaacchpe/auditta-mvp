@@ -28,7 +28,7 @@ Todo el contenido que procesa el MVP es sintético. Las historias clínicas se g
 ## Requisitos
 
 - Python 3.11
-- Una cuenta de MongoDB Atlas (clúster gratuito) para el despliegue. En desarrollo se usa una base en memoria.
+- Una base de datos MongoDB en la nube para el despliegue. En desarrollo se usa una base en memoria.
 - Una clave de la API de DeepSeek para la etapa de análisis del pipeline.
 
 ## Instalación local
@@ -75,7 +75,7 @@ El servicio se despliega en Render desde este repositorio con el archivo `render
 
 | Variable | Uso |
 |---|---|
-| `MONGODB_URI` | Cadena de conexión de MongoDB Atlas. Si falta, se usa una base en memoria. |
+| `MONGODB_URI` | Cadena de conexión de MongoDB. Si falta, se usa una base en memoria. |
 | `MONGODB_DB` | Nombre de la base de datos. Por defecto `auditta`. |
 | `JWT_SECRETO` | Clave para firmar las sesiones. |
 | `JWT_HORAS` | Duración de la sesión en horas. Por defecto 12. |

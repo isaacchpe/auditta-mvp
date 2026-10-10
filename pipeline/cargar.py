@@ -46,6 +46,6 @@ def cargar(limpiar_decisiones: bool = False) -> dict:
 
 if __name__ == "__main__":
     if not os.environ.get("MONGODB_URI"):
-        print("Defina MONGODB_URI para cargar a Atlas")
+        print("Defina MONGODB_URI para cargar a la base de datos")
         sys.exit(1)
     print(cargar(limpiar_decisiones="--reiniciar" in sys.argv))

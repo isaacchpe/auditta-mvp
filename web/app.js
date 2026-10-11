@@ -90,5 +90,19 @@ const Auditta = (() => {
     temporizadorNotificacion = setTimeout(() => caja.classList.remove("visible"), 6000);
   }
 
-  return { ICONOS, ESTADOS, PERFILES, api, evento, ocupado, lateral, escapar, resaltarTokens, chip, estado, puntaje, parametro, segundos, insignia, notificar, guardarSesion, cerrarSesion, exigirSesion, token, almacen };
+  function sinHistoria(contenedor, mensaje) {
+    const destino = document.querySelector(contenedor) || document.querySelector(".contenido");
+    const caja = `<section class="tarjeta exito" style="margin:40px auto"><span style="font-size:40px;font-weight:700;color:var(--color-marca-primario)">!</span><h1 style="font-size:20px">${escapar(mensaje || "No encontramos esta historia")}</h1><p style="margin:0;color:var(--color-neutro-texto-secundario)">Elija una historia desde la bandeja para continuar.</p><a class="btn" href="/bandeja.html">Ir a la bandeja</a></section>`;
+    const principal = document.querySelector(".contenido");
+    if (principal) { [...principal.children].forEach(n => { if (!n.classList.contains("encabezado")) n.remove(); }); principal.insertAdjacentHTML("beforeend", caja); }
+    else if (destino) destino.innerHTML = caja;
+  }
+
+  function historiaSolicitada() {
+    const id = parametro("id");
+    if (!id) { sinHistoria(null, "No se indicó qué historia abrir"); return null; }
+    return id;
+  }
+
+  return { sinHistoria, historiaSolicitada, ICONOS, ESTADOS, PERFILES, api, evento, ocupado, lateral, escapar, resaltarTokens, chip, estado, puntaje, parametro, segundos, insignia, notificar, guardarSesion, cerrarSesion, exigirSesion, token, almacen };
 })();

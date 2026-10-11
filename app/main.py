@@ -63,7 +63,10 @@ async def bitacora(request: Request, call_next):
     except Exception:
         log.exception("Error no controlado en %s %s", request.method, request.url.path)
         return JSONResponse({"detail": "Error interno. Intente de nuevo."}, status_code=500)
-    if request.url.path.startswith("/api"):
+    if not request.url.path.startswith("/api"):
+        respuesta.headers["Cache-Control"] = "no-cache"
+    else:
+        respuesta.headers["Cache-Control"] = "no-store"
         log.info("%s %s %d %.0fms", request.method, request.url.path, respuesta.status_code, (time.perf_counter() - inicio) * 1000)
     return respuesta
 
@@ -287,7 +290,10 @@ def raiz():
 @app.exception_handler(404)
 async def no_encontrado(request: Request, exc):
     if request.url.path.startswith("/api"):
-        return JSONResponse({"detail": "Recurso no encontrado."}, status_code=404)
+        detalle = getattr(exc, "detail", None)
+        if not isinstance(detalle, str) or detalle == "Not Found":
+            detalle = "Recurso no encontrado."
+        return JSONResponse({"detail": detalle}, status_code=404)
     return FileResponse(WEB / "404.html", status_code=404)
 
 

@@ -31,11 +31,11 @@
 if (Auditta.exigirSesion()) {
   Auditta.lateral("bandeja");
   const $ = s => document.querySelector(s);
-  const id = Auditta.parametro("id");
+  const id = Auditta.historiaSolicitada();
   $("#insignia").innerHTML = Auditta.insignia();
   $("#aviso").innerHTML = `${Auditta.ICONOS.candado}<span>Este es el único texto que se envía al proveedor externo de inteligencia artificial. Revise que no quede ningún dato que identifique al paciente (Ley 1581 de 2012).</span>`;
   const CATEGORIAS = { PACIENTE: "Nombres de personas", DOCUMENTO: "Documento de identidad", FECHA: "Fechas", DIRECCION: "Dirección", TELEFONO: "Teléfono", CORREO: "Correo electrónico", LUGAR: "Lugar de residencia", MEDICO: "Profesional tratante", REGISTRO: "Registro médico", HISTORIA: "Número de historia", FACTURA: "Número de admisión o factura" };
-  Auditta.api("/historias/" + id).then(h => {
+  if (id) Auditta.api("/historias/" + id).then(h => {
     $("#titulo").textContent = "Confirmar anonimización · " + h._id;
     $("#ruta").textContent = "Inicio / Bandeja / " + h._id;
     $("#subdoc").textContent = `Plantilla ${h.plantilla} · ${h.paginas} páginas · reglas de anonimización v${h.version_reglas}`;
@@ -45,7 +45,7 @@ if (Auditta.exigirSesion()) {
     $("#subent").textContent = `${(h.entidades || []).length} sustituciones en ${Object.keys(grupos).length} categorías`;
     $("#entidades").innerHTML = Object.entries(grupos).map(([c, g]) => `<div style="display:flex;align-items:center;gap:8px"><div style="flex:1"><div style="font-weight:500">${CATEGORIAS[c] || c}</div><div class="token" style="font-size:11px">${g.tokens.slice(0, 3).join(" ")}${g.tokens.length > 3 ? " …" : ""}</div></div><span style="padding:2px 8px;border-radius:999px;background:var(--color-neutro-fondo);font-weight:600;font-size:12px">${g.n}</span></div>`).join("");
     if (h.estado !== "pendiente_confirmacion") { $("#casilla").disabled = true; $("#confirmar").disabled = true; $("#error").textContent = "Esta historia ya fue confirmada."; $("#confirmar").insertAdjacentHTML("afterend", `<a class="btn" href="/informe.html?id=${h._id}">Ver informe</a>`); }
-  }).catch(x => { $("#documento").innerHTML = `<div class="aviso error">${Auditta.escapar(x.message)}</div>`; });
+  }).catch(x => Auditta.sinHistoria(null, x.message));
   $("#casilla").addEventListener("change", e => { $("#confirmar").disabled = !e.target.checked; });
   $("#confirmar").addEventListener("click", async () => {
     const boton = $("#confirmar"); $("#error").textContent = "";

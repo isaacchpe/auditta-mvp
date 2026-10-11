@@ -32,7 +32,7 @@
 if (Auditta.exigirSesion()) {
   Auditta.lateral("bandeja");
   const $ = s => document.querySelector(s);
-  const id = Auditta.parametro("id");
+  const id = Auditta.historiaSolicitada();
   const apertura = performance.now();
   const transcurrido = () => Math.round((performance.now() - apertura) / 1000);
   let historia = null, hallazgos = [], reclasificando = null;
@@ -74,7 +74,8 @@ if (Auditta.exigirSesion()) {
   }
   function pintar() {
     $("#documento").innerHTML = (historia.secciones || []).map(s => (s.titulo ? `<h3>${Auditta.escapar(s.titulo)}</h3>` : "") + `<div>${resaltar(s.texto, hallazgos)}</div>`).join("");
-    $("#hallazgos").innerHTML = hallazgos.length ? hallazgos.map(tarjeta).join("") : `<div class="tarjeta panel" style="align-items:center;text-align:center;padding:40px"><h2>Sin hallazgos para esta historia</h2><p class="sub">El análisis no reportó incumplimientos sustentados con evidencia.</p></div>`;
+    $("#hallazgos").innerHTML = hallazgos.length ? hallazgos.map(tarjeta).join("") :`<div class="tarjeta panel" style="align-items:center;text-align:center;padding:40px"><h2>Sin hallazgos para esta historia</h2><p class="sub">El análisis no reportó incumplimientos sustentados con evidencia.</p></div>`;
+    document.querySelectorAll('a[href^="#ev-"]').forEach(a => { if (!document.getElementById(a.getAttribute("href").slice(1))) a.remove(); });
     pintarResumen();
   }
   async function decidir(hallazgoId, datos, boton) {
@@ -123,13 +124,13 @@ if (Auditta.exigirSesion()) {
     catch (x) { $("#error-cierre").textContent = x.message; Auditta.ocupado(boton, false); }
   });
   setInterval(() => { const r = $("#reloj"); if (r) r.textContent = Auditta.segundos(transcurrido()); }, 1000);
-  Auditta.api("/historias/" + id).then(h => {
-    if (h.estado === "pendiente_confirmacion") { location.href = "/confirmacion.html?id=" + id; return; }
+  if (id) Auditta.api("/historias/" + id).then(h => {
+    if (h.estado === "pendiente_confirmacion") { location.replace("/confirmacion.html?id=" + id); return; }
     historia = h; hallazgos = h.hallazgos || [];
     $("#titulo").textContent = "Informe de riesgo · " + h._id; $("#ruta").textContent = "Inicio / Bandeja / " + h._id;
     pintar();
     Auditta.evento("abrir_informe", { historia_id: id });
-  }).catch(x => { $("#documento").innerHTML = `<div class="aviso error">${Auditta.escapar(x.message)}</div>`; });
+  }).catch(x => Auditta.sinHistoria(null, x.message));
 }
 </script>
 </body>

@@ -17,6 +17,7 @@ from app.db import obtener_db
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 log = logging.getLogger("auditta")
 
+
 @asynccontextmanager
 async def ciclo_de_vida(_: FastAPI):
     from app.semilla import sembrar_si_vacio, sembrar_usuario_demo
@@ -24,8 +25,12 @@ async def ciclo_de_vida(_: FastAPI):
     try:
         sembrar_si_vacio()
         sembrar_usuario_demo()
+        db = obtener_db()
+        db.revisiones.create_index([("usuario", 1), ("historia_id", 1)], unique=True)
+        db.hallazgos.create_index("historia_id")
+        db.eventos.create_index("fecha")
     except Exception:
-        log.exception("No fue posible sembrar los datos iniciales")
+        log.exception("No fue posible preparar los datos iniciales")
     yield
 
 
@@ -33,6 +38,7 @@ app = FastAPI(title="Auditta MVP", version=VERSION_APP, docs_url=None, redoc_url
 WEB = RAIZ / "web"
 CORREO = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 PERFILES = ("auditor_medico", "facturacion", "coordinador", "desarrollador", "otro")
+PERFILES_MEDIDOS = ("auditor_medico", "facturacion", "coordinador")
 
 
 def ahora() -> datetime:
@@ -138,17 +144,33 @@ def registro(datos: Registro):
     return {"token": emitir_token(datos.correo, datos.nombre, datos.perfil), "nombre": datos.nombre, "perfil": datos.perfil}
 
 
-def resumen_historia(historia: dict, hallazgos: list[dict]) -> dict:
-    revisados = [h for h in hallazgos if h.get("estado_revision", "pendiente") != "pendiente"]
+def revision_de(usuario: str, historia_id: str) -> dict:
+    revision = obtener_db().revisiones.find_one({"usuario": usuario, "historia_id": historia_id})
+    return revision or {"usuario": usuario, "historia_id": historia_id, "estado": "pendiente_confirmacion", "decisiones": {}}
+
+
+def fusionar_hallazgo(hallazgo: dict, decision: dict | None) -> dict:
+    hallazgo = dict(hallazgo)
+    if decision:
+        hallazgo["estado_revision"] = decision["decision"]
+        hallazgo["ultima_decision"] = decision
+        if decision.get("severidad_nueva"):
+            hallazgo["severidad_revisada"] = decision["severidad_nueva"]
+    else:
+        hallazgo["estado_revision"] = "pendiente"
+    return hallazgo
+
+
+def resumen_historia(historia: dict, total_hallazgos: int, revision: dict) -> dict:
     return {
         "_id": historia["_id"],
         "plantilla": historia.get("plantilla"),
         "paginas": historia.get("paginas"),
-        "estado": historia.get("estado"),
+        "estado": revision["estado"],
         "puntaje": historia.get("puntaje"),
         "nivel": historia.get("nivel"),
-        "num_hallazgos": len(hallazgos),
-        "revisados": len(revisados),
+        "num_hallazgos": total_hallazgos,
+        "revisados": len(revision.get("decisiones", {})),
         "error": historia.get("error"),
         "fecha_carga": historia.get("fecha_carga"),
     }
@@ -157,10 +179,14 @@ def resumen_historia(historia: dict, hallazgos: list[dict]) -> dict:
 @app.get("/api/historias")
 def listar_historias(usuario: dict = Depends(usuario_actual)):
     db = obtener_db()
-    conteo: dict[str, list[dict]] = {}
-    for hallazgo in db.hallazgos.find({}, {"historia_id": 1, "estado_revision": 1}):
-        conteo.setdefault(hallazgo["historia_id"], []).append(hallazgo)
-    historias = [limpiar(resumen_historia(h, conteo.get(h["_id"], []))) for h in db.historias.find({}, {"texto_anonimizado": 0, "entidades": 0, "secciones": 0})]
+    conteo: dict[str, int] = {}
+    for hallazgo in db.hallazgos.find({}, {"historia_id": 1}):
+        conteo[hallazgo["historia_id"]] = conteo.get(hallazgo["historia_id"], 0) + 1
+    revisiones = {r["historia_id"]: r for r in db.revisiones.find({"usuario": usuario["sub"]})}
+    historias = []
+    for h in db.historias.find({}, {"texto_anonimizado": 0, "entidades": 0, "secciones": 0}):
+        revision = revisiones.get(h["_id"]) or {"estado": "pendiente_confirmacion", "decisiones": {}}
+        historias.append(limpiar(resumen_historia(h, conteo.get(h["_id"], 0), revision)))
     historias.sort(key=lambda h: (h["puntaje"] is None, -(h["puntaje"] or 0)))
     return {"historias": historias}
 
@@ -171,7 +197,13 @@ def ver_historia(historia_id: str, usuario: dict = Depends(usuario_actual)):
     historia = db.historias.find_one({"_id": historia_id})
     if not historia:
         raise HTTPException(404, "Historia no encontrada.")
-    hallazgos = [limpiar(h) for h in db.hallazgos.find({"historia_id": historia_id}).sort("orden", 1)]
+    revision = revision_de(usuario["sub"], historia_id)
+    decisiones = revision.get("decisiones", {})
+    hallazgos = [limpiar(fusionar_hallazgo(h, decisiones.get(h["_id"]))) for h in db.hallazgos.find({"historia_id": historia_id}).sort("orden", 1)]
+    for campo in ("estado", "confirmacion", "cierre"):
+        if campo in revision:
+            historia[campo] = revision[campo]
+    historia["estado"] = revision["estado"]
     registrar_evento("ver_historia", usuario["sub"], {"historia_id": historia_id})
     return {**limpiar(historia), "hallazgos": hallazgos}
 
@@ -179,12 +211,16 @@ def ver_historia(historia_id: str, usuario: dict = Depends(usuario_actual)):
 @app.post("/api/historias/{historia_id}/confirmar-anonimizacion")
 def confirmar_anonimizacion(historia_id: str, usuario: dict = Depends(usuario_actual)):
     db = obtener_db()
-    resultado = db.historias.update_one(
-        {"_id": historia_id, "estado": "pendiente_confirmacion"},
-        {"$set": {"estado": "analizada", "confirmacion": {"usuario": usuario["sub"], "fecha": ahora()}}},
-    )
-    if resultado.matched_count == 0:
+    if not db.historias.find_one({"_id": historia_id}, {"_id": 1}):
+        raise HTTPException(404, "Historia no encontrada.")
+    revision = revision_de(usuario["sub"], historia_id)
+    if revision["estado"] != "pendiente_confirmacion":
         raise HTTPException(409, "La historia no está pendiente de confirmación.")
+    db.revisiones.update_one(
+        {"usuario": usuario["sub"], "historia_id": historia_id},
+        {"$set": {"estado": "analizada", "confirmacion": {"fecha": ahora()}, "perfil": usuario.get("perfil")}, "$setOnInsert": {"decisiones": {}, "fecha_inicio": ahora()}},
+        upsert=True,
+    )
     registrar_evento("confirmar_anonimizacion", usuario["sub"], {"historia_id": historia_id})
     return {"estado": "analizada"}
 
@@ -199,11 +235,13 @@ def decidir(hallazgo_id: str, datos: Decision, usuario: dict = Depends(usuario_a
     hallazgo = db.hallazgos.find_one({"_id": hallazgo_id})
     if not hallazgo:
         raise HTTPException(404, "Hallazgo no encontrado.")
+    revision = revision_de(usuario["sub"], hallazgo["historia_id"])
+    if revision["estado"] == "pendiente_confirmacion":
+        raise HTTPException(409, "Confirme la anonimización antes de decidir.")
+    if revision["estado"] == "revisada":
+        raise HTTPException(409, "La revisión de esta historia ya fue cerrada.")
     decision = {**datos.model_dump(), "usuario": usuario["sub"], "nombre": usuario.get("nombre"), "fecha": ahora()}
-    cambios = {"estado_revision": datos.decision, "ultima_decision": decision}
-    if datos.decision == "reclasificado":
-        cambios["severidad_revisada"] = datos.severidad_nueva
-    db.hallazgos.update_one({"_id": hallazgo_id}, {"$set": cambios, "$push": {"decisiones": decision}})
+    db.revisiones.update_one({"usuario": usuario["sub"], "historia_id": hallazgo["historia_id"]}, {"$set": {f"decisiones.{hallazgo_id}": decision}})
     registrar_evento("cta_decision", usuario["sub"], {"hallazgo_id": hallazgo_id, "historia_id": hallazgo["historia_id"], "decision": datos.decision})
     return {"estado_revision": datos.decision, "decision": limpiar(decision)}
 
@@ -211,9 +249,13 @@ def decidir(hallazgo_id: str, datos: Decision, usuario: dict = Depends(usuario_a
 @app.post("/api/hallazgos/{hallazgo_id}/deshacer")
 def deshacer(hallazgo_id: str, usuario: dict = Depends(usuario_actual)):
     db = obtener_db()
-    resultado = db.hallazgos.update_one({"_id": hallazgo_id}, {"$set": {"estado_revision": "pendiente"}, "$unset": {"ultima_decision": "", "severidad_revisada": ""}})
-    if resultado.matched_count == 0:
+    hallazgo = db.hallazgos.find_one({"_id": hallazgo_id}, {"historia_id": 1})
+    if not hallazgo:
         raise HTTPException(404, "Hallazgo no encontrado.")
+    revision = revision_de(usuario["sub"], hallazgo["historia_id"])
+    if revision["estado"] == "revisada":
+        raise HTTPException(409, "La revisión de esta historia ya fue cerrada.")
+    db.revisiones.update_one({"usuario": usuario["sub"], "historia_id": hallazgo["historia_id"]}, {"$unset": {f"decisiones.{hallazgo_id}": ""}})
     registrar_evento("deshacer_decision", usuario["sub"], {"hallazgo_id": hallazgo_id})
     return {"estado_revision": "pendiente"}
 
@@ -221,17 +263,21 @@ def deshacer(hallazgo_id: str, usuario: dict = Depends(usuario_actual)):
 @app.post("/api/historias/{historia_id}/cerrar-revision")
 def cerrar_revision(historia_id: str, datos: Cierre, usuario: dict = Depends(usuario_actual)):
     db = obtener_db()
-    hallazgos = list(db.hallazgos.find({"historia_id": historia_id}))
+    hallazgos = list(db.hallazgos.find({"historia_id": historia_id}, {"_id": 1}))
     if not hallazgos:
         raise HTTPException(404, "Historia sin hallazgos.")
-    pendientes = [h for h in hallazgos if h.get("estado_revision", "pendiente") == "pendiente"]
+    revision = revision_de(usuario["sub"], historia_id)
+    if revision["estado"] == "revisada":
+        return limpiar(revision["cierre"])
+    decisiones = revision.get("decisiones", {})
+    pendientes = [h["_id"] for h in hallazgos if h["_id"] not in decisiones]
     if pendientes:
         raise HTTPException(409, f"Faltan {len(pendientes)} hallazgos por decidir.")
     resumen = {"aceptados": 0, "descartados": 0, "reclasificados": 0}
-    for h in hallazgos:
-        resumen[h["estado_revision"] + "s"] += 1
-    cierre = {"usuario": usuario["sub"], "fecha": ahora(), "segundos_revision": datos.segundos_revision, **resumen}
-    db.historias.update_one({"_id": historia_id}, {"$set": {"estado": "revisada", "cierre": cierre}})
+    for d in decisiones.values():
+        resumen[d["decision"] + "s"] += 1
+    cierre = {"fecha": ahora(), "segundos_revision": datos.segundos_revision, **resumen}
+    db.revisiones.update_one({"usuario": usuario["sub"], "historia_id": historia_id}, {"$set": {"estado": "revisada", "cierre": cierre}})
     registrar_evento("revision_completada", usuario["sub"], {"historia_id": historia_id, **cierre})
     return limpiar(cierre)
 
@@ -239,37 +285,41 @@ def cerrar_revision(historia_id: str, datos: Cierre, usuario: dict = Depends(usu
 @app.get("/api/metricas")
 def metricas(usuario: dict = Depends(usuario_actual)):
     db = obtener_db()
-    hallazgos = list(db.hallazgos.find({}, {"familia": 1, "severidad": 1, "estado_revision": 1, "criterio_id": 1}))
-    revisados = [h for h in hallazgos if h.get("estado_revision", "pendiente") != "pendiente"]
+    hallazgos = {h["_id"]: h for h in db.hallazgos.find({}, {"familia": 1, "severidad": 1, "criterio_id": 1})}
+    medidos = {u["_id"] for u in db.usuarios.find({"perfil": {"$in": list(PERFILES_MEDIDOS)}}, {"_id": 1})}
     decisiones = {"aceptado": 0, "descartado": 0, "reclasificado": 0}
-    for h in revisados:
-        decisiones[h["estado_revision"]] += 1
+    por_criterio: dict[str, dict] = {}
+    tiempos = []
+    participantes = set()
+    for r in db.revisiones.find({"usuario": {"$in": list(medidos)}}):
+        for hid, d in r.get("decisiones", {}).items():
+            decisiones[d["decision"]] += 1
+            participantes.add(r["usuario"])
+            criterio = hallazgos.get(hid, {}).get("criterio_id", "?")
+            c = por_criterio.setdefault(criterio, {"total": 0, "descartados": 0})
+            c["total"] += 1
+            c["descartados"] += d["decision"] == "descartado"
+        if r.get("cierre"):
+            tiempos.append(r["cierre"]["segundos_revision"])
+    revisados = sum(decisiones.values())
     por_familia: dict[str, int] = {}
     por_severidad: dict[str, int] = {}
-    por_criterio: dict[str, dict] = {}
-    for h in hallazgos:
+    for h in hallazgos.values():
         por_familia[h["familia"]] = por_familia.get(h["familia"], 0) + 1
         por_severidad[h["severidad"]] = por_severidad.get(h["severidad"], 0) + 1
-        c = por_criterio.setdefault(h["criterio_id"], {"total": 0, "descartados": 0})
-        c["total"] += 1
-        if h.get("estado_revision") == "descartado":
-            c["descartados"] += 1
-    estados: dict[str, int] = {}
-    tiempos = []
-    for h in db.historias.find({}, {"estado": 1, "cierre": 1}):
-        estados[h["estado"]] = estados.get(h["estado"], 0) + 1
-        if h.get("cierre"):
-            tiempos.append(h["cierre"]["segundos_revision"])
-    participantes = db.usuarios.count_documents({"perfil": {"$in": ["auditor_medico", "facturacion", "coordinador"]}})
+    propias = {r["historia_id"]: r["estado"] for r in db.revisiones.find({"usuario": usuario["sub"]}, {"historia_id": 1, "estado": 1})}
+    total_historias = db.historias.count_documents({})
+    estados = {"analizada": sum(1 for e in propias.values() if e == "analizada"), "revisada": sum(1 for e in propias.values() if e == "revisada")}
+    estados["pendiente_confirmacion"] = total_historias - estados["analizada"] - estados["revisada"]
     return {
         "historias_por_estado": estados,
         "hallazgos_total": len(hallazgos),
-        "hallazgos_revisados": len(revisados),
+        "hallazgos_revisados": revisados,
         "decisiones": decisiones,
-        "tasa_aceptacion": round(decisiones["aceptado"] / len(revisados), 3) if revisados else None,
+        "tasa_aceptacion": round(decisiones["aceptado"] / revisados, 3) if revisados else None,
         "tiempo_medio_revision": round(sum(tiempos) / len(tiempos)) if tiempos else None,
         "historias_cerradas": len(tiempos),
-        "participantes": participantes,
+        "participantes": len(participantes),
         "por_familia": por_familia,
         "por_severidad": por_severidad,
         "por_criterio": por_criterio,

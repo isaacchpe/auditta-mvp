@@ -10,20 +10,20 @@ from app.main import app
 cliente = TestClient(app)
 
 
-def sesion(correo="ana@ips-ejemplo.com.co"):
-    respuesta = cliente.post("/api/auth/registro", json={"nombre": "Ana Prueba", "correo": correo, "clave": "clave12345", "perfil": "auditor_medico"})
+def sesion(correo="ana@ips-ejemplo.com.co", perfil="auditor_medico"):
+    respuesta = cliente.post("/api/auth/registro", json={"nombre": "Ana Prueba", "correo": correo, "clave": "clave12345", "perfil": perfil})
     assert respuesta.status_code == 201
     return {"Authorization": "Bearer " + respuesta.json()["token"]}
 
 
 def sembrar():
     db = obtener_db()
-    db.historias.delete_many({})
-    db.hallazgos.delete_many({})
+    for coleccion in ("historias", "hallazgos", "revisiones", "eventos"):
+        db[coleccion].delete_many({})
     db.historias.insert_one({"_id": "HC-T1", "estado": "pendiente_confirmacion", "plantilla": "B", "paginas": 3, "puntaje": 72, "nivel": "alto", "secciones": [], "entidades": []})
     db.hallazgos.insert_many([
-        {"_id": "HC-T1-H01", "historia_id": "HC-T1", "orden": 1, "criterio_id": "COMP-05", "criterio": "Diagnóstico codificado", "familia": "COMP", "severidad": "alta", "descripcion": "x", "evidencia": "y", "sustento": "z", "confianza": 0.9, "estado_revision": "pendiente"},
-        {"_id": "HC-T1-H02", "historia_id": "HC-T1", "orden": 2, "criterio_id": "SOP-02", "criterio": "Orden médica", "familia": "SOP", "severidad": "alta", "descripcion": "x", "evidencia": "y", "sustento": "z", "confianza": 0.8, "estado_revision": "pendiente"},
+        {"_id": "HC-T1-H01", "historia_id": "HC-T1", "orden": 1, "criterio_id": "COMP-05", "criterio": "Diagnóstico codificado", "familia": "COMP", "severidad": "alta", "descripcion": "x", "evidencia": "y", "sustento": "z", "confianza": 0.9},
+        {"_id": "HC-T1-H02", "historia_id": "HC-T1", "orden": 2, "criterio_id": "SOP-02", "criterio": "Orden médica", "familia": "SOP", "severidad": "alta", "descripcion": "x", "evidencia": "y", "sustento": "z", "confianza": 0.8},
     ])
 
 
@@ -43,7 +43,8 @@ def test_ingreso_incorrecto():
 def test_flujo_completo_del_auditor():
     sembrar()
     cabeceras = sesion("maria@ips-ejemplo.com.co")
-    assert cliente.get("/api/historias", headers=cabeceras).json()["historias"][0]["_id"] == "HC-T1"
+    assert cliente.get("/api/historias", headers=cabeceras).json()["historias"][0]["estado"] == "pendiente_confirmacion"
+    assert cliente.post("/api/hallazgos/HC-T1-H01/decision", headers=cabeceras, json={"decision": "aceptado"}).status_code == 409
     assert cliente.post("/api/historias/HC-T1/confirmar-anonimizacion", headers=cabeceras).status_code == 200
     assert cliente.post("/api/historias/HC-T1/confirmar-anonimizacion", headers=cabeceras).status_code == 409
     assert cliente.post("/api/hallazgos/HC-T1-H01/decision", headers=cabeceras, json={"decision": "reclasificado"}).status_code == 422
@@ -53,26 +54,38 @@ def test_flujo_completo_del_auditor():
     assert respuesta.status_code == 200
     cierre = cliente.post("/api/historias/HC-T1/cerrar-revision", headers=cabeceras, json={"segundos_revision": 185}).json()
     assert cierre["aceptados"] == 1 and cierre["reclasificados"] == 1
+    historia = cliente.get("/api/historias/HC-T1", headers=cabeceras).json()
+    assert historia["estado"] == "revisada" and historia["hallazgos"][1]["severidad_revisada"] == "media"
     metricas = cliente.get("/api/metricas", headers=cabeceras).json()
-    assert metricas["tasa_aceptacion"] == 0.5 and metricas["tiempo_medio_revision"] == 185
+    assert metricas["tasa_aceptacion"] == 0.5 and metricas["tiempo_medio_revision"] == 185 and metricas["participantes"] == 1
     assert obtener_db().eventos.count_documents({"tipo": "cta_decision"}) == 2
-    assert cliente.get("/api/historias/HC-T1", headers=cabeceras).json()["estado"] == "revisada"
 
 
-def test_deshacer():
+def test_revisiones_independientes_por_usuario():
     sembrar()
-    cabeceras = sesion("jorge@ips-ejemplo.com.co")
-    cliente.post("/api/hallazgos/HC-T1-H01/decision", headers=cabeceras, json={"decision": "descartado"})
-    assert cliente.post("/api/hallazgos/HC-T1-H01/deshacer", headers=cabeceras).json()["estado_revision"] == "pendiente"
+    primera = sesion("carlos@ips-ejemplo.com.co")
+    segunda = sesion("lucia@ips-ejemplo.com.co", "facturacion")
+    cliente.post("/api/historias/HC-T1/confirmar-anonimizacion", headers=primera)
+    cliente.post("/api/hallazgos/HC-T1-H01/decision", headers=primera, json={"decision": "descartado"})
+    assert cliente.get("/api/historias", headers=segunda).json()["historias"][0]["estado"] == "pendiente_confirmacion"
+    assert cliente.get("/api/historias/HC-T1", headers=segunda).json()["hallazgos"][0]["estado_revision"] == "pendiente"
+    assert cliente.get("/api/historias/HC-T1", headers=primera).json()["hallazgos"][0]["estado_revision"] == "descartado"
+    assert cliente.post("/api/hallazgos/HC-T1-H01/deshacer", headers=primera).json()["estado_revision"] == "pendiente"
 
 
-def test_cuenta_de_prueba():
+def test_cuenta_de_prueba_fuera_de_metricas():
+    sembrar()
     from app.semilla import sembrar_usuario_demo
 
     sembrar_usuario_demo()
     demo = cliente.get("/api/configuracion").json()["cuenta_prueba"]
     respuesta = cliente.post("/api/auth/ingreso", json={"correo": demo["correo"], "clave": demo["clave"]})
     assert respuesta.status_code == 200 and respuesta.json()["perfil"] == "evaluador"
+    cabeceras = {"Authorization": "Bearer " + respuesta.json()["token"]}
+    cliente.post("/api/historias/HC-T1/confirmar-anonimizacion", headers=cabeceras)
+    cliente.post("/api/hallazgos/HC-T1-H01/decision", headers=cabeceras, json={"decision": "aceptado"})
+    metricas = cliente.get("/api/metricas", headers=cabeceras).json()
+    assert metricas["hallazgos_revisados"] == 0 and metricas["participantes"] == 0
     assert sembrar_usuario_demo() is False
 
 

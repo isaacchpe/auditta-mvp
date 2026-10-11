@@ -42,7 +42,7 @@ def sembrar_si_vacio() -> int:
         datos["fecha_carga"] = ahora
         db.historias.replace_one({"_id": datos["_id"]}, datos, upsert=True)
         for hallazgo in hallazgos:
-            hallazgo.setdefault("estado_revision", "pendiente")
+            hallazgo.pop("estado_revision", None)
             db.hallazgos.replace_one({"_id": hallazgo["_id"]}, hallazgo, upsert=True)
         cargadas += 1
     resumen = SALIDA / "metricas_pipeline.json"

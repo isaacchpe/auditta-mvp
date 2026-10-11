@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditta · Cargar historia clínica</title>
+<link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+<div class="marco">
+  <main class="contenido">
+    <div class="encabezado"><div class="titulos"><p class="ruta">Inicio / Cargar historia</p><h1>Cargar historia clínica</h1></div><span id="insignia"></span></div>
+    <div class="fila" style="align-items:flex-start">
+      <section class="tarjeta panel" style="flex:1.4">
+        <h2>Archivo PDF</h2>
+        <p class="sub">Historias clínicas en PDF con capa de texto, de hasta 20 MB. Los documentos escaneados no se procesan en esta versión.</p>
+        <form id="f-carga" novalidate>
+          <label class="zona" id="zona" for="archivo">
+            <input id="archivo" type="file" accept="application/pdf,.pdf" class="oculto">
+            <span class="zona-icono"></span>
+            <b id="zona-titulo">Arrastre el PDF aquí o haga clic para elegirlo</b>
+            <span id="zona-detalle" style="color:var(--color-neutro-texto-secundario);font-size:13px">Ningún archivo seleccionado</span>
+          </label>
+          <div class="mensaje-error" id="error" role="alert"></div>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
+            <button class="btn" type="submit" id="subir" disabled><span class="giro"></span><span class="etiqueta">Cargar y anonimizar</span></button>
+            <a class="btn fantasma" href="/bandeja.html">Volver a la bandeja</a>
+          </div>
+        </form>
+        <div id="progreso" class="oculto" style="display:flex;flex-direction:column;gap:8px">
+          <div class="barra-h"><span style="width:200px">Extracción del texto</span><div class="pista"><div class="barra" id="p1" style="width:0%"></div></div></div>
+          <div class="barra-h"><span style="width:200px">Anonimización local</span><div class="pista"><div class="barra" id="p2" style="width:0%"></div></div></div>
+          <div class="barra-h"><span style="width:200px">Listo para confirmar</span><div class="pista"><div class="barra" id="p3" style="width:0%"></div></div></div>
+        </div>
+        <div id="resultado" class="oculto"></div>
+      </section>
+      <section class="tarjeta panel" style="flex:1">
+        <h2>Qué pasa con el documento</h2>
+        <ol style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px;color:var(--color-neutro-texto-secundario)">
+          <li>Se extrae el texto y se segmenta por secciones clínicas.</li>
+          <li>Se anonimizan localmente los datos del paciente y del profesional: el PDF original no se conserva en el servidor.</li>
+          <li>Usted revisa el texto anonimizado y confirma.</li>
+          <li>Solo entonces el texto anonimizado se envía al modelo de lenguaje para generar los hallazgos.</li>
+        </ol>
+        <div class="aviso info" id="aviso"></div>
+      </section>
+    </div>
+  </main>
+</div>
+<script src="/app.js"></script>
+<script>
+if (Auditta.exigirSesion()) {
+  Auditta.lateral("carga");
+  const $ = s => document.querySelector(s);
+  $("#insignia").innerHTML = Auditta.insignia();
+  $("#aviso").innerHTML = `${Auditta.ICONOS.candado}<span>Use únicamente historias sintéticas o de prueba. Ningún dato identificable sale del servidor sin su confirmación (Ley 1581 de 2012).</span>`;
+  $(".zona-icono").innerHTML = Auditta.ICONOS.documento;
+  let archivo = null;
+  const MAX = 20 * 1024 * 1024;
+  function elegir(f) {
+    $("#error").textContent = "";
+    if (!f) return;
+    if (!/\.pdf$/i.test(f.name)) { $("#error").textContent = "Solo se aceptan archivos PDF."; return; }
+    if (f.size > MAX) { $("#error").textContent = "El archivo supera los 20 MB permitidos."; return; }
+    archivo = f;
+    $("#zona-titulo").textContent = f.name;
+    $("#zona-detalle").textContent = `${(f.size / 1024).toFixed(0)} KB · listo para cargar`;
+    $("#subir").disabled = false;
+  }
+  $("#archivo").addEventListener("change", e => elegir(e.target.files[0]));
+  const zona = $("#zona");
+  ["dragenter", "dragover"].forEach(ev => zona.addEventListener(ev, e => { e.preventDefault(); zona.classList.add("activa"); }));
+  ["dragleave", "drop"].forEach(ev => zona.addEventListener(ev, e => { e.preventDefault(); zona.classList.remove("activa"); }));
+  zona.addEventListener("drop", e => elegir(e.dataTransfer.files[0]));
+  $("#f-carga").addEventListener("submit", async e => {
+    e.preventDefault();
+    if (!archivo) { $("#error").textContent = "Elija un archivo PDF."; return; }
+    const boton = $("#subir"); Auditta.ocupado(boton, true); $("#error").textContent = "";
+    $("#progreso").classList.remove("oculto"); $("#p1").style.width = "60%";
+    const datos = new FormData(); datos.append("archivo", archivo);
+    try {
+      const r = await fetch("/api/historias/cargar", { method: "POST", headers: { Authorization: "Bearer " + Auditta.token() }, body: datos });
+      const cuerpo = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(typeof cuerpo.detail === "string" ? cuerpo.detail : "No fue posible cargar el archivo.");
+      $("#p1").style.width = "100%"; $("#p2").style.width = "100%"; $("#p3").style.width = "100%";
+      $("#resultado").classList.remove("oculto");
+      $("#resultado").innerHTML = `<div class="aviso exito">${Auditta.ICONOS.aceptar}<span>Historia <b>${Auditta.escapar(cuerpo.id)}</b> cargada: ${cuerpo.paginas} página(s), ${cuerpo.entidades} datos anonimizados, ${cuerpo.secciones_reconocidas.length} secciones reconocidas.</span></div><div style="display:flex;gap:10px;margin-top:12px"><a class="btn" href="/confirmacion.html?id=${encodeURIComponent(cuerpo.id)}">Revisar y confirmar la anonimización</a><button class="btn secundario" type="button" id="otra">Cargar otra</button></div>`;
+      $("#otra").addEventListener("click", () => location.reload());
+      Auditta.ocupado(boton, false); boton.disabled = true;
+    } catch (x) { $("#error").textContent = x.message; $("#progreso").classList.add("oculto"); $("#p1").style.width = "0%"; Auditta.ocupado(boton, false); }
+  });
+}
+</script>
+</body>
+</html>

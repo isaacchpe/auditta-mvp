@@ -8,7 +8,7 @@ import httpx
 
 from pipeline import catalogo as cat
 
-VERSION_PROMPT = "1.2.0"
+VERSION_PROMPT = "1.3.0"
 URL = os.environ.get("DEEPSEEK_URL", "https://api.deepseek.com/chat/completions")
 MODELO = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
 MAX_INTENTOS = 3
@@ -39,9 +39,10 @@ Reglas:
    - SOP-03 aplica cuando se ordenaron exámenes o imágenes y la historia no registra su resultado ni su interpretación, salvo que indique expresamente que están pendientes.
    - PERT-01 se refiere a procedimientos terapéuticos o servicios prestados sin justificación clínica; PERT-02 se refiere a laboratorios e imágenes ordenados sin indicación.
    - COH-03 aplica solo si falta la dosis, la vía o la frecuencia; la duración no es exigible en esquemas intrahospitalarios ni en dosis únicas.
-7. Responde únicamente con un objeto JSON válido, sin texto adicional ni marcas de código, con esta estructura exacta:
-{"hallazgos": [{"criterio_id": "COMP-05", "severidad": "alta", "descripcion": "...", "evidencia": "...", "seccion": "...", "recomendacion": "...", "confianza": 0.9}], "no_evaluables": ["..."]}
-Si no encuentras incumplimientos, responde {"hallazgos": [], "no_evaluables": []}."""
+7. Antes de listar los hallazgos, escribe en "resumen" una frase que diga qué tipo de atención es y qué secciones revisaste; esa revisión debe cubrir identificación, motivo, enfermedad actual, antecedentes, examen físico, diagnósticos, órdenes, resultados, plan, evoluciones, egreso y profesional.
+8. Responde únicamente con un objeto JSON válido, sin texto adicional ni marcas de código, con esta estructura exacta:
+{"resumen": "...", "hallazgos": [{"criterio_id": "COMP-05", "severidad": "alta", "descripcion": "...", "evidencia": "...", "seccion": "...", "recomendacion": "...", "confianza": 0.9}], "no_evaluables": ["..."]}
+Si no encuentras incumplimientos, responde con el resumen y las listas vacías."""
 
 
 class RespuestaInvalida(Exception):
@@ -80,6 +81,8 @@ def _extraer_json(contenido: str) -> dict:
 def validar_esquema(datos: dict, ids_validos: set[str]) -> list[dict]:
     if not isinstance(datos, dict) or not isinstance(datos.get("hallazgos"), list):
         raise RespuestaInvalida("falta la lista hallazgos")
+    if not isinstance(datos.get("resumen"), str) or len(datos["resumen"].strip()) < 20:
+        raise RespuestaInvalida("falta el resumen de la revisión")
     limpios = []
     for h in datos["hallazgos"]:
         if not isinstance(h, dict):
@@ -108,7 +111,7 @@ def validar_esquema(datos: dict, ids_validos: set[str]) -> list[dict]:
 
 
 def llamar_modelo(mensajes: list[dict], clave: str) -> tuple[str, dict]:
-    cuerpo = {"model": MODELO, "messages": mensajes, "temperature": 0.1, "max_tokens": 2500, "response_format": {"type": "json_object"}}
+    cuerpo = {"model": MODELO, "messages": mensajes, "temperature": 0.0, "max_tokens": 2500, "response_format": {"type": "json_object"}}
     with httpx.Client(timeout=120) as cliente:
         respuesta = cliente.post(URL, headers={"Authorization": f"Bearer {clave}", "Content-Type": "application/json"}, json=cuerpo)
     respuesta.raise_for_status()

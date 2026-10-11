@@ -5,7 +5,10 @@ from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from typing import Literal
 
-from fastapi import Depends, FastAPI, HTTPException, Request
+import tempfile
+from pathlib import Path
+
+from fastapi import Depends, FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator
@@ -172,6 +175,8 @@ def resumen_historia(historia: dict, total_hallazgos: int, revision: dict) -> di
         "num_hallazgos": total_hallazgos,
         "revisados": len(revision.get("decisiones", {})),
         "error": historia.get("error"),
+        "origen": historia.get("origen", "corpus"),
+        "analisis_pendiente": historia.get("analisis_pendiente", False),
         "fecha_carga": historia.get("fecha_carga"),
     }
 
@@ -208,21 +213,78 @@ def ver_historia(historia_id: str, usuario: dict = Depends(usuario_actual)):
     return {**limpiar(historia), "hallazgos": hallazgos}
 
 
+@app.post("/api/historias/cargar", status_code=201)
+async def cargar_historia(archivo: UploadFile = File(...), usuario: dict = Depends(usuario_actual)):
+    from pipeline import servicio
+    from pipeline.extraer import DocumentoSinTexto
+
+    nombre = archivo.filename or "historia.pdf"
+    if not nombre.lower().endswith(".pdf") or (archivo.content_type or "").lower() not in ("application/pdf", "application/octet-stream", ""):
+        raise HTTPException(422, "Solo se aceptan archivos PDF.")
+    contenido = await archivo.read()
+    if len(contenido) > servicio.TAMANO_MAXIMO:
+        raise HTTPException(422, "El archivo supera los 20 MB permitidos.")
+    if not contenido.startswith(b"%PDF"):
+        raise HTTPException(422, "El archivo no es un PDF válido.")
+    db = obtener_db()
+    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as temporal:
+        temporal.write(contenido)
+        ruta = Path(temporal.name)
+    try:
+        historia = servicio.preparar(ruta, nombre, usuario["sub"])
+    except DocumentoSinTexto:
+        raise HTTPException(422, "El PDF no tiene capa de texto. Los documentos escaneados no se procesan en esta versión.")
+    except ValueError as e:
+        raise HTTPException(422, str(e))
+    finally:
+        ruta.unlink(missing_ok=True)
+    existente = db.historias.find_one({"hash": historia["hash"]}, {"_id": 1})
+    if existente:
+        raise HTTPException(409, f"Este documento ya fue cargado como {existente['_id']}.")
+    db.historias.insert_one(historia)
+    registrar_evento("cargar_historia", usuario["sub"], {"historia_id": historia["_id"], "paginas": historia["paginas"], "entidades": len(historia["entidades"])})
+    return {"id": historia["_id"], "paginas": historia["paginas"], "entidades": len(historia["entidades"]), "secciones_reconocidas": historia["secciones_reconocidas"], "tiempos_ms": historia["tiempos_ms"]}
+
+
+def analizar_si_pendiente(historia: dict) -> dict | None:
+    from pipeline import servicio
+
+    db = obtener_db()
+    if not historia.get("analisis_pendiente"):
+        return None
+    if not servicio.modelo_disponible():
+        return {"aviso": "El análisis con el modelo no está configurado en este servidor; la historia queda sin hallazgos."}
+    resultado = servicio.analizar_historia(historia)
+    hallazgos = resultado.pop("hallazgos")
+    db.hallazgos.delete_many({"historia_id": historia["_id"]})
+    if hallazgos:
+        db.hallazgos.insert_many(hallazgos)
+    db.historias.update_one({"_id": historia["_id"]}, {"$set": {**resultado, "analisis_pendiente": False, "fecha_analisis": ahora()}})
+    return {"hallazgos": len(hallazgos), "puntaje": resultado["puntaje"], "latencia_analisis_ms": resultado["latencia_analisis_ms"]}
+
+
 @app.post("/api/historias/{historia_id}/confirmar-anonimizacion")
 def confirmar_anonimizacion(historia_id: str, usuario: dict = Depends(usuario_actual)):
     db = obtener_db()
-    if not db.historias.find_one({"_id": historia_id}, {"_id": 1}):
+    historia = db.historias.find_one({"_id": historia_id})
+    if not historia:
         raise HTTPException(404, "Historia no encontrada.")
     revision = revision_de(usuario["sub"], historia_id)
     if revision["estado"] != "pendiente_confirmacion":
         raise HTTPException(409, "La historia no está pendiente de confirmación.")
+    analisis = None
+    try:
+        analisis = analizar_si_pendiente(historia)
+    except Exception:
+        log.exception("Falló el análisis de %s", historia_id)
+        raise HTTPException(502, "No fue posible analizar la historia con el modelo. Intente de nuevo en unos segundos.")
     db.revisiones.update_one(
         {"usuario": usuario["sub"], "historia_id": historia_id},
         {"$set": {"estado": "analizada", "confirmacion": {"fecha": ahora()}, "perfil": usuario.get("perfil")}, "$setOnInsert": {"decisiones": {}, "fecha_inicio": ahora()}},
         upsert=True,
     )
-    registrar_evento("confirmar_anonimizacion", usuario["sub"], {"historia_id": historia_id})
-    return {"estado": "analizada"}
+    registrar_evento("confirmar_anonimizacion", usuario["sub"], {"historia_id": historia_id, **(analisis or {})})
+    return {"estado": "analizada", "analisis": analisis}
 
 
 @app.post("/api/hallazgos/{hallazgo_id}/decision")

@@ -92,81 +92,18 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 5,
+    "extraccion": 4,
     "anonimizacion": 3,
-    "analisis": 3052,
-    "total": 3060
+    "analisis": 1998,
+    "total": 2006
   },
-  "puntaje": 20,
+  "puntaje": 0,
   "nivel": "bajo",
-  "composicion": [
-    {
-      "familia": "COMP",
-      "nombre": "Completitud",
-      "puntos": 12
-    },
-    {
-      "familia": "SOP",
-      "nombre": "Soporte",
-      "puntos": 8
-    }
-  ],
-  "hallazgos_lista": [
-    {
-      "_id": "HC-SINT-019-H01",
-      "historia_id": "HC-SINT-019",
-      "orden": 1,
-      "criterio_id": "COMP-04",
-      "criterio": "Examen físico y signos vitales",
-      "familia": "COMP",
-      "familia_nombre": "Completitud",
-      "severidad": "media",
-      "descripcion": "El examen físico no registra la revisión pertinente al motivo de consulta ni los signos vitales completos esperados para una valoración integral de primera infancia; no se documenta SatO2 ni examen por sistemas, y la valoración del desarrollo se menciona de forma global sin hallazgos del examen físico.",
-      "evidencia": "Peso 14,2 kg, talla 95 cm, perímetro cefálico 49 cm, FC 104 lpm, FR 24 rpm, T 36,5 °C. Desarrollo acorde a la edad en las cuatro áreas de la escala abreviada.",
-      "seccion": "EXAMEN FÍSICO",
-      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
-      "recomendacion": "Registrar el examen físico completo por sistemas con los hallazgos pertinentes al motivo de consulta y los signos vitales completos.",
-      "confianza": 0.6,
-      "estado_revision": "pendiente"
-    },
-    {
-      "_id": "HC-SINT-019-H02",
-      "historia_id": "HC-SINT-019",
-      "orden": 2,
-      "criterio_id": "COMP-03",
-      "criterio": "Antecedentes",
-      "familia": "COMP",
-      "familia_nombre": "Completitud",
-      "severidad": "baja",
-      "descripcion": "No se registran antecedentes familiares ni se declara explícitamente su ausencia; solo se consignan antecedentes perinatales, de vacunación y alérgicos.",
-      "evidencia": "Perinatales: parto a término, peso al nacer 3.100 g. Vacunación: esquema completo para la edad según carné. Alérgicos: niega.",
-      "seccion": "ANTECEDENTES",
-      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
-      "recomendacion": "Registrar los antecedentes familiares o declarar de forma explícita su ausencia.",
-      "confianza": 0.7,
-      "estado_revision": "pendiente"
-    },
-    {
-      "_id": "HC-SINT-019-H03",
-      "historia_id": "HC-SINT-019",
-      "orden": 3,
-      "criterio_id": "SOP-03",
-      "criterio": "Resultados e interpretación",
-      "familia": "SOP",
-      "familia_nombre": "Soporte",
-      "severidad": "media",
-      "descripcion": "Se ordena/aplica flúor barniz y valoración por odontología sin que la historia registre el resultado o la interpretación de dichas intervenciones, ni se indique que están pendientes.",
-      "evidencia": "Aplicación de flúor barniz y valoración por odontología.",
-      "seccion": "INTERVENCIONES DE LA RUTA",
-      "sustento": "Resolución 1995 de 1999, art. 11",
-      "recomendacion": "Registrar el resultado e interpretación de las intervenciones realizadas o indicar expresamente que quedan pendientes.",
-      "confianza": 0.6,
-      "estado_revision": "pendiente"
-    }
-  ],
-  "num_hallazgos": 3,
+  "composicion": [],
+  "hallazgos_lista": [],
+  "num_hallazgos": 0,
   "no_evaluables": [],
-  "version_prompt": "1.2.0",
+  "version_prompt": "1.3.0",
   "version_catalogo": "1.0.0",
   "modelo": "deepseek-chat",
   "secciones": [

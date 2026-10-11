@@ -89,8 +89,8 @@
   "tiempos_ms": {
     "extraccion": 7,
     "anonimizacion": 3,
-    "analisis": 1735,
-    "total": 1746
+    "analisis": 2672,
+    "total": 2682
   },
   "puntaje": 8,
   "nivel": "bajo",
@@ -111,18 +111,18 @@
       "familia": "COH",
       "familia_nombre": "Coherencia",
       "severidad": "media",
-      "descripcion": "El acetaminofén formulado no registra la frecuencia de administración ni la duración del esquema.",
+      "descripcion": "El acetaminofén formulado no registra la frecuencia ni la duración del esquema, solo dosis y vía.",
       "evidencia": "Acetaminofén 15 mg/kg vía oral cada 6 horas si hay fiebre.",
       "seccion": "PLAN DE MANEJO",
       "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
-      "recomendacion": "Completar la formulación del acetaminofén indicando la frecuencia y la duración del tratamiento.",
+      "recomendacion": "Completar la formulación con la frecuencia y la duración del acetaminofén, o justificar su omisión.",
       "confianza": 0.6,
       "estado_revision": "pendiente"
     }
   ],
   "num_hallazgos": 1,
   "no_evaluables": [],
-  "version_prompt": "1.2.0",
+  "version_prompt": "1.3.0",
   "version_catalogo": "1.0.0",
   "modelo": "deepseek-chat",
   "secciones": [

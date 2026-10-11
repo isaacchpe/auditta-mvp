@@ -83,18 +83,20 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 5,
+    "extraccion": 4,
     "anonimizacion": 3,
-    "analisis": 954,
-    "total": 964
+    "analisis": 2298,
+    "total": 2306
   },
   "puntaje": 0,
   "nivel": "bajo",
   "composicion": [],
   "hallazgos_lista": [],
   "num_hallazgos": 0,
-  "no_evaluables": [],
-  "version_prompt": "1.2.0",
+  "no_evaluables": [
+    "Evoluciones y egreso: no hay sección de evolución ni de egreso en el texto, por lo que no se evalúan criterios asociados a esos apartados."
+  ],
+  "version_prompt": "1.3.0",
   "version_catalogo": "1.0.0",
   "modelo": "deepseek-chat",
   "secciones": [

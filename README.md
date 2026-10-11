@@ -67,7 +67,9 @@ El texto que recibe el proveedor externo es únicamente el texto anonimizado. Lo
 uvicorn app.main:app --reload
 ```
 
-Abra `http://127.0.0.1:8000`. Cree una cuenta, confirme la anonimización de una historia, revise sus hallazgos y registre una decisión por cada uno. Al finalizar se registra el tiempo de revisión.
+Abra `http://127.0.0.1:8000`. Entre con la cuenta de prueba que se muestra en el ingreso o cree una cuenta, confirme la anonimización de una historia, revise sus hallazgos y registre una decisión por cada uno. Al finalizar se registra el tiempo de revisión.
+
+Desde la pantalla «Cargar historia» se puede subir una historia clínica nueva en PDF con capa de texto (hasta 20 MB). Al subirla, el servidor la extrae y la anonimiza; el análisis con el modelo se ejecuta solo cuando el usuario confirma la anonimización. El PDF original no se conserva.
 
 ## Pruebas
 

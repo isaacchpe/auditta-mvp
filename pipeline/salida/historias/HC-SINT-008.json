@@ -84,16 +84,21 @@
   "tiempos_ms": {
     "extraccion": 4,
     "anonimizacion": 3,
-    "analisis": 1927,
-    "total": 1935
+    "analisis": 3055,
+    "total": 3063
   },
-  "puntaje": 9,
+  "puntaje": 18,
   "nivel": "bajo",
   "composicion": [
     {
       "familia": "SOP",
       "nombre": "Soporte",
-      "puntos": 9
+      "puntos": 10
+    },
+    {
+      "familia": "COH",
+      "nombre": "Coherencia",
+      "puntos": 8
     }
   ],
   "hallazgos_lista": [
@@ -106,18 +111,35 @@
       "familia": "SOP",
       "familia_nombre": "Soporte",
       "severidad": "media",
-      "descripcion": "Se ordenó electrocardiograma de 12 derivaciones y troponina I seriada, pero la historia no registra el resultado ni la interpretación de estos exámenes, ni indica que estén pendientes.",
+      "descripcion": "Se ordenaron electrocardiograma y troponina I seriada, pero la historia no registra sus resultados ni su interpretación, ni indica que estén pendientes.",
       "evidencia": "- Electrocardiograma de 12 derivaciones. Justificación: Dolor torácico con sospecha de síndrome coronario\nagudo.\n- Troponina I seriada.",
       "seccion": "ÓRDENES",
       "sustento": "Resolución 1995 de 1999, art. 11",
-      "recomendacion": "Registrar en la evolución el resultado y la interpretación del electrocardiograma y de la troponina, o dejar constancia expresa de que se encuentran pendientes.",
-      "confianza": 0.85,
+      "recomendacion": "Registrar en la evolución los resultados del electrocardiograma y de la troponina I, con su interpretación clínica, o dejar constancia expresa de que se encuentran pendientes.",
+      "confianza": 0.9,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-008-H02",
+      "historia_id": "HC-SINT-008",
+      "orden": 2,
+      "criterio_id": "COH-03",
+      "criterio": "Formulación completa",
+      "familia": "COH",
+      "familia_nombre": "Coherencia",
+      "severidad": "media",
+      "descripcion": "El ácido acetilsalicílico se formula sin frecuencia ni duración; solo se registra dosis y vía.",
+      "evidencia": "- Ácido acetilsalicílico 300 mg vía oral dosis única.",
+      "seccion": "PLAN DE MANEJO",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Completar la formulación con la frecuencia y, cuando aplique, la duración del medicamento.",
+      "confianza": 0.6,
       "estado_revision": "pendiente"
     }
   ],
-  "num_hallazgos": 1,
+  "num_hallazgos": 2,
   "no_evaluables": [],
-  "version_prompt": "1.2.0",
+  "version_prompt": "1.3.0",
   "version_catalogo": "1.0.0",
   "modelo": "deepseek-chat",
   "secciones": [

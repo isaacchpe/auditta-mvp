@@ -103,23 +103,28 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 8,
+    "extraccion": 7,
     "anonimizacion": 4,
-    "analisis": 3126,
-    "total": 3139
+    "analisis": 4001,
+    "total": 4013
   },
-  "puntaje": 50,
+  "puntaje": 41,
   "nivel": "medio",
   "composicion": [
     {
-      "familia": "SOP",
-      "nombre": "Soporte",
-      "puntos": 28
-    },
-    {
       "familia": "PERT",
       "nombre": "Pertinencia",
-      "puntos": 18
+      "puntos": 19
+    },
+    {
+      "familia": "SOP",
+      "nombre": "Soporte",
+      "puntos": 9
+    },
+    {
+      "familia": "COH",
+      "nombre": "Coherencia",
+      "puntos": 9
     },
     {
       "familia": "COMP",
@@ -132,17 +137,17 @@
       "_id": "HC-SINT-018-H01",
       "historia_id": "HC-SINT-018",
       "orden": 1,
-      "criterio_id": "SOP-02",
-      "criterio": "Orden médica del servicio",
-      "familia": "SOP",
-      "familia_nombre": "Soporte",
-      "severidad": "alta",
-      "descripcion": "Se ordena y realiza una toracentesis diagnóstica sin que figure en el plan de manejo ni exista orden médica que la respalde; además no tiene justificación clínica registrada.",
-      "evidencia": "Toracentesis diagnóstica.",
-      "seccion": "ÓRDENES",
-      "sustento": "Resolución 2284 de 2023, manual único de glosas (soportes)",
-      "recomendacion": "Documentar la orden médica y la justificación clínica de la toracentesis o retirarla de las órdenes, dado que no corresponde al manejo del trabajo de parto.",
-      "confianza": 0.85,
+      "criterio_id": "COMP-03",
+      "criterio": "Antecedentes",
+      "familia": "COMP",
+      "familia_nombre": "Completitud",
+      "severidad": "baja",
+      "descripcion": "No se registra una sección de antecedentes personales, familiares y alérgicos, ni se declara explícitamente su ausencia.",
+      "evidencia": "ENFERMEDAD ACTUAL\nGestante de 39,2 semanas por ecografía temprana, con actividad uterina regular desde hace 5 horas, sin\nsangrado ni pérdida de líquido.",
+      "seccion": "Antecedentes",
+      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
+      "recomendacion": "Registrar los antecedentes personales, familiares y alérgicos o declarar de forma explícita su ausencia.",
+      "confianza": 0.9,
       "estado_revision": "pendiente"
     },
     {
@@ -154,12 +159,12 @@
       "familia": "PERT",
       "familia_nombre": "Pertinencia",
       "severidad": "alta",
-      "descripcion": "La toracentesis diagnóstica es un procedimiento invasivo sin justificación clínica registrada en una gestante a término en trabajo de parto de bajo riesgo.",
-      "evidencia": "Toracentesis diagnóstica.",
-      "seccion": "ÓRDENES",
+      "descripcion": "Se ordena una toracentesis diagnóstica sin justificación clínica registrada, en una paciente con embarazo a término de bajo riesgo y sin patología respiratoria documentada.",
+      "evidencia": "- Toracentesis diagnóstica.",
+      "seccion": "Órdenes",
       "sustento": "Resolución 1995 de 1999, art. 3; Resolución 2284 de 2023, manual único de glosas (pertinencia)",
-      "recomendacion": "Registrar la indicación clínica que sustente el procedimiento o eliminarlo de la atención.",
-      "confianza": 0.8,
+      "recomendacion": "Registrar la justificación clínica de la toracentesis o retirarla de las órdenes si no está indicada.",
+      "confianza": 0.85,
       "estado_revision": "pendiente"
     },
     {
@@ -171,35 +176,35 @@
       "familia": "SOP",
       "familia_nombre": "Soporte",
       "severidad": "media",
-      "descripcion": "Se ordenaron hemoclasificación y VIH, pero la historia solo registra el resultado del hemograma; no se documentan ni interpretan los resultados de las otras ayudas diagnósticas ordenadas ni se declaran pendientes.",
-      "evidencia": "Hemograma, hemoclasificación y VIH. Justificación: Protocolo de ingreso a trabajo de parto.",
-      "seccion": "ÓRDENES",
+      "descripcion": "Se ordenaron hemoclasificación y VIH y no se registran sus resultados ni interpretación, ni se indica que estén pendientes.",
+      "evidencia": "- Hemograma, hemoclasificación y VIH. Justificación: Protocolo de ingreso a trabajo de parto.",
+      "seccion": "Resultados",
       "sustento": "Resolución 1995 de 1999, art. 11",
-      "recomendacion": "Registrar e interpretar los resultados de hemoclasificación y VIH, o indicar expresamente que están pendientes.",
-      "confianza": 0.75,
+      "recomendacion": "Registrar los resultados e interpretación de hemoclasificación y VIH o indicar expresamente que están pendientes.",
+      "confianza": 0.8,
       "estado_revision": "pendiente"
     },
     {
       "_id": "HC-SINT-018-H04",
       "historia_id": "HC-SINT-018",
       "orden": 4,
-      "criterio_id": "COMP-03",
-      "criterio": "Antecedentes",
-      "familia": "COMP",
-      "familia_nombre": "Completitud",
-      "severidad": "baja",
-      "descripcion": "La historia no incluye una sección de antecedentes personales, familiares y alérgicos, ni declara explícitamente su ausencia.",
-      "evidencia": "Controles prenatales completos.",
-      "seccion": "ENFERMEDAD ACTUAL",
+      "criterio_id": "COH-03",
+      "criterio": "Formulación completa",
+      "familia": "COH",
+      "familia_nombre": "Coherencia",
+      "severidad": "media",
+      "descripcion": "El sulfato ferroso formulado en el egreso registra dosis y frecuencia, pero no la vía de administración.",
+      "evidencia": "Plan: sulfato ferroso 300 mg cada día por 30 días, control de puerperio en 7 días, signos de alarma explicados.",
+      "seccion": "Epicrisis",
       "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
-      "recomendacion": "Adicionar la sección de antecedentes personales, familiares y alérgicos o declarar su ausencia.",
+      "recomendacion": "Completar la formulación con la vía de administración del sulfato ferroso.",
       "confianza": 0.7,
       "estado_revision": "pendiente"
     }
   ],
   "num_hallazgos": 4,
   "no_evaluables": [],
-  "version_prompt": "1.2.0",
+  "version_prompt": "1.3.0",
   "version_catalogo": "1.0.0",
   "modelo": "deepseek-chat",
   "secciones": [

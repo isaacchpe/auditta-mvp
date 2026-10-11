@@ -105,18 +105,18 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 7,
-    "anonimizacion": 8,
-    "analisis": 3140,
-    "total": 3156
+    "extraccion": 6,
+    "anonimizacion": 6,
+    "analisis": 4514,
+    "total": 4527
   },
   "puntaje": 76,
   "nivel": "alto",
   "composicion": [
     {
-      "familia": "COH",
-      "nombre": "Coherencia",
-      "puntos": 29
+      "familia": "PERT",
+      "nombre": "Pertinencia",
+      "puntos": 28
     },
     {
       "familia": "SOP",
@@ -124,9 +124,9 @@
       "puntos": 28
     },
     {
-      "familia": "PERT",
-      "nombre": "Pertinencia",
-      "puntos": 19
+      "familia": "COH",
+      "nombre": "Coherencia",
+      "puntos": 20
     }
   ],
   "hallazgos_lista": [
@@ -139,11 +139,11 @@
       "familia": "COH",
       "familia_nombre": "Coherencia",
       "severidad": "alta",
-      "descripcion": "Se registra la realización de una citología cervicouterina de tamizaje en un paciente de sexo masculino, lo cual es una contradicción demográfica real.",
+      "descripcion": "Se registra la realización de una citología cervicouterina de tamizaje en un paciente de sexo masculino, lo que constituye una contradicción entre el sexo del usuario y el procedimiento realizado.",
       "evidencia": "Se realiza citología cervicouterina de tamizaje durante la consulta.",
       "seccion": "ANÁLISIS",
       "sustento": "Resolución 1995 de 1999, art. 3 (racionalidad científica)",
-      "recomendacion": "Aclarar o eliminar el procedimiento registrado, ya que no corresponde al sexo del usuario; verificar posible error de transcripción.",
+      "recomendacion": "Aclarar y corregir el registro del procedimiento, verificando que corresponda al paciente y al sexo registrado; si fue un error de digitación, ajustar la historia clínica.",
       "confianza": 0.95,
       "estado_revision": "pendiente"
     },
@@ -156,11 +156,11 @@
       "familia": "PERT",
       "familia_nombre": "Pertinencia",
       "severidad": "alta",
-      "descripcion": "Se ordena una toracentesis diagnóstica sin justificación clínica registrada, en un cuadro de colecistitis aguda litiásica.",
+      "descripcion": "Se ordena una toracentesis diagnóstica sin justificación clínica registrada ni relación con el diagnóstico de colecistitis aguda litiásica.",
       "evidencia": "Toracentesis diagnóstica.",
       "seccion": "ÓRDENES",
       "sustento": "Resolución 1995 de 1999, art. 3; Resolución 2284 de 2023, manual único de glosas (pertinencia)",
-      "recomendacion": "Registrar la indicación clínica de la toracentesis o retirarla de las órdenes si no está justificada.",
+      "recomendacion": "Registrar la justificación clínica de la toracentesis o retirarla de las órdenes si no está indicada.",
       "confianza": 0.9,
       "estado_revision": "pendiente"
     },
@@ -173,11 +173,11 @@
       "familia": "SOP",
       "familia_nombre": "Soporte",
       "severidad": "alta",
-      "descripcion": "La citología cervicouterina se realizó sin figurar en el plan de manejo ni en las órdenes médicas.",
+      "descripcion": "La citología cervicouterina se realizó durante la consulta sin que figure como orden médica en el plan de manejo ni en las órdenes.",
       "evidencia": "Se realiza citología cervicouterina de tamizaje durante la consulta.",
       "seccion": "ANÁLISIS",
       "sustento": "Resolución 2284 de 2023, manual único de glosas (soportes)",
-      "recomendacion": "Documentar la orden médica correspondiente o aclarar el registro del procedimiento.",
+      "recomendacion": "Documentar la orden médica que respalde la realización del procedimiento o aclarar su pertinencia.",
       "confianza": 0.85,
       "estado_revision": "pendiente"
     },
@@ -190,7 +190,7 @@
       "familia": "SOP",
       "familia_nombre": "Soporte",
       "severidad": "media",
-      "descripcion": "Se ordenaron hemograma, bilirrubinas y transaminasas, pero solo se registra el resultado del hemograma; no hay resultado ni interpretación de bilirrubinas y transaminasas, ni constancia de que estén pendientes.",
+      "descripcion": "Se ordenaron hemograma, bilirrubinas y transaminasas, pero solo se registra e interpreta el hemograma; no hay resultado ni interpretación de bilirrubinas y transaminasas, ni constancia de que estén pendientes.",
       "evidencia": "Hemograma, bilirrubinas, transaminasas. Justificación: Evaluar respuesta inflamatoria y descartar colestasis.",
       "seccion": "ÓRDENES",
       "sustento": "Resolución 1995 de 1999, art. 11",
@@ -202,23 +202,23 @@
       "_id": "HC-SINT-016-H05",
       "historia_id": "HC-SINT-016",
       "orden": 5,
-      "criterio_id": "COH-03",
-      "criterio": "Formulación completa",
-      "familia": "COH",
-      "familia_nombre": "Coherencia",
+      "criterio_id": "PERT-02",
+      "criterio": "Indicación de ayudas diagnósticas",
+      "familia": "PERT",
+      "familia_nombre": "Pertinencia",
       "severidad": "media",
-      "descripcion": "El acetaminofén formulado en el plan de egreso no registra la vía de administración.",
-      "evidencia": "Plan: acetaminofén 1 g cada 8 horas por 5 días, curación de heridas, control en 8 días con patología.",
-      "seccion": "EPICRISIS",
-      "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
-      "recomendacion": "Completar la formulación indicando la vía de administración del acetaminofén.",
-      "confianza": 0.75,
+      "descripcion": "La toracentesis diagnóstica figura en las órdenes sin indicación clínica registrada que la justifique.",
+      "evidencia": "Toracentesis diagnóstica.",
+      "seccion": "ÓRDENES",
+      "sustento": "Resolución 2284 de 2023, manual único de glosas (pertinencia)",
+      "recomendacion": "Agregar la indicación clínica de la toracentesis o eliminarla de las órdenes.",
+      "confianza": 0.85,
       "estado_revision": "pendiente"
     }
   ],
   "num_hallazgos": 5,
   "no_evaluables": [],
-  "version_prompt": "1.2.0",
+  "version_prompt": "1.3.0",
   "version_catalogo": "1.0.0",
   "modelo": "deepseek-chat",
   "secciones": [

@@ -88,8 +88,8 @@
   "tiempos_ms": {
     "extraccion": 5,
     "anonimizacion": 3,
-    "analisis": 2295,
-    "total": 2303
+    "analisis": 3108,
+    "total": 3116
   },
   "puntaje": 23,
   "nivel": "bajo",
@@ -120,12 +120,12 @@
       "familia": "COMP",
       "familia_nombre": "Completitud",
       "severidad": "baja",
-      "descripcion": "La historia no registra antecedentes personales, familiares ni alérgicos, ni declara de forma explícita su ausencia.",
-      "evidencia": "MOTIVO DE CONSULTA\n«Dolor al orinar y ganas frecuentes de ir al baño».",
+      "descripcion": "No se registra una sección de antecedentes personales, familiares y alérgicos, ni se declara explícitamente su ausencia.",
+      "evidencia": "EXAMEN FÍSICO\nTA 110/70 mmHg, FC 82 lpm, FR 16 rpm, T 37,1 °C. Abdomen blando, dolor leve suprapúbico, puño percusión\nlumbar negativa.",
       "seccion": "Antecedentes",
       "sustento": "Resolución 1995 de 1999, art. 3 (integralidad)",
-      "recomendacion": "Registrar los antecedentes personales, familiares y alérgicos del usuario o declarar explícitamente su ausencia.",
-      "confianza": 0.85,
+      "recomendacion": "Registrar antecedentes personales, familiares y alérgicos o declarar explícitamente su ausencia.",
+      "confianza": 0.9,
       "estado_revision": "pendiente"
     },
     {
@@ -139,10 +139,10 @@
       "severidad": "media",
       "descripcion": "Se ordenaron uroanálisis y urocultivo, pero la historia no registra sus resultados ni su interpretación, ni indica que estén pendientes.",
       "evidencia": "- Uroanálisis y urocultivo. Justificación: Confirmación del diagnóstico y orientación del antibiótico.",
-      "seccion": "ÓRDENES",
+      "seccion": "Órdenes/Resultados",
       "sustento": "Resolución 1995 de 1999, art. 11",
-      "recomendacion": "Registrar los resultados e interpretación de las ayudas diagnósticas ordenadas o indicar expresamente que se encuentran pendientes.",
-      "confianza": 0.8,
+      "recomendacion": "Registrar los resultados e interpretación de las ayudas diagnósticas ordenadas o indicar expresamente que están pendientes.",
+      "confianza": 0.85,
       "estado_revision": "pendiente"
     },
     {
@@ -156,16 +156,16 @@
       "severidad": "media",
       "descripcion": "No se registra el número de registro profesional ni la especialidad o cargo del responsable de la atención.",
       "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
-      "seccion": "PROFESIONAL",
+      "seccion": "Profesional",
       "sustento": "Resolución 1995 de 1999, art. 5",
-      "recomendacion": "Registrar el número de registro profesional y la especialidad o cargo del profesional que atiende.",
+      "recomendacion": "Registrar el número de registro profesional y la especialidad o cargo del responsable de la atención.",
       "confianza": 0.9,
       "estado_revision": "pendiente"
     }
   ],
   "num_hallazgos": 3,
   "no_evaluables": [],
-  "version_prompt": "1.2.0",
+  "version_prompt": "1.3.0",
   "version_catalogo": "1.0.0",
   "modelo": "deepseek-chat",
   "secciones": [

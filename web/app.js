@@ -1,6 +1,7 @@
 const Auditta = (() => {
   const ICONOS = {
     inicio: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+    carga: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>',
     bandeja: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>',
     metricas: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
     salir: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>',
@@ -62,7 +63,7 @@ const Auditta = (() => {
     const enlace = (clave, href, texto) => `<a href="${href}" ${activa === clave ? 'aria-current="page"' : ""}>${ICONOS[clave]}${texto}</a>`;
     const aside = document.createElement("aside");
     aside.className = "lateral";
-    aside.innerHTML = `<div class="marca">Auditta<small>MVP</small></div><nav aria-label="Navegación principal">${enlace("inicio", "/inicio.html", "Inicio")}${enlace("bandeja", "/bandeja.html", "Bandeja de historias")}${enlace("metricas", "/metricas.html", "Métricas")}</nav><div class="espacio"></div><div class="usuario"><div class="avatar">${iniciales(nombre)}</div><div><b>${escapar(nombre)}</b><span>${perfil}</span></div></div><button class="salir" type="button">${ICONOS.salir}Cerrar sesión</button>`;
+    aside.innerHTML = `<div class="marca">Auditta<small>MVP</small></div><nav aria-label="Navegación principal">${enlace("inicio", "/inicio.html", "Inicio")}${enlace("carga", "/carga.html", "Cargar historia")}${enlace("bandeja", "/bandeja.html", "Bandeja de historias")}${enlace("metricas", "/metricas.html", "Métricas")}</nav><div class="espacio"></div><div class="usuario"><div class="avatar">${iniciales(nombre)}</div><div><b>${escapar(nombre)}</b><span>${perfil}</span></div></div><button class="salir" type="button">${ICONOS.salir}Cerrar sesión</button>`;
     aside.querySelector(".salir").addEventListener("click", () => { evento("cerrar_sesion"); cerrarSesion(); });
     document.querySelector(".marco").prepend(aside);
   }

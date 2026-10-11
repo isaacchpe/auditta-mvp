@@ -9,7 +9,7 @@
 <body>
 <div class="marco">
   <main class="contenido">
-    <div class="encabezado"><div class="titulos"><p class="ruta">Inicio / Bandeja</p><h1>Bandeja de historias</h1></div><span id="insignia"></span></div>
+    <div class="encabezado"><div class="titulos"><p class="ruta">Inicio / Bandeja</p><h1>Bandeja de historias</h1></div><a class="btn" href="/carga.html">Cargar historia</a><span id="insignia"></span></div>
     <div class="filtros" id="filtros"><input class="buscar" id="buscar" type="search" placeholder="Buscar por identificador…"></div>
     <div class="tarjeta tabla-envoltorio"><table><thead><tr><th>Historia</th><th>Plantilla de prestador</th><th>Págs.</th><th>Estado</th><th>Puntaje</th><th>Hallazgos</th><th>Acción</th></tr></thead><tbody id="filas"><tr><td colspan="7">Cargando…</td></tr></tbody></table></div>
     <p id="conteo" style="color:var(--color-neutro-texto-secundario);font-size:13px"></p>
@@ -32,7 +32,7 @@ if (Auditta.exigirSesion()) {
   function pintar() {
     const texto = $("#buscar").value.trim().toLowerCase();
     const visibles = historias.filter(h => (filtro === "todas" || h.estado === filtro) && (!texto || h._id.toLowerCase().includes(texto)));
-    $("#filas").innerHTML = visibles.length ? visibles.map(h => `<tr><td>${h._id}</td><td>${PLANTILLAS[h.plantilla] || h.plantilla || "—"}</td><td>${h.paginas ?? "—"}</td><td>${Auditta.estado(h.estado)}</td><td>${h.estado === "error" ? '<span style="color:var(--color-severidad-alta)">Sin capa de texto</span>' : Auditta.puntaje(h.puntaje, h.nivel)}</td><td>${h.num_hallazgos ? `${h.revisados}/${h.num_hallazgos}` : "—"}</td><td>${accion(h)}</td></tr>`).join("") : '<tr><td colspan="7" style="text-align:center;color:var(--color-neutro-texto-secundario);padding:40px">Aún no hay historias en esta vista.</td></tr>';
+    $("#filas").innerHTML = visibles.length ? visibles.map(h => `<tr><td>${h._id}</td><td>${PLANTILLAS[h.plantilla] || (h.origen === "carga" ? "Cargada por el usuario" : h.plantilla || "—")}</td><td>${h.paginas ?? "—"}</td><td>${Auditta.estado(h.estado)}</td><td>${h.estado === "error" ? '<span style="color:var(--color-severidad-alta)">Sin capa de texto</span>' : Auditta.puntaje(h.puntaje, h.nivel)}</td><td>${h.num_hallazgos ? `${h.revisados}/${h.num_hallazgos}` : "—"}</td><td>${accion(h)}</td></tr>`).join("") : '<tr><td colspan="7" style="text-align:center;color:var(--color-neutro-texto-secundario);padding:40px">Aún no hay historias en esta vista.</td></tr>';
     $("#conteo").textContent = `Mostrando ${visibles.length} de ${historias.length} historias`;
   }
   function filtros() {

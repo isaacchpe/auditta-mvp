@@ -89,6 +89,25 @@ def test_cuenta_de_prueba_fuera_de_metricas():
     assert sembrar_usuario_demo() is False
 
 
+def test_carga_de_historia_nueva():
+    from pathlib import Path
+
+    sembrar()
+    cabeceras = sesion("pedro@ips-ejemplo.com.co")
+    pdf = sorted(Path("corpus/pdf").glob("*.pdf"))[0].read_bytes()
+    assert cliente.post("/api/historias/cargar", headers=cabeceras, files={"archivo": ("nota.txt", b"hola", "text/plain")}).status_code == 422
+    assert cliente.post("/api/historias/cargar", headers=cabeceras, files={"archivo": ("falso.pdf", b"no es pdf", "application/pdf")}).status_code == 422
+    respuesta = cliente.post("/api/historias/cargar", headers=cabeceras, files={"archivo": ("Historia nueva.pdf", pdf, "application/pdf")})
+    assert respuesta.status_code == 201
+    datos = respuesta.json()
+    assert datos["id"].startswith("HISTORIA-NUEVA-") and datos["entidades"] > 0
+    assert cliente.post("/api/historias/cargar", headers=cabeceras, files={"archivo": ("otra.pdf", pdf, "application/pdf")}).status_code == 409
+    historia = cliente.get(f"/api/historias/{datos['id']}", headers=cabeceras).json()
+    assert historia["analisis_pendiente"] is True and "[PACIENTE_1]" in historia["texto_anonimizado"]
+    confirmacion = cliente.post(f"/api/historias/{datos['id']}/confirmar-anonimizacion", headers=cabeceras).json()
+    assert confirmacion["estado"] == "analizada"
+
+
 def test_paginas_y_404():
     for ruta in ("/", "/index.html", "/bandeja.html", "/informe.html", "/metricas.html", "/estilos.css", "/app.js"):
         assert cliente.get(ruta).status_code == 200

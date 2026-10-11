@@ -89,16 +89,16 @@
   "tiempos_ms": {
     "extraccion": 4,
     "anonimizacion": 3,
-    "analisis": 1853,
-    "total": 1861
+    "analisis": 2683,
+    "total": 2690
   },
-  "puntaje": 18,
+  "puntaje": 19,
   "nivel": "bajo",
   "composicion": [
     {
       "familia": "IDP",
       "nombre": "Identificación del prestador",
-      "puntos": 9
+      "puntos": 10
     },
     {
       "familia": "SOP",
@@ -111,6 +111,23 @@
       "_id": "HC-SINT-002-H01",
       "historia_id": "HC-SINT-002",
       "orden": 1,
+      "criterio_id": "SOP-03",
+      "criterio": "Resultados e interpretación",
+      "familia": "SOP",
+      "familia_nombre": "Soporte",
+      "severidad": "media",
+      "descripcion": "Se ordenó perfil lipídico y glicemia en ayunas y la historia no registra sus resultados ni interpretación, ni indica que estén pendientes.",
+      "evidencia": "- Perfil lipídico y glicemia en ayunas. Justificación: Control de riesgo cardiovascular en paciente hipertensa.",
+      "seccion": "ÓRDENES",
+      "sustento": "Resolución 1995 de 1999, art. 11",
+      "recomendacion": "Registrar los resultados de las ayudas diagnósticas ordenadas y su interpretación en la evolución, o dejar constancia expresa de que están pendientes.",
+      "confianza": 0.85,
+      "estado_revision": "pendiente"
+    },
+    {
+      "_id": "HC-SINT-002-H02",
+      "historia_id": "HC-SINT-002",
+      "orden": 2,
       "criterio_id": "IDP-02",
       "criterio": "Registro profesional y especialidad",
       "familia": "IDP",
@@ -120,31 +137,14 @@
       "evidencia": "Atendido por: [MEDICO_1]. Firma electrónica registrada.",
       "seccion": "PROFESIONAL",
       "sustento": "Resolución 1995 de 1999, art. 5",
-      "recomendacion": "Registrar el número de registro profesional (ReTHUS) y la especialidad o cargo del médico tratante.",
-      "confianza": 0.85,
-      "estado_revision": "pendiente"
-    },
-    {
-      "_id": "HC-SINT-002-H02",
-      "historia_id": "HC-SINT-002",
-      "orden": 2,
-      "criterio_id": "SOP-03",
-      "criterio": "Resultados e interpretación",
-      "familia": "SOP",
-      "familia_nombre": "Soporte",
-      "severidad": "media",
-      "descripcion": "Se ordenaron ayudas diagnósticas (perfil lipídico y glicemia) y la historia no registra sus resultados ni interpretación, ni indica que estén pendientes.",
-      "evidencia": "- Perfil lipídico y glicemia en ayunas. Justificación: Control de riesgo cardiovascular en paciente hipertensa.",
-      "seccion": "ÓRDENES",
-      "sustento": "Resolución 1995 de 1999, art. 11",
-      "recomendacion": "Registrar los resultados e interpretación de las ayudas diagnósticas ordenadas o dejar constancia expresa de que se encuentran pendientes.",
-      "confianza": 0.8,
+      "recomendacion": "Incluir el registro profesional y la especialidad o cargo del profesional que atiende.",
+      "confianza": 0.9,
       "estado_revision": "pendiente"
     }
   ],
   "num_hallazgos": 2,
   "no_evaluables": [],
-  "version_prompt": "1.2.0",
+  "version_prompt": "1.3.0",
   "version_catalogo": "1.0.0",
   "modelo": "deepseek-chat",
   "secciones": [

@@ -92,10 +92,10 @@
   },
   "estado": "pendiente_confirmacion",
   "tiempos_ms": {
-    "extraccion": 6,
-    "anonimizacion": 5,
-    "analisis": 1207,
-    "total": 1219
+    "extraccion": 5,
+    "anonimizacion": 3,
+    "analisis": 1845,
+    "total": 1853
   },
   "puntaje": 0,
   "nivel": "bajo",
@@ -103,7 +103,7 @@
   "hallazgos_lista": [],
   "num_hallazgos": 0,
   "no_evaluables": [],
-  "version_prompt": "1.2.0",
+  "version_prompt": "1.3.0",
   "version_catalogo": "1.0.0",
   "modelo": "deepseek-chat",
   "secciones": [

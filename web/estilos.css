@@ -140,5 +140,8 @@ mark .marca-h{display:inline-block;background:var(--color-severidad-media);color
 .demo>div{flex:1;display:flex;flex-direction:column;gap:2px;font-size:13px}
 .demo b{color:var(--color-severidad-media)}
 .demo code{font-family:ui-monospace,Consolas,monospace;font-size:13px;font-weight:600;user-select:all}
+.zona{display:flex;flex-direction:column;align-items:center;gap:8px;padding:36px 20px;border:2px dashed var(--color-neutro-borde);border-radius:var(--radio-lg);background:var(--color-neutro-fondo);cursor:pointer;text-align:center}
+.zona.activa,.zona:hover{border-color:var(--color-marca-primario);background:var(--color-marca-primario-suave)}
+.zona-icono svg{width:36px;height:36px;color:var(--color-marca-primario)}
 .oculto{display:none!important}
 @media (max-width:900px){.marco{flex-direction:column}.lateral{position:static;height:auto;flex:none}.contenido{padding:18px 16px}.fila{flex-direction:column}.acceso{flex-direction:column}.acceso .marca-panel{flex:none;padding:40px 24px}}

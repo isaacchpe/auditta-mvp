@@ -51,6 +51,14 @@ python pipeline/cargar.py
 
 El primer comando genera el corpus en `corpus/pdf` y `corpus/verdad`. El segundo extrae y anonimiza sin llamar al modelo y mide el recall de la anonimización. El tercero ejecuta el análisis completo con el modelo de lenguaje, verifica que cada evidencia exista literalmente en el texto y calcula el puntaje de riesgo. El cuarto carga los resultados a la base de datos indicada en `MONGODB_URI`. Las métricas de cada corrida quedan en `pipeline/salida/metricas_pipeline.json`.
 
+Para agregar una historia clínica nueva en un solo paso:
+
+```
+python pipeline/agregar.py "ruta\a\la\historia.pdf"
+```
+
+El comando copia el PDF al corpus, lo extrae, lo anonimiza, lo analiza con el modelo y lo carga a la base de datos con el nombre del archivo como identificador. Con `--sin-modelo` solo extrae y anonimiza. El PDF debe tener capa de texto.
+
 El texto que recibe el proveedor externo es únicamente el texto anonimizado. Los mapas de re-identificación se guardan en `pipeline/salida/mapas` y no se versionan.
 
 ## Aplicación

@@ -18,6 +18,7 @@
     <form id="f-ingreso" class="tarjeta" novalidate>
       <h1 style="font-size:26px">Ingresar</h1>
       <p>Use la cuenta con la que se registró para la prueba.</p>
+      <div class="demo oculto" id="demo"><div><b>Cuenta de prueba</b><span>Correo: <code id="demo-correo"></code></span><span>Contraseña: <code id="demo-clave"></code></span></div><button class="btn secundario" type="button" id="usar-demo">Usar cuenta de prueba</button></div>
       <div class="campo"><label for="i-correo">Correo</label><input id="i-correo" type="email" autocomplete="email" required><div class="mensaje-error" id="i-correo-error"></div></div>
       <div class="campo"><label for="i-clave">Contraseña</label><input id="i-clave" type="password" autocomplete="current-password" required><div class="mensaje-error" id="i-clave-error"></div></div>
       <div class="mensaje-error" id="i-error" role="alert"></div>
@@ -51,6 +52,13 @@ function mostrar(registro) { $("#f-ingreso").classList.toggle("oculto", registro
 $("#ir-registro").addEventListener("click", e => { e.preventDefault(); mostrar(true); });
 $("#ir-ingreso").addEventListener("click", e => { e.preventDefault(); mostrar(false); });
 if (location.hash === "#registro") mostrar(true);
+fetch("/api/configuracion").then(r => r.json()).then(c => {
+  if (!c.cuenta_prueba) return;
+  $("#demo-correo").textContent = c.cuenta_prueba.correo;
+  $("#demo-clave").textContent = c.cuenta_prueba.clave;
+  $("#demo").classList.remove("oculto");
+  $("#usar-demo").addEventListener("click", () => { $("#i-correo").value = c.cuenta_prueba.correo; $("#i-clave").value = c.cuenta_prueba.clave; mostrar(false); $("#f-ingreso").requestSubmit($("#f-ingreso button[type=submit]")); });
+}).catch(() => {});
 function marcar(id, mensaje) { const campo = $("#" + id).closest(".campo"); campo.classList.toggle("error", !!mensaje); $("#" + id + "-error").textContent = mensaje || ""; return !mensaje; }
 $("#f-ingreso").addEventListener("submit", async e => {
   e.preventDefault();

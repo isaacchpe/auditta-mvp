@@ -66,6 +66,16 @@ def test_deshacer():
     assert cliente.post("/api/hallazgos/HC-T1-H01/deshacer", headers=cabeceras).json()["estado_revision"] == "pendiente"
 
 
+def test_cuenta_de_prueba():
+    from app.semilla import sembrar_usuario_demo
+
+    sembrar_usuario_demo()
+    demo = cliente.get("/api/configuracion").json()["cuenta_prueba"]
+    respuesta = cliente.post("/api/auth/ingreso", json={"correo": demo["correo"], "clave": demo["clave"]})
+    assert respuesta.status_code == 200 and respuesta.json()["perfil"] == "evaluador"
+    assert sembrar_usuario_demo() is False
+
+
 def test_paginas_y_404():
     for ruta in ("/", "/index.html", "/bandeja.html", "/informe.html", "/metricas.html", "/estilos.css", "/app.js"):
         assert cliente.get(ruta).status_code == 200

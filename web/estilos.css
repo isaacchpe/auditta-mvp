@@ -64,8 +64,8 @@ h2{font-size:17px;font-weight:600;margin:0}
 .estado.revisada{background:var(--color-marca-primario-suave);color:var(--color-marca-primario-oscuro)}
 .estado.error{background:var(--color-severidad-alta-suave);color:var(--color-severidad-alta)}
 .puntaje{display:inline-flex;align-items:center;gap:10px;font-weight:600}
-.puntaje .pista{width:120px;height:8px;border-radius:4px;background:var(--color-neutro-fondo);overflow:hidden}
-.puntaje .barra{height:100%;border-radius:4px}
+.puntaje .pista{display:inline-block;width:120px;height:8px;border-radius:4px;background:var(--color-neutro-fondo);overflow:hidden}
+.puntaje .barra{display:block;height:100%;border-radius:4px}
 .alto{color:var(--color-severidad-alta)}.alto .barra{background:var(--color-severidad-alta)}
 .medio{color:var(--color-severidad-media)}.medio .barra{background:var(--color-severidad-media)}
 .bajo{color:var(--color-severidad-baja)}.bajo .barra{background:var(--color-severidad-baja)}
@@ -136,5 +136,9 @@ mark .marca-h{display:inline-block;background:var(--color-severidad-media);color
 .barra-h{display:flex;align-items:center;gap:10px}
 .barra-h .pista{flex:1;height:10px;border-radius:5px;background:var(--color-neutro-fondo);overflow:hidden}
 .barra-h .barra{height:100%;border-radius:5px;background:var(--color-marca-primario)}
+.demo{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:var(--radio-md);background:var(--color-severidad-media-suave);border:1px dashed var(--color-severidad-media)}
+.demo>div{flex:1;display:flex;flex-direction:column;gap:2px;font-size:13px}
+.demo b{color:var(--color-severidad-media)}
+.demo code{font-family:ui-monospace,Consolas,monospace;font-size:13px;font-weight:600;user-select:all}
 .oculto{display:none!important}
 @media (max-width:900px){.marco{flex-direction:column}.lateral{position:static;height:auto;flex:none}.contenido{padding:18px 16px}.fila{flex-direction:column}.acceso{flex-direction:column}.acceso .marca-panel{flex:none;padding:40px 24px}}

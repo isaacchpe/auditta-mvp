@@ -11,7 +11,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator
 
 from app.auth import emitir_token, hashear, usuario_actual, verificar
-from app.config import FORMULARIO_RETROALIMENTACION, RAIZ, VERSION_APP
+from app.config import DEMO_CLAVE, DEMO_CORREO, FORMULARIO_RETROALIMENTACION, RAIZ, VERSION_APP
 from app.db import obtener_db
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -19,10 +19,11 @@ log = logging.getLogger("auditta")
 
 @asynccontextmanager
 async def ciclo_de_vida(_: FastAPI):
-    from app.semilla import sembrar_si_vacio
+    from app.semilla import sembrar_si_vacio, sembrar_usuario_demo
 
     try:
         sembrar_si_vacio()
+        sembrar_usuario_demo()
     except Exception:
         log.exception("No fue posible sembrar los datos iniciales")
     yield
@@ -111,7 +112,8 @@ def salud():
 
 @app.get("/api/configuracion")
 def configuracion():
-    return {"formulario_retroalimentacion": FORMULARIO_RETROALIMENTACION}
+    demo = {"correo": DEMO_CORREO, "clave": DEMO_CLAVE} if DEMO_CORREO and DEMO_CLAVE else None
+    return {"formulario_retroalimentacion": FORMULARIO_RETROALIMENTACION, "cuenta_prueba": demo}
 
 
 @app.post("/api/auth/ingreso")

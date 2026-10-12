@@ -9,8 +9,8 @@ import httpx
 from pipeline import catalogo as cat
 
 VERSION_PROMPT = "1.3.0"
-URL = os.environ.get("DEEPSEEK_URL", "https://api.deepseek.com/chat/completions")
-MODELO = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+URL = os.environ.get("DEEPSEEK_URL", "https://api.deepseek.com/chat/completions").strip()
+MODELO = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat").strip()
 MAX_INTENTOS = 3
 SEVERIDADES = ("alta", "media", "baja")
 
@@ -120,7 +120,7 @@ def llamar_modelo(mensajes: list[dict], clave: str) -> tuple[str, dict]:
 
 
 def analizar(texto_anonimizado: str, contexto: dict, clave: str | None = None) -> dict:
-    clave = clave or os.environ.get("DEEPSEEK_API_KEY", "")
+    clave = (clave or os.environ.get("DEEPSEEK_API_KEY", "")).strip()
     if not clave:
         raise RuntimeError("Falta DEEPSEEK_API_KEY")
     catalogo = cat.cargar()

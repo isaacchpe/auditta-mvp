@@ -107,6 +107,7 @@ mark .marca-h{display:inline-block;background:var(--color-severidad-media);color
 .apilada{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--color-neutro-fondo)}
 .apilada span{display:block;height:100%}
 .leyenda{display:flex;gap:16px;font-size:12px;flex-wrap:wrap}
+.leyenda .muestra{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 .velo{position:fixed;inset:0;background:rgba(13,43,69,.45);display:none;align-items:center;justify-content:center;z-index:20}
 .velo.abierto{display:flex}
 .modal{width:min(480px,92vw);background:#fff;border-radius:var(--radio-lg);box-shadow:var(--sombra-modal);padding:24px;display:flex;flex-direction:column;gap:18px}

@@ -17,3 +17,15 @@ services:
         generateValue: true
       - key: FORMULARIO_RETROALIMENTACION
         sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: DEEPSEEK_URL
+        sync: false
+      - key: DEEPSEEK_MODEL
+        value: deepseek-chat
+      - key: DEMO_CORREO
+        value: evaluador@auditta.test
+      - key: DEMO_CLAVE
+        sync: false
+      - key: DEMO_NOMBRE
+        value: Evaluador de prueba

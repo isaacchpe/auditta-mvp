@@ -101,16 +101,6 @@ def es_participante_compartido(usuario: str) -> bool:
 PREFIJO_AUDITOR = "#auditor_medico#"
 
 
-def filtro_auditores_compartidos() -> dict:
-    return {"usuario": {"$regex": "^" + re.escape(DEMO_CORREO) + "#(auditor_medico#|[^#]+$)"}}
-
-
-def trasladar_participante(anterior: str, nuevo: str) -> None:
-    db = obtener_db()
-    for coleccion in ("revisiones", "eventos", "trazas"):
-        db[coleccion].update_many({"usuario": anterior}, {"$set": {"usuario": nuevo}})
-
-
 class Registro(BaseModel):
     nombre: str = Field(min_length=3, max_length=80)
     correo: str
@@ -173,8 +163,6 @@ def ingreso(datos: Ingreso):
         identificador = identificador_participante(datos.participante)
         if identificador and identificador not in PARTICIPANTES_EXCLUIDOS:
             sujeto, nombre, perfil = f"{usuario['_id']}#{datos.rol}#{identificador}", datos.participante.strip(), datos.rol
-            if datos.rol == "auditor_medico":
-                trasladar_participante(f"{usuario['_id']}#{identificador}", sujeto)
     registrar_evento("ingreso", sujeto)
     return {"token": emitir_token(sujeto, nombre, perfil), "nombre": nombre, "perfil": perfil}
 
@@ -395,7 +383,7 @@ def metricas(usuario: dict = Depends(usuario_actual)):
     por_criterio: dict[str, dict] = {}
     tiempos = []
     participantes = set()
-    for r in db.revisiones.find({"$or": [{"usuario": {"$in": list(medidos)}}, filtro_auditores_compartidos()]}):
+    for r in db.revisiones.find({"$or": [{"usuario": {"$in": list(medidos)}}, {"usuario": {"$regex": "^" + re.escape(DEMO_CORREO + PREFIJO_AUDITOR)}}]}):
         for hid, d in r.get("decisiones", {}).items():
             decisiones[d["decision"]] += 1
             participantes.add(r["usuario"])

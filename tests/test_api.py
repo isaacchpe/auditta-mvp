@@ -89,6 +89,24 @@ def test_cuenta_de_prueba_fuera_de_metricas():
     assert sembrar_usuario_demo() is False
 
 
+def test_auditor_de_la_version_anterior_se_conserva():
+    sembrar()
+    from app.semilla import sembrar_usuario_demo
+
+    sembrar_usuario_demo()
+    demo = cliente.get("/api/configuracion").json()["cuenta_prueba"]
+    db = obtener_db()
+    anterior = demo["correo"] + "#ana-perez"
+    db.revisiones.insert_one({"usuario": anterior, "historia_id": "HC-T1", "estado": "analizada", "decisiones": {"HC-T1-H01": {"decision": "aceptado"}}})
+    db.eventos.insert_one({"tipo": "decision", "usuario": anterior, "detalle": {}, "fecha": None})
+    r = cliente.post("/api/auth/ingreso", json={**demo, "participante": "Ana Pérez", "rol": "auditor_medico"})
+    cab = {"Authorization": "Bearer " + r.json()["token"]}
+    assert db.revisiones.count_documents({"usuario": anterior}) == 0
+    assert cliente.get("/api/historias/HC-T1", headers=cab).json()["hallazgos"][0]["estado_revision"] == "aceptado"
+    metricas = cliente.get("/api/metricas", headers=cab).json()
+    assert metricas["participantes"] == 1 and metricas["decisiones"]["aceptado"] == 1
+
+
 def test_traza_anonima_y_con_sesion():
     db = obtener_db()
     db.trazas.delete_many({})

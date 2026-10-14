@@ -108,17 +108,19 @@ def test_cuenta_compartida_separa_participantes():
     sembrar_usuario_demo()
     demo = cliente.get("/api/configuracion").json()["cuenta_prueba"]
 
-    def entrar(nombre):
-        r = cliente.post("/api/auth/ingreso", json={**demo, "participante": nombre})
+    def entrar(nombre, rol="auditor_medico"):
+        r = cliente.post("/api/auth/ingreso", json={**demo, "participante": nombre, "rol": rol})
         assert r.status_code == 200
         return r.json(), {"Authorization": "Bearer " + r.json()["token"]}
 
     datos_a, a = entrar("Auditora Uno")
     datos_b, b = entrar("Auditor Dos")
     datos_e, e = entrar("Evaluador")
-    assert datos_a["perfil"] == "participante" and datos_a["nombre"] == "Auditora Uno"
-    assert datos_e["perfil"] == "evaluador"
-    for cab, decision in ((a, "aceptado"), (b, "descartado"), (e, "aceptado")):
+    datos_d, d = entrar("Dev Uno", "desarrollador")
+    datos_p, p = entrar("Profesor", "evaluador")
+    assert datos_a["perfil"] == "auditor_medico" and datos_a["nombre"] == "Auditora Uno"
+    assert datos_e["perfil"] == "evaluador" and datos_p["perfil"] == "evaluador" and datos_d["perfil"] == "desarrollador"
+    for cab, decision in ((a, "aceptado"), (b, "descartado"), (e, "aceptado"), (d, "aceptado"), (p, "aceptado")):
         cliente.post("/api/historias/HC-T1/confirmar-anonimizacion", headers=cab)
         cliente.post("/api/hallazgos/HC-T1-H01/decision", headers=cab, json={"decision": decision})
     assert cliente.get("/api/historias/HC-T1", headers=b).json()["hallazgos"][0]["estado_revision"] == "descartado"

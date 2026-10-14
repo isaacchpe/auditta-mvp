@@ -30,13 +30,13 @@ def emitir_token(correo: str, nombre: str, perfil: str) -> str:
     return jwt.encode({"sub": correo, "nombre": nombre, "perfil": perfil, "exp": expira}, JWT_SECRETO, algorithm="HS256")
 
 
-def sujeto_de_token(token: str | None) -> str | None:
+def datos_de_token(token: str | None) -> dict:
     if not token:
-        return None
+        return {}
     try:
-        return jwt.decode(token, JWT_SECRETO, algorithms=["HS256"])["sub"]
+        return jwt.decode(token, JWT_SECRETO, algorithms=["HS256"])
     except jwt.PyJWTError:
-        return None
+        return {}
 
 
 def usuario_actual(credencial: HTTPAuthorizationCredentials | None = Depends(portador)) -> dict:

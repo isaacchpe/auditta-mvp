@@ -20,7 +20,8 @@ def recorridos(perfiles=("desarrollador",)):
     resultado = []
     for traza, eventos in por_traza.items():
         usuario = next((e["usuario"] for e in reversed(eventos) if e.get("usuario")), None)
-        if not usuario or perfil_de.get(usuario) not in perfiles:
+        perfil = next((e["perfil"] for e in reversed(eventos) if e.get("perfil")), None) or perfil_de.get(usuario)
+        if not usuario or perfil not in perfiles:
             continue
         visitas, actual = [], None
         for e in eventos:

@@ -14,7 +14,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator
 
-from app.auth import emitir_token, hashear, sujeto_de_token, usuario_actual, verificar
+from app.auth import datos_de_token, emitir_token, hashear, usuario_actual, verificar
 from app.config import DEMO_CLAVE, DEMO_CORREO, FORMULARIO_RETROALIMENTACION, RAIZ, VERSION_APP
 from app.db import obtener_db
 
@@ -86,6 +86,7 @@ class Ingreso(BaseModel):
     correo: str
     clave: str
     participante: str | None = Field(default=None, max_length=60)
+    rol: Literal["auditor_medico", "desarrollador", "evaluador"] | None = None
 
 
 def identificador_participante(nombre: str) -> str:
@@ -95,6 +96,9 @@ def identificador_participante(nombre: str) -> str:
 
 def es_participante_compartido(usuario: str) -> bool:
     return bool(DEMO_CORREO) and usuario.startswith(DEMO_CORREO + "#")
+
+
+PREFIJO_AUDITOR = "#auditor_medico#"
 
 
 class Registro(BaseModel):
@@ -155,10 +159,10 @@ def ingreso(datos: Ingreso):
     if not usuario or not verificar(datos.clave, usuario["hash"]):
         raise HTTPException(401, "Correo o contraseña incorrectos.")
     sujeto, nombre, perfil = usuario["_id"], usuario["nombre"], usuario["perfil"]
-    if usuario["_id"] == DEMO_CORREO and datos.participante:
+    if usuario["_id"] == DEMO_CORREO and datos.participante and datos.rol in ("auditor_medico", "desarrollador"):
         identificador = identificador_participante(datos.participante)
         if identificador and identificador not in PARTICIPANTES_EXCLUIDOS:
-            sujeto, nombre, perfil = f"{usuario['_id']}#{identificador}", datos.participante.strip(), "participante"
+            sujeto, nombre, perfil = f"{usuario['_id']}#{datos.rol}#{identificador}", datos.participante.strip(), datos.rol
     registrar_evento("ingreso", sujeto)
     return {"token": emitir_token(sujeto, nombre, perfil), "nombre": nombre, "perfil": perfil}
 
@@ -379,7 +383,7 @@ def metricas(usuario: dict = Depends(usuario_actual)):
     por_criterio: dict[str, dict] = {}
     tiempos = []
     participantes = set()
-    for r in db.revisiones.find({"$or": [{"usuario": {"$in": list(medidos)}}, {"usuario": {"$regex": "^" + re.escape(DEMO_CORREO) + "#"}}]}):
+    for r in db.revisiones.find({"$or": [{"usuario": {"$in": list(medidos)}}, {"usuario": {"$regex": "^" + re.escape(DEMO_CORREO + PREFIJO_AUDITOR)}}]}):
         for hid, d in r.get("decisiones", {}).items():
             decisiones[d["decision"]] += 1
             participantes.add(r["usuario"])
@@ -418,7 +422,8 @@ def metricas(usuario: dict = Depends(usuario_actual)):
 @app.post("/api/traza", status_code=204)
 def traza(datos: Traza):
     detalle = {str(k)[:40]: str(v)[:200] for k, v in list(datos.detalle.items())[:8]}
-    obtener_db().trazas.insert_one({"traza": datos.traza, "usuario": sujeto_de_token(datos.token), "tipo": datos.tipo, "ruta": datos.ruta, "ms": datos.ms, "detalle": detalle, "fecha": ahora()})
+    sesion = datos_de_token(datos.token)
+    obtener_db().trazas.insert_one({"traza": datos.traza, "usuario": sesion.get("sub"), "perfil": sesion.get("perfil"), "tipo": datos.tipo, "ruta": datos.ruta, "ms": datos.ms, "detalle": detalle, "fecha": ahora()})
 
 
 @app.post("/api/eventos", status_code=204)

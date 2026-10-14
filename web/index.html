@@ -21,7 +21,8 @@
       <div class="demo oculto" id="demo"><div><b>Cuenta de prueba</b><span>Correo: <code id="demo-correo"></code></span><span>Contraseña: <code id="demo-clave"></code></span></div><button class="btn secundario" type="button" id="usar-demo">Usar cuenta de prueba</button></div>
       <div class="campo"><label for="i-correo">Correo</label><input id="i-correo" type="email" autocomplete="email" required><div class="mensaje-error" id="i-correo-error"></div></div>
       <div class="campo"><label for="i-clave">Contraseña</label><input id="i-clave" type="password" autocomplete="current-password" required><div class="mensaje-error" id="i-clave-error"></div></div>
-      <div class="campo oculto" id="campo-participante"><label for="i-participante">¿Quién revisa?</label><input id="i-participante" autocomplete="name" maxlength="60" placeholder="Su nombre o sus iniciales"><small style="color:var(--color-neutro-texto-secundario);font-size:12px">La cuenta de prueba es compartida. Su nombre separa sus decisiones de las de otras personas. Si solo va a conocer el sistema, escriba «Evaluador».</small><div class="mensaje-error" id="i-participante-error"></div></div>
+      <div class="campo oculto" id="campo-rol"><label for="i-rol">Participo como</label><select id="i-rol"><option value="">Seleccione…</option><option value="auditor_medico">Auditor médico</option><option value="desarrollador">Desarrollador (prueba de pasillo)</option><option value="evaluador">Evaluador (solo conocer el sistema)</option></select><div class="mensaje-error" id="i-rol-error"></div></div>
+      <div class="campo oculto" id="campo-participante"><label for="i-participante">¿Quién revisa?</label><input id="i-participante" autocomplete="name" maxlength="60" placeholder="Su nombre o sus iniciales"><small style="color:var(--color-neutro-texto-secundario);font-size:12px">La cuenta de prueba es compartida. Su nombre separa sus decisiones de las de otras personas. Use siempre el mismo nombre.</small><div class="mensaje-error" id="i-participante-error"></div></div>
       <div class="mensaje-error" id="i-error" role="alert"></div>
       <button class="btn" type="submit"><span class="giro"></span><span class="etiqueta">Ingresar</span></button>
       <p>¿No tiene cuenta? <a href="#registro" id="ir-registro">Crear una cuenta</a></p>
@@ -54,26 +55,28 @@ $("#ir-registro").addEventListener("click", e => { e.preventDefault(); mostrar(t
 $("#ir-ingreso").addEventListener("click", e => { e.preventDefault(); mostrar(false); });
 if (location.hash === "#registro") mostrar(true);
 let correoPrueba = "";
-function revisarCompartida() { const compartida = !!correoPrueba && $("#i-correo").value.trim().toLowerCase() === correoPrueba; $("#campo-participante").classList.toggle("oculto", !compartida); return compartida; }
+function revisarCompartida() { const compartida = !!correoPrueba && $("#i-correo").value.trim().toLowerCase() === correoPrueba; $("#campo-rol").classList.toggle("oculto", !compartida); $("#campo-participante").classList.toggle("oculto", !compartida || $("#i-rol").value === "evaluador"); return compartida; }
 $("#i-correo").addEventListener("input", revisarCompartida);
+$("#i-rol").addEventListener("change", revisarCompartida);
 fetch("/api/configuracion").then(r => r.json()).then(c => {
   if (!c.cuenta_prueba) return;
   correoPrueba = c.cuenta_prueba.correo.toLowerCase(); revisarCompartida();
   $("#demo-correo").textContent = c.cuenta_prueba.correo;
   $("#demo-clave").textContent = c.cuenta_prueba.clave;
   $("#demo").classList.remove("oculto");
-  $("#usar-demo").addEventListener("click", () => { $("#i-correo").value = c.cuenta_prueba.correo; $("#i-clave").value = c.cuenta_prueba.clave; mostrar(false); revisarCompartida(); $("#i-participante").focus(); });
+  $("#usar-demo").addEventListener("click", () => { $("#i-correo").value = c.cuenta_prueba.correo; $("#i-clave").value = c.cuenta_prueba.clave; mostrar(false); revisarCompartida(); $("#i-rol").focus(); });
 }).catch(() => {});
 function marcar(id, mensaje) { const campo = $("#" + id).closest(".campo"); campo.classList.toggle("error", !!mensaje); $("#" + id + "-error").textContent = mensaje || ""; return !mensaje; }
 $("#f-ingreso").addEventListener("submit", async e => {
   e.preventDefault();
   const boton = e.submitter; $("#i-error").textContent = "";
   const correo = $("#i-correo").value, clave = $("#i-clave").value, compartida = revisarCompartida();
-  const participante = compartida ? $("#i-participante").value.trim() : "";
-  const ok = [marcar("i-correo", correoValido(correo) ? "" : "Escriba un correo válido."), marcar("i-clave", clave ? "" : "Escriba la contraseña."), compartida ? marcar("i-participante", participante.length >= 2 ? "" : "Escriba su nombre o sus iniciales.") : true].every(Boolean);
+  const rol = compartida ? $("#i-rol").value : "";
+  const participante = compartida && rol !== "evaluador" ? $("#i-participante").value.trim() : "";
+  const ok = [marcar("i-correo", correoValido(correo) ? "" : "Escriba un correo válido."), marcar("i-clave", clave ? "" : "Escriba la contraseña."), compartida ? marcar("i-rol", rol ? "" : "Seleccione cómo participa.") : true, compartida && rol !== "evaluador" ? marcar("i-participante", participante.length >= 2 ? "" : "Escriba su nombre o sus iniciales.") : true].every(Boolean);
   if (!ok) return;
   Auditta.ocupado(boton, true);
-  try { Auditta.guardarSesion(await Auditta.api("/auth/ingreso", { method: "POST", body: JSON.stringify(participante ? { correo, clave, participante } : { correo, clave }) })); location.href = "/bandeja.html"; }
+  try { Auditta.guardarSesion(await Auditta.api("/auth/ingreso", { method: "POST", body: JSON.stringify(compartida ? { correo, clave, rol, participante } : { correo, clave }) })); location.href = "/bandeja.html"; }
   catch (x) { $("#i-error").textContent = x.message; Auditta.ocupado(boton, false); }
 });
 $("#f-registro").addEventListener("submit", async e => {

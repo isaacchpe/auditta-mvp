@@ -13,7 +13,7 @@ const Auditta = (() => {
     escudo: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
   };
   const ESTADOS = { pendiente_confirmacion: "Pendiente de confirmar", analizada: "Analizada", revisada: "Revisada", error: "Error" };
-  const PERFILES = { auditor_medico: "Auditor médico", facturacion: "Facturación", coordinador: "Coordinador de auditoría", desarrollador: "Desarrollador", evaluador: "Cuenta de prueba", participante: "Participante de la prueba", otro: "Otro" };
+  const PERFILES = { auditor_medico: "Auditor médico", facturacion: "Facturación", coordinador: "Coordinador de auditoría", desarrollador: "Desarrollador", evaluador: "Cuenta de prueba", otro: "Otro" };
 
   const almacen = {
     leer(clave) { try { return localStorage.getItem(clave); } catch { return null; } },

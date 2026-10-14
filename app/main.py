@@ -1,6 +1,7 @@
 import logging
 import re
 import time
+import unicodedata
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from typing import Literal
@@ -42,6 +43,7 @@ WEB = RAIZ / "web"
 CORREO = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 PERFILES = ("auditor_medico", "facturacion", "coordinador", "desarrollador", "otro")
 PERFILES_MEDIDOS = ("auditor_medico", "facturacion", "coordinador")
+PARTICIPANTES_EXCLUIDOS = {"evaluador", "evaluadora", "docente", "profesor", "profesora", "prueba"}
 
 
 def ahora() -> datetime:
@@ -83,6 +85,16 @@ async def bitacora(request: Request, call_next):
 class Ingreso(BaseModel):
     correo: str
     clave: str
+    participante: str | None = Field(default=None, max_length=60)
+
+
+def identificador_participante(nombre: str) -> str:
+    plano = unicodedata.normalize("NFKD", nombre).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", plano).strip("-")
+
+
+def es_participante_compartido(usuario: str) -> bool:
+    return bool(DEMO_CORREO) and usuario.startswith(DEMO_CORREO + "#")
 
 
 class Registro(BaseModel):
@@ -133,8 +145,13 @@ def ingreso(datos: Ingreso):
     usuario = obtener_db().usuarios.find_one({"_id": datos.correo.strip().lower()})
     if not usuario or not verificar(datos.clave, usuario["hash"]):
         raise HTTPException(401, "Correo o contraseña incorrectos.")
-    registrar_evento("ingreso", usuario["_id"])
-    return {"token": emitir_token(usuario["_id"], usuario["nombre"], usuario["perfil"]), "nombre": usuario["nombre"], "perfil": usuario["perfil"]}
+    sujeto, nombre, perfil = usuario["_id"], usuario["nombre"], usuario["perfil"]
+    if usuario["_id"] == DEMO_CORREO and datos.participante:
+        identificador = identificador_participante(datos.participante)
+        if identificador and identificador not in PARTICIPANTES_EXCLUIDOS:
+            sujeto, nombre, perfil = f"{usuario['_id']}#{identificador}", datos.participante.strip(), "participante"
+    registrar_evento("ingreso", sujeto)
+    return {"token": emitir_token(sujeto, nombre, perfil), "nombre": nombre, "perfil": perfil}
 
 
 @app.post("/api/auth/registro", status_code=201)
@@ -353,7 +370,7 @@ def metricas(usuario: dict = Depends(usuario_actual)):
     por_criterio: dict[str, dict] = {}
     tiempos = []
     participantes = set()
-    for r in db.revisiones.find({"usuario": {"$in": list(medidos)}}):
+    for r in db.revisiones.find({"$or": [{"usuario": {"$in": list(medidos)}}, {"usuario": {"$regex": "^" + re.escape(DEMO_CORREO) + "#"}}]}):
         for hid, d in r.get("decisiones", {}).items():
             decisiones[d["decision"]] += 1
             participantes.add(r["usuario"])

@@ -89,6 +89,32 @@ def test_cuenta_de_prueba_fuera_de_metricas():
     assert sembrar_usuario_demo() is False
 
 
+def test_cuenta_compartida_separa_participantes():
+    sembrar()
+    from app.semilla import sembrar_usuario_demo
+
+    sembrar_usuario_demo()
+    demo = cliente.get("/api/configuracion").json()["cuenta_prueba"]
+
+    def entrar(nombre):
+        r = cliente.post("/api/auth/ingreso", json={**demo, "participante": nombre})
+        assert r.status_code == 200
+        return r.json(), {"Authorization": "Bearer " + r.json()["token"]}
+
+    datos_a, a = entrar("Auditora Uno")
+    datos_b, b = entrar("Auditor Dos")
+    datos_e, e = entrar("Evaluador")
+    assert datos_a["perfil"] == "participante" and datos_a["nombre"] == "Auditora Uno"
+    assert datos_e["perfil"] == "evaluador"
+    for cab, decision in ((a, "aceptado"), (b, "descartado"), (e, "aceptado")):
+        cliente.post("/api/historias/HC-T1/confirmar-anonimizacion", headers=cab)
+        cliente.post("/api/hallazgos/HC-T1-H01/decision", headers=cab, json={"decision": decision})
+    assert cliente.get("/api/historias/HC-T1", headers=b).json()["hallazgos"][0]["estado_revision"] == "descartado"
+    assert cliente.get("/api/historias/HC-T1", headers=a).json()["hallazgos"][0]["estado_revision"] == "aceptado"
+    metricas = cliente.get("/api/metricas", headers=a).json()
+    assert metricas["participantes"] == 2 and metricas["hallazgos_revisados"] == 2 and metricas["decisiones"]["aceptado"] == 1
+
+
 def test_carga_de_historia_nueva():
     from pathlib import Path
 

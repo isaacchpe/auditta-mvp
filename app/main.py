@@ -14,7 +14,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, field_validator
 
-from app.auth import emitir_token, hashear, usuario_actual, verificar
+from app.auth import emitir_token, hashear, sujeto_de_token, usuario_actual, verificar
 from app.config import DEMO_CLAVE, DEMO_CORREO, FORMULARIO_RETROALIMENTACION, RAIZ, VERSION_APP
 from app.db import obtener_db
 
@@ -121,6 +121,15 @@ class Decision(BaseModel):
 
 class Cierre(BaseModel):
     segundos_revision: float = Field(ge=0)
+
+
+class Traza(BaseModel):
+    traza: str = Field(min_length=1, max_length=64)
+    tipo: Literal["pantalla", "clic", "validacion", "error_js", "salida"]
+    ruta: str = Field(default="", max_length=300)
+    ms: int = Field(default=0, ge=0)
+    detalle: dict = {}
+    token: str | None = Field(default=None, max_length=2000)
 
 
 class Evento(BaseModel):
@@ -404,6 +413,12 @@ def metricas(usuario: dict = Depends(usuario_actual)):
         "por_criterio": por_criterio,
         "pipeline": limpiar(db.metricas_pipeline.find_one({"_id": "ultima_corrida"}) or {}),
     }
+
+
+@app.post("/api/traza", status_code=204)
+def traza(datos: Traza):
+    detalle = {str(k)[:40]: str(v)[:200] for k, v in list(datos.detalle.items())[:8]}
+    obtener_db().trazas.insert_one({"traza": datos.traza, "usuario": sujeto_de_token(datos.token), "tipo": datos.tipo, "ruta": datos.ruta, "ms": datos.ms, "detalle": detalle, "fecha": ahora()})
 
 
 @app.post("/api/eventos", status_code=204)

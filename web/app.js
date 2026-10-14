@@ -107,3 +107,34 @@ const Auditta = (() => {
 
   return { sinHistoria, historiaSolicitada, ICONOS, ESTADOS, PERFILES, api, evento, ocupado, lateral, escapar, resaltarTokens, chip, estado, puntaje, parametro, segundos, insignia, notificar, guardarSesion, cerrarSesion, exigirSesion, token, almacen };
 })();
+
+(() => {
+  let id;
+  try { id = localStorage.getItem("auditta_traza"); if (!id) { id = crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2); localStorage.setItem("auditta_traza", id); } } catch { id = "sin-almacen"; }
+  const inicio = performance.now();
+  const ruta = location.pathname + location.search;
+  function enviar(tipo, detalle = {}) {
+    const cuerpo = JSON.stringify({ traza: id, tipo, ruta, ms: Math.round(performance.now() - inicio), detalle, token: Auditta.token() || null });
+    try { if (navigator.sendBeacon && navigator.sendBeacon("/api/traza", new Blob([cuerpo], { type: "application/json" }))) return; } catch {}
+    fetch("/api/traza", { method: "POST", headers: { "Content-Type": "application/json" }, body: cuerpo, keepalive: true }).catch(() => {});
+  }
+  enviar("pantalla");
+  document.addEventListener("click", e => {
+    const el = e.target.closest("button, a, [role=button], input[type=checkbox], input[type=radio], select");
+    if (!el) return;
+    enviar("clic", { elemento: el.tagName.toLowerCase(), id: el.id || "", texto: (el.innerText || el.getAttribute("aria-label") || el.name || "").trim().slice(0, 60) });
+  }, true);
+  const vistos = new WeakMap();
+  new MutationObserver(cambios => {
+    for (const c of cambios) {
+      const el = c.target.nodeType === 1 ? c.target : c.target.parentElement;
+      if (!el || !el.matches || !el.matches(".mensaje-error")) continue;
+      const texto = el.textContent.trim();
+      if (texto && vistos.get(el) !== texto) enviar("validacion", { campo: el.id, mensaje: texto.slice(0, 120) });
+      vistos.set(el, texto);
+    }
+  }).observe(document.documentElement, { subtree: true, childList: true, characterData: true });
+  window.addEventListener("error", e => enviar("error_js", { mensaje: String(e.message).slice(0, 200), origen: String(e.filename || "").slice(-80), linea: e.lineno || 0 }));
+  window.addEventListener("unhandledrejection", e => enviar("error_js", { mensaje: String((e.reason && e.reason.message) || e.reason).slice(0, 200) }));
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") enviar("salida"); });
+})();

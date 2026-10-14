@@ -30,6 +30,15 @@ def emitir_token(correo: str, nombre: str, perfil: str) -> str:
     return jwt.encode({"sub": correo, "nombre": nombre, "perfil": perfil, "exp": expira}, JWT_SECRETO, algorithm="HS256")
 
 
+def sujeto_de_token(token: str | None) -> str | None:
+    if not token:
+        return None
+    try:
+        return jwt.decode(token, JWT_SECRETO, algorithms=["HS256"])["sub"]
+    except jwt.PyJWTError:
+        return None
+
+
 def usuario_actual(credencial: HTTPAuthorizationCredentials | None = Depends(portador)) -> dict:
     if credencial is None:
         raise HTTPException(401, "Inicie sesión para continuar.")

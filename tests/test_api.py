@@ -89,6 +89,18 @@ def test_cuenta_de_prueba_fuera_de_metricas():
     assert sembrar_usuario_demo() is False
 
 
+def test_traza_anonima_y_con_sesion():
+    db = obtener_db()
+    db.trazas.delete_many({})
+    assert cliente.post("/api/traza", json={"traza": "t-1", "tipo": "pantalla", "ruta": "/index.html", "ms": 0}).status_code == 204
+    cab = sesion("dev@ejemplo.com", "desarrollador")
+    token = cab["Authorization"].split()[1]
+    assert cliente.post("/api/traza", json={"traza": "t-1", "tipo": "clic", "ruta": "/bandeja.html", "ms": 6200, "detalle": {"texto": "Revisar informe"}, "token": token}).status_code == 204
+    assert cliente.post("/api/traza", json={"traza": "t-1", "tipo": "otro", "ruta": "/"}).status_code == 422
+    trazas = list(db.trazas.find({"traza": "t-1"}).sort("fecha", 1))
+    assert len(trazas) == 2 and trazas[0]["usuario"] is None and trazas[1]["usuario"] == "dev@ejemplo.com"
+
+
 def test_cuenta_compartida_separa_participantes():
     sembrar()
     from app.semilla import sembrar_usuario_demo

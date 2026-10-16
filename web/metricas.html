@@ -13,7 +13,7 @@
     <div class="indicadores" id="indicadores"></div>
     <div class="fila">
       <section class="tarjeta panel"><h2>Decisiones del auditor</h2><p class="sub">Cómo se resolvieron los hallazgos revisados</p><div id="decisiones"></div></section>
-      <section class="tarjeta panel"><h2>Hallazgos por familia de criterio</h2><p class="sub">Todas las historias analizadas</p><div id="familias" style="display:flex;flex-direction:column;gap:10px"></div></section>
+      <section class="tarjeta panel"><h2>Hallazgos por familia de criterio</h2><p class="sub">Cantidad de hallazgos de cada familia en todas las historias analizadas. Son conteos, no porcentajes: no suman 100.</p><div id="familias" style="display:flex;flex-direction:column;gap:10px"></div></section>
     </div>
     <section class="tarjeta panel"><h2>Indicadores técnicos del pipeline (OE1 y OE2)</h2><p class="sub" id="sub-pipeline"></p><div class="tabla-envoltorio"><table><thead><tr><th>Indicador</th><th>Umbral</th><th>Resultado</th><th>Estado</th></tr></thead><tbody id="pipeline"></tbody></table></div></section>
     <section class="tarjeta panel"><h2>Criterios con mayor tasa de descarte</h2><p class="sub">Candidatos a revisión del catálogo</p><div id="criterios"></div></section>
@@ -25,7 +25,6 @@ if (Auditta.exigirSesion()) {
   Auditta.lateral("metricas");
   const $ = s => document.querySelector(s);
   $("#insignia").innerHTML = Auditta.insignia();
-  const FAMILIAS = { COMP: "Completitud", COH: "Coherencia", PERT: "Pertinencia", OPO: "Oportunidad", SOP: "Soporte", IDP: "Identificación del prestador" };
   const pct = v => v == null ? "—" : (v * 100).toFixed(1).replace(".", ",") + " %";
   Auditta.api("/metricas").then(m => {
     const kpi = (etiqueta, valor, detalle) => `<div class="tarjeta kpi"><span class="etiqueta">${etiqueta}</span><span class="valor">${valor}</span><span class="detalle">${detalle}</span></div>`;
@@ -34,10 +33,10 @@ if (Auditta.exigirSesion()) {
     const partes = [["aceptado", "Aceptados", "var(--color-severidad-baja)"], ["reclasificado", "Reclasificados", "var(--color-severidad-media)"], ["descartado", "Descartados", "var(--color-neutro-texto-tenue)"]];
     $("#decisiones").innerHTML = `<div class="apilada" style="height:20px">${partes.map(([k, , c]) => `<span style="width:${100 * d[k] / total}%;background:${c}"></span>`).join("")}</div><div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">${partes.map(([k, t, c]) => `<div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:2px;background:${c}"></span>${t}: ${d[k]} (${Math.round(100 * d[k] / total)} %)</div>`).join("")}</div>`;
     const fam = Object.entries(m.por_familia || {}).sort((a, b) => b[1] - a[1]); const maxF = Math.max(1, ...fam.map(f => f[1]));
-    $("#familias").innerHTML = fam.length ? fam.map(([f, n]) => `<div class="barra-h"><span style="width:190px">${FAMILIAS[f] || f}</span><div class="pista"><div class="barra" style="width:${100 * n / maxF}%"></div></div><b>${n}</b></div>`).join("") : '<p style="color:var(--color-neutro-texto-secundario)">Aún no hay hallazgos cargados.</p>';
+    $("#familias").innerHTML = fam.length ? fam.map(([f, n]) => `<div><div class="barra-h"><span style="width:190px;font-weight:600">${Auditta.FAMILIAS[f]?.nombre || f}</span><div class="pista"><div class="barra" style="width:${100 * n / maxF}%"></div></div><b>${n} ${n === 1 ? "hallazgo" : "hallazgos"}</b></div><div class="def">${Auditta.FAMILIAS[f]?.texto || ""}</div></div>`).join("") : '<p style="color:var(--color-neutro-texto-secundario)">Aún no hay hallazgos cargados.</p>';
     const p = m.pipeline || {};
     $("#sub-pipeline").textContent = p.fecha ? `Medidos sobre ${p.historias} historias sintéticas · reglas v${p.version_reglas} · prompt v${p.version_prompt} · ${new Date(p.fecha).toLocaleDateString("es-CO")}` : "Aún no se ha cargado una corrida del pipeline.";
-    const filas = [["Recall de anonimización", "≥ 98 %", p.recall_anonimizacion, v => v >= 0.98, pct], ["Documentos con fuga residual", "0", p.documentos_con_fuga, v => v === 0, v => v ?? "—"], ["JSON válido al primer intento", "≥ 95 %", p.json_valido_primer_intento, v => v >= 0.95, pct], ["Hallazgos con evidencia localizable", "≥ 90 %", p.hallazgos_con_evidencia, v => v >= 0.9, pct], ["Tiempo de procesamiento por historia (promedio)", "≤ 90 s", p.latencia_media_ms, v => v <= 90000, v => v == null ? "—" : (v / 1000).toFixed(1).replace(".", ",") + " s"]];
+    const filas = [["Recall de anonimización", "≥ 98 %", p.recall_anonimizacion, v => v >= 0.98, pct], ["Documentos con fuga residual", "0", p.documentos_con_fuga, v => v === 0, v => v ?? "—"], ["Hallazgos con evidencia localizable", "≥ 90 %", p.hallazgos_con_evidencia, v => v >= 0.9, pct], ["Tiempo de procesamiento por historia (promedio)", "≤ 90 s", p.latencia_media_ms, v => v <= 90000, v => v == null ? "—" : (v / 1000).toFixed(1).replace(".", ",") + " s"]];
     $("#pipeline").innerHTML = filas.map(([n, u, v, ok, f]) => `<tr><td style="font-weight:400">${n}</td><td>${u}</td><td>${f(v)}</td><td>${v == null ? '<span style="color:var(--color-neutro-texto-tenue)">Sin dato</span>' : (ok(v) ? '<span class="estado analizada">Cumple</span>' : '<span class="estado error">No cumple</span>')}</td></tr>`).join("");
     const crit = Object.entries(m.por_criterio || {}).filter(([, c]) => c.total >= 2).map(([k, c]) => [k, c.descartados / c.total, c]).sort((a, b) => b[1] - a[1]).slice(0, 5);
     $("#criterios").innerHTML = crit.length ? `<table><thead><tr><th>Criterio</th><th>Hallazgos</th><th>Descartados</th><th>Tasa</th></tr></thead><tbody>${crit.map(([k, t, c]) => `<tr><td>${k}</td><td>${c.total}</td><td>${c.descartados}</td><td>${pct(t)}</td></tr>`).join("")}</tbody></table>` : '<p style="color:var(--color-neutro-texto-secundario)">Se necesitan al menos dos hallazgos por criterio.</p>';

@@ -107,6 +107,13 @@ mark .marca-h{display:inline-block;background:var(--color-severidad-media);color
 .apilada{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--color-neutro-fondo)}
 .apilada span{display:block;height:100%}
 .leyenda{display:flex;gap:16px;font-size:12px;flex-wrap:wrap}
+.glosario{display:grid;grid-template-columns:max-content 1fr;gap:8px 14px;margin:10px 0 0;font-size:13px;align-items:baseline}
+.glosario dt{font-weight:600}
+.glosario dd{margin:0;color:var(--color-neutro-texto-secundario)}
+.ayuda{font-size:13px}
+.ayuda summary{cursor:pointer;color:var(--color-marca-primario);font-weight:600}
+.nota-escala{font-size:12px;color:var(--color-neutro-texto-secundario);margin-top:4px}
+.def{font-size:12px;color:var(--color-neutro-texto-secundario);margin-top:2px}
 .leyenda .muestra{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 .velo{position:fixed;inset:0;background:rgba(13,43,69,.45);display:none;align-items:center;justify-content:center;z-index:20}
 .velo.abierto{display:flex}

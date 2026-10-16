@@ -70,7 +70,23 @@ const Auditta = (() => {
 
   function escapar(texto) { return String(texto ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
   function resaltarTokens(texto) { return escapar(texto).replace(/\[([A-ZÁÉÍÓÚÑ_]+_\d+|EDAD_MAYOR_90)\]/g, '<span class="token">[$1]</span>'); }
-  function chip(severidad) { return `<span class="chip ${severidad}">${{ alta: "Alta", media: "Media", baja: "Baja" }[severidad] || severidad}</span>`; }
+  const SEVERIDADES = {
+    alta: { nombre: "Alta", corto: "Falta un soporte o requisito que la norma exige: glosa probable.", largo: "Falta un soporte o una condición que la norma exige para pagar el servicio. Es probable que la cuenta se glose o se devuelva. Aporta hasta 20 puntos al puntaje de riesgo." },
+    media: { nombre: "Media", corto: "El registro existe pero está incompleto: posible glosa parcial.", largo: "El registro existe pero está incompleto o es impreciso. Puede generar una glosa parcial o una solicitud de aclaración. Aporta hasta 10 puntos." },
+    baja: { nombre: "Baja", corto: "Defecto de calidad del registro: rara vez genera glosa.", largo: "Defecto de calidad del registro que por sí solo rara vez genera glosa, pero conviene corregir. Aporta hasta 4 puntos." }
+  };
+  const FAMILIAS = {
+    SOP: { nombre: "Soporte", texto: "Documentos que respaldan el servicio cobrado: consentimiento, orden médica, resultados y epicrisis." },
+    COMP: { nombre: "Completitud", texto: "Datos mínimos que debe tener la historia: identificación, motivo, examen, diagnóstico y plan." },
+    PERT: { nombre: "Pertinencia", texto: "Justificación clínica del servicio, de las ayudas diagnósticas y de las remisiones." },
+    COH: { nombre: "Coherencia", texto: "Concordancia entre la anamnesis, el examen, el diagnóstico, el plan y la fórmula." },
+    OPO: { nombre: "Oportunidad", texto: "Fecha, hora y orden cronológico de cada anotación." },
+    IDP: { nombre: "Identificación del prestador", texto: "Nombre, firma y registro del profesional y datos de la institución." }
+  };
+  const NIVELES_PUNTAJE = "Bajo: 0 a 29 · Medio: 30 a 59 · Alto: 60 a 100";
+  function chip(severidad) { return `<span class="chip ${severidad}" title="${escapar(SEVERIDADES[severidad]?.largo || "")}">${SEVERIDADES[severidad]?.nombre || severidad}</span>`; }
+  function glosarioSeveridades() { return `<dl class="glosario">${Object.keys(SEVERIDADES).map(s => `<dt>${chip(s)}</dt><dd>${SEVERIDADES[s].largo}</dd>`).join("")}</dl>`; }
+  function glosarioFamilias(codigos) { return `<dl class="glosario">${(codigos || Object.keys(FAMILIAS)).filter(c => FAMILIAS[c]).map(c => `<dt>${FAMILIAS[c].nombre}</dt><dd>${FAMILIAS[c].texto}</dd>`).join("")}</dl>`; }
   function estado(valor) { return `<span class="estado ${valor}">${ESTADOS[valor] || valor}</span>`; }
   function puntaje(valor, nivel) {
     if (valor == null) return '<span style="color:var(--color-neutro-texto-tenue)">—</span>';
@@ -105,7 +121,7 @@ const Auditta = (() => {
     return id;
   }
 
-  return { sinHistoria, historiaSolicitada, ICONOS, ESTADOS, PERFILES, api, evento, ocupado, lateral, escapar, resaltarTokens, chip, estado, puntaje, parametro, segundos, insignia, notificar, guardarSesion, cerrarSesion, exigirSesion, token, almacen };
+  return { sinHistoria, historiaSolicitada, ICONOS, ESTADOS, PERFILES, SEVERIDADES, FAMILIAS, NIVELES_PUNTAJE, glosarioSeveridades, glosarioFamilias, api, evento, ocupado, lateral, escapar, resaltarTokens, chip, estado, puntaje, parametro, segundos, insignia, notificar, guardarSesion, cerrarSesion, exigirSesion, token, almacen };
 })();
 
 (() => {

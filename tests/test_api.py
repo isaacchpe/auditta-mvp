@@ -148,6 +148,18 @@ def test_carga_de_historia_nueva():
     assert confirmacion["estado"] == "analizada"
 
 
+def test_historia_cargada_solo_visible_para_quien_la_cargo():
+    sembrar()
+    db = obtener_db()
+    db.historias.insert_one({"_id": "HC-CARGA", "origen": "carga", "cargada_por": "carga.propia@ips-ejemplo.com.co", "estado": "pendiente_confirmacion", "plantilla": None, "paginas": 1, "secciones": [], "entidades": []})
+    propio = sesion("carga.propia@ips-ejemplo.com.co")
+    ajeno = sesion("carga.ajena@ips-ejemplo.com.co")
+    ids = lambda cab: {h["_id"] for h in cliente.get("/api/historias", headers=cab).json()["historias"]}
+    assert ids(propio) == {"HC-T1", "HC-CARGA"}
+    assert ids(ajeno) == {"HC-T1"}
+    assert cliente.get("/api/metricas", headers=ajeno).json()["historias_por_estado"]["pendiente_confirmacion"] == 1
+
+
 def test_paginas_y_404():
     for ruta in ("/", "/index.html", "/bandeja.html", "/informe.html", "/metricas.html", "/estilos.css", "/app.js"):
         assert cliente.get(ruta).status_code == 200

@@ -194,6 +194,10 @@ def fusionar_hallazgo(hallazgo: dict, decision: dict | None) -> dict:
     return hallazgo
 
 
+def filtro_visibles(sujeto: str, revisadas: list[str]) -> dict:
+    return {"$or": [{"origen": {"$ne": "carga"}}, {"cargada_por": {"$in": [sujeto, None]}}, {"_id": {"$in": revisadas}}]}
+
+
 def resumen_historia(historia: dict, total_hallazgos: int, revision: dict) -> dict:
     return {
         "_id": historia["_id"],
@@ -219,7 +223,7 @@ def listar_historias(usuario: dict = Depends(usuario_actual)):
         conteo[hallazgo["historia_id"]] = conteo.get(hallazgo["historia_id"], 0) + 1
     revisiones = {r["historia_id"]: r for r in db.revisiones.find({"usuario": usuario["sub"]})}
     historias = []
-    for h in db.historias.find({}, {"texto_anonimizado": 0, "entidades": 0, "secciones": 0}):
+    for h in db.historias.find(filtro_visibles(usuario["sub"], list(revisiones)), {"texto_anonimizado": 0, "entidades": 0, "secciones": 0}):
         revision = revisiones.get(h["_id"]) or {"estado": "pendiente_confirmacion", "decisiones": {}}
         historias.append(limpiar(resumen_historia(h, conteo.get(h["_id"], 0), revision)))
     historias.sort(key=lambda h: (h["puntaje"] is None, -(h["puntaje"] or 0)))
@@ -400,7 +404,7 @@ def metricas(usuario: dict = Depends(usuario_actual)):
         por_familia[h["familia"]] = por_familia.get(h["familia"], 0) + 1
         por_severidad[h["severidad"]] = por_severidad.get(h["severidad"], 0) + 1
     propias = {r["historia_id"]: r["estado"] for r in db.revisiones.find({"usuario": usuario["sub"]}, {"historia_id": 1, "estado": 1})}
-    total_historias = db.historias.count_documents({})
+    total_historias = db.historias.count_documents(filtro_visibles(usuario["sub"], list(propias)))
     estados = {"analizada": sum(1 for e in propias.values() if e == "analizada"), "revisada": sum(1 for e in propias.values() if e == "revisada")}
     estados["pendiente_confirmacion"] = total_historias - estados["analizada"] - estados["revisada"]
     return {

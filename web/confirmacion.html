@@ -14,14 +14,16 @@
     <div class="fila">
       <section class="tarjeta panel" style="flex:2"><h2>Texto anonimizado</h2><p class="sub" id="subdoc"></p><div class="documento" id="documento">Cargando…</div></section>
       <div style="display:flex;flex-direction:column;gap:16px;flex:1">
-        <section class="tarjeta panel"><h2>Entidades detectadas</h2><p class="sub" id="subent"></p><div id="entidades" style="display:flex;flex-direction:column;gap:8px"></div></section>
         <section class="tarjeta panel"><h2>Confirmación</h2>
+          <p class="def" style="margin:0">Paso 1 de 2. Confirme que el texto no identifica al paciente; al confirmar se abre el informe con los hallazgos.</p>
           <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" id="casilla" style="margin-top:3px"><span>Revisé el texto y no contiene datos que identifiquen al paciente.</span></label>
           <div class="mensaje-error" id="error" role="alert"></div>
           <button class="btn" id="confirmar" type="button" disabled><span class="giro"></span><span class="etiqueta">Confirmar y ver informe</span></button>
+          <p class="def" id="pista" style="margin:0">Marque la casilla para habilitar el botón.</p>
           <a class="btn secundario" href="/bandeja.html">Volver a la bandeja</a>
           <p class="pie-legal" style="margin:0">Si no confirma, el análisis queda bloqueado (RNF-01).</p>
         </section>
+        <section class="tarjeta panel"><h2>Entidades detectadas</h2><p class="sub" id="subent"></p><div id="entidades" style="display:flex;flex-direction:column;gap:8px"></div></section>
       </div>
     </div>
   </main>
@@ -47,9 +49,9 @@ if (Auditta.exigirSesion()) {
     (h.entidades || []).forEach(e => { const g = grupos[e.categoria] = grupos[e.categoria] || { n: 0, tokens: [] }; g.n += e.ocurrencias; g.tokens.push(e.token); });
     $("#subent").textContent = `${(h.entidades || []).length} sustituciones en ${Object.keys(grupos).length} categorías`;
     $("#entidades").innerHTML = Object.entries(grupos).map(([c, g]) => `<div style="display:flex;align-items:center;gap:8px"><div style="flex:1"><div style="font-weight:500">${CATEGORIAS[c] || c}</div><div class="token" style="font-size:11px">${g.tokens.slice(0, 3).join(" ")}${g.tokens.length > 3 ? " …" : ""}</div></div><span style="padding:2px 8px;border-radius:999px;background:var(--color-neutro-fondo);font-weight:600;font-size:12px">${g.n}</span></div>`).join("");
-    if (h.estado !== "pendiente_confirmacion") { $("#casilla").disabled = true; $("#confirmar").disabled = true; $("#error").textContent = "Esta historia ya fue confirmada."; $("#confirmar").insertAdjacentHTML("afterend", `<a class="btn" href="/informe.html?id=${h._id}">Ver informe</a>`); }
+    if (h.estado !== "pendiente_confirmacion") { $("#casilla").disabled = true; $("#confirmar").disabled = true; $("#pista").classList.add("oculto"); $("#error").textContent = "Esta historia ya fue confirmada."; $("#confirmar").insertAdjacentHTML("afterend", `<a class="btn" href="/informe.html?id=${h._id}">Ver informe</a>`); }
   }).catch(x => Auditta.sinHistoria(null, x.message));
-  $("#casilla").addEventListener("change", e => { $("#confirmar").disabled = !e.target.checked; });
+  $("#casilla").addEventListener("change", e => { $("#confirmar").disabled = !e.target.checked; $("#pista").classList.toggle("oculto", e.target.checked); });
   $("#confirmar").addEventListener("click", async () => {
     const boton = $("#confirmar"); $("#error").textContent = "";
     if (!$("#casilla").checked) { $("#error").textContent = "Marque la casilla para confirmar."; return; }

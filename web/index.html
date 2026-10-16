@@ -64,7 +64,7 @@ fetch("/api/configuracion").then(r => r.json()).then(c => {
   $("#demo-correo").textContent = c.cuenta_prueba.correo;
   $("#demo-clave").textContent = c.cuenta_prueba.clave;
   $("#demo").classList.remove("oculto");
-  $("#usar-demo").addEventListener("click", () => { $("#i-correo").value = c.cuenta_prueba.correo; $("#i-clave").value = c.cuenta_prueba.clave; mostrar(false); revisarCompartida(); $("#i-rol").focus(); });
+  $("#usar-demo").addEventListener("click", () => { $("#i-correo").value = c.cuenta_prueba.correo; $("#i-clave").value = c.cuenta_prueba.clave; mostrar(false); const rolPrevio = Auditta.almacen.leer("auditta_ultimo_rol"), nombrePrevio = Auditta.almacen.leer("auditta_ultimo_participante"); if (rolPrevio) $("#i-rol").value = rolPrevio; if (nombrePrevio) $("#i-participante").value = nombrePrevio; revisarCompartida(); $(rolPrevio ? "#i-participante" : "#i-rol").focus(); });
 }).catch(() => {});
 function marcar(id, mensaje) { const campo = $("#" + id).closest(".campo"); campo.classList.toggle("error", !!mensaje); $("#" + id + "-error").textContent = mensaje || ""; return !mensaje; }
 $("#f-ingreso").addEventListener("submit", async e => {
@@ -76,7 +76,7 @@ $("#f-ingreso").addEventListener("submit", async e => {
   const ok = [marcar("i-correo", correoValido(correo) ? "" : "Escriba un correo válido."), marcar("i-clave", clave ? "" : "Escriba la contraseña."), compartida ? marcar("i-rol", rol ? "" : "Seleccione cómo participa.") : true, compartida && rol !== "evaluador" ? marcar("i-participante", participante.length >= 2 ? "" : "Escriba su nombre o sus iniciales.") : true].every(Boolean);
   if (!ok) return;
   Auditta.ocupado(boton, true);
-  try { Auditta.guardarSesion(await Auditta.api("/auth/ingreso", { method: "POST", body: JSON.stringify(compartida ? { correo, clave, rol, participante } : { correo, clave }) })); location.href = "/bandeja.html"; }
+  try { Auditta.guardarSesion(await Auditta.api("/auth/ingreso", { method: "POST", body: JSON.stringify(compartida ? { correo, clave, rol, participante } : { correo, clave }) })); if (compartida) { Auditta.almacen.escribir("auditta_ultimo_rol", rol); Auditta.almacen.escribir("auditta_ultimo_participante", participante); } location.href = "/bandeja.html"; }
   catch (x) { $("#i-error").textContent = x.message; Auditta.ocupado(boton, false); }
 });
 $("#f-registro").addEventListener("submit", async e => {

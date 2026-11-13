@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditta · Mi cuenta</title>
+<link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+<div class="marco">
+  <main class="contenido">
+    <div class="encabezado"><div class="titulos"><p class="ruta">Inicio / Mi cuenta</p><h1>Mi cuenta</h1></div></div>
+    <div class="cuenta-rejilla">
+      <section class="tarjeta panel" id="p-datos">
+        <h2>Datos de la cuenta</h2>
+        <div class="campo"><label for="c-correo">Correo</label><input id="c-correo" disabled></div>
+        <div class="campo"><label for="c-nombre">Nombre completo</label><input id="c-nombre" autocomplete="name" maxlength="80"><div class="mensaje-error" id="c-nombre-error"></div></div>
+        <div class="campo"><label for="c-perfil">Perfil</label><select id="c-perfil"><option value="auditor_medico">Auditor médico</option><option value="facturacion">Facturación o cuentas médicas</option><option value="coordinador">Coordinador de auditoría</option><option value="desarrollador">Desarrollador</option><option value="otro">Otro</option></select></div>
+        <div class="mensaje-error" id="c-datos-error" role="alert"></div>
+        <div class="acciones"><button class="btn" type="button" id="b-datos"><span class="giro"></span><span class="etiqueta">Guardar cambios</span></button></div>
+      </section>
+      <section class="tarjeta panel" id="p-clave">
+        <h2>Cambiar contraseña</h2>
+        <p class="sub">Al cambiarla se cierran sus sesiones en los demás dispositivos.</p>
+        <div class="campo"><label for="k-actual">Contraseña actual</label><input id="k-actual" type="password" autocomplete="current-password" maxlength="128"><div class="mensaje-error" id="k-actual-error"></div></div>
+        <div class="campo"><label for="k-nueva">Nueva contraseña</label><input id="k-nueva" type="password" autocomplete="new-password" maxlength="64"><small class="ayuda-clave">Mínimo 8 caracteres, con letras y números.</small><div class="mensaje-error" id="k-nueva-error"></div></div>
+        <div class="campo"><label for="k-nueva2">Confirme la nueva contraseña</label><input id="k-nueva2" type="password" autocomplete="new-password" maxlength="64"><div class="mensaje-error" id="k-nueva2-error"></div></div>
+        <div class="mensaje-error" id="k-error" role="alert"></div>
+        <div class="acciones"><button class="btn" type="button" id="b-clave"><span class="giro"></span><span class="etiqueta">Cambiar contraseña</span></button></div>
+      </section>
+      <section class="tarjeta panel oculto" id="p-demo">
+        <h2>Cuenta de demostración</h2>
+        <p id="demo-texto">Esta cuenta es temporal y solo usted la ve.</p>
+        <div class="acciones"><button class="btn" type="button" id="b-crear">Crear mi cuenta</button></div>
+      </section>
+      <section class="tarjeta panel">
+        <h2>Sesiones abiertas</h2>
+        <p class="sub">Dispositivos donde su cuenta está abierta ahora. Cierre los que no reconozca.</p>
+        <div id="sesiones"></div>
+        <div class="acciones"><button class="btn secundario" type="button" id="b-otras"><span class="giro"></span><span class="etiqueta">Cerrar las demás sesiones</span></button></div>
+      </section>
+      <section class="tarjeta panel peligro" id="p-eliminar">
+        <h2>Eliminar la cuenta</h2>
+        <p class="sub">Se borran su cuenta, sus sesiones, sus revisiones y las historias que usted cargó. No se puede deshacer.</p>
+        <div class="campo" id="campo-e-clave"><label for="e-clave">Contraseña</label><input id="e-clave" type="password" autocomplete="current-password" maxlength="128"><div class="mensaje-error" id="e-clave-error"></div></div>
+        <div class="campo"><label class="casilla"><input id="e-confirma" type="checkbox"><span>Entiendo que la eliminación es definitiva.</span></label><div class="mensaje-error" id="e-confirma-error"></div></div>
+        <div class="mensaje-error" id="e-error" role="alert"></div>
+        <div class="acciones"><button class="btn rojo" type="button" id="b-eliminar"><span class="giro"></span><span class="etiqueta">Eliminar mi cuenta</span></button></div>
+      </section>
+    </div>
+  </main>
+</div>
+<script src="/app.js"></script>
+<script>
+if (Auditta.exigirSesion()) {
+  Auditta.lateral("cuenta");
+  const $ = s => document.querySelector(s);
+  const problemaClave = v => v.length < 8 ? "La contraseña debe tener al menos 8 caracteres." : (!/[A-Za-zÁÉÍÓÚÑáéíóúñ]/.test(v) || !/\d/.test(v)) ? "La contraseña debe combinar letras y números." : "";
+  const fecha = ts => new Date(ts * 1000).toLocaleString("es-CO", { dateStyle: "medium", timeStyle: "short" });
+  function marcar(id, mensaje) { const campo = $("#" + id).closest(".campo"); campo.classList.toggle("error", !!mensaje); $("#" + id + "-error").textContent = mensaje || ""; return !mensaje; }
+  let esDemo = false;
+
+  Auditta.api("/cuenta").then(c => {
+    esDemo = c.demo;
+    if (c.demo) {
+      ["#p-datos", "#p-clave"].forEach(s => $(s).classList.add("oculto"));
+      $("#p-demo").classList.remove("oculto");
+      $("#campo-e-clave").classList.add("oculto");
+      $("#p-eliminar h2").textContent = "Borrar la demostración ahora";
+      $("#b-eliminar .etiqueta").textContent = "Borrar la demostración";
+      if (c.expira_ts) $("#demo-texto").textContent = `Esta cuenta es temporal y solo usted la ve. Se borra automáticamente el ${fecha(c.expira_ts)}. Para conservar su trabajo, cree una cuenta.`;
+    } else {
+      $("#c-correo").value = c.correo; $("#c-nombre").value = c.nombre; $("#c-perfil").value = c.perfil;
+    }
+  }).catch(x => Auditta.notificar(x.message));
+
+  $("#b-crear").addEventListener("click", () => Auditta.cerrarSesion("/index.html#registro"));
+
+  $("#b-datos").addEventListener("click", async e => {
+    const boton = e.currentTarget; $("#c-datos-error").textContent = "";
+    const nombre = $("#c-nombre").value.trim();
+    if (!marcar("c-nombre", nombre.length >= 3 ? "" : "Escriba su nombre completo.")) return;
+    Auditta.ocupado(boton, true, "Guardando…");
+    try {
+      const r = await Auditta.api("/cuenta", { method: "PUT", body: JSON.stringify({ nombre, perfil: $("#c-perfil").value }) });
+      Auditta.guardarSesion(r);
+      document.querySelector(".lateral .usuario b").textContent = r.nombre;
+      document.querySelector(".lateral .usuario span").textContent = Auditta.PERFILES[r.perfil] || r.perfil;
+      document.querySelector(".lateral .avatar").textContent = Auditta.iniciales(r.nombre);
+      Auditta.notificar("Datos actualizados.");
+    } catch (x) { $("#c-datos-error").textContent = x.message; }
+    Auditta.ocupado(boton, false);
+  });
+
+  $("#b-clave").addEventListener("click", async e => {
+    const boton = e.currentTarget; $("#k-error").textContent = "";
+    const actual = $("#k-actual").value, nueva = $("#k-nueva").value;
+    const ok = [marcar("k-actual", actual ? "" : "Escriba su contraseña actual."), marcar("k-nueva", problemaClave(nueva)), marcar("k-nueva2", $("#k-nueva2").value === nueva ? "" : "Las contraseñas no coinciden.")].every(Boolean);
+    if (!ok) return;
+    Auditta.ocupado(boton, true, "Cambiando…");
+    try {
+      const r = await Auditta.api("/cuenta/clave", { method: "POST", body: JSON.stringify({ actual, nueva }) });
+      ["#k-actual", "#k-nueva", "#k-nueva2"].forEach(s => $(s).value = "");
+      Auditta.notificar(r.sesiones_cerradas ? `Contraseña cambiada. Se cerraron ${r.sesiones_cerradas} ${r.sesiones_cerradas === 1 ? "sesión" : "sesiones"} en otros dispositivos.` : "Contraseña cambiada.");
+      cargarSesiones();
+    } catch (x) { $("#k-error").textContent = x.message; }
+    Auditta.ocupado(boton, false);
+  });
+
+  async function cargarSesiones() {
+    try {
+      const { sesiones } = await Auditta.api("/cuenta/sesiones");
+      $("#sesiones").innerHTML = sesiones.map(s => `<div class="sesion-fila"><div><b>${Auditta.escapar(s.dispositivo)}</b>${s.actual ? '<span class="etiqueta-actual">Este dispositivo</span>' : ""}<small>Inició ${fecha(s.creada_ts)} · Última actividad ${fecha(s.actividad_ts)}</small></div>${s.actual ? "" : `<button class="btn secundario" type="button" data-ref="${Auditta.escapar(s.ref)}">Cerrar</button>`}</div>`).join("");
+      $("#b-otras").classList.toggle("oculto", sesiones.length < 2);
+    } catch (x) { $("#sesiones").innerHTML = `<div class="aviso error">${Auditta.escapar(x.message)}</div>`; }
+  }
+  $("#sesiones").addEventListener("click", async e => {
+    const b = e.target.closest("button[data-ref]");
+    if (!b) return;
+    b.disabled = true;
+    try { await Auditta.api("/cuenta/sesiones/" + encodeURIComponent(b.dataset.ref), { method: "DELETE" }); Auditta.notificar("Sesión cerrada."); } catch (x) { Auditta.notificar(x.message); }
+    cargarSesiones();
+  });
+  $("#b-otras").addEventListener("click", async e => {
+    const boton = e.currentTarget;
+    Auditta.ocupado(boton, true, "Cerrando…");
+    try { const r = await Auditta.api("/cuenta/sesiones/cerrar-otras", { method: "POST" }); Auditta.notificar(`Se cerraron ${r.sesiones_cerradas} ${r.sesiones_cerradas === 1 ? "sesión" : "sesiones"}.`); } catch (x) { Auditta.notificar(x.message); }
+    Auditta.ocupado(boton, false);
+    cargarSesiones();
+  });
+  cargarSesiones();
+
+  $("#b-eliminar").addEventListener("click", async e => {
+    const boton = e.currentTarget; $("#e-error").textContent = "";
+    const clave = $("#e-clave").value;
+    const ok = [esDemo ? true : marcar("e-clave", clave ? "" : "Escriba su contraseña."), marcar("e-confirma", $("#e-confirma").checked ? "" : "Confirme que entiende que es definitivo.")].every(Boolean);
+    if (!ok) return;
+    Auditta.ocupado(boton, true, "Eliminando…");
+    try { await Auditta.api("/cuenta/eliminar", { method: "POST", body: JSON.stringify({ clave: esDemo ? "" : clave }) }); Auditta.olvidarSesion("/index.html"); }
+    catch (x) { $("#e-error").textContent = x.message; Auditta.ocupado(boton, false); }
+  });
+}
+</script>
+</body>
+</html>

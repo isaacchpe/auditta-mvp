@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditta · Tratamiento de datos</title>
+<link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+<main class="legal">
+  <p><a href="/index.html">← Volver a Auditta</a></p>
+  <h1>Política de tratamiento de datos personales</h1>
+  <p>Esta política explica qué datos trata Auditta, para qué y cómo puede ejercer sus derechos, conforme a la Ley 1581 de 2012.</p>
+
+  <h2>Qué datos de usted tratamos</h2>
+  <p>Su nombre, su correo, su perfil profesional y su contraseña, que se guarda transformada con un algoritmo irreversible, de modo que no se puede leer. También registramos sus sesiones (navegador, sistema operativo y fechas de inicio y de actividad) y las acciones que realiza en la aplicación, como las decisiones sobre los hallazgos.</p>
+
+  <h2>Para qué los usamos</h2>
+  <p>Para darle acceso a su cuenta, mantener separadas sus historias y revisiones de las de otros usuarios, proteger la cuenta frente a accesos indebidos y medir, de forma agregada, si la herramienta ahorra tiempo y es útil.</p>
+
+  <h2>Datos de los pacientes</h2>
+  <p>Las historias clínicas contienen datos sensibles. Auditta reemplaza los datos que identifican al paciente por marcadores antes de cualquier análisis, y usted confirma ese resultado. Solo el texto anonimizado se envía al servicio de inteligencia artificial que analiza la historia, que puede operar fuera de Colombia. La historia que usted carga solo la ve usted.</p>
+
+  <h2>Sus derechos</h2>
+  <p>Usted puede conocer, actualizar y rectificar sus datos; solicitar prueba de su autorización; ser informado sobre el uso de sus datos; presentar quejas ante la Superintendencia de Industria y Comercio, y revocar la autorización o solicitar la supresión de sus datos (Ley 1581 de 2012, art. 8). Puede actualizar su nombre y perfil, y eliminar su cuenta con todos sus datos, desde <b>Mi cuenta</b>.</p>
+
+  <h2>Cuánto tiempo los conservamos</h2>
+  <p>Mientras su cuenta exista. Si la elimina, se borran su cuenta, sus sesiones, sus revisiones y las historias que cargó, y los registros de uso quedan sin su identificación. Las cuentas de demostración se borran automáticamente.</p>
+
+  <h2>Contacto</h2>
+  <p id="contacto">Para cualquier solicitud sobre sus datos, escríbanos desde el correo de su cuenta.</p>
+</main>
+<script>
+fetch("/api/configuracion").then(r => r.json()).then(c => {
+  if (!c.contacto_privacidad) return;
+  const p = document.getElementById("contacto");
+  p.textContent = "Para cualquier solicitud sobre sus datos, escriba a ";
+  const a = document.createElement("a"); a.href = "mailto:" + c.contacto_privacidad; a.textContent = c.contacto_privacidad;
+  p.append(a, ".");
+}).catch(() => {});
+</script>
+</body>
+</html>

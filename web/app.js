@@ -10,10 +10,12 @@ const Auditta = (() => {
     aceptar: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
     descartar: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
     reclasificar: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>',
+    cuenta: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+    ojo: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>',
     escudo: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
   };
   const ESTADOS = { pendiente_confirmacion: "Pendiente de confirmar", analizada: "Analizada", revisada: "Revisada", error: "Error" };
-  const PERFILES = { auditor_medico: "Auditor médico", facturacion: "Facturación", coordinador: "Coordinador de auditoría", desarrollador: "Desarrollador", evaluador: "Cuenta de prueba", otro: "Otro" };
+  const PERFILES = { auditor_medico: "Auditor médico", facturacion: "Facturación", coordinador: "Coordinador de auditoría", desarrollador: "Desarrollador", evaluador: "Cuenta de prueba", demo: "Demostración", otro: "Otro" };
 
   const almacen = {
     leer(clave) { try { return localStorage.getItem(clave); } catch { return null; } },
@@ -22,8 +24,15 @@ const Auditta = (() => {
   };
 
   function token() { return almacen.leer("auditta_token"); }
-  function guardarSesion(datos) { almacen.escribir("auditta_token", datos.token); almacen.escribir("auditta_nombre", datos.nombre); almacen.escribir("auditta_perfil", datos.perfil); }
-  function cerrarSesion() { ["auditta_token", "auditta_nombre", "auditta_perfil"].forEach(almacen.borrar); location.href = "/index.html"; }
+  const CLAVES_SESION = ["auditta_token", "auditta_nombre", "auditta_perfil", "auditta_demo"];
+  function guardarSesion(datos) { almacen.escribir("auditta_token", datos.token); almacen.escribir("auditta_nombre", datos.nombre); almacen.escribir("auditta_perfil", datos.perfil); if ("demo" in datos) { if (datos.demo) almacen.escribir("auditta_demo", "1"); else almacen.borrar("auditta_demo"); } }
+  function olvidarSesion(destino = "/index.html") { CLAVES_SESION.forEach(almacen.borrar); location.href = destino; }
+  async function cerrarSesion(destino) {
+    const t = token();
+    if (t) { try { await fetch("/api/auth/salir", { method: "POST", headers: { Authorization: "Bearer " + t }, keepalive: true }); } catch {} }
+    olvidarSesion(destino);
+  }
+  function esDemo() { return almacen.leer("auditta_demo") === "1"; }
   function exigirSesion() { if (!token()) { location.href = "/index.html"; return false; } return true; }
 
   function mensajeDe(datos) {
@@ -37,7 +46,7 @@ const Auditta = (() => {
     const t = token();
     if (t) cabeceras.Authorization = "Bearer " + t;
     const respuesta = await fetch("/api" + ruta, { ...opciones, headers: cabeceras });
-    if (respuesta.status === 401 && t) { cerrarSesion(); throw new Error("Sesión expirada"); }
+    if (respuesta.status === 401 && t) { olvidarSesion(); throw new Error("Sesión expirada"); }
     if (respuesta.status === 204) return null;
     const datos = await respuesta.json().catch(() => ({}));
     if (!respuesta.ok) throw new Error(mensajeDe(datos));
@@ -63,9 +72,16 @@ const Auditta = (() => {
     const enlace = (clave, href, texto) => `<a href="${href}" ${activa === clave ? 'aria-current="page"' : ""}>${ICONOS[clave]}${texto}</a>`;
     const aside = document.createElement("aside");
     aside.className = "lateral";
-    aside.innerHTML = `<div class="marca">Auditta<small>MVP</small></div><nav aria-label="Navegación principal">${enlace("inicio", "/inicio.html", "Inicio")}${enlace("carga", "/carga.html", "Cargar historia")}${enlace("bandeja", "/bandeja.html", "Bandeja de historias")}${enlace("metricas", "/metricas.html", "Métricas")}</nav><div class="espacio"></div><div class="usuario"><div class="avatar">${iniciales(nombre)}</div><div><b>${escapar(nombre)}</b><span>${perfil}</span></div></div><button class="salir" type="button">${ICONOS.salir}Cerrar sesión</button>`;
-    aside.querySelector(".salir").addEventListener("click", () => { evento("cerrar_sesion"); cerrarSesion(); });
+    aside.innerHTML = `<div class="marca">Auditta<small>MVP</small></div><nav aria-label="Navegación principal">${enlace("inicio", "/inicio.html", "Inicio")}${enlace("carga", "/carga.html", "Cargar historia")}${enlace("bandeja", "/bandeja.html", "Bandeja de historias")}${enlace("metricas", "/metricas.html", "Métricas")}${enlace("cuenta", "/cuenta.html", "Mi cuenta")}</nav><div class="espacio"></div><a class="usuario" href="/cuenta.html" title="Mi cuenta"><div class="avatar">${iniciales(nombre)}</div><div><b>${escapar(nombre)}</b><span>${perfil}</span></div></a><button class="salir" type="button">${ICONOS.salir}${esDemo() ? "Salir de la demostración" : "Cerrar sesión"}</button>`;
+    aside.querySelector(".salir").addEventListener("click", () => cerrarSesion());
     document.querySelector(".marco").prepend(aside);
+    if (esDemo()) {
+      const franja = document.createElement("div");
+      franja.className = "franja-demo";
+      franja.innerHTML = `<span><b>Está en una demostración.</b> Lo que haga aquí es solo suyo y se borra en 24 horas.</span><button class="btn secundario" type="button">Crear mi cuenta</button>`;
+      franja.querySelector("button").addEventListener("click", () => cerrarSesion("/index.html#registro"));
+      document.querySelector(".contenido")?.prepend(franja);
+    }
   }
 
   function escapar(texto) { return String(texto ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
@@ -121,7 +137,7 @@ const Auditta = (() => {
     return id;
   }
 
-  return { sinHistoria, historiaSolicitada, ICONOS, ESTADOS, PERFILES, SEVERIDADES, FAMILIAS, NIVELES_PUNTAJE, glosarioSeveridades, glosarioFamilias, api, evento, ocupado, lateral, escapar, resaltarTokens, chip, estado, puntaje, parametro, segundos, insignia, notificar, guardarSesion, cerrarSesion, exigirSesion, token, almacen };
+  return { sinHistoria, historiaSolicitada, ICONOS, ESTADOS, PERFILES, SEVERIDADES, FAMILIAS, NIVELES_PUNTAJE, glosarioSeveridades, glosarioFamilias, api, evento, ocupado, lateral, escapar, resaltarTokens, chip, estado, puntaje, parametro, segundos, insignia, notificar, guardarSesion, cerrarSesion, olvidarSesion, esDemo, iniciales, exigirSesion, token, almacen };
 })();
 
 (() => {

@@ -67,9 +67,17 @@ El texto que recibe el proveedor externo es únicamente el texto anonimizado. Lo
 uvicorn app.main:app --reload
 ```
 
-Abra `http://127.0.0.1:8000`. Entre con la cuenta de prueba que se muestra en el ingreso o cree una cuenta, confirme la anonimización de una historia, revise sus hallazgos y registre una decisión por cada uno. Al finalizar se registra el tiempo de revisión.
+Abra `http://127.0.0.1:8000`. Cree una cuenta o use «Probar sin registrarse», que abre una cuenta temporal propia que se borra a las 24 horas. Confirme la anonimización de una historia, revise sus hallazgos y registre una decisión por cada uno. Al finalizar se registra el tiempo de revisión.
 
 Desde la pantalla «Cargar historia» se puede subir una historia clínica nueva en PDF con capa de texto (hasta 20 MB). Al subirla, el servidor la extrae y la anonimiza; el análisis con el modelo se ejecuta solo cuando el usuario confirma la anonimización. El PDF original no se conserva.
+
+## Cuentas y sesiones
+
+- Cada cuenta es personal: las historias que carga un usuario, sus revisiones y sus métricas solo las ve él.
+- Las sesiones se guardan en el servidor. Cerrar sesión invalida el token, y desde «Mi cuenta» se ven los dispositivos con sesión abierta y se pueden cerrar.
+- Cinco intentos fallidos de ingreso bloquean la cuenta durante 15 minutos. Cambiar la contraseña cierra las demás sesiones.
+- «Mi cuenta» permite cambiar nombre, perfil y contraseña, y eliminar la cuenta con todos sus datos.
+- `ADMIN_CORREOS` (lista separada por comas) habilita la vista «Estudio con auditores» en Métricas. `CONTACTO_PRIVACIDAD` es el correo que aparece en la política de tratamiento de datos.
 
 ## Pruebas
 

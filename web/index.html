@@ -17,24 +17,26 @@
   <section class="formulario">
     <form id="f-ingreso" class="tarjeta" novalidate>
       <h1 style="font-size:26px">Ingresar</h1>
-      <p>Use la cuenta con la que se registró para la prueba.</p>
-      <div class="demo oculto" id="demo"><div><b>Cuenta de prueba</b><span>Correo: <code id="demo-correo"></code></span><span>Contraseña: <code id="demo-clave"></code></span></div><button class="btn secundario" type="button" id="usar-demo">Usar cuenta de prueba</button></div>
-      <div class="campo"><label for="i-correo">Correo</label><input id="i-correo" type="email" autocomplete="email" required><div class="mensaje-error" id="i-correo-error"></div></div>
-      <div class="campo"><label for="i-clave">Contraseña</label><input id="i-clave" type="password" autocomplete="current-password" required><div class="mensaje-error" id="i-clave-error"></div></div>
-      <div class="campo oculto" id="campo-rol"><label for="i-rol">Participo como</label><select id="i-rol"><option value="">Seleccione…</option><option value="auditor_medico">Auditor médico</option><option value="desarrollador">Desarrollador (prueba de pasillo)</option><option value="evaluador">Evaluador (solo conocer el sistema)</option></select><div class="mensaje-error" id="i-rol-error"></div></div>
-      <div class="campo oculto" id="campo-participante"><label for="i-participante">¿Quién revisa?</label><input id="i-participante" autocomplete="name" maxlength="60" placeholder="Su nombre o sus iniciales"><small style="color:var(--color-neutro-texto-secundario);font-size:12px">La cuenta de prueba es compartida. Su nombre separa sus decisiones de las de otras personas. Use siempre el mismo nombre.</small><div class="mensaje-error" id="i-participante-error"></div></div>
+      <p>Ingrese con su cuenta personal. Sus historias y revisiones solo las ve usted.</p>
+      <div class="campo"><label for="i-correo">Correo</label><input id="i-correo" type="email" autocomplete="email" required maxlength="120"><div class="mensaje-error" id="i-correo-error"></div></div>
+      <div class="campo"><label for="i-clave">Contraseña</label><div class="con-ojo"><input id="i-clave" type="password" autocomplete="current-password" required maxlength="128"><button type="button" class="ver-clave" data-para="i-clave" aria-label="Mostrar contraseña" aria-pressed="false"></button></div><div class="mensaje-error" id="i-clave-error"></div></div>
       <div class="mensaje-error" id="i-error" role="alert"></div>
       <button class="btn" type="submit"><span class="giro"></span><span class="etiqueta">Ingresar</span></button>
       <p>¿No tiene cuenta? <a href="#registro" id="ir-registro">Crear una cuenta</a></p>
+      <div class="o-separador">o</div>
+      <button class="btn secundario probar-demo" type="button"><span class="giro"></span><span class="etiqueta">Probar sin registrarse</span></button>
+      <small class="ayuda-clave texto-demo"></small>
       <div class="aviso info" id="aviso-1"></div>
     </form>
     <form id="f-registro" class="tarjeta oculto" novalidate>
       <h1 style="font-size:26px">Crear una cuenta</h1>
-      <p>Para participar en la prueba del MVP con historias clínicas sintéticas.</p>
-      <div class="campo"><label for="r-nombre">Nombre completo</label><input id="r-nombre" autocomplete="name" required minlength="3"><div class="mensaje-error" id="r-nombre-error"></div></div>
-      <div class="campo"><label for="r-correo">Correo</label><input id="r-correo" type="email" autocomplete="email" required><div class="mensaje-error" id="r-correo-error"></div></div>
-      <div class="campo"><label for="r-perfil">Perfil</label><select id="r-perfil" required><option value="">Seleccione…</option><option value="auditor_medico">Auditor médico</option><option value="facturacion">Facturación o cuentas médicas</option><option value="coordinador">Coordinador de auditoría</option><option value="desarrollador">Desarrollador (prueba de pasillo)</option><option value="otro">Otro</option></select><div class="mensaje-error" id="r-perfil-error"></div></div>
-      <div class="campo"><label for="r-clave">Contraseña (mínimo 8 caracteres)</label><input id="r-clave" type="password" autocomplete="new-password" required minlength="8"><div class="mensaje-error" id="r-clave-error"></div></div>
+      <p>Cada cuenta es personal: sus historias, revisiones y métricas no las ve nadie más.</p>
+      <div class="campo"><label for="r-nombre">Nombre completo</label><input id="r-nombre" autocomplete="name" required minlength="3" maxlength="80"><div class="mensaje-error" id="r-nombre-error"></div></div>
+      <div class="campo"><label for="r-correo">Correo</label><input id="r-correo" type="email" autocomplete="email" required maxlength="120"><div class="mensaje-error" id="r-correo-error"></div></div>
+      <div class="campo"><label for="r-perfil">Perfil</label><select id="r-perfil" required><option value="">Seleccione…</option><option value="auditor_medico">Auditor médico</option><option value="facturacion">Facturación o cuentas médicas</option><option value="coordinador">Coordinador de auditoría</option><option value="desarrollador">Desarrollador</option><option value="otro">Otro</option></select><div class="mensaje-error" id="r-perfil-error"></div></div>
+      <div class="campo"><label for="r-clave">Contraseña</label><div class="con-ojo"><input id="r-clave" type="password" autocomplete="new-password" required minlength="8" maxlength="64" aria-describedby="r-clave-ayuda"><button type="button" class="ver-clave" data-para="r-clave" aria-label="Mostrar contraseña" aria-pressed="false"></button></div><div class="fuerza" id="r-fuerza" data-nivel="0" aria-hidden="true"><span></span><span></span><span></span><span></span></div><small class="ayuda-clave" id="r-clave-ayuda">Mínimo 8 caracteres, con letras y números.</small><div class="mensaje-error" id="r-clave-error"></div></div>
+      <div class="campo"><label for="r-clave2">Confirme la contraseña</label><input id="r-clave2" type="password" autocomplete="new-password" required maxlength="64"><div class="mensaje-error" id="r-clave2-error"></div></div>
+      <div class="campo"><label class="casilla"><input id="r-acepta" type="checkbox"><span>Autorizo el tratamiento de mis datos personales según la <a href="/privacidad.html" target="_blank" rel="noopener">política de tratamiento de datos</a> (Ley 1581 de 2012).</span></label><div class="mensaje-error" id="r-acepta-error"></div></div>
       <div class="mensaje-error" id="r-error" role="alert"></div>
       <button class="btn" type="submit"><span class="giro"></span><span class="etiqueta">Crear cuenta</span></button>
       <p><a href="#ingreso" id="ir-ingreso">Ya tengo cuenta</a></p>
@@ -45,48 +47,58 @@
 <script src="/app.js"></script>
 <script>
 const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
 const correoValido = v => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.trim());
+const problemaClave = v => v.length < 8 ? "La contraseña debe tener al menos 8 caracteres." : (!/[A-Za-zÁÉÍÓÚÑáéíóúñ]/.test(v) || !/\d/.test(v)) ? "La contraseña debe combinar letras y números." : "";
 if (Auditta.token()) location.href = "/bandeja.html";
-$("#garantias").innerHTML = [["candado", "Anonimización local: ningún dato del paciente sale sin su confirmación."], ["documento", "Cada hallazgo cita el texto exacto de la historia y su ubicación."], ["escudo", "El sustento normativo viene de un catálogo versionado, no del modelo."]].map(([i, t]) => `<li>${Auditta.ICONOS[i]}<span>${t}</span></li>`).join("");
+$("#garantias").innerHTML = [["candado", "Anonimización local: ningún dato del paciente sale sin su confirmación."], ["documento", "Cada hallazgo cita el texto exacto de la historia y su ubicación."], ["cuenta", "Cuentas personales: nadie más ve sus historias ni sus revisiones."]].map(([i, t]) => `<li>${Auditta.ICONOS[i]}<span>${t}</span></li>`).join("");
 const legal = `${Auditta.ICONOS.escudo}<span>Auditta emite recomendaciones. La decisión de auditoría es del profesional.</span>`;
 $("#aviso-1").innerHTML = legal; $("#aviso-2").innerHTML = legal;
-function mostrar(registro) { $("#f-ingreso").classList.toggle("oculto", registro); $("#f-registro").classList.toggle("oculto", !registro); }
-$("#ir-registro").addEventListener("click", e => { e.preventDefault(); mostrar(true); });
-$("#ir-ingreso").addEventListener("click", e => { e.preventDefault(); mostrar(false); });
+function mostrar(registro) { $("#f-ingreso").classList.toggle("oculto", registro); $("#f-registro").classList.toggle("oculto", !registro); (registro ? $("#r-nombre") : $("#i-correo")).focus(); }
+$("#ir-registro").addEventListener("click", e => { e.preventDefault(); history.replaceState(null, "", "#registro"); mostrar(true); });
+$("#ir-ingreso").addEventListener("click", e => { e.preventDefault(); history.replaceState(null, "", "#ingreso"); mostrar(false); });
 if (location.hash === "#registro") mostrar(true);
-let correoPrueba = "";
-function revisarCompartida() { const compartida = !!correoPrueba && $("#i-correo").value.trim().toLowerCase() === correoPrueba; $("#campo-rol").classList.toggle("oculto", !compartida); $("#campo-participante").classList.toggle("oculto", !compartida || $("#i-rol").value === "evaluador"); return compartida; }
-$("#i-correo").addEventListener("input", revisarCompartida);
-$("#i-rol").addEventListener("change", revisarCompartida);
-fetch("/api/configuracion").then(r => r.json()).then(c => {
-  if (!c.cuenta_prueba) return;
-  correoPrueba = c.cuenta_prueba.correo.toLowerCase(); revisarCompartida();
-  $("#demo-correo").textContent = c.cuenta_prueba.correo;
-  $("#demo-clave").textContent = c.cuenta_prueba.clave;
-  $("#demo").classList.remove("oculto");
-  $("#usar-demo").addEventListener("click", () => { $("#i-correo").value = c.cuenta_prueba.correo; $("#i-clave").value = c.cuenta_prueba.clave; mostrar(false); const rolPrevio = Auditta.almacen.leer("auditta_ultimo_rol"), nombrePrevio = Auditta.almacen.leer("auditta_ultimo_participante"); if (rolPrevio) $("#i-rol").value = rolPrevio; if (nombrePrevio) $("#i-participante").value = nombrePrevio; revisarCompartida(); $(rolPrevio ? "#i-participante" : "#i-rol").focus(); });
-}).catch(() => {});
+$$(".ver-clave").forEach(b => {
+  b.innerHTML = Auditta.ICONOS.ojo;
+  b.addEventListener("click", () => { const campo = $("#" + b.dataset.para), visible = campo.type === "password"; campo.type = visible ? "text" : "password"; b.setAttribute("aria-pressed", String(visible)); b.setAttribute("aria-label", visible ? "Ocultar contraseña" : "Mostrar contraseña"); campo.focus(); });
+});
+$("#r-clave").addEventListener("input", e => {
+  const v = e.target.value;
+  const nivel = !v ? 0 : problemaClave(v) ? 1 : (v.length >= 12 && /[^A-Za-z0-9]/.test(v)) ? 4 : (v.length >= 10 || /[^A-Za-z0-9]/.test(v)) ? 3 : 2;
+  $("#r-fuerza").dataset.nivel = nivel;
+});
+fetch("/api/configuracion").then(r => r.json()).then(c => { $$(".texto-demo").forEach(t => t.textContent = `Entra a una cuenta temporal solo para usted, con historias de ejemplo. Se borra en ${c.demo_horas || 24} horas.`); }).catch(() => {});
+$$(".probar-demo").forEach(b => b.addEventListener("click", async () => {
+  Auditta.ocupado(b, true, "Preparando…");
+  try { Auditta.guardarSesion(await Auditta.api("/auth/demo", { method: "POST" })); location.href = "/inicio.html"; }
+  catch (x) { $("#i-error").textContent = x.message; Auditta.ocupado(b, false); }
+}));
 function marcar(id, mensaje) { const campo = $("#" + id).closest(".campo"); campo.classList.toggle("error", !!mensaje); $("#" + id + "-error").textContent = mensaje || ""; return !mensaje; }
 $("#f-ingreso").addEventListener("submit", async e => {
   e.preventDefault();
-  const boton = e.submitter; $("#i-error").textContent = "";
-  const correo = $("#i-correo").value, clave = $("#i-clave").value, compartida = revisarCompartida();
-  const rol = compartida ? $("#i-rol").value : "";
-  const participante = compartida && rol !== "evaluador" ? $("#i-participante").value.trim() : "";
-  const ok = [marcar("i-correo", correoValido(correo) ? "" : "Escriba un correo válido."), marcar("i-clave", clave ? "" : "Escriba la contraseña."), compartida ? marcar("i-rol", rol ? "" : "Seleccione cómo participa.") : true, compartida && rol !== "evaluador" ? marcar("i-participante", participante.length >= 2 ? "" : "Escriba su nombre o sus iniciales.") : true].every(Boolean);
+  const boton = e.submitter || $("#f-ingreso [type=submit]"); $("#i-error").textContent = "";
+  const correo = $("#i-correo").value, clave = $("#i-clave").value;
+  const ok = [marcar("i-correo", correoValido(correo) ? "" : "Escriba un correo válido."), marcar("i-clave", clave ? "" : "Escriba la contraseña.")].every(Boolean);
   if (!ok) return;
   Auditta.ocupado(boton, true);
-  try { Auditta.guardarSesion(await Auditta.api("/auth/ingreso", { method: "POST", body: JSON.stringify(compartida ? { correo, clave, rol, participante } : { correo, clave }) })); if (compartida) { Auditta.almacen.escribir("auditta_ultimo_rol", rol); Auditta.almacen.escribir("auditta_ultimo_participante", participante); } location.href = "/bandeja.html"; }
-  catch (x) { $("#i-error").textContent = x.message; Auditta.ocupado(boton, false); }
+  try { Auditta.guardarSesion(await Auditta.api("/auth/ingreso", { method: "POST", body: JSON.stringify({ correo, clave }) })); location.href = "/bandeja.html"; }
+  catch (x) { $("#i-error").textContent = x.message; Auditta.ocupado(boton, false); $("#i-clave").select(); }
 });
 $("#f-registro").addEventListener("submit", async e => {
   e.preventDefault();
-  const boton = e.submitter; $("#r-error").textContent = "";
-  const datos = { nombre: $("#r-nombre").value.trim(), correo: $("#r-correo").value, perfil: $("#r-perfil").value, clave: $("#r-clave").value };
-  const ok = [marcar("r-nombre", datos.nombre.length >= 3 ? "" : "Escriba su nombre completo."), marcar("r-correo", correoValido(datos.correo) ? "" : "Escriba un correo válido."), marcar("r-perfil", datos.perfil ? "" : "Seleccione su perfil."), marcar("r-clave", datos.clave.length >= 8 ? "" : "La contraseña debe tener al menos 8 caracteres.")].every(Boolean);
+  const boton = e.submitter || $("#f-registro [type=submit]"); $("#r-error").textContent = "";
+  const datos = { nombre: $("#r-nombre").value.trim(), correo: $("#r-correo").value, perfil: $("#r-perfil").value, clave: $("#r-clave").value, acepta_tratamiento: $("#r-acepta").checked };
+  const ok = [
+    marcar("r-nombre", datos.nombre.length >= 3 ? "" : "Escriba su nombre completo."),
+    marcar("r-correo", correoValido(datos.correo) ? "" : "Escriba un correo válido."),
+    marcar("r-perfil", datos.perfil ? "" : "Seleccione su perfil."),
+    marcar("r-clave", problemaClave(datos.clave)),
+    marcar("r-clave2", $("#r-clave2").value === datos.clave ? "" : "Las contraseñas no coinciden."),
+    marcar("r-acepta", datos.acepta_tratamiento ? "" : "Debe autorizar el tratamiento de datos para crear la cuenta."),
+  ].every(Boolean);
   if (!ok) return;
   Auditta.ocupado(boton, true);
-  try { Auditta.guardarSesion(await Auditta.api("/auth/registro", { method: "POST", body: JSON.stringify(datos) })); location.href = "/bandeja.html"; }
+  try { Auditta.guardarSesion(await Auditta.api("/auth/registro", { method: "POST", body: JSON.stringify(datos) })); location.href = "/inicio.html"; }
   catch (x) { $("#r-error").textContent = x.message; Auditta.ocupado(boton, false); }
 });
 </script>

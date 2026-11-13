@@ -25,7 +25,9 @@ services:
         value: deepseek-chat
       - key: DEMO_CORREO
         value: evaluador@auditta.test
-      - key: DEMO_CLAVE
+      - key: DEMO_HORAS
+        value: "24"
+      - key: ADMIN_CORREOS
         sync: false
-      - key: DEMO_NOMBRE
-        value: Evaluador de prueba
+      - key: CONTACTO_PRIVACIDAD
+        sync: false
